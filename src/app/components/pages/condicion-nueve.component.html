@@ -1,0 +1,72 @@
+<nav class="navbar navbar-expand-lg navcon">
+  <a class="navbar-brand" [routerLink]="['/home']" style="color: #8F141B"><i class="fas fa-arrow-left"></i> Menú</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars" style="color: #8F141B"></span>
+  </button>
+  
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+          <a class="nav-link navlinkout" [routerLink]="['/DenominacionDelPrograma']">Condición 1</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link navlinkout" [routerLink]="['/JustificacionDelPrograma']">Condición 2</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link navlinkout" [routerLink]="['/AspectosCurriculares']">Condición 3</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link navlinkout" [routerLink]="['/AcademicasProcesosFormativos']">Condición 4</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link navlinkout" [routerLink]="['/InvestigacionInnovacion']">Condición 5</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link navlinkout" [routerLink]="['/SectorExerno']">Condición 6</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link navlinkout" [routerLink]="['/Profesor']">Condición 7</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link navlinkout" [routerLink]="['/MediosEducativos']">Condición 8</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link navlinkin" [routerLink]="['/InfraestructuraFisicaTecnologica']" routerLinkActive="active">Condición 9</a>
+      </li>
+      </ul>
+  </div>
+</nav>
+<div class="container">
+  <br>
+  <h3 class="text-uppercase">Infraestructura física y tecnológica</h3>
+  <br>
+  <hr>
+  <div class="accordion" id="accordionExample" style="border-bottom-style: solid;border-color: #cccccc;;border-width: 1px;">
+    <div class="card">
+      <div class="card-header" id="headingOne" style="background-color: #8F141B" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <h2 class="mb-0">
+          <button class="btn btn-link navlinkin font-weight-bold text-uppercase" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Cuestionario
+          </button>
+        </h2>
+      </div>
+  
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body">
+          <form action="">
+            <h6 class="gray text-left">1). ¿De qué manera garantiza la Institución la disponibilidad de una planta física de adecuado acceso para la comunidad en general, incluyendo a las personas con discapacidades o limitaciones físicas? </h6>
+            <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
+            <h6 class="gray text-left">2). ¿Cuáles son los elementos que al verificarse permiten a la Institución garantizar que la infraestructura física (Aulas, Biblioteca, Auditorios, Laboratorios, Escenarios para el bienestar universitario) es adecuada, y suficiente para el programa según su naturaleza, y cumple con las normas vigentes? </h6>
+            <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
+            <h6 class="gray text-left">3). ¿Cómo se logra verificar la disponibilidad y suficiencia en los escenarios de práctica académica, profesional o de docencia servicio en coherencia con la cantidad de estudiantes y profesores actual o proyectada? </h6>
+            <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
+            <h6 class="gray text-left">4). ¿Cuáles elementos del contenido general de las actividades permiten verificar coherencia con el plan de estudios, las competencias propuestas y el área de conocimiento o disciplina propios del programa? </h6>
+            <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
+            <h6 class="gray text-left">5). ¿De qué manera garantiza la Institución una infraestructura apropiada, legal y actualizada para los programas de esta naturaleza en cuanto a plataforma, conectividad, producción de materiales, disponibilidad del material producido y los medios educativos, herramientas de comunicación, interacción y evaluación de los procesos académicos? En caso de que el programa requiera la presencia de estudiantes en centros de tutoría, aprendizaje, centros de práctica, granjas, clínicas, talleres y similares ¿Cuáles son los escenarios que garantizan dichos espacios según la cantidad de estudiantes y sus sitios de residencia? </h6>
+            <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

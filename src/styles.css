@@ -1,1 +1,371 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+* {
+    box-sizing: border-box;
+}
+body {
+    /* font: 96% 'Open Sans', Arial, Helvetica, sans-serif;*/
+    background: #FFF;
+}
+.centro {
+    clear: both;
+    margin: 0 auto;
+    width: 990px;
+}
+
+.txtcenter {
+    text-align: center;
+}
+
+header .logos .figure {
+    float: center;
+}
+
+.header {
+    width: 100%;
+    padding: 5px 0 0 0;
+    height: 110px;
+    background-color: #8F141B;
+}
+
+.footer {
+    clear: both;
+    float: left;
+    margin: 60px 0 20px 0;
+    width: 100%;
+    font-size: 94%;
+}
+
+.usco-card {
+    width: 45%;
+    margin: 0 auto;
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border-radius: 0.25rem;
+}
+
+.card-uscoHeader {
+    background-color: #8f141b;
+    border-color: #707070;
+    border-width: 1px;
+    color: #CAB691;
+    padding: 0.9rem;
+    text-align: center;
+}
+
+
+.card-uscoContent {
+    background-color: #F9E4E4;
+    color: #000;
+    border-color: #8F141B;
+    border-width: 1px;
+    padding: 0.9rem;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+}
+
+.uscoInputs {
+    width: 100%;
+    border-radius: 20px;
+    background-color: #fff;
+    font-family: Segoe UI;
+    color: black;
+    font-style: italic;
+    display: block;
+    padding: 0.375rem 0.75rem;
+    line-height: 1.5;
+    color: #495057;
+    background-clip: padding-box;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.uscoButton {
+    background-color: #8F141B;
+    border-color: #707070;
+    border-width: 1px;
+    color: #DFD4A6;
+    padding: .375rem .75rem;
+    margin: 1em 1em 1em 1em;
+    cursor: pointer;
+}
+
+.uscolink {
+    color: #8F141B;
+    text-decoration: none;
+}
+
+input:invalid {
+    border: 1px solid red;
+    box-shadow: 0 0 3px 1px red;
+}
+
+.input-inside-button {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-color: red;
+}
+
+.uscoSearchTitulo {
+    width: 100%;
+    border-radius: 20px;
+    background-color: #fff;
+    padding: 0.4rem;
+    font-family: Segoe UI;
+    color: black;
+}
+
+.uscoMenuNav {
+    width: 100%;
+    padding: 0.4rem;
+    font-family: Segoe UI;
+    color: black;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.uscoSesion {
+    width: 100%;
+    padding: 0.4rem;
+    font-family: Segoe UI;
+    color: #8F141B;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.focus {
+    background-color: #ffecec;
+}
+
+.flechaSelect {
+    background-image: url(/assets/flechaSelect.png);
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.iconoSelect {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 100px 100px 0 100px;
+    border-color: #8f141a transparent transparent transparent;
+}
+
+.categoriasSearch {
+    background-color: #8f141b;
+    border-width: 1px;
+    padding: 0.9rem;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.colorCategoria {
+    color: #dfd9bf;
+    text-align: center;
+}
+
+.uscoInputSearch {
+    width: 100%;
+    border-radius: 20px;
+    background-color: #fff;
+    padding: 0.6rem;
+    font-family: Segoe UI;
+    color: black;
+    font-style: italic;
+}
+
+.selectSearch {
+    width: 100%;
+    background-color: #fff;
+    padding: 0.6rem;
+    font-family: Segoe UI;
+    color: black;
+    font-style: italic;
+}
+
+.flechaSelect {
+    border: 1px solid #ccc;
+    background: URL(/assets/flechaSelect.png) no-repeat 298px 3px #fff !important;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.activeTab {
+    color: #8f141b;
+    border-bottom: 5px solid #8f141b;
+    border-radius: 5px;
+}
+
+a.activeTab:hover {
+    color: #CAB691;
+}
+.colorRojo{
+    background-color: #8F141B;
+}
+.colorCafe{
+    background-color: #DFD4A6;
+}
+.colorNegro{
+    color: black;
+}
+.colorRojoContorno{
+    color: #8F141B;
+}
+.iconRadio {
+    display: inline-block;
+    border-radius: 60px;
+    box-shadow: 0px 0px 5px black;
+    padding: 0.5em 0.6em;
+}
+.divUpload {
+    position: relative;
+    overflow: hidden;
+  }
+.inputUpload {
+    position: absolute;
+    font-size: 50px;
+    opacity: 0;
+    right: 0;
+    top: 0;
+}
+.menuAdmin{
+    background-color: white;
+    padding: 10px;
+    font-style: italic;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #000;
+    color: #8fc8ee;
+}
+.selectAdmin{
+    font-size: 12px;
+    width: 15%;
+    margin-bottom: 5%;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-top: 1%;
+}
+.tablaAdmin{
+    font-size: 13px;
+    color: #FFF;
+    background-color: #9bbb59;
+}
+.main-container{
+    margin-top: 40px;
+    margin-bottom: 150px;
+  }
+  
+  .puntero{
+    cursor: pointer;
+  }
+  
+  .w120{
+    width: 120px;
+  }
+  
+  /* Animaciones */
+  .animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  
+  .fast {
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+.fadeIn {
+    animation-name: fadeIn;
+}
+.caki{
+    color: #DFD4A6
+}
+.factores{
+    font-size: 20px;
+    height: 50px;
+    width: 600px;
+    border-radius:15px 0px 15px 0px;
+    background-color: #8F141B;
+    padding: 10px;
+    color: #DFD4A6;
+}
+
+.claro2{
+    background-color: rgb(167, 25, 32);
+    color: rgb(236, 224, 176)
+}
+.indice{
+    margin: 5px;
+    font-size: 30px;
+    background-color: #8F141B;
+}
+.navcon{
+    background-color: #DFD4A6;
+    color: #8F141B;
+    border-bottom-style: solid;
+    border-color: #ccc;
+    border-width: 1px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.navlinkin{
+    background-color: #8F141B;
+    color: #DFD4A6;
+}
+.navlinkout{
+    background-color: #DFD4A6;
+    color: #8f141b;
+}
+.navlinkin:hover{
+    color: #DFD4A6;
+}
+.navlinkout:hover{
+    color: #DFD4A6;
+    background-color: #8F141B;
+}
+.fondoTitulo{
+    background-color: rgb(72, 153, 228);
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: 2px solid;
+    border-radius: 20px;
+    padding: 10px;
+    width: 100%;
+}
+.inputPaciente{
+    border-radius: 50px;
+    width: 20%px;
+    margin-bottom: 15px
+}
+.gray{
+    color: #626567;
+}
+.tablaAdmin{
+    font-size: 13px;
+    color: #FFF;
+    background-color: #9bbb59;
+}

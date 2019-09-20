@@ -1,0 +1,76 @@
+<nav class="navbar navbar-expand-lg navcon">
+  <a class="navbar-brand" [routerLink]="['/home']" style="color: #8F141B"><i class="fas fa-arrow-left"></i> Menú</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars" style="color: #8F141B"></span>
+  </button>
+  
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+          <a class="nav-link navlinkout" [routerLink]="['/DenominacionDelPrograma']">Condición 1</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link navlinkout" [routerLink]="['/JustificacionDelPrograma']">Condición 2</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link navlinkin" [routerLink]="['/AspectosCurriculares']" routerLinkActive="active">Condición 3</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link navlinkout" [routerLink]="['/AcademicasProcesosFormativos']">Condición 4</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link navlinkout" [routerLink]="['/InvestigacionInnovacion']">Condición 5</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link navlinkout" [routerLink]="['/SectorExerno']">Condición 6</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link navlinkout" [routerLink]="['/Profesor']">Condición 7</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link navlinkout" [routerLink]="['/MediosEducativos']">Condición 8</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link navlinkout" [routerLink]="['/InfraestructuraFisicaTecnologica']">Condición 9</a>
+      </li>
+      </ul>
+  </div>
+</nav>
+<div class="container">
+  <br>
+  <h3 class="text-uppercase">Contenidos Curriculares</h3>
+  <br>
+  <hr>
+  <div class="accordion" id="accordionExample" style="border-bottom-style: solid;border-color: #cccccc;;border-width: 1px;">
+    <div class="card">
+      <div class="card-header" id="headingOne" style="background-color: #8F141B" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <h2 class="mb-0">
+          <button class="btn btn-link navlinkin font-weight-bold text-uppercase" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Cuestionario
+          </button>
+        </h2>
+      </div>
+  
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body">
+          <form action="">
+              <h6 class="gray text-left">1). ¿Qué elementos permiten verificar la coherencia entre: los perfiles establecidos para el programa, las competencias y el plan de estudios, se articula con la justificación para la oferta del programa? </h6>
+              <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
+              <h6 class="gray text-left">2). ¿Cómo sustenta la Institución la correspondencia entre la distribución de los créditos académicos de las distintas áreas curriculares con los perfiles del programa? </h6>
+              <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
+              <h6 class="gray text-left">3). ¿Qué estrategias permiten lograr las competencias propuestas desde el plan de estudios? </h6>
+              <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
+              <h6 class="gray text-left">4). ¿Cuáles elementos del contenido general de las actividades permiten verificar coherencia con el plan de estudios, las competencias propuestas y el área de conocimiento o disciplina propios del programa? </h6>
+              <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
+              <h6 class="gray text-left">5). ¿Cuáles componentes curriculares permiten justificar la existencia apropiada de características de interdisciplinariedad, flexibilidad y competencias comunicativas en segunda lengua? </h6>
+              <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
+              <h6 class="gray text-left">6). ¿De qué manera la institución sustenta la complementariedad y secuenciación entre los diferentes niveles de formación que se articulan por ciclos? </h6>
+              <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
+              <h6 class="gray text-left">7). ¿Cuáles son los elementos que permiten justificar coherencia entre los créditos académicos, la distribución de las horas de trabajo académico, la naturaleza del programa y el modelo pedagógico institucional? </h6>
+              <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

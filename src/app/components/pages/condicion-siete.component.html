@@ -1,0 +1,215 @@
+<nav class="navbar navbar-expand-lg navcon">
+  <a class="navbar-brand" [routerLink]="['/home']" style="color: #8F141B"><i class="fas fa-arrow-left"></i> Menú</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars" style="color: #8F141B"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+          <a class="nav-link navlinkout" [routerLink]="['/DenominacionDelPrograma']">Condición 1</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link navlinkout" [routerLink]="['/JustificacionDelPrograma']">Condición 2</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link navlinkout" [routerLink]="['/AspectosCurriculares']">Condición 3</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link navlinkout" [routerLink]="['/AcademicasProcesosFormativos']">Condición 4</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link navlinkout" [routerLink]="['/InvestigacionInnovacion']">Condición 5</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link navlinkout" [routerLink]="['/SectorExerno']">Condición 6</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link navlinkin" [routerLink]="['/Profesor']" routerLinkActive="active">Condición 7</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link navlinkout" [routerLink]="['/MediosEducativos']">Condición 8</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link navlinkout" [routerLink]="['/InfraestructuraFisicaTecnologica']">Condición 9</a>
+      </li>
+      </ul>
+  </div>
+</nav>
+<div class="container">
+  <br>
+  <h3 class="text-uppercase">Profesores</h3>
+  <br>
+  <h5 class="text-uppercase">Tabla 1</h5>
+  <table bordercolor="black" class="table table-bordered">
+    <thead>
+      <tr class="text-center">
+        <th rowspan="2" scope="col" class="text-uppercase align-middle borden">TIPO DE VINCULACIÓN</th>
+        <th rowspan="2" scope="col" class="text-uppercase align-middle borden">número de docentes</th>
+        <th colspan="6" scope="col" class="text-uppercase align-middle borden">nivel de formación</th>
+      </tr>
+      <tr class="text-center">
+        <th scope="col" class="text-uppercase align-middle borden">no. doctores</th>
+        <th scope="col" class="text-uppercase align-middle borden">no. magisters</th>
+        <th scope="col" class="text-uppercase align-middle borden">no. especialistas</th>
+        <th scope="col" class="text-uppercase align-middle borden">no. profesionales</th>
+        <th scope="col" class="text-uppercase align-middle borden">no. tecnólogos</th>
+        <th scope="col" class="text-uppercase align-middle borden">no. técnicos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row" class="text-uppercase">Tiempo completo</th>
+        <td class="align-middle text-center">
+          <input type="text" class="text-center" style="border:0px;width: 100%;">
+        </td>
+        <td class="align-middle text-center">
+          <input type="text" class="text-center" style="border:0px;width: 100%;">
+        </td>
+        <td class="align-middle text-center">
+          <input type="text" class="text-center" style="border:0px;width: 100%;">
+        </td>
+        <td class="align-middle text-center">
+          <input type="text" class="text-center" style="border:0px;width: 100%;">
+        </td>
+        <td class="align-middle text-center">
+          <input type="text" class="text-center" style="border:0px;width: 100%;">
+        </td>
+        <td class="align-middle text-center">
+          <input type="text" class="text-center" style="border:0px;width: 100%;">
+        </td>
+        <td class="align-middle text-center">
+          <input type="text" class="text-center" style="border:0px;width: 100%;">
+        </td>
+      </tr>
+      <tr>
+        <th scope="row" class="text-uppercase">Medio Tiempo</th>
+        <td class="align-middle text-center">
+          <input type="text" class="text-center" style="border:0px;width: 100%;">
+        </td>
+        <td class="align-middle text-center">
+          <input type="text" class="text-center" style="border:0px;width: 100%;">
+        </td>
+        <td class="align-middle text-center">
+          <input type="text" class="text-center" style="border:0px;width: 100%;">
+        </td>
+        <td class="align-middle text-center">
+          <input type="text" class="text-center" style="border:0px;width: 100%;">
+        </td>
+        <td class="align-middle text-center">
+          <input type="text" class="text-center" style="border:0px;width: 100%;">
+        </td>
+        <td class="align-middle text-center">
+          <input type="text" class="text-center" style="border:0px;width: 100%;">
+        </td>
+        <td class="align-middle text-center">
+          <input type="text" class="text-center" style="border:0px;width: 100%;">
+        </td>
+      </tr>
+      <tr>
+        <th scope="row" class="text-uppercase">catedra</th>
+        <td class="align-middle text-center">
+          <input type="text" class="text-center" style="border:0px;width: 100%;">
+        </td>
+        <td class="align-middle text-center">
+          <input type="text" class="text-center" style="border:0px;width: 100%;">
+        </td>
+        <td class="align-middle text-center">
+          <input type="text" class="text-center" style="border:0px;width: 100%;">
+        </td>
+        <td class="align-middle text-center">
+          <input type="text" class="text-center" style="border:0px;width: 100%;">
+        </td>
+        <td class="align-middle text-center">
+          <input type="text" class="text-center" style="border:0px;width: 100%;">
+        </td>
+        <td class="align-middle text-center">
+          <input type="text" class="text-center" style="border:0px;width: 100%;">
+        </td>
+        <td class="align-middle text-center">
+          <input type="text" class="text-center" style="border:0px;width: 100%;">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <h5 class="text-uppercase">Tabla 2</h5>
+  <br>
+  <table class="table table-bordered">
+    <thead>
+      <tr class="text-center">
+        <th rowspan="2" scope="col" class="text-uppercase align-middle borden">GRUPOS DE INVESTIGACIÓN NOMBRE</th>
+        <th colspan="5" scope="col" class="text-uppercase align-middle borden">CLASIFICACIÓN EN COLCIENCIAS</th>
+        <th rowspan="2" scope="col" class="text-uppercase align-middle borden">OTROS GRUPOS</th>
+        <th rowspan="2" scope="col" class="text-uppercase align-middle borden">GRUPOS INTERDISCIPLINARIOS</th>
+      </tr>
+      <tr class="text-center">
+        <th scope="col" class="text-uppercase align-middle borden">A1</th>
+        <th scope="col" class="text-uppercase align-middle borden">A</th>
+        <th scope="col" class="text-uppercase align-middle borden">B</th>
+        <th scope="col" class="text-uppercase align-middle borden">C</th>
+        <th scope="col" class="text-uppercase align-middle borden">registrado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="align-middle text-center">
+          <input type="text" class="text-center" style="border:0px;width: 100%;">
+        </td>
+        <td class="align-middle text-center">
+          <input type="text" class="text-center" style="border:0px;width: 100%;">
+        </td>
+        <td class="align-middle text-center">
+          <input type="text" class="text-center" style="border:0px;width: 100%;">
+        </td>
+        <td class="align-middle text-center">
+          <input type="text" class="text-center" style="border:0px;width: 100%;">
+        </td>
+        <td class="align-middle text-center">
+          <input type="text" class="text-center" style="border:0px;width: 100%;">
+        </td>
+        <td class="align-middle text-center">
+          <input type="text" class="text-center" style="border:0px;width: 100%;">
+        </td>
+        <td class="align-middle text-center">
+          <input type="text" class="text-center" style="border:0px;width: 100%;">
+        </td>
+        <td class="align-middle text-center">
+          <input type="text" class="text-center" style="border:0px;width: 100%;">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <hr>
+  <div class="accordion" id="accordionExample" style="border-bottom-style: solid;border-color: #cccccc;;border-width: 1px;">
+    <div class="card">
+      <div class="card-header" id="headingOne" style="background-color: #8F141B" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <h2 class="mb-0">
+          <button class="btn btn-link navlinkin font-weight-bold text-uppercase" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Cuestionario
+          </button>
+        </h2>
+      </div>
+  
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body">
+          <form action="">
+            <h6 class="gray text-left">1). ¿Cómo sustenta la Institución la disponibilidad, idoneidad y suficiencia de profesores para atender las diferentes áreas curriculares del Programa, en correspondencia con el número de estudiantes actual y/o proyectado? </h6>
+            <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
+            <h6 class="gray text-left">2). ¿Cómo sustenta la Institución la disponibilidad, idoneidad y suficiencia de profesores de Tiempo completo para atender las funciones sustantivas del Programa, en correspondencia con el campo específico y nivel de formación del programa, y el número de estudiantes actual y/o proyectado? </h6>
+            <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
+            <h6 class="gray text-left">3). ¿En qué aspectos se logra coherencia, sincronía  y suficiencia entre las metas, los plazos y los resultados (alcanzados o esperados) asociados a los planes de contratación docente y de desarrollo profesoral (o formación docente) con las necesidades del programa? </h6>
+            <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
+            <h6 class="gray text-left">4). ¿Qué estrategias y acciones concretas desarrolla o desarrollará la Institución para fomentar el avance de los docentes en el escalafón o categorías previstas en el Reglamento o Estatuto Docente? </h6>
+            <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
+            <h6 class="gray text-left">5). ¿De qué manera la Institución garantiza la capacitación de los docentes en el uso de las tecnologías y herramientas de apoyo al proceso de enseñanza-aprendizaje? ¿Qué perfiles establece la Institución para el personal docente de manera que se pueda atender adecuadamente la modalidad? </h6>
+            <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
+            <h6 class="gray text-left">6). ¿De qué manera la institución sustenta la complementariedad y secuenciación entre los diferentes niveles de formación que se articulan por ciclos? </h6>
+            <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
+            <h6 class="gray text-left">7). ¿De qué manera sustenta  la Institución la relación de trabajo y distribución de tiempos de los docentes con nivel de formación Maestría y Doctorado para los proyectos de investigación en los que participan los estudiantes? </h6>
+            <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

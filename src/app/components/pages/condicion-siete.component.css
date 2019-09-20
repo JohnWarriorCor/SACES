@@ -1,0 +1,10 @@
+table,tr,th,td{
+    border-color: black;
+}
+thead.tr{
+    border-color: black;
+}
+.borden{
+    border-width: 1px;
+    border-color: black;
+}
