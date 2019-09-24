@@ -9,6 +9,8 @@ import { CondicionSeisComponent } from './components/pages/condicion-seis.compon
 import { CondicionSieteComponent } from './components/pages/condicion-siete.component';
 import { CondicionOchoComponent } from './components/pages/condicion-ocho.component';
 import { CondicionNueveComponent } from './components/pages/condicion-nueve.component';
+import { CronogramaComponent } from './components/pages/cronograma.component';
+
 
 
 const routes: Routes = [
@@ -22,6 +24,7 @@ const routes: Routes = [
   { path: 'Profesor', component: CondicionSieteComponent },
   { path: 'MediosEducativos', component: CondicionOchoComponent },
   { path: 'InfraestructuraFisicaTecnologica', component: CondicionNueveComponent },
+  { path: 'Cronograma', component: CronogramaComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 

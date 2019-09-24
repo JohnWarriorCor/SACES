@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TituloService } from '../services/titulo.service';
 
 @Component({
   selector: 'app-home',
@@ -15,9 +16,10 @@ export class HomeComponent implements OnInit {
   hover7 = false;
   hover8 = false;
   hover9 = false;
-  constructor() { }
+  constructor(private headerTitleService: TituloService) { }
 
   ngOnInit() {
+    this.headerTitleService.setTitle('Condiciones de Calidad para la Creación y Funcionamiento de Programas Académicos')
   }
 
 }

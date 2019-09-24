@@ -1,0 +1,41 @@
+<nav *ngIf="nav.visible" class="navbar navbar-expand-lg navcon">
+  <a class="navbar-brand" [routerLink]="['/home']" style="color: #8F141B"><i class="fas fa-arrow-left"></i> Menú</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars" style="color: #8F141B"></span>
+  </button>
+  
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+          <a class="nav-link navlinkout" [routerLink]="['/DenominacionDelPrograma']" routerLinkActive="navlinkin">Condición 1</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link navlinkout" [routerLink]="['/JustificacionDelPrograma']" routerLinkActive="navlinkin">Condición 2</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link navlinkout" [routerLink]="['/AspectosCurriculares']" routerLinkActive="navlinkin">Condición 3</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link navlinkout" [routerLink]="['/AcademicasProcesosFormativos']" routerLinkActive="navlinkin">Condición 4</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link navlinkout" [routerLink]="['/InvestigacionInnovacion']" routerLinkActive="navlinkin">Condición 5</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link navlinkout" [routerLink]="['/SectorExerno']" routerLinkActive="navlinkin">Condición 6</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link navlinkout" [routerLink]="['/Profesor']" routerLinkActive="navlinkout">Condición 7</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link navlinkout" [routerLink]="['/MediosEducativos']" routerLinkActive="navlinkout">Condición 8</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link navlinkout" [routerLink]="['/InfraestructuraFisicaTecnologica']" routerLinkActive="navlinkout">Condición 9</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link navlinkout" [routerLink]="['/InfraestructuraFisicaTecnologica']" routerLinkActive="navlinkout">Cronograma</a>
+    </li>
+      </ul>
+  </div>
+</nav>

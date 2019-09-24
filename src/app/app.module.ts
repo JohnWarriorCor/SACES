@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+// MODULOS DE CRONOGRAMA
+
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // import { MatDialogModule } from '@angular/material/dialog';
 import { AppComponent } from './app.component';
@@ -17,6 +19,9 @@ import { CondicionSieteComponent } from './components/pages/condicion-siete.comp
 import { CondicionOchoComponent } from './components/pages/condicion-ocho.component';
 import { CondicionNueveComponent } from './components/pages/condicion-nueve.component';
 import { ModalUnoComponent } from './components/pages/modal-uno.component';
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { NavbarService } from './services/navbar.service';
+import { CronogramaComponent } from './components/pages/cronograma.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +39,8 @@ import { ModalUnoComponent } from './components/pages/modal-uno.component';
     CondicionOchoComponent,
     CondicionNueveComponent,
     ModalUnoComponent,
+    NavbarComponent,
+    CronogramaComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +51,9 @@ import { ModalUnoComponent } from './components/pages/modal-uno.component';
   exports: [
     // MatDialogModule
   ],
-  providers: [],
+  providers: [
+    NavbarService
+  ],
   bootstrap: [AppComponent],
   entryComponents: [ModalUnoComponent]
 })

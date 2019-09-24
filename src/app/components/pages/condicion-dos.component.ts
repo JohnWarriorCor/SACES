@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TituloService } from '../../services/titulo.service';
 
 @Component({
   selector: 'app-condicion-dos',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CondicionDosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private headerTitleService: TituloService) { }
 
   ngOnInit() {
+    this.headerTitleService.setTitle('JUSTIFICACIÓN DEL PROGRAMA');
   }
 
 }
