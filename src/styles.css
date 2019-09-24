@@ -369,3 +369,4 @@ a.activeTab:hover {
     color: #FFF;
     background-color: #9bbb59;
 }
+@import "../node_modules/angular-calendar/css/angular-calendar.css";

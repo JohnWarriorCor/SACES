@@ -8,7 +8,11 @@
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "app",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -23,13 +27,10 @@
               "src/assets"
             ],
             "styles": [
-              "../node_modules/fullcalendar/dist/fullcalendar.min.css",
-              "src/styles.css"
+              "src/styles.css",
+              "src/styles.scss"
             ],
             "scripts": [
-              "../node_modules/jquery/jquery.js",
-              "../node_modules/ap-angular2-fullcalendar/angular2-fullcalendar.js",
-              "../node_modules/moment/moment.js"
             ],
             "es5BrowserSupport": true
           },
