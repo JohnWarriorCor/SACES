@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 // MODULOS DE CRONOGRAMA
-
+import { FullCalendarModule } from '@fullcalendar/angular';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // import { MatDialogModule } from '@angular/material/dialog';
 import { AppComponent } from './app.component';
@@ -43,6 +43,7 @@ import { CronogramaComponent } from './components/pages/cronograma.component';
     CronogramaComponent,
   ],
   imports: [
+    FullCalendarModule,
     BrowserModule,
     APP_ROUTING,
     // NgbModule,
