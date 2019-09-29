@@ -63,7 +63,7 @@
                         </div>
                         <div class="col text-center">
                           <div class="alert alert-warning">
-                              <p style="font-size: 12px;">Para saber qué tan próxima está la fecha, por favor dar click encima de la casilla de fecha</p>
+                            <p style="font-size: 12px;">Para saber qué tan próxima está la fecha, por favor dar click encima de la casilla de fecha</p>
                           </div>
                         </div>
                     </div>
@@ -88,7 +88,7 @@
                         <div class="col">
                           <form action="get"></form>
                             <h6 class="gray text-left">Fecha:</h6>
-                            <input id="date" type="date" [ngClass]="{'atiempo' : res1 <= 30,'encurso' : res1 <= 15, 'expira': res1 < 5, 'nulo': res1 == 0 }" name="fecha1Id" class="form-control shadow p-3 inputPaciente" [(ngModel)]="fecha1Id" (click)="myFunc1(fecha1Id)">
+                            <input id="date" type="date" [ngClass]="{'atiempo' : res1 > 15,'encurso' : res1 <= 15, 'expira': res1 < 5, 'nulo': res1 == 0 || res1 > 30}" name="fecha1Id" class="form-control shadow p-3 inputPaciente" [(ngModel)]="fecha1Id" (click)="myFunc1(fecha1Id)">
                         </div>
                     </div>
                 </div>
@@ -109,7 +109,7 @@
                         </div>
                         <div class="col">
                             <h6 class="gray text-left">Fecha:</h6>
-                            <input id="date" type="date" [ngClass]="{'atiempo' : res2 <= 30,'encurso' : res2 <= 15, 'expira': res2 <5, 'nulo': res2 == 0 }" name="fecha1Id" class="form-control shadow p-3 inputPaciente" [(ngModel)]="fecha2Id" (click)="myFunc2(fecha2Id)">
+                            <input id="date" type="date" [ngClass]="{'atiempo' : res2 > 15,'encurso' : res2 <= 15, 'expira': res2 <5, 'nulo': res2 == 0 || res2 > 30}" name="fecha1Id" class="form-control shadow p-3 inputPaciente" [(ngModel)]="fecha2Id" (click)="myFunc2(fecha2Id)">
                         </div>
                     </div>
                 </div>
@@ -140,7 +140,7 @@
                         </div>
                         <div class="col">
                             <h6 class="gray text-left">Fecha:</h6>
-                            <input id="date" type="date" [ngClass]="{'atiempo' : res3 <= 30,'encurso' : res3 <= 15, 'expira': res3 <5, 'nulo': res3 == 0 }" name="fecha3Id" class="form-control shadow p-3 inputPaciente" [(ngModel)]="fecha3Id" (click)="myFunc3(fecha3Id)">
+                            <input id="date" type="date" [ngClass]="{'atiempo' : res3 > 15,'encurso' : res3 <= 15, 'expira': res3 <5, 'nulo': res3 == 0 || res3 > 30}" name="fecha3Id" class="form-control shadow p-3 inputPaciente" [(ngModel)]="fecha3Id" (click)="myFunc3(fecha3Id)">
                         </div>
                     </div>
                 </div>
@@ -165,7 +165,7 @@
                         </div>
                         <div class="col">
                             <h6 class="gray text-left">Fecha:</h6>
-                            <input id="date" type="date" [ngClass]="{'atiempo' : res4 <= 30,'encurso' : res4 <= 15, 'expira': res4 < 5, 'nulo': res4 == 0 }" name="fecha1Id" class="form-control shadow p-3 inputPaciente" [(ngModel)]="fecha4Id" (click)="myFunc4(fecha4Id)">
+                            <input id="date" type="date" [ngClass]="{'atiempo' : res4 > 15,'encurso' : res4 <= 15, 'expira': res4 < 5, 'nulo': res4 == 0 || res4 > 30}" name="fecha1Id" class="form-control shadow p-3 inputPaciente" [(ngModel)]="fecha4Id" (click)="myFunc4(fecha4Id)">
                         </div>
                     </div>
                 </div>

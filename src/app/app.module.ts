@@ -23,6 +23,7 @@ import { ModalUnoComponent } from './components/pages/modal-uno.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { NavbarService } from './services/navbar.service';
 import { CronogramaComponent } from './components/pages/cronograma.component';
+import { RegistroCon1Component } from './components/pages/registro-con1.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { CronogramaComponent } from './components/pages/cronograma.component';
     ModalUnoComponent,
     NavbarComponent,
     CronogramaComponent,
+    RegistroCon1Component,
   ],
   imports: [
     FullCalendarModule,
