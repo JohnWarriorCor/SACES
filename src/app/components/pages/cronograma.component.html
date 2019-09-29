@@ -44,10 +44,9 @@
   <div class="app">
 
     <div class="app-top">
-      <button (click)='toggleVisible()' class="btn btn-dark" style="margin: 5px;">toggle visible</button>
-      <button (click)='toggleWeekends()' class="btn btn-dark" style="margin: 5px;">toggle weekends</button>
-      <button (click)='gotoPast()' class="btn btn-dark" style="margin: 5px;">go to a date in the past</button>
-      (also, click a date/time to add an event)
+      <button (click)='toggleVisible()' class="btn btn-dark" style="margin: 5px;"><i class="far fa-eye-slash"></i></button>
+      <button (click)='toggleWeekends()' class="btn btn-dark" style="margin: 5px;">OCULTAR FINES DE SEMANAS</button>
+      <button (click)='gotoPast()' class="btn btn-dark" style="margin: 5px;">ÚLTIMA FECHA</button>
     </div>
   
     <div class="app-calendar" *ngIf="calendarVisible">

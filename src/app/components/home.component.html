@@ -2,8 +2,8 @@
   <h4>LINEAMIENTOS PARA EL REGISTRO CALIFICADO</h4>
   <hr>
   <div class="row align-items-center text-center" style="display: flex;justify-content: center;align-items: center">
-      <span [routerLink]="['/DenominacionDelPrograma']" class="badge badge-primary badge-pill indice">1</span>
-      <h3 (mouseover)="hover1=true" (mouseout)="hover1=false" [ngClass]="{'claro2': hover1}" [routerLink]="['/DenominacionDelPrograma']" class="factores">Denominación del programa</h3>
+      <span [routerLink]="['/DenominacionDelPrograma', 'nuevo']" class="badge badge-primary badge-pill indice">1</span>
+      <h3 (mouseover)="hover1=true" (mouseout)="hover1=false" [ngClass]="{'claro2': hover1}" [routerLink]="['/DenominacionDelPrograma', 'nuevo']" class="factores">Denominación del programa</h3>
   </div>
   <div class="row align-items-center text-center" style="display: flex;justify-content: center;align-items: center">
       <span [routerLink]="['/JustificacionDelPrograma']" routerLinkActive="router-link-active"  class="badge badge-primary badge-pill" style="margin: 5px;font-size: 30px;background-color: #8F141B">2</span>

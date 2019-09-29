@@ -1,10 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 // MODULOS DE CRONOGRAMA
 import { FullCalendarModule } from '@fullcalendar/angular';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // import { MatDialogModule } from '@angular/material/dialog';
+// MODULOS REGISTRO FIREBASE
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// MODULOS REGISTRO FIREBASE
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
@@ -24,6 +28,9 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { NavbarService } from './services/navbar.service';
 import { CronogramaComponent } from './components/pages/cronograma.component';
 import { RegistroCon1Component } from './components/pages/registro-con1.component';
+import { KeysPipe } from './pipes/keys.pipe';
+import { Condicion1Service } from './services/condicion1.service';
+import { TituloService } from './services/titulo.service';
 
 @NgModule({
   declarations: [
@@ -44,10 +51,14 @@ import { RegistroCon1Component } from './components/pages/registro-con1.componen
     NavbarComponent,
     CronogramaComponent,
     RegistroCon1Component,
+    KeysPipe,
   ],
   imports: [
     FullCalendarModule,
     FormsModule,
+    HttpModule,
+    HttpClientModule,
+    ReactiveFormsModule,
     BrowserModule,
     APP_ROUTING,
     // NgbModule,
@@ -57,7 +68,9 @@ import { RegistroCon1Component } from './components/pages/registro-con1.componen
     // MatDialogModule
   ],
   providers: [
-    NavbarService
+    NavbarService,
+    Condicion1Service,
+    TituloService
   ],
   bootstrap: [AppComponent],
   entryComponents: [ModalUnoComponent]

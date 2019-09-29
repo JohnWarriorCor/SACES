@@ -42,167 +42,175 @@
 <div class="container">
   <br>
   <br>
-    <div class="row animated fadeIn fast">
-    <div class="col-md-12">
-        <form class="text-center">
-            <div class="row">
-                <div class="col">
-                    <h6 class="text-left gray">Tipo de programa:</h6>
-                    <select class="custom-select shadow inputPaciente gray" id="documento" name="documento">
-                        <option selected>Elija el tipo de programa</option>
-                        <option>Técnico</option>
-                        <option>Tecnológico</option>
-                        <option>Especialización</option>
-                        <option>Maestría</option>
-                        <option>Doctorado</option>
-                    </select>
-                </div>
-                <div class="col">
-                    <div class="row">
-                        <div class="col">
-                        </div>
-                        <div class="col text-center">
-                          <div class="alert alert-warning">
-                            <p style="font-size: 12px;">Para saber qué tan próxima está la fecha, por favor dar click encima de la casilla de fecha</p>
-                          </div>
+  <form (ngSubmit)="guardar()" #forma="ngForm" class="text-center">
+      <div class="row animated fadeIn fast">
+          <div class="col-md-12">        
+                <div class="row">
+                    <div class="col">
+                        <h6 class="text-left gray">Tipo de programa:</h6>
+                        <select class="custom-select shadow inputPaciente gray" id="tipoprograma" name="tipoprograma" [(ngModel)]="cond1.tipoprograma">
+                            <option value="null" selected>Elija el tipo de programa</option>
+                            <option value="Técnico">Técnico</option>
+                            <option value="Tecnológico">Tecnológico</option>
+                            <option value="Especialización">Especialización</option>
+                            <option value="Maestría">Maestría</option>
+                            <option value="Doctorado">Doctorado</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                            </div>
+                            <div class="col text-center">
+                              <div class="alert alert-warning">
+                                <p style="font-size: 12px;">Para saber qué tan próxima está la fecha, por favor dar click encima de la casilla de fecha</p>
+                              </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <h6 class="gray text-left">Nombre del programa:</h6>
-                    <input type="text" name="apellido" class="form-control shadow p-3 inputPaciente" placeholder="...">
-                </div>
-                <div class="col">
-                    <div class="row">
-                        <div class="col">
-                            <h6 class="gray text-left">Responsable:</h6>
-                            <select class="custom-select shadow inputPaciente gray" id="documento" name="documento">
-                                <option selected>Elija el responsable</option>
-                                <option>Responsable 1</option>
-                                <option>Responsable 2</option>
-                                <option>Responsable 3</option>
-                            </select>
-                        </div>
-                        <div class="col">
-                          <form action="get"></form>
-                            <h6 class="gray text-left">Fecha:</h6>
-                            <input id="date" type="date" [ngClass]="{'atiempo' : res1 > 15,'encurso' : res1 <= 15, 'expira': res1 < 5, 'nulo': res1 == 0 || res1 > 30}" name="fecha1Id" class="form-control shadow p-3 inputPaciente" [(ngModel)]="fecha1Id" (click)="myFunc1(fecha1Id)">
+                <div class="row">
+                    <div class="col">
+                        <h6 class="gray text-left">Nombre del programa:</h6>
+                        <input type="text" [(ngModel)]="cond1.nombreprograma" name="nombreprograma" id="nombreprograma" class="form-control shadow p-3 inputPaciente" placeholder="...">
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <h6 class="gray text-left">Responsable:</h6>
+                                <select class="custom-select shadow inputPaciente gray" id="respnombre" name="respnombre" [(ngModel)]="cond1.respnombre">
+                                    <option value="null" selected>Elija el responsable</option>
+                                    <option value="Responsable 1">Responsable 1</option>
+                                    <option value="Responsable 2">Responsable 2</option>
+                                    <option value="Responsable 3">Responsable 3</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                              <form action="get"></form>
+                                <h6 class="gray text-left">Fecha:</h6>
+                                <input id="datenombre" name="datenombre" [(ngModel)]="cond1.datenombre" type="date" [ngClass]="{'atiempo' : res1 > 15,'encurso' : res1 <= 15, 'expira': res1 < 5, 'nulo': res1 == 0 || res1 > 30}" name="fecha1Id" class="form-control shadow p-3 inputPaciente" [(ngModel)]="fecha1Id" (click)="myFunc1(fecha1Id)">
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <h6 class="gray text-left">Título a otorgar:</h6>
-                    <input type="text" name="direccion" class="form-control shadow p-3 inputPaciente" placeholder="Nombre del título">
-                </div>
-                <div class="col">
-                    <div class="row">
-                        <div class="col">
-                            <h6 class="gray text-left">Responsable:</h6>
-                            <select class="custom-select shadow inputPaciente gray" id="documento" name="documento">
-                                <option selected>Elija el responsable</option>
-                                <option>Responsable 1</option>
-                            </select>
-                        </div>
-                        <div class="col">
-                            <h6 class="gray text-left">Fecha:</h6>
-                            <input id="date" type="date" [ngClass]="{'atiempo' : res2 > 15,'encurso' : res2 <= 15, 'expira': res2 <5, 'nulo': res2 == 0 || res2 > 30}" name="fecha1Id" class="form-control shadow p-3 inputPaciente" [(ngModel)]="fecha2Id" (click)="myFunc2(fecha2Id)">
+                <div class="row">
+                    <div class="col">
+                        <h6 class="gray text-left">Título a otorgar:</h6>
+                        <input type="text" id="titulo" name="titulo" [(ngModel)]="cond1.titulo"  class="form-control shadow p-3 inputPaciente" placeholder="Nombre del título">
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <h6 class="gray text-left">Responsable:</h6>
+                                <select class="custom-select shadow inputPaciente gray" id="resptitulo" name="resptitulo" [(ngModel)]="cond1.resptitulo">
+                                  <option value="null" selected>Elija el responsable</option>
+                                  <option value="Responsable 1">Responsable 1</option>
+                                  <option value="Responsable 2">Responsable 2</option>
+                                  <option value="Responsable 3">Responsable 3</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <h6 class="gray text-left">Fecha:</h6>
+                                <input id="datetitulo" name="datetitulo" [(ngModel)]="cond1.datetitulo" type="date" [ngClass]="{'atiempo' : res2 > 15,'encurso' : res2 <= 15, 'expira': res2 <5, 'nulo': res2 == 0 || res2 > 30}" name="fecha1Id" class="form-control shadow p-3 inputPaciente" [(ngModel)]="fecha2Id" (click)="myFunc2(fecha2Id)">
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col text-left">
-                    <h6 class="gray text-left">Contenido curricular:</h6>
-                    <div class="custom-file mb-3">
-                        <input type="file" class="custom-file-input inputPaciente" id="customFile" name="filename">
-                        <label class="custom-file-label inputPaciente" for="customFile">Elija el archivo</label>
+                <div class="row">
+                    <div class="col text-left">
+                        <h6 class="gray text-left">Contenido curricular:</h6>
+                        <div class="custom-file mb-3">
+                            <input type="file" class="custom-file-input inputPaciente" id="customFile" name="filename">
+                            <label class="custom-file-label inputPaciente" for="customFile">Elija el archivo</label>
+                        </div>
+                        <!--<script>
+                            // Add the following code if you want the name of the file appear on select
+                            $(".custom-file-input").on("change", function() {
+                                var fileName = $(this).val().split("\\").pop();
+                                $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+                            });
+                        </script>-->
                     </div>
-                    <!--<script>
-                        // Add the following code if you want the name of the file appear on select
-                        $(".custom-file-input").on("change", function() {
-                            var fileName = $(this).val().split("\\").pop();
-                            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-                        });
-                    </script>-->
-                </div>
-                <div class="col">
-                     <div class="row">
-                        <div class="col">
-                            <h6 class="gray text-left">Responsable:</h6>
-                            <select class="custom-select shadow inputPaciente gray" id="documento" name="documento">
-                                <option selected>Elija el responsable</option>
-                                <option>Responsable 1</option>
-                            </select>
-                        </div>
-                        <div class="col">
-                            <h6 class="gray text-left">Fecha:</h6>
-                            <input id="date" type="date" [ngClass]="{'atiempo' : res3 > 15,'encurso' : res3 <= 15, 'expira': res3 <5, 'nulo': res3 == 0 || res3 > 30}" name="fecha3Id" class="form-control shadow p-3 inputPaciente" [(ngModel)]="fecha3Id" (click)="myFunc3(fecha3Id)">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col text-left">
-                    <h6 class="gray text-left">Perfil de egresado:</h6>
-                    <a class="btn uscoButton" href="https://contenidos.usco.edu.co/salud/index.php/programas/posgrados/doctorado-en-ciencias-de-la-salud" target="_blank">Ir al perfil</a>
-                    <!--
-                    <button mat-button (click)="openDialog()">Open dialog</button>
-                    <button class="btn uscoButton" (click)="openFormModal()">Visualizar perfil</button>
-                    -->
-                </div>
-                <div class="col">
-                     <div class="row">
-                        <div class="col">
-                            <h6 class="gray text-left">Responsable:</h6>
-                            <select class="custom-select shadow inputPaciente gray" id="documento" name="documento">
-                                <option selected>Elija el responsable</option>
-                                <option>Responsable 1</option>
-                            </select>
-                        </div>
-                        <div class="col">
-                            <h6 class="gray text-left">Fecha:</h6>
-                            <input id="date" type="date" [ngClass]="{'atiempo' : res4 > 15,'encurso' : res4 <= 15, 'expira': res4 < 5, 'nulo': res4 == 0 || res4 > 30}" name="fecha1Id" class="form-control shadow p-3 inputPaciente" [(ngModel)]="fecha4Id" (click)="myFunc4(fecha4Id)">
+                    <div class="col">
+                         <div class="row">
+                            <div class="col">
+                                <h6 class="gray text-left">Responsable:</h6>
+                                <select class="custom-select shadow inputPaciente gray" id="respcontenido" name="respcontenido" [(ngModel)]="cond1.respcontenido">
+                                  <option value="null" selected>Elija el responsable</option>
+                                  <option value="Responsable 1">Responsable 1</option>
+                                  <option value="Responsable 2">Responsable 2</option>
+                                  <option value="Responsable 3">Responsable 3</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <h6 class="gray text-left">Fecha:</h6>
+                                <input id="datecontenido" name="datecontenido" [(ngModel)]="cond1.datecontenido" type="date" [ngClass]="{'atiempo' : res3 > 15,'encurso' : res3 <= 15, 'expira': res3 <5, 'nulo': res3 == 0 || res3 > 30}" name="fecha3Id" class="form-control shadow p-3 inputPaciente" [(ngModel)]="fecha3Id" (click)="myFunc3(fecha3Id)">
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <h6 class="gray text-left">Observaciones:</h6>
-                    <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="3"></textarea>
+                <div class="row">
+                    <div class="col text-left">
+                        <h6 class="gray text-left">Perfil de egresado:</h6>
+                        <a class="btn uscoButton" href="https://contenidos.usco.edu.co/salud/index.php/programas/posgrados/doctorado-en-ciencias-de-la-salud" target="_blank">Ir al perfil</a>
+                        <!--
+                        <button mat-button (click)="openDialog()">Open dialog</button>
+                        <button class="btn uscoButton" (click)="openFormModal()">Visualizar perfil</button>
+                        -->
+                    </div>
+                    <div class="col">
+                         <div class="row">
+                            <div class="col">
+                            </div>
+                            <div class="col">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </form>
+                <div class="row">
+                    <div class="col">
+                        <h6 class="gray text-left">Observaciones:</h6>
+                        <textarea id="observa" name="observa" [(ngModel)]="cond1.observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="3"></textarea>
+                    </div>
+                </div>
+        </div>
     </div>
-</div>
-<hr>
-<div class="accordion" id="accordionExample" style="border-bottom-style: solid;border-color: #cccccc;border-width: 1px;">
-<div class="card">
-  <div class="card-header" id="headingOne" style="background-color: #8F141B" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-    <h2 class="mb-0">
-      <button class="btn btn-link navlinkin font-weight-bold text-uppercase" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        Cuestionario
-      </button>
-    </h2>
-  </div>
-  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-    <div class="card-body">
-      <form action="">
-          <h6 class="gray text-left">1). ¿Mediante qué acto administrativo se creó el programa y que órgano interno de dirección aprobó dicha creación?</h6>
-          <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
-          <h6 class="gray text-left">2). ¿Cuáles son las áreas de formación del programa presentado y como éstas se articulan con el alcance de la denominación? </h6>
-          <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
-          <h6 class="gray text-left">3). ¿De qué manera las competencias previstas a desarrollar en el programa soportan el alcance y la especificidad de la denominación? ¿Cómo se explica la coherencia entre la denominación, el campo de conocimiento y el nivel de formación? </h6>
-          <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
-          <h6 class="gray text-left">4). ¿Cuáles son los argumentos que la IES presenta para justificar la articulación entre la denominación del título y la del programa, en los casos en los que no se puede evidenciar una correspondencia directa? </h6>
-          <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
-      </form>
+    <hr>
+    <div class="accordion" id="accordionExample" style="border-bottom-style: solid;border-color: #cccccc;border-width: 1px;">
+    <div class="card">
+      <div class="card-header" id="headingOne" style="background-color: #8F141B" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <h2 class="mb-0">
+          <button class="btn btn-link navlinkin font-weight-bold text-uppercase" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Cuestionario
+          </button>
+        </h2>
+      </div>
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body">
+              <h6 class="gray text-left">1). ¿Mediante qué acto administrativo se creó el programa y que órgano interno de dirección aprobó dicha creación?</h6>
+              <textarea id="pregunta11" name="pregunta11" [(ngModel)]="cond1.pregunta11" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
+              <h6 class="gray text-left">2). ¿Cuáles son las áreas de formación del programa presentado y como éstas se articulan con el alcance de la denominación? </h6>
+              <textarea id="pregunta21" name="pregunta21" [(ngModel)]="cond1.pregunta21" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
+              <h6 class="gray text-left">3). ¿De qué manera las competencias previstas a desarrollar en el programa soportan el alcance y la especificidad de la denominación? ¿Cómo se explica la coherencia entre la denominación, el campo de conocimiento y el nivel de formación? </h6>
+              <textarea id="pregunta31" name="pregunta31" [(ngModel)]="cond1.pregunta31" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
+              <h6 class="gray text-left">4). ¿Cuáles son los argumentos que la IES presenta para justificar la articulación entre la denominación del título y la del programa, en los casos en los que no se puede evidenciar una correspondencia directa? </h6>
+              <textarea id="pregunta41" name="pregunta41" [(ngModel)]="cond1.pregunta41" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-</div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col">
+          <div class="form-group">
+            <button [disabled]="!forma.valid" type="submit" class="btn btn-outline-success" style="width: 100%"><span class="far fa-save fa-3x"></span></button>
+          </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <button [routerLink]="['/Condiciones1']" routerLinkActive="router-link-active"  class="btn btn-outline-dark" style="width: 100%"><span class="fas fa-atlas fa-3x"></span></button>
+        </div>
+      </div>
+    </div>
+  </form>
 </div>

@@ -10,12 +10,14 @@ import { CondicionSieteComponent } from './components/pages/condicion-siete.comp
 import { CondicionOchoComponent } from './components/pages/condicion-ocho.component';
 import { CondicionNueveComponent } from './components/pages/condicion-nueve.component';
 import { CronogramaComponent } from './components/pages/cronograma.component';
+import { RegistroCon1Component } from './components/pages/registro-con1.component';
 
 
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'DenominacionDelPrograma', component: CondicionUnoComponent },
+  { path: 'DenominacionDelPrograma/:id', component: CondicionUnoComponent },
+  { path: 'Condiciones1', component: RegistroCon1Component },
   { path: 'JustificacionDelPrograma', component: CondicionDosComponent },
   { path: 'AspectosCurriculares', component: CondicionTresComponent },
   { path: 'AcademicasProcesosFormativos', component: CondicionCuatroComponent },

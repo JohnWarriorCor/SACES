@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   constructor(private headerTitleService: TituloService) { }
 
   ngOnInit() {
-    this.headerTitleService.setTitle('Condiciones de Calidad para la Creación y Funcionamiento de Programas Académicos')
+    this.headerTitleService.setTitle('Condiciones de Calidad para la Creación y Funcionamiento de Programas Académicos');
   }
 
 }

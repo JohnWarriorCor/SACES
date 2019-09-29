@@ -1,0 +1,111 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-right p-3">
+            <button [routerLink]="['/DenominacionDelPrograma', 'nuevo']" class="btn btn-outline-primary" type="button">Nuevo</button>
+        </div>
+    </div>
+    <div class="row animated fadeIn fast">
+        <div class="col-md-12">
+            <div class="table-responsive-md">
+    <table class="table table-bordered">
+        <thead>
+        <tr class="tablaAdmin text-center">
+        <th scope="col" style="width: 5%" class="align-middle" style="background-color: rgb(72, 153, 228);">#</th>
+        <th scope="col" style="width: 25%" class="align-middle" style="background-color: rgb(72, 153, 228);">Tipo</th>
+        <th scope="col" style="width: 25%" class="align-middle" style="background-color: rgb(72, 153, 228);">Nombre</th>
+        <th scope="col" style="width: 25%" class="align-middle" style="background-color: rgb(72, 153, 228);">Resp1</th>
+        <th scope="col" style="width: 25%" class="align-middle" style="background-color: rgb(72, 153, 228);">Fecha1</th>
+        <th scope="col" style="width: 5%" class="align-middle" style="background-color: rgb(72, 153, 228);"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let k of condiciones1 | keys; let i = index" class="mitad" style="font-size: 12px">
+        <td scope="row">{{ i + 1 }}</td>
+        <td>{{ condiciones1[k].tipoprograma }}</td>
+        <td>{{ condiciones1[k].nombreprograma }}</td>
+        <td>{{ condiciones1[k].respnombre }}</td>
+        <td>{{ condiciones1[k].datenombre }}</td>
+        <td style="margin: 10px;">
+            <div class="row">
+            <div class="col text-left" style="width: 50%;padding: 2%">
+                <button [routerLink]="['/DenominacionDelPrograma', k]" class="btn btn-outline-success" style="width: 100%;padding: 0%"><span class="fas fa-pencil-alt"></span></button>
+            </div>
+            <div class="col text-right" style="width: 50%;padding: 2%">
+                <button (click)="borrarInvocador(k)" class="btn btn-outline-danger" style="width: 100%;padding: 0%"><span class="far fa-trash-alt"></span></button>
+            </div>
+            </div>
+        </td>
+        </tr>    
+    </tbody>
+    </table>
+    <br>
+    <table class="table table-bordered">
+            <thead>
+            <tr class="tablaAdmin text-center">
+            <th scope="col" style="width: 10%" class="align-middle" style="background-color: rgb(72, 153, 228);">#</th>
+            <th scope="col" style="width: 10%" class="align-middle" style="background-color: rgb(72, 153, 228);">Título</th>
+            <th scope="col" style="width: 10%" class="align-middle" style="background-color: rgb(72, 153, 228);">Resp2</th>
+            <th scope="col" style="width: 10%" class="align-middle" style="background-color: rgb(72, 153, 228);">Fecha2</th>
+            <th scope="col" style="width: 10%" class="align-middle" style="background-color: rgb(72, 153, 228);">Resp3</th>
+            <th scope="col" style="width: 10%" class="align-middle" style="background-color: rgb(72, 153, 228);">Fecha3</th>
+            <th scope="col" style="width: 10%" class="align-middle" style="background-color: rgb(72, 153, 228);"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let k of condiciones1 | keys; let i = index" class="mitad" style="font-size: 12px">
+            <td scope="row">{{ i + 1 }}</td>
+            <td>{{ condiciones1[k].titulo }}</td>
+            <td>{{ condiciones1[k].resptitulo }}</td>
+            <td>{{ condiciones1[k].datetitulo }}</td>
+            <td>{{ condiciones1[k].respcontenido }}</td>
+            <td>{{ condiciones1[k].datecontenido }}</td>
+            <td style="margin: 10px;">
+                <div class="row">
+                <div class="col text-left" style="width: 50%;padding: 2%">
+                    <button [routerLink]="['/DenominacionDelPrograma', k]" class="btn btn-outline-success" style="width: 100%;padding: 0%"><span class="fas fa-pencil-alt"></span></button>
+                </div>
+                <div class="col text-right" style="width: 50%;padding: 2%">
+                    <button (click)="borrarInvocador(k)" class="btn btn-outline-danger" style="width: 100%;padding: 0%"><span class="far fa-trash-alt"></span></button>
+                </div>
+                </div>
+            </td>
+            </tr>    
+        </tbody>
+        </table>
+        <br>
+        <table class="table table-bordered">
+                <thead>
+                <tr class="tablaAdmin text-center">
+                <th scope="col" style="width: 10%" class="align-middle" style="background-color: rgb(72, 153, 228);">#</th>                    
+                <th scope="col" style="width: 10%" class="align-middle" style="background-color: rgb(72, 153, 228);">Pre1</th>
+                <th scope="col" style="width: 10%" class="align-middle" style="background-color: rgb(72, 153, 228);">Pre2</th>
+                <th scope="col" style="width: 10%" class="align-middle" style="background-color: rgb(72, 153, 228);">Pre3</th>
+                <th scope="col" style="width: 10%" class="align-middle" style="background-color: rgb(72, 153, 228);">Pre4</th>
+                <th scope="col" style="width: 10%" class="align-middle" style="background-color: rgb(72, 153, 228);">Obs</th>
+                <th scope="col" style="width: 10%" class="align-middle" style="background-color: rgb(72, 153, 228);"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let k of condiciones1 | keys; let i = index" class="mitad" style="font-size: 12px">
+                <td scope="row">{{ i + 1 }}</td>
+                <td>{{ condiciones1[k].pregunta11 }}</td>
+                <td>{{ condiciones1[k].pregunta21 }}</td>
+                <td>{{ condiciones1[k].pregunta31 }}</td>
+                <td>{{ condiciones1[k].pregunta41 }}</td>
+                <td>{{ condiciones1[k].observa }}</td>
+                <td style="margin: 10px;">
+                    <div class="row">
+                    <div class="col text-left" style="width: 50%;padding: 2%">
+                        <button [routerLink]="['/DenominacionDelPrograma', k]" class="btn btn-outline-success" style="width: 100%;padding: 0%"><span class="fas fa-pencil-alt"></span></button>
+                    </div>
+                    <div class="col text-right" style="width: 50%;padding: 2%">
+                        <button (click)="borrarInvocador(k)" class="btn btn-outline-danger" style="width: 100%;padding: 0%"><span class="far fa-trash-alt"></span></button>
+                    </div>
+                    </div>
+                </td>
+                </tr>    
+            </tbody>
+            </table>
+        </div>
+    </div>
+</div>
