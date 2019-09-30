@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TituloService } from '../../services/titulo.service';
+import { NavbarService } from '../../services/navbar.service';
 
 
 @Component({
@@ -9,10 +10,11 @@ import { TituloService } from '../../services/titulo.service';
 })
 export class CondicionSeisComponent implements OnInit {
 
-  constructor(private headerTitleService: TituloService) { }
+  constructor(private headerTitleService: TituloService, public nav: NavbarService) { }
 
   ngOnInit() {
     this.headerTitleService.setTitle('RELACIÓN CON EL SECTOR EXTERNO');
+    this.nav.show();
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TituloService } from '../../services/titulo.service';
+import { NavbarService } from '../../services/navbar.service';
 
 @Component({
   selector: 'app-condicion-nueve',
@@ -8,10 +9,11 @@ import { TituloService } from '../../services/titulo.service';
 })
 export class CondicionNueveComponent implements OnInit {
 
-  constructor(private headerTitleService: TituloService) { }
+  constructor(private headerTitleService: TituloService, public nav: NavbarService) { }
 
   ngOnInit() {
     this.headerTitleService.setTitle('INFRAESTRUCTURA FÍSICA Y TECNOLÓGICA');
+    this.nav.show();
   }
 
 }
