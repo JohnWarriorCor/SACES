@@ -11,11 +11,13 @@ import { CondicionOchoComponent } from './components/pages/condicion-ocho.compon
 import { CondicionNueveComponent } from './components/pages/condicion-nueve.component';
 import { CronogramaComponent } from './components/pages/cronograma.component';
 import { RegistroCon1Component } from './components/pages/registro-con1.component';
+import { CondicionCeroComponent } from './components/pages/condicion-cero.component';
 
 
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
+  { path: 'HistoriaInstitucional', component: CondicionCeroComponent },
   { path: 'DenominacionDelPrograma/:id', component: CondicionUnoComponent },
   { path: 'Condiciones1', component: RegistroCon1Component },
   { path: 'JustificacionDelPrograma', component: CondicionDosComponent },

@@ -6,6 +6,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGrigPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import { NavbarService } from '../../services/navbar.service';
+import { PropiedadIntelectualService } from '../../services/propiedad-intelectual.service';
 
 
 
@@ -46,10 +47,11 @@ export class CronogramaComponent implements OnInit {
       });
     }
   }
-  constructor(private headerTitleService: TituloService, public nav: NavbarService) { }
+  constructor(public prop: PropiedadIntelectualService, private headerTitleService: TituloService, public nav: NavbarService) { }
 
   ngOnInit() {
     this.headerTitleService.setTitle('cronograma');
+    this.prop.hide();
     this.nav.show();
   }
 

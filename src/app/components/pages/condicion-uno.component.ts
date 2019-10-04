@@ -15,6 +15,7 @@ import { TituloService } from '../../services/titulo.service';
 import { FormGroup, NgForm, FormControl, Validators, FormArray } from '@angular/forms';
 import { Condicion1 } from '../../interfaces/condicion1.interface';
 import { Condicion1Service } from '../../services/condicion1.service';
+import { PropiedadIntelectualService } from '../../services/propiedad-intelectual.service';
 @Component({
   selector: 'app-condicion-uno',
   templateUrl: './condicion-uno.component.html',
@@ -44,19 +45,17 @@ export class CondicionUnoComponent implements OnInit {
   // FECHA
   formato = 1000 * 60 * 60 * 24;
   today = new Date();
-  res1 = 0;
-  res2 = 0;
-  res3 = 0;
-  res4 = 0;
+  res1 = -10000;
+  res2 = -10000;
+  res3 = -10000;
   resultado = new Date();
   fecha1 = new Date('09/20/2019');
   fecha1Id = 0;
   fecha2Id = 0;
   fecha3Id = 0;
-  fecha4Id = 0;
   jstoday = '';
   // tslint:disable-next-line:max-line-length
-  constructor( public nav: NavbarService, private headerTitleService: TituloService, private _CONDICIONSERVICES: Condicion1Service, private router: Router, private activatedRoute: ActivatedRoute) {
+  constructor(public prop: PropiedadIntelectualService, public nav: NavbarService, private headerTitleService: TituloService, private _CONDICIONSERVICES: Condicion1Service, private router: Router, private activatedRoute: ActivatedRoute) {
     console.log(this.today);
     console.log(this.fecha1);
     // this.res = diferenciaEntreDiasEnDias(this.fecha1, this.today);
@@ -97,7 +96,7 @@ export class CondicionUnoComponent implements OnInit {
     function diferenciaEntreDiasEnDias(a, b) {
       const utc1 = Date.UTC(a.getFullYear(), a.getMonth(), a.getDate());
       const utc2 = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate());
-      return Math.floor((utc2 - utc1) / (1000 * 60 * 60 * 24));
+      return Math.floor((utc1 - utc2) / (1000 * 60 * 60 * 24));
     }
     console.log('Dias', this.res1);
   }
@@ -112,7 +111,7 @@ export class CondicionUnoComponent implements OnInit {
       const utc1 = Date.UTC(a.getFullYear(), a.getMonth(), a.getDate());
       const utc2 = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate());
 
-      return Math.floor((utc2 - utc1) / (1000 * 60 * 60 * 24));
+      return Math.floor((utc1 - utc2) / (1000 * 60 * 60 * 24));
     }
     console.log('Dias', this.res2);
   }
@@ -127,28 +126,14 @@ export class CondicionUnoComponent implements OnInit {
       const utc1 = Date.UTC(a.getFullYear(), a.getMonth(), a.getDate());
       const utc2 = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate());
 
-      return Math.floor((utc2 - utc1) / (1000 * 60 * 60 * 24));
+      return Math.floor((utc1 - utc2) / (1000 * 60 * 60 * 24));
     }
     console.log('Dias', this.res3);
-  }
-  myFunc4(num4) {
-    console.log(num4); // here you will get input value through ng-model
-    console.log(num4);
-    const con = new Date(num4);
-    con.setDate(con.getDate() + 1);
-    console.log('Convertido', con);
-    this.res4 = diferenciaEntreDiasEnDias(con, this.today);
-    function diferenciaEntreDiasEnDias(a, b) {
-      const utc1 = Date.UTC(a.getFullYear(), a.getMonth(), a.getDate());
-      const utc2 = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate());
-
-      return Math.floor((utc2 - utc1) / (1000 * 60 * 60 * 24));
-    }
-    console.log('Dias', this.res4);
   }
   ngOnInit() {
     this.headerTitleService.setTitle('DENOMINACIÓN DEL PROGRAMA');
     this.nav.show();
+    this.prop.hide();
     // this.nav.doSomethingElseUseful();
   }
   /*openDialog() {

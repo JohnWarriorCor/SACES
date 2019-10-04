@@ -31,6 +31,8 @@ import { RegistroCon1Component } from './components/pages/registro-con1.componen
 import { KeysPipe } from './pipes/keys.pipe';
 import { Condicion1Service } from './services/condicion1.service';
 import { TituloService } from './services/titulo.service';
+import { PropiedadIntelectualComponent } from './components/shared/footer/propiedad-intelectual.component';
+import { CondicionCeroComponent } from './components/pages/condicion-cero.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ import { TituloService } from './services/titulo.service';
     CronogramaComponent,
     RegistroCon1Component,
     KeysPipe,
+    PropiedadIntelectualComponent,
+    CondicionCeroComponent,
   ],
   imports: [
     FullCalendarModule,
