@@ -1,3 +1,13 @@
+table,tr,th,td{
+    border-color: black;
+}
+thead.tr{
+    border-color: black;
+}
+.borden{
+    border-width: 1px;
+    border-color: black;
+}
 .fondoTitulo{
     background-color: rgb(72, 153, 228);
     color: white;
@@ -12,12 +22,9 @@
     width: 20%px;
     margin-bottom: 15px
 }
-.gray{
-    color: #626567;
-}
 .tablaAdmin{
     font-size: 13px;
-    color: black
+    color: black;
 }
 .botonTablaRegistro{
     background-color: #8D191D;

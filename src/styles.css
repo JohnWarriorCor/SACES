@@ -4,8 +4,14 @@
     box-sizing: border-box;
 }
 body {
-    /* font: 96% 'Open Sans', Arial, Helvetica, sans-serif;*/
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     background: #FFF;
+}
+span{
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+.fuenteUsco{
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
 .centro {
     clear: both;
@@ -358,4 +364,14 @@ a.activeTab:hover {
 }
 .gray{
     color: #626567;
+}
+.botonUsco{
+    background-color: #8F141B;
+    color: #DFD4A6;
+    width: 50%;
+    font-size: 2vw;
+}
+.botonUsco:hover{
+    background-color: rgb(179, 27, 34);
+    color: rgb(255, 242, 191);
 }

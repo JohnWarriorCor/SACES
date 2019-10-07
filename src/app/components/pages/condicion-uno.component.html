@@ -39,9 +39,9 @@
                                 <h6 class="gray text-left">Responsable:</h6>
                                 <select class="custom-select shadow inputPaciente gray" id="respnombre" name="respnombre" [(ngModel)]="cond1.respnombre">
                                     <option value="null" selected>Elija el responsable</option>
-                                    <option value="Responsable 1">Responsable 1</option>
-                                    <option value="Responsable 2">Responsable 2</option>
-                                    <option value="Responsable 3">Responsable 3</option>
+                                    <option value="Jefe de programa">Jefe de programa</option>
+                                    <option value="Coordinador de currículo">Coordinador de currículo</option>
+                                    <option value="Responsable 3">Jefe de programa y Coordinador de currículo</option>
                                 </select>
                             </div>
                             <div class="col">
@@ -140,15 +140,16 @@
       <div class="card-header" id="headingOne" style="background-color: #8F141B" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
         <h2 class="mb-0">
           <button class="btn btn-link navlinkin font-weight-bold text-uppercase" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            Cuestionario
+            aspectos
           </button>
         </h2>
       </div>
       <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
         <div class="card-body">
-              <h6 class="gray text-left">1). ¿Mediante qué acto administrativo se creó el programa y que órgano interno de dirección aprobó dicha creación?</h6><br>
+              <h5 class="alert-warning text-center">Diligencie los campos y adjunte los archivos respectivos</h5><br>
+              <h6 class="gray text-left">1). Acto administrativo con el que se creó el programa y el órgano interno de dirección que aprobó dicha creación.</h6><br>
               <textarea id="pregunta11" name="pregunta11" [(ngModel)]="cond1.pregunta11" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="3"></textarea><br>
-              <h6 class="gray text-left">2). ¿Cuáles son las áreas de formación del programa presentado y como éstas se articulan con el alcance de la denominación? </h6><br>
+              <h6 class="gray text-left">2). Áreas de formación del programa presentado y la articulación con el alcance de la denominación.</h6><br>
               <textarea id="pregunta21" name="pregunta21" [(ngModel)]="cond1.pregunta21" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="3"></textarea><br>
               <h6 class="gray text-left">3). ¿De qué manera las competencias previstas a desarrollar en el programa soportan el alcance y la especificidad de la denominación? ¿Cómo se explica la coherencia entre la denominación, el campo de conocimiento y el nivel de formación? </h6><br>
               <textarea id="pregunta31" name="pregunta31" [(ngModel)]="cond1.pregunta31" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="3"></textarea><br>
@@ -160,14 +161,14 @@
     </div>
     <br>
     <div class="row">
-      <div class="col">
+      <div class="col text-right">
           <div class="form-group">
-            <button [disabled]="!forma.valid" type="submit" class="btn btn-outline-info" style="width: 100%"><span class="far fa-save fa-3x"></span></button>
+            <button [disabled]="!forma.valid" type="submit" class="btn botonUsco"><span class="far fa-save"></span> Guardar</button>
           </div>
       </div>
-      <div class="col">
+      <div class="col text-left">
         <div class="form-group">
-          <button [routerLink]="['/Condiciones1']" routerLinkActive="router-link-active"  class="btn btn-outline-primary" style="width: 100%"><span class="fas fa-atlas fa-3x"></span></button>
+          <button [routerLink]="['/Condiciones1']" routerLinkActive="router-link-active"  class="btn botonUsco"><span class="fas fa-atlas"></span> Registros</button>
         </div>
       </div>
     </div>
