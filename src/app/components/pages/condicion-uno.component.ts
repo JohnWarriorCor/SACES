@@ -134,6 +134,9 @@ export class CondicionUnoComponent implements OnInit {
     this.headerTitleService.setTitle('DENOMINACIÓN DEL PROGRAMA');
     this.nav.show();
     this.prop.hide();
+    this.myFunc1(this.fecha1Id);
+    this.myFunc2(this.fecha2Id);
+    this.myFunc3(this.fecha3Id);
     // this.nav.doSomethingElseUseful();
   }
   /*openDialog() {

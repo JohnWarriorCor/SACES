@@ -38,7 +38,7 @@
       <tr class="text-center tablaAdmin">
         <td colspan="4" scope="row" class="align-middle borden">{{ condiciones1[k].titulo }}</td>
         <td colspan="2" scope="row" class="align-middle borden">{{ condiciones1[k].resptitulo }}</td>
-        <td colspan="2" scope="row" class="align-middle borden" [ngClass]="{'atiempo' : res2 > 15,'encurso' : res2 <= 15, 'expira': res2 < 5, 'nulo': res2 == -10000 || res2 < -30}" (click)="myFunc2(condiciones1[k].datetitulo)">{{ condiciones1[k].datetitulo }}</td>
+        <td colspan="2" scope="row" class="align-middle borden" [ngClass]="{'atiempo' : res2 > 15,'encurso' : res2 <= 15, 'expira': res2 < 5, 'nulo': res2 == -10000 || res2 < -30}" (blur)="myFunc2(condiciones1[k].datetitulo)">{{ condiciones1[k].datetitulo }}</td>
       </tr>
       <tr class="text-center tablaAdmin">
         <th colspan="4" scope="row" class="text-uppercase align-middle borden">contenido curricular:</th>
@@ -57,22 +57,22 @@
         <td colspan="8" scope="row" class="align-middle borden">{{ condiciones1[k].observa }}</td>
       </tr>
       <tr class="text-center tablaAdmin">
-        <th rowspan="2" scope="row" class="text-uppercase align-middle borden">pregunta 1:</th>
-        <th colspan="7" scope="row" class="text-uppercase align-middle borden">Respuestas:</th>
+        <th rowspan="2" scope="row" class="text-uppercase align-middle borden"><span class="font-weight-bold">Aspecto 1:</span><br>Acto administrativo con el que se creó el programa y el órgano interno de dirección que aprobó dicha creación.</th>
+        <th colspan="7" scope="row" class="text-uppercase align-middle borden">Adjuntos</th>
       </tr>
       <tr class="text-center tablaAdmin">
         <td colspan="7" scope="row" class="align-middle borden">{{ condiciones1[k].pregunta11 }}</td>
       </tr>
       <tr class="text-center tablaAdmin">  
-        <th colspan="1" scope="row" class="text-uppercase align-middle borden">pregunta 2:</th>
+        <th colspan="1" scope="row" class="text-uppercase align-middle borden"><span class="font-weight-bold">Aspecto 2:</span><br>Áreas de formación del programa presentado y la articulación con el alcance de la denominación.</th>
         <td colspan="7" scope="row" class="align-middle borden">{{ condiciones1[k].pregunta21 }}</td>
       </tr>
       <tr class="text-center tablaAdmin">
-        <th colspan="1" scope="row" class="text-uppercase align-middle borden">pregunta 3:</th>
+        <th colspan="1" scope="row" class="text-uppercase align-middle borden"><span class="font-weight-bold">Aspecto 3:</span><br>Soporte del alcance, la especificidad de la denominación y explicación de coherencia entre la denominación, el campo de conocimiento y el nivel de formación.</th>
         <td colspan="7" scope="row" class="align-middle borden">{{ condiciones1[k].pregunta31 }}</td>
       </tr>
       <tr class="text-center tablaAdmin">
-        <th colspan="1" scope="row" class="text-uppercase align-middle borden">pregunta 4:</th>
+        <th colspan="1" scope="row" class="text-uppercase align-middle borden"><span class="font-weight-bold">Aspecto 3:</span><br>Argumentos que la IES presenta para justificar la articulación entre la denominación del título y la del programa.</th>
         <td colspan="7" scope="row" class="align-middle borden">{{ condiciones1[k].pregunta41 }}</td>
       </tr>
       <tr style="border:0px;" class="text-center tablaAdmin">
@@ -92,5 +92,11 @@
       </tr>
     </tbody>
   </table>
+  <div *ngIf="(condiciones1 | keys).length === 0 && !loading" class="alert alert-success text-center" role="alert">
+    <strong><h4 class="alert-heading">No hay regsitros que mostrar</h4></strong>
+</div>
+<div *ngIf="loading" class="alert alert-warning text-center" role="alert">
+    <strong><h4 class="alert-heading">Cargando...</h4></strong>
+</div>
 </div>
 </div>

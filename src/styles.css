@@ -7,9 +7,6 @@ body {
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     background: #FFF;
 }
-span{
-    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-}
 .fuenteUsco{
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
@@ -27,19 +24,27 @@ header .logos .figure {
     float: center;
 }
 
-.header {
-    width: 100%;
-    padding: 5px 0 0 0;
-    height: 110px;
+header{
+    /* Enable flex mode. */
+    display: flex; 
+    
+    /* Spread out the elements inside the header. */
+    justify-content: space-between;
+
+    /* Align items vertically in the center. */
+    align-items: center;
     background-color: #8F141B;
 }
 
 .footer {
-    clear: both;
-    float: left;
-    margin: 10px 0 10px 0;
-    width: 100%;
-    font-size: 94%;
+    /* Enable flex mode. */
+    display: flex; 
+    
+    /* Spread out the elements inside the header. */
+    justify-content: space-between;
+
+    /* Align items vertically in the center. */
+    align-items: center;
 }
 
 .usco-card {
