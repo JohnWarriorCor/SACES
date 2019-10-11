@@ -22,6 +22,8 @@ import { PropiedadIntelectualService } from '../../services/propiedad-intelectua
   styleUrls: ['./condicion-uno.component.css']
 })
 export class CondicionUnoComponent implements OnInit {
+  acumPuntos = 0.0;
+  textoPuntos = '';
   forma: FormGroup;
   controls: any;
   nuevo = false;
@@ -67,6 +69,13 @@ export class CondicionUnoComponent implements OnInit {
         this._CONDICIONSERVICES.getInvocador( this.id ).subscribe(cond1 => this.cond1 = cond1);
       }
     });
+  }
+  progreso() {
+    this.acumPuntos = this.acumPuntos + 7;
+    this.textoPuntos = String(this.acumPuntos);
+    this.textoPuntos = this.textoPuntos + '%';
+    console.log(this.textoPuntos);
+    return [this.acumPuntos, this.textoPuntos];
   }
   guardar() {
     console.log(this.cond1);

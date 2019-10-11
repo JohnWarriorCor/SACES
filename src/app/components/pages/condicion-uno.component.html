@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="col">
                         <h6 class="text-left gray">Tipo de programa:</h6>
-                        <select class="custom-select shadow inputPaciente" id="tipoprograma" name="tipoprograma" [(ngModel)]="cond1.tipoprograma">
+                        <select class="custom-select shadow inputPaciente" id="tipoprograma" name="tipoprograma" [(ngModel)]="cond1.tipoprograma" (change)="progreso()">
                             <option value="" disabled="disabled">Elija el tipo de programa</option>
                             <option value="Técnico">Técnico</option>
                             <option value="Tecnológico">Tecnológico</option>
@@ -21,7 +21,7 @@
                             <div class="col">
                             </div>
                             <div class="col text-center">
-                              <div class="alert alert-light">
+                              <div class="alert alert-light text-left">
                                 <p style="font-size: 12px;">Convenciones<br><i class="fas fa-stop" style="color: rgb(255, 157, 157);"></i> Menos de 5 días<br><i class="fas fa-stop" style="color: rgb(252, 252, 149);"></i> Menos de 15 días<br><i class="fas fa-stop" style="color: rgb(184, 255, 184);"></i> Más de 15 días</p>
                               </div>
                             </div>
@@ -31,13 +31,13 @@
                 <div class="row">
                     <div class="col">
                         <h6 class="gray text-left">Nombre del programa:</h6>
-                        <input type="text" [(ngModel)]="cond1.nombreprograma" name="nombreprograma" id="nombreprograma" class="form-control shadow p-3 inputPaciente" placeholder="...">
+                        <input type="text"  (change)="progreso()" [(ngModel)]="cond1.nombreprograma" name="nombreprograma" id="nombreprograma" class="form-control shadow p-3 inputPaciente" placeholder="...">
                     </div>
                     <div class="col">
                         <div class="row">
                             <div class="col">
                                 <h6 class="gray text-left">Responsable:</h6>
-                                <select class="custom-select shadow inputPaciente gray" id="respnombre" name="respnombre" [(ngModel)]="cond1.respnombre">
+                                <select  (change)="progreso()" class="custom-select shadow inputPaciente gray" id="respnombre" name="respnombre" [(ngModel)]="cond1.respnombre">
                                     <option value="" disabled="disabled">Elija el responsable</option>
                                     <option value="Jefe de programa">Jefe de programa</option>
                                     <option value="Coordinador de currículo">Coordinador de currículo</option>
@@ -47,7 +47,7 @@
                             <div class="col">
                               <form action="get"></form>
                                 <h6 class="gray text-left">Fecha:</h6>
-                                <input id="datenombre" name="datenombre" [(ngModel)]="cond1.datenombre" type="date" [ngClass]="{'atiempo' : res1 > 15,'encurso' : res1 <= 15, 'expira': res1 < 5, 'nulo': res1 == -10000 || res1 < -30}" name="fecha1Id" class="form-control shadow p-3 inputPaciente" [(ngModel)]="fecha1Id" (change)="myFunc1(fecha1Id)">
+                                <input (change)="progreso()" id="datenombre" name="datenombre" [(ngModel)]="cond1.datenombre" type="date" [ngClass]="{'atiempo' : res1 > 15,'encurso' : res1 <= 15, 'expira': res1 < 5, 'nulo': res1 == -10000 || res1 < -30}" name="fecha1Id" class="form-control shadow p-3 inputPaciente" [(ngModel)]="fecha1Id" (change)="myFunc1(fecha1Id)">
                             </div>
                         </div>
                     </div>
@@ -55,13 +55,13 @@
                 <div class="row">
                     <div class="col">
                         <h6 class="gray text-left">Título a otorgar:</h6>
-                        <input type="text" id="titulo" name="titulo" [(ngModel)]="cond1.titulo"  class="form-control shadow p-3 inputPaciente" placeholder="Nombre del título">
+                        <input (change)="progreso()" type="text" id="titulo" name="titulo" [(ngModel)]="cond1.titulo"  class="form-control shadow p-3 inputPaciente" placeholder="Nombre del título">
                     </div>
                     <div class="col">
                         <div class="row">
                             <div class="col">
                                 <h6 class="gray text-left">Responsable:</h6>
-                                <select class="custom-select shadow inputPaciente gray" id="resptitulo" name="resptitulo" [(ngModel)]="cond1.resptitulo">
+                                <select (change)="progreso()" class="custom-select shadow inputPaciente gray" id="resptitulo" name="resptitulo" [(ngModel)]="cond1.resptitulo">
                                   <option value="" disabled="disabled">Elija el responsable</option>
                                   <option value="Jefe de programa">Jefe de programa</option>
                                   <option value="Coordinador de currículo">Coordinador de currículo</option>
@@ -70,7 +70,7 @@
                             </div>
                             <div class="col">
                                 <h6 class="gray text-left">Fecha:</h6>
-                                <input id="datetitulo" name="datetitulo" [(ngModel)]="cond1.datetitulo" type="date" [ngClass]="{'atiempo' : res2 > 15,'encurso' : res2 <= 15, 'expira': res2 <5, 'nulo': res2 == -10000 || res2 < -30}" name="fecha2Id" class="form-control shadow p-3 inputPaciente" [(ngModel)]="fecha2Id" (change)="myFunc2(fecha2Id)">
+                                <input (change)="progreso()" id="datetitulo" name="datetitulo" [(ngModel)]="cond1.datetitulo" type="date" [ngClass]="{'atiempo' : res2 > 15,'encurso' : res2 <= 15, 'expira': res2 <5, 'nulo': res2 == -10000 || res2 < -30}" name="fecha2Id" class="form-control shadow p-3 inputPaciente" [(ngModel)]="fecha2Id" (change)="myFunc2(fecha2Id)">
                             </div>
                         </div>
                     </div>
@@ -79,7 +79,7 @@
                     <div class="col text-left">
                         <h6 class="gray text-left">Contenido curricular:</h6>
                         <div class="custom-file mb-3">
-                            <input type="file" class="custom-file-input inputPaciente" id="customFile" name="filename">
+                            <input (change)="progreso()" type="file" class="custom-file-input inputPaciente" id="customFile" name="filename">
                             <label class="custom-file-label inputPaciente" for="customFile">Elija el archivo</label>
                         </div>
                         <!--<script>
@@ -94,7 +94,7 @@
                          <div class="row">
                             <div class="col">
                                 <h6 class="gray text-left">Responsable:</h6>
-                                <select  class="custom-select shadow inputPaciente gray" id="respcontenido" name="respcontenido" [(ngModel)]="cond1.respcontenido">
+                                <select (change)="progreso()"  class="custom-select shadow inputPaciente gray" id="respcontenido" name="respcontenido" [(ngModel)]="cond1.respcontenido">
                                   <option value="" disabled="disabled">Elija el responsable</option>
                                   <option value="Jefe de programa">Jefe de programa</option>
                                   <option value="Coordinador de currículo">Coordinador de currículo</option>
@@ -148,16 +148,20 @@
         <div class="card-body">
               <h5 class="alert-warning text-center">Diligencie los campos y adjunte los archivos respectivos</h5><br>
               <h6 class="gray text-left">1). Acto administrativo con el que se creó el programa y el órgano interno de dirección que aprobó dicha creación.</h6><br>
-              <textarea id="pregunta11" name="pregunta11" [(ngModel)]="cond1.pregunta11" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="3"></textarea><br>
+              <textarea (change)="progreso()" id="pregunta11" name="pregunta11" [(ngModel)]="cond1.pregunta11" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="3"></textarea><br>
               <h6 class="gray text-left">2). Áreas de formación del programa presentado y la articulación con el alcance de la denominación.</h6><br>
-              <textarea id="pregunta21" name="pregunta21" [(ngModel)]="cond1.pregunta21" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="3"></textarea><br>
+              <textarea (change)="progreso()" id="pregunta21" name="pregunta21" [(ngModel)]="cond1.pregunta21" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="3"></textarea><br>
               <h6 class="gray text-left">3). Soporte del alcance, la especificidad de la denominación y explicación de coherencia entre la denominación, el campo de conocimiento y el nivel de formación.</h6><br>
-              <textarea id="pregunta31" name="pregunta31" [(ngModel)]="cond1.pregunta31" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="3"></textarea><br>
+              <textarea (change)="progreso()" id="pregunta31" name="pregunta31" [(ngModel)]="cond1.pregunta31" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="3"></textarea><br>
               <h6 class="gray text-left">4). Argumentos que la IES presenta para justificar la articulación entre la denominación del título y la del programa.</h6><br>
-              <textarea id="pregunta41" name="pregunta41" [(ngModel)]="cond1.pregunta41" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="3"></textarea><br>
+              <textarea (change)="progreso()" id="pregunta41" name="pregunta41" [(ngModel)]="cond1.pregunta41" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="3"></textarea><br>
         </div>
       </div>
     </div>
+    </div>
+    <h5 class="text-center font-weight-bold text-uppercase">Progreso‬</h5>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 50%;background-color: #AB121B;" aria-valuenow="'acumPuntos'" aria-valuemin="0" aria-valuemax="'acumPuntos'">{{acumPuntos}}%</div>
     </div>
     <br>
     <div class="row">
