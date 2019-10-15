@@ -36,3 +36,7 @@ input[type=date]::-webkit-outer-spin-button {
 }
 
 input[type=date] { -moz-appearance:textfield; }
+.uscoRojo{
+    background-color: #AB121B;
+    color: #AB121B;
+}

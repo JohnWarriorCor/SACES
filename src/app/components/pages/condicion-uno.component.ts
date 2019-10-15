@@ -16,13 +16,23 @@ import { FormGroup, NgForm, FormControl, Validators, FormArray } from '@angular/
 import { Condicion1 } from '../../interfaces/condicion1.interface';
 import { Condicion1Service } from '../../services/condicion1.service';
 import { PropiedadIntelectualService } from '../../services/propiedad-intelectual.service';
+import {NgbProgressbarConfig} from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-condicion-uno',
   templateUrl: './condicion-uno.component.html',
-  styleUrls: ['./condicion-uno.component.css']
+  styleUrls: ['./condicion-uno.component.css'],
+  providers: [NgbProgressbarConfig]
 })
 export class CondicionUnoComponent implements OnInit {
   acumPuntos = 0.0;
+  acumPuntos1 = 0.0;
+  acumPuntos2 = 0.0;
+  acumPuntos3 = 0.0;
+  acumPuntos4 = 0.0;
+  acumPuntos5 = 0.0;
+  acumPuntos6 = 0.0;
+  acumPuntos7 = 0.0;
+  acumPuntos8 = 0.0;
   textoPuntos = '';
   forma: FormGroup;
   controls: any;
@@ -57,7 +67,9 @@ export class CondicionUnoComponent implements OnInit {
   fecha3Id = 0;
   jstoday = '';
   // tslint:disable-next-line:max-line-length
-  constructor(public prop: PropiedadIntelectualService, public nav: NavbarService, private headerTitleService: TituloService, private _CONDICIONSERVICES: Condicion1Service, private router: Router, private activatedRoute: ActivatedRoute) {
+  constructor(config: NgbProgressbarConfig, public prop: PropiedadIntelectualService, public nav: NavbarService, private headerTitleService: TituloService, private _CONDICIONSERVICES: Condicion1Service, private router: Router, private activatedRoute: ActivatedRoute) {
+    config.striped = true;
+    config.animated = true;
     console.log(this.today);
     console.log(this.fecha1);
     // this.res = diferenciaEntreDiasEnDias(this.fecha1, this.today);
@@ -71,11 +83,67 @@ export class CondicionUnoComponent implements OnInit {
     });
   }
   progreso() {
-    this.acumPuntos = this.acumPuntos + 7;
+    this.acumPuntos = this.acumPuntos + 8;
     this.textoPuntos = String(this.acumPuntos);
     this.textoPuntos = this.textoPuntos + '%';
     console.log(this.textoPuntos);
     return [this.acumPuntos, this.textoPuntos];
+  }
+  progreso1() {
+    this.acumPuntos1 = this.acumPuntos1 + 100;
+    this.textoPuntos = String(this.acumPuntos1);
+    this.textoPuntos = this.textoPuntos + '%';
+    console.log(this.textoPuntos);
+    return [this.acumPuntos1, this.textoPuntos];
+  }
+  progreso2() {
+    this.acumPuntos2 = this.acumPuntos2 + 34;
+    this.textoPuntos = String(this.acumPuntos2);
+    this.textoPuntos = this.textoPuntos + '%';
+    console.log(this.textoPuntos);
+    return [this.acumPuntos2, this.textoPuntos];
+  }
+  progreso3() {
+    this.acumPuntos3 = this.acumPuntos3 + 34;
+    this.textoPuntos = String(this.acumPuntos3);
+    this.textoPuntos = this.textoPuntos + '%';
+    console.log(this.textoPuntos);
+    return [this.acumPuntos3, this.textoPuntos];
+  }
+  progreso4() {
+    this.acumPuntos4 = this.acumPuntos4 + 34;
+    this.textoPuntos = String(this.acumPuntos4);
+    this.textoPuntos = this.textoPuntos + '%';
+    console.log(this.textoPuntos);
+    return [this.acumPuntos4, this.textoPuntos];
+  }
+  progreso5() {
+    this.acumPuntos5 = this.acumPuntos5 + 50;
+    this.textoPuntos = String(this.acumPuntos5);
+    this.textoPuntos = this.textoPuntos + '%';
+    console.log(this.textoPuntos);
+    return [this.acumPuntos5, this.textoPuntos];
+  }
+  progreso6() {
+    this.acumPuntos6 = this.acumPuntos6 + 50;
+    this.textoPuntos = String(this.acumPuntos6);
+    this.textoPuntos = this.textoPuntos + '%';
+    console.log(this.textoPuntos);
+    return [this.acumPuntos6, this.textoPuntos];
+  }
+  progreso7() {
+    this.acumPuntos7 = this.acumPuntos7 + 50;
+    this.textoPuntos = String(this.acumPuntos7);
+    this.textoPuntos = this.textoPuntos + '%';
+    console.log(this.textoPuntos);
+    return [this.acumPuntos7, this.textoPuntos];
+  }
+  progreso8() {
+    this.acumPuntos8 = this.acumPuntos8 + 50;
+    this.textoPuntos = String(this.acumPuntos8);
+    this.textoPuntos = this.textoPuntos + '%';
+    console.log(this.textoPuntos);
+    return [this.acumPuntos8, this.textoPuntos];
   }
   guardar() {
     console.log(this.cond1);

@@ -24,6 +24,7 @@ export class RegistroCon1Component implements OnInit {
   funcion1 = true;
   funcion2 = true;
   funcion3 = true;
+  acumPuntos = 0.0;
   // tslint:disable-next-line:max-line-length
   constructor(public prop: PropiedadIntelectualService, private _CONDICIONES1SERVICE: Condicion1Service, public nav: NavbarService, public headerTitleService: TituloService ) {
     this._CONDICIONES1SERVICE.getInvocadores().subscribe( data => {
@@ -33,11 +34,16 @@ export class RegistroCon1Component implements OnInit {
       }, 0);
     });
   }
+  progreso() {
+    this.acumPuntos = this.acumPuntos + 8;
+    return this.acumPuntos;
+  }
   ngOnInit() {
     this.headerTitleService.setTitle('Registro condición 1');
     this.nav.show();
     this.prop.hide();
     this.myFunc1(this.condiciones1);
+    this.progreso();
   }
   borrarInvocador( key$: string) {
     this._CONDICIONES1SERVICE.borrarInvocador(key$).subscribe( respuesta => {

@@ -33,6 +33,7 @@ import { Condicion1Service } from './services/condicion1.service';
 import { TituloService } from './services/titulo.service';
 import { PropiedadIntelectualComponent } from './components/shared/footer/propiedad-intelectual.component';
 import { CondicionCeroComponent } from './components/pages/condicion-cero.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { CondicionCeroComponent } from './components/pages/condicion-cero.compon
     CondicionCeroComponent,
   ],
   imports: [
+    NgbModule,
     FullCalendarModule,
     FormsModule,
     HttpModule,
