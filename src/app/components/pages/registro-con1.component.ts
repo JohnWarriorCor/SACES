@@ -1,16 +1,19 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { Condicion1Service } from '../../services/condicion1.service';
 import { NavbarService } from '../../services/navbar.service';
 import { TituloService } from '../../services/titulo.service';
 import { formatDate } from '@fullcalendar/core';
 import { PropiedadIntelectualService } from '../../services/propiedad-intelectual.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-registro-con1',
   templateUrl: './registro-con1.component.html',
-  styleUrls: ['./registro-con1.component.css']
+  styleUrls: ['./registro-con1.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class RegistroCon1Component implements OnInit {
+  closeResult: string;
   condiciones1: any[] = [];
   loading = true;
   formato = 1000 * 60 * 60 * 24;
@@ -26,13 +29,16 @@ export class RegistroCon1Component implements OnInit {
   funcion3 = true;
   acumPuntos = 0.0;
   // tslint:disable-next-line:max-line-length
-  constructor(public prop: PropiedadIntelectualService, private _CONDICIONES1SERVICE: Condicion1Service, public nav: NavbarService, public headerTitleService: TituloService ) {
+  constructor(private modalService: NgbModal, public prop: PropiedadIntelectualService, private _CONDICIONES1SERVICE: Condicion1Service, public nav: NavbarService, public headerTitleService: TituloService ) {
     this._CONDICIONES1SERVICE.getInvocadores().subscribe( data => {
       setTimeout(() => {
         this.loading = false;
         this.condiciones1 = data;
       }, 0);
     });
+  }
+  openSm(content) {
+    this.modalService.open(content, { size: 'sm' });
   }
   progreso() {
     this.acumPuntos = this.acumPuntos + 8;

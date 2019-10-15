@@ -34,6 +34,7 @@ import { TituloService } from './services/titulo.service';
 import { PropiedadIntelectualComponent } from './components/shared/footer/propiedad-intelectual.component';
 import { CondicionCeroComponent } from './components/pages/condicion-cero.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { ModalConfirmarBorrarComponent } from './components/pages/modals/modal-confirmar-borrar.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     KeysPipe,
     PropiedadIntelectualComponent,
     CondicionCeroComponent,
+    ModalConfirmarBorrarComponent,
   ],
   imports: [
     NgbModule,

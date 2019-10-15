@@ -17,6 +17,8 @@ import { Condicion1 } from '../../interfaces/condicion1.interface';
 import { Condicion1Service } from '../../services/condicion1.service';
 import { PropiedadIntelectualService } from '../../services/propiedad-intelectual.service';
 import {NgbProgressbarConfig} from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalUnoComponent } from './modal-uno.component';
 @Component({
   selector: 'app-condicion-uno',
   templateUrl: './condicion-uno.component.html',
@@ -67,7 +69,7 @@ export class CondicionUnoComponent implements OnInit {
   fecha3Id = 0;
   jstoday = '';
   // tslint:disable-next-line:max-line-length
-  constructor(config: NgbProgressbarConfig, public prop: PropiedadIntelectualService, public nav: NavbarService, private headerTitleService: TituloService, private _CONDICIONSERVICES: Condicion1Service, private router: Router, private activatedRoute: ActivatedRoute) {
+  constructor(private modalService: NgbModal, config: NgbProgressbarConfig, public prop: PropiedadIntelectualService, public nav: NavbarService, private headerTitleService: TituloService, private _CONDICIONSERVICES: Condicion1Service, private router: Router, private activatedRoute: ActivatedRoute) {
     config.striped = true;
     config.animated = true;
     console.log(this.today);
@@ -81,6 +83,10 @@ export class CondicionUnoComponent implements OnInit {
         this._CONDICIONSERVICES.getInvocador( this.id ).subscribe(cond1 => this.cond1 = cond1);
       }
     });
+  }
+  open() {
+    const modalRef = this.modalService.open(ModalUnoComponent);
+    modalRef.componentInstance.name = 'World';
   }
   progreso() {
     this.acumPuntos = this.acumPuntos + 8;

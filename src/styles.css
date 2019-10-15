@@ -380,3 +380,14 @@ a.activeTab:hover {
     background-color: rgb(179, 27, 34);
     color: rgb(255, 242, 191);
 }
+.botonUscoPerfil{
+    background-color: #8F141B;
+    color: #DFD4A6;
+    width: 20%;
+    font-size: 12px;
+    margin: 5px;
+}
+.botonUscoPerfil:hover{
+    background-color: rgb(179, 27, 34);
+    color: rgb(255, 242, 191);
+}

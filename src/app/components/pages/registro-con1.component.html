@@ -95,7 +95,24 @@
                 <button (click)="borrarInvocador(k)" class="btn botonUsco"  onclick="window.print()"><span class="fas fa-print"></span> Imprimir</button>
             </div>
             <div class="col text-center">
-                <button (click)="borrarInvocador(k)" class="btn botonUsco"><span class="far fa-trash-alt"></span> Borrar</button>
+                <!--<button (click)="borrarInvocador(k)" class="btn botonUsco"><span class="far fa-trash-alt"></span> Borrar</button>-->
+                <button class="btn botonUsco" (click)="openSm(content)"><span class="far fa-trash-alt"></span> Borrar</button>
+                <ng-template #content let-modal>
+                    <div class="modal-header text-center navlinkin">
+                      <h4 class="modal-title" style="margin-left:45px;">¡PRECAUCIÓN!</h4>
+                    </div>
+                    <div class="modal-body text-center">
+                      <p class="alert alert-danger text-uppercase">Está a punto de borrar el registro <br> presione aceptar para borrar o cancelar para salir</p>
+                      <div class="row align-content-center">
+                        <div class="col text-center">
+                          <button (click)="borrarInvocador(k)" routerLinkActive="router-link-active"  class="btn btn-info">Aceptar</button>  
+                        </div>
+                        <div class="col text-center">
+                          <button class="btn btn-danger" (click)="modal.close('Close click')">Cancelar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </ng-template>
             </div>
             </div>
         </td>
