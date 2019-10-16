@@ -34,7 +34,7 @@ import { TituloService } from './services/titulo.service';
 import { PropiedadIntelectualComponent } from './components/shared/footer/propiedad-intelectual.component';
 import { CondicionCeroComponent } from './components/pages/condicion-cero.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { ModalConfirmarBorrarComponent } from './components/pages/modals/modal-confirmar-borrar.component';
+import { FormTabla2Condicion7Component } from './components/pages/modals/form-tabla2-condicion7.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +58,7 @@ import { ModalConfirmarBorrarComponent } from './components/pages/modals/modal-c
     KeysPipe,
     PropiedadIntelectualComponent,
     CondicionCeroComponent,
-    ModalConfirmarBorrarComponent,
+    FormTabla2Condicion7Component,
   ],
   imports: [
     NgbModule,
@@ -81,6 +81,9 @@ import { ModalConfirmarBorrarComponent } from './components/pages/modals/modal-c
     TituloService
   ],
   bootstrap: [AppComponent],
-  entryComponents: [ModalUnoComponent]
+  entryComponents: [
+    ModalUnoComponent,
+    FormTabla2Condicion7Component
+  ]
 })
 export class AppModule { }

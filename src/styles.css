@@ -347,7 +347,8 @@ a.activeTab:hover {
     color: #8f141b;
 }
 .navlinkin:hover{
-    color: #DFD4A6;
+    background-color: rgb(179, 27, 34);
+    color: rgb(255, 242, 191);
 }
 .navlinkout:hover{
     color: #DFD4A6;
