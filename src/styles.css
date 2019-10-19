@@ -342,6 +342,10 @@ a.activeTab:hover {
     background-color: #8F141B;
     color: #DFD4A6;
 }
+.navlinkinSolid{
+    background-color: #8F141B;
+    color: #DFD4A6;
+}
 .navlinkout{
     background-color: #DFD4A6;
     color: #8f141b;

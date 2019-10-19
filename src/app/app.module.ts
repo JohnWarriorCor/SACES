@@ -8,6 +8,7 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
 // MODULOS REGISTRO FIREBASE
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home.component';
@@ -35,7 +36,7 @@ import { PropiedadIntelectualComponent } from './components/shared/footer/propie
 import { CondicionCeroComponent } from './components/pages/condicion-cero.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FormTabla2Condicion7Component } from './components/pages/modals/form-tabla2-condicion7.component';
-
+import { ModalContainerComponent } from './modal-container.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,6 +60,7 @@ import { FormTabla2Condicion7Component } from './components/pages/modals/form-ta
     PropiedadIntelectualComponent,
     CondicionCeroComponent,
     FormTabla2Condicion7Component,
+    ModalContainerComponent,
   ],
   imports: [
     NgbModule,

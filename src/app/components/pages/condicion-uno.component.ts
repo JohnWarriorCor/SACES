@@ -36,6 +36,7 @@ export class CondicionUnoComponent implements OnInit {
   acumPuntos7 = 0.0;
   acumPuntos8 = 0.0;
   textoPuntos = '';
+  // CONEXION FIREBASE BD
   forma: FormGroup;
   controls: any;
   nuevo = false;
@@ -77,8 +78,12 @@ export class CondicionUnoComponent implements OnInit {
     // this.res = diferenciaEntreDiasEnDias(this.fecha1, this.today);
     // console.log(this.res);
     this.jstoday = formatDate(this.today, 'dd/MM/yyyy', 'en-US', '-0500');
+    console.log('A VER QUE SALE', this.id);
     this.activatedRoute.params.subscribe( parametros => {
       this.id = parametros.id;
+      console.log('Los supuestos parametros', parametros.id);
+      console.log('SI PASÓ POR ACÁ');
+      console.log(this.id);
       if ( this.id !== 'nuevo' ) {
         this._CONDICIONSERVICES.getInvocador( this.id ).subscribe(cond1 => this.cond1 = cond1);
       }

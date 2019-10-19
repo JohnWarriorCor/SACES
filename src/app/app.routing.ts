@@ -12,6 +12,8 @@ import { CondicionNueveComponent } from './components/pages/condicion-nueve.comp
 import { CronogramaComponent } from './components/pages/cronograma.component';
 import { RegistroCon1Component } from './components/pages/registro-con1.component';
 import { CondicionCeroComponent } from './components/pages/condicion-cero.component';
+import { FormTabla2Condicion7Component } from './components/pages/modals/form-tabla2-condicion7.component';
+import { ModalContainerComponent } from './modal-container.component';
 
 
 
@@ -19,6 +21,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'HistoriaInstitucional', component: CondicionCeroComponent },
   { path: 'DenominacionDelPrograma/:id', component: CondicionUnoComponent },
+  { path: 'Modal/:id', component: ModalContainerComponent },
   { path: 'Condiciones1', component: RegistroCon1Component },
   { path: 'JustificacionDelPrograma', component: CondicionDosComponent },
   { path: 'AspectosCurriculares', component: CondicionTresComponent },
