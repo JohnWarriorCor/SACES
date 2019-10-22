@@ -14,6 +14,7 @@ import { RegistroCon1Component } from './components/pages/registro-con1.componen
 import { CondicionCeroComponent } from './components/pages/condicion-cero.component';
 import { FormTabla2Condicion7Component } from './components/pages/modals/form-tabla2-condicion7.component';
 import { ModalContainerComponent } from './modal-container.component';
+import { ModalContainerTabla1Component } from './modal-container-tabla1.component';
 
 
 
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'HistoriaInstitucional', component: CondicionCeroComponent },
   { path: 'DenominacionDelPrograma/:id', component: CondicionUnoComponent },
   { path: 'Modal/:id', component: ModalContainerComponent },
+  { path: 'ModalTabla1', component: ModalContainerTabla1Component },
   { path: 'Condiciones1', component: RegistroCon1Component },
   { path: 'JustificacionDelPrograma', component: CondicionDosComponent },
   { path: 'AspectosCurriculares', component: CondicionTresComponent },

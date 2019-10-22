@@ -38,6 +38,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FormTabla2Condicion7Component } from './components/pages/modals/form-tabla2-condicion7.component';
 import { ModalContainerComponent } from './modal-container.component';
 import { NgInitDirective } from './components/ng-init.directive';
+import { ModalContainerTabla1Component } from './modal-container-tabla1.component';
+import { FormTabla1Condicion7Component } from './components/pages/modals/form-tabla1-condicion7.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,7 +64,9 @@ import { NgInitDirective } from './components/ng-init.directive';
     CondicionCeroComponent,
     FormTabla2Condicion7Component,
     ModalContainerComponent,
-    NgInitDirective
+    NgInitDirective,
+    ModalContainerTabla1Component,
+    FormTabla1Condicion7Component
   ],
   imports: [
     NgbModule,
@@ -87,7 +91,8 @@ import { NgInitDirective } from './components/ng-init.directive';
   bootstrap: [AppComponent],
   entryComponents: [
     ModalUnoComponent,
-    FormTabla2Condicion7Component
+    FormTabla2Condicion7Component,
+    FormTabla1Condicion7Component
   ]
 })
 export class AppModule { }

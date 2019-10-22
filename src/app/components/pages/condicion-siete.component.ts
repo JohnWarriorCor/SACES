@@ -12,7 +12,7 @@ import { FormGroup, NgForm, FormControl, Validators, FormArray } from '@angular/
 import { Tabla2Condicion7 } from '../../interfaces/tabla2Condicion7.interface';
 import { ModalContainerComponent } from 'src/app/modal-container.component';
 import { Routes, RouterModule } from '@angular/router';
-
+import { FormTabla1Condicion7Component } from './modals/form-tabla1-condicion7.component';
 
 @Component({
   selector: 'app-condicion-siete',
@@ -54,6 +54,10 @@ export class CondicionSieteComponent implements OnInit {
   }
   open() {
     const modalRef = this.modalService.open(FormTabla2Condicion7Component);
+    modalRef.componentInstance.name = 'World';
+  }
+  open2() {
+    const modalRef = this.modalService.open(FormTabla1Condicion7Component);
     modalRef.componentInstance.name = 'World';
   }
 

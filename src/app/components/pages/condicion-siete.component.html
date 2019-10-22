@@ -1,7 +1,5 @@
 <div class="container animated fadeIn fast">
   <br>
-  <h3 class="text-uppercase">Profesores</h3>
-  <br>
   <h5 class="text-uppercase">Tabla 1</h5>
   <table bordercolor="black" class="table table-bordered">
     <thead>
@@ -104,6 +102,8 @@
       </tr>
     </tbody>
   </table>
+  <button class="btn botonUscoPerfil" routerLinkActive="active" [routerLink]="['/ModalTabla1']" >Nuevo registro</button>
+  <br>
   <br>
   <h5 class="text-uppercase">Tabla 2</h5>
   <br>
@@ -121,7 +121,7 @@
         <th scope="col" class="text-uppercase align-middle borden">A</th>
         <th scope="col" class="text-uppercase align-middle borden">B</th>
         <th scope="col" class="text-uppercase align-middle borden">C</th>
-        <th scope="col" class="text-uppercase align-middle borden">registrado</th>
+        <th scope="col" class="text-uppercase align-middle borden" placement="top" ngbTooltip="Registrado">r</th>
       </tr>
     </thead>
     <tbody>
