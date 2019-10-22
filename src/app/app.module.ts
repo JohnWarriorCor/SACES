@@ -37,6 +37,7 @@ import { CondicionCeroComponent } from './components/pages/condicion-cero.compon
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FormTabla2Condicion7Component } from './components/pages/modals/form-tabla2-condicion7.component';
 import { ModalContainerComponent } from './modal-container.component';
+import { NgInitDirective } from './components/ng-init.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,6 +62,7 @@ import { ModalContainerComponent } from './modal-container.component';
     CondicionCeroComponent,
     FormTabla2Condicion7Component,
     ModalContainerComponent,
+    NgInitDirective
   ],
   imports: [
     NgbModule,

@@ -12,7 +12,7 @@
     <thead>
       <tr class="text-center tablaAdmin" style="background-color: #AB121B;color: #D8CEA3">
         <th colspan="7" style="width: 90%" scope="col" class="text-uppercase align-middle borden">DENOMINACIÓN DEL PROGRAMA</th>
-        <th colspan="1" style="width: 10%" scope="col" class="text-uppercase align-middle borden" (change)="progreso()">Registro {{ i + 1 }}</th>
+        <th colspan="1" style="width: 10%" scope="col" class="text-uppercase align-middle borden"  (change)="progreso()">Registro {{ i + 1 }}</th>
       </tr>
     </thead>
     <tbody>
@@ -28,7 +28,7 @@
       <tr class="text-center tablaAdmin">
         <td colspan="4" scope="row" class="align-middle borden" (change)="progreso()">{{ condiciones1[k].nombreprograma }}</td>
         <td colspan="2" scope="row" class="align-middle borden" (change)="progreso()">{{ condiciones1[k].respnombre }}</td>
-        <td colspan="2" scope="row" class="align-middle borden" (click)="myFunc1(condiciones1[k].datenombre)" [ngClass]="{'atiempo' : res1 > 15,'encurso' : res1 <= 15, 'expira': res1 < 5, 'nulo': res1 == -10000 || res1 < -30}">{{ condiciones1[k].datenombre }}</td>
+        <td colspan="2" scope="row" class="align-middle borden" [ngClass]="{'atiempo' : res1 > 15,'encurso' : res1 <= 15, 'expira': res1 < 5, 'nulo': res1 == -10000 || res1 < -30}" (ngInit)="myFunc1(condiciones1[k].datenombre)">{{ condiciones1[k].datenombre }}</td>
       </tr>
       <tr class="text-center tablaAdmin">
         <th colspan="4" scope="row" class="text-uppercase align-middle borden">Título a otorgar:</th>
@@ -38,7 +38,7 @@
       <tr class="text-center tablaAdmin">
         <td colspan="4" scope="row" class="align-middle borden">{{ condiciones1[k].titulo }}</td>
         <td colspan="2" scope="row" class="align-middle borden">{{ condiciones1[k].resptitulo }}</td>
-        <td colspan="2" scope="row" class="align-middle borden" [ngClass]="{'atiempo' : res2 > 15,'encurso' : res2 <= 15, 'expira': res2 < 5, 'nulo': res2 == -10000 || res2 < -30}" (blur)="myFunc2(condiciones1[k].datetitulo)">{{ condiciones1[k].datetitulo }}</td>
+        <td colspan="2" scope="row" class="align-middle borden" [ngClass]="{'atiempo' : res2 > 15,'encurso' : res2 <= 15, 'expira': res2 < 5, 'nulo': res2 == -10000 || res2 < -30}" (ngInit)="myFunc2(condiciones1[k].datetitulo)">{{ condiciones1[k].datetitulo }}</td>
       </tr>
       <tr class="text-center tablaAdmin">
         <th colspan="4" scope="row" class="text-uppercase align-middle borden">contenido curricular:</th>
@@ -48,7 +48,7 @@
       <tr class="text-center tablaAdmin">
         <td colspan="4" scope="row" class="align-middle borden">C:\Users\jdcor\Documents\ING SOFTWARE\U - DOCTORADO CONDICIONES MINIMAS</td>
         <td colspan="2" scope="row" class="align-middle borden">{{ condiciones1[k].respcontenido }}</td>
-        <td colspan="2" scope="row" class="align-middle borden" [ngClass]="{'atiempo' : res3 > 15,'encurso' : res3 <= 15, 'expira': res3 < 5, 'nulo': res3 == -10000 || res3 < -30}" (click)="myFunc3(condiciones1[k].datecontenido)">{{ condiciones1[k].datecontenido }}</td>
+        <td colspan="2" scope="row" class="align-middle borden" [ngClass]="{'atiempo' : res3 > 15,'encurso' : res3 <= 15, 'expira': res3 < 5, 'nulo': res3 == -10000 || res3 < -30}" (ngInit)="myFunc3(condiciones1[k].datecontenido)">{{ condiciones1[k].datecontenido }}</td>
       </tr>
       <tr class="text-center tablaAdmin">
         <th colspan="8" scope="row" class="text-uppercase align-middle borden">observaciones:</th>

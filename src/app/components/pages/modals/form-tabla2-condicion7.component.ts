@@ -57,6 +57,8 @@ export class FormTabla2Condicion7Component {
     } else {
       this._CONDICIONSERVICES.actualizarInvocador( this.tabla2cond7, this.id ).subscribe(data => {
         console.log(data);
+        this.router.navigate(['/Profesor']);
+        this.activeModal.dismiss();
       },
       error => console.error(error));
     }
