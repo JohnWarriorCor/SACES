@@ -89,10 +89,7 @@ export class CondicionUnoComponent implements OnInit {
       }
     });
   }
-  open() {
-    const modalRef = this.modalService.open(ModalUnoComponent);
-    modalRef.componentInstance.name = 'World';
-  }
+  open() { }
   progreso() {
     this.acumPuntos = this.acumPuntos + 8;
     this.textoPuntos = String(this.acumPuntos);
