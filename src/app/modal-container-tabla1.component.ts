@@ -46,7 +46,7 @@ export class ModalContainerTabla1Component implements OnDestroy {
     });
     this.route.params.pipe(takeUntil(this.destroy)).subscribe(params => {
       // When router navigates on this component is takes the params and opens up the photo detail modal
-      this.currentDialog = this.modalService.open(FormTabla1Condicion7Component, {centered: true});
+      this.currentDialog = this.modalService.open(FormTabla1Condicion7Component, {centered: true, windowClass: 'hugeModal'});
       this.currentDialog.componentInstance.photo = params.id;
 
       // Go back to home page after the modal is closed
