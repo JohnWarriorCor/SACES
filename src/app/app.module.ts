@@ -40,6 +40,14 @@ import { ModalContainerComponent } from './modal-container.component';
 import { NgInitDirective } from './components/ng-init.directive';
 import { ModalContainerTabla1Component } from './modal-container-tabla1.component';
 import { FormTabla1Condicion7Component } from './components/pages/modals/form-tabla1-condicion7.component';
+import { ModalContainerTabla3Component } from './modal-container-tabla3.component';
+import { ModalContainerTabla4Component } from './modal-container-tabla4.component';
+import { ModalContainerTabla5Component } from './modal-container-tabla5.component';
+import { ModalContainerTabla6Component } from './modal-container-tabla6.component';
+import { FormTabla3Condicion7Component } from './components/pages/modals/form-tabla3-condicion7.component';
+import { FormTabla4Condicion7Component } from './components/pages/modals/form-tabla4-condicion7.component';
+import { FormTabla5Condicion7Component } from './components/pages/modals/form-tabla5-condicion7.component';
+import { FormTabla6Condicion7Component } from './components/pages/modals/form-tabla6-condicion7.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,7 +74,15 @@ import { FormTabla1Condicion7Component } from './components/pages/modals/form-ta
     ModalContainerComponent,
     NgInitDirective,
     ModalContainerTabla1Component,
-    FormTabla1Condicion7Component
+    FormTabla1Condicion7Component,
+    ModalContainerTabla3Component,
+    ModalContainerTabla4Component,
+    ModalContainerTabla5Component,
+    ModalContainerTabla6Component,
+    FormTabla3Condicion7Component,
+    FormTabla4Condicion7Component,
+    FormTabla5Condicion7Component,
+    FormTabla6Condicion7Component
   ],
   imports: [
     NgbModule,
@@ -92,7 +108,11 @@ import { FormTabla1Condicion7Component } from './components/pages/modals/form-ta
   entryComponents: [
     ModalUnoComponent,
     FormTabla2Condicion7Component,
-    FormTabla1Condicion7Component
+    FormTabla1Condicion7Component,
+    FormTabla3Condicion7Component,
+    FormTabla4Condicion7Component,
+    FormTabla5Condicion7Component,
+    FormTabla6Condicion7Component
   ]
 })
 export class AppModule { }

@@ -15,6 +15,11 @@ import { CondicionCeroComponent } from './components/pages/condicion-cero.compon
 import { FormTabla2Condicion7Component } from './components/pages/modals/form-tabla2-condicion7.component';
 import { ModalContainerComponent } from './modal-container.component';
 import { ModalContainerTabla1Component } from './modal-container-tabla1.component';
+import { ModalContainerTabla3Component } from './modal-container-tabla3.component';
+import { ModalContainerTabla4Component } from './modal-container-tabla4.component';
+import { ModalContainerTabla5Component } from './modal-container-tabla5.component';
+import { ModalContainerTabla6Component } from './modal-container-tabla6.component';
+
 
 
 
@@ -24,6 +29,10 @@ const routes: Routes = [
   { path: 'DenominacionDelPrograma/:id', component: CondicionUnoComponent },
   { path: 'Modal/:id', component: ModalContainerComponent },
   { path: 'ModalTabla1', component: ModalContainerTabla1Component },
+  { path: 'ModalTabla3', component: ModalContainerTabla3Component },
+  { path: 'ModalTabla4', component: ModalContainerTabla4Component },
+  { path: 'ModalTabla5', component: ModalContainerTabla5Component },
+  { path: 'ModalTabla6', component: ModalContainerTabla6Component },
   { path: 'Condiciones1', component: RegistroCon1Component },
   { path: 'JustificacionDelPrograma', component: CondicionDosComponent },
   { path: 'AspectosCurriculares', component: CondicionTresComponent },
