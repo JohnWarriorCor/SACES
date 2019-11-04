@@ -1,6 +1,6 @@
 <div class="container animated fadeIn fast">
   <br>
-  <h5 class="text-uppercase">Tabla 1</h5>
+  <h5 class="text-uppercase">NÚMERO DE DOCENTES POR VINCULACIÓN</h5>
   <table bordercolor="black" class="table table-bordered">
     <thead>
       <tr class="text-center">
@@ -105,7 +105,7 @@
   <button class="btn botonUscoPerfil" routerLinkActive="active" [routerLink]="['/ModalTabla1']" >Nuevo registro</button>
   <br>
   <br>
-  <h5 class="text-uppercase">Tabla 2</h5>
+  <h5 class="text-uppercase">Grupos de investigación</h5>
   <br>
   <table class="table table-bordered">
     <thead>
@@ -210,7 +210,7 @@
   </table>
   <button class="btn botonUscoPerfil" routerLinkActive="active" [routerLink]="['/ModalTabla3']" >Nuevo registro</button>
   <hr>
-  <h5 class="text-uppercase">tabla 4</h5>
+  <h5 class="text-uppercase">Estudiantes por año</h5>
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -235,18 +235,18 @@
   </table>
   <button class="btn botonUscoPerfil" routerLinkActive="active" [routerLink]="['/ModalTabla4']" >Nuevo registro</button>
   <hr>
-  <h5 class="text-uppercase">Docentes 1111 Administrativo</h5>
+  <h5 class="text-uppercase">Porcentaje de dedicación docentes</h5>
   <table class="table table-bordered">
     <thead>
       <tr class="text-center">
         <th scope="col" class="text-uppercase align-middle borden">Año</th>
         <th scope="col" class="text-uppercase align-middle borden">Período</th>
-        <th scope="col" class="text-uppercase align-middle borden">T.C (2A.)</th>
-        <th scope="col" class="text-uppercase align-middle borden">Medio tiempo (2B)</th>
-        <th scope="col" class="text-uppercase align-middle borden">Cátedra (2C.)</th>
-        <th scope="col" class="text-uppercase align-middle borden">Dedicación de profesores a la docencia de T.C y M.T(%)</th>
-        <th scope="col" class="text-uppercase align-middle borden">Dedicación de profesores de T.C.y M.T a la investigación (%)</th>
-        <th scope="col" class="text-uppercase align-middle borden">Dedicación de profesores a la extensión de T.C y M.T (%)</th>
+        <th scope="col" class="text-uppercase align-middle borden"><span placement="top" ngbTooltip="Tiempo completo">T.C. (2A.)</span></th>
+        <th scope="col" class="text-uppercase align-middle borden"><span placement="top" ngbTooltip="Medio tiempo">M.T. (2B)</span></th>
+        <th scope="col" class="text-uppercase align-middle borden"><span placement="top" ngbTooltip="Cátedra">C (2C.)</span></th>
+        <th scope="col" class="text-uppercase align-middle borden">Dedicación de profesores a la docencia de <span placement="top" ngbTooltip="Tiempo completo">T.C.</span> y <span placement="top" ngbTooltip="Medio tiempo">M.T.</span> (%)</th>
+        <th scope="col" class="text-uppercase align-middle borden">Dedicación de profesores de <span placement="top" ngbTooltip="Tiempo completo">T.C.</span> y <span placement="top" ngbTooltip="Medio tiempo">M.T.</span> a la investigación (%)</th>
+        <th scope="col" class="text-uppercase align-middle borden">Dedicación de profesores a la extensión de <span placement="top" ngbTooltip="Tiempo completo">T.C.</span> y <span placement="top" ngbTooltip="Medio tiempo">M.T.</span> (%)</th>
       </tr>
     </thead>
     <tbody>
@@ -313,19 +313,19 @@
       <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
         <div class="card-body">
           <form action="">
-            <h6 class="gray text-left">1). ¿Cómo sustenta la Institución la disponibilidad, idoneidad y suficiencia de profesores para atender las diferentes áreas curriculares del Programa, en correspondencia con el número de estudiantes actual y/o proyectado? </h6>
+            <h6 class="gray text-left">1). Sustentación por parte de la Institución la disponibilidad, idoneidad y suficiencia de profesores para atender las diferentes áreas curriculares del Programa, en correspondencia con el número de estudiantes actual y/o proyectado </h6>
             <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
-            <h6 class="gray text-left">2). ¿Cómo sustenta la Institución la disponibilidad, idoneidad y suficiencia de profesores de Tiempo completo para atender las funciones sustantivas del Programa, en correspondencia con el campo específico y nivel de formación del programa, y el número de estudiantes actual y/o proyectado? </h6>
+            <h6 class="gray text-left">2). Sustentación por parte de la Institución la disponibilidad, idoneidad y suficiencia de profesores de Tiempo completo para atender las funciones sustantivas del Programa, en correspondencia con el campo específico, nivel de formación del programa, el número de estudiantes actual y/o proyectado </h6>
             <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
-            <h6 class="gray text-left">3). ¿En qué aspectos se logra coherencia, sincronía  y suficiencia entre las metas, los plazos y los resultados (alcanzados o esperados) asociados a los planes de contratación docente y de desarrollo profesoral (o formación docente) con las necesidades del programa? </h6>
+            <h6 class="gray text-left">3). Aspectos donde se logra coherencia, sincronía  y suficiencia entre las metas, los plazos y los resultados (alcanzados o esperados) asociados a los planes de contratación docente y de desarrollo profesoral (o formación docente) con las necesidades del programa</h6>
             <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
-            <h6 class="gray text-left">4). ¿Qué estrategias y acciones concretas desarrolla o desarrollará la Institución para fomentar el avance de los docentes en el escalafón o categorías previstas en el Reglamento o Estatuto Docente? </h6>
+            <h6 class="gray text-left">4). Estrategias y acciones concretas que desarrollará la Institución para fomentar el avance de los docentes en el escalafón o categorías previstas en el Reglamento o Estatuto Docente</h6>
             <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
-            <h6 class="gray text-left">5). ¿De qué manera la Institución garantiza la capacitación de los docentes en el uso de las tecnologías y herramientas de apoyo al proceso de enseñanza-aprendizaje? ¿Qué perfiles establece la Institución para el personal docente de manera que se pueda atender adecuadamente la modalidad? </h6>
+            <h6 class="gray text-left">5). Manera en que la Institución garantiza la capacitación de los docentes en el uso de las tecnologías y herramientas de apoyo al proceso de enseñanza-aprendizaje. Indique los perfiles que establece la Institución para el personal docente de manera que se pueda atender adecuadamente la modalidad</h6>
             <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
-            <h6 class="gray text-left">6). ¿De qué manera la institución sustenta la complementariedad y secuenciación entre los diferentes niveles de formación que se articulan por ciclos? </h6>
+            <h6 class="gray text-left">6). Manera en que la institución sustenta la complementariedad y secuenciación entre los diferentes niveles de formación que se articulan por ciclos</h6>
             <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
-            <h6 class="gray text-left">7). ¿De qué manera sustenta  la Institución la relación de trabajo y distribución de tiempos de los docentes con nivel de formación Maestría y Doctorado para los proyectos de investigación en los que participan los estudiantes? </h6>
+            <h6 class="gray text-left">7). Manera en que la institución sustenta la relación de trabajo y distribución de tiempos de los docentes con nivel de formación Maestría y Doctorado para los proyectos de investigación en los que participan los estudiantes</h6>
             <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
           </form>
         </div>
