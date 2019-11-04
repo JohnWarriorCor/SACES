@@ -48,6 +48,16 @@ import { FormTabla3Condicion7Component } from './components/pages/modals/form-ta
 import { FormTabla4Condicion7Component } from './components/pages/modals/form-tabla4-condicion7.component';
 import { FormTabla5Condicion7Component } from './components/pages/modals/form-tabla5-condicion7.component';
 import { FormTabla6Condicion7Component } from './components/pages/modals/form-tabla6-condicion7.component';
+// Firebase
+import { CargaImagenesService } from './services/carga-imagenes.service';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from '../environments/environment';
+import { NgDropFilesDirective } from './directives/ng-drop-files.directive';
+// import { NgDropFilesDirective } from './directives/ng-drop-files.directive';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -82,7 +92,8 @@ import { FormTabla6Condicion7Component } from './components/pages/modals/form-ta
     FormTabla3Condicion7Component,
     FormTabla4Condicion7Component,
     FormTabla5Condicion7Component,
-    FormTabla6Condicion7Component
+    FormTabla6Condicion7Component,
+    NgDropFilesDirective
   ],
   imports: [
     NgbModule,
@@ -93,6 +104,10 @@ import { FormTabla6Condicion7Component } from './components/pages/modals/form-ta
     ReactiveFormsModule,
     BrowserModule,
     APP_ROUTING,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
+    AngularFireStorageModule // imports firebase/storage only needed for storage features
     // NgbModule,
     // MatDialogModule
   ],
@@ -102,7 +117,8 @@ import { FormTabla6Condicion7Component } from './components/pages/modals/form-ta
   providers: [
     NavbarService,
     Condicion1Service,
-    TituloService
+    TituloService,
+    CargaImagenesService
   ],
   bootstrap: [AppComponent],
   entryComponents: [

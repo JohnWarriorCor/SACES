@@ -13,7 +13,7 @@ import { FormTabla3Condicion7Component } from './components/pages/modals/form-ta
 
 @Component({
   selector: 'app-modal-container-tabla3',
-  template: ''
+  templateUrl: './modal-container.component.html',
 })
 export class ModalContainerTabla3Component implements OnDestroy {
 

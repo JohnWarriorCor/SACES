@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NgbActiveModal, NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Router, ActivatedRoute} from '@angular/router';
 import { FormGroup, NgForm, FormControl, Validators, FormArray } from '@angular/forms';
@@ -11,7 +11,12 @@ import { FuncionesCompartidasService } from '../../../services/funciones-compart
   templateUrl: './form-tabla5-condicion7.component.html',
   styleUrls: ['./form-tabla5-condicion7.component.css']
 })
-export class FormTabla5Condicion7Component {
+export class FormTabla5Condicion7Component implements OnInit {
+  // Variables para generar fecha en select
+  year = new Date().getFullYear();
+  yearStrin = '';
+  range = [];
+  // ---
   forma: FormGroup;
   controls: any;
   nuevo = false;
@@ -69,6 +74,17 @@ export class FormTabla5Condicion7Component {
   agregarNuevo( forma: NgForm) {
     this.router.navigate(['/Modal', 'nuevo']);
     forma.reset({});
+  }
+  generateYear() {
+    this.year = this.year - 10;
+    for ( let i = 1; i < 15; i++) {
+      this.yearStrin = String(this.year + i);
+      this.range.push(this.yearStrin);
+    }
+    return this.range;
+  }
+  ngOnInit() {
+    this.generateYear();
   }
 }
 

@@ -1,17 +1,21 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NgbActiveModal, NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Router, ActivatedRoute} from '@angular/router';
 import { FormGroup, NgForm, FormControl, Validators, FormArray } from '@angular/forms';
 import { Tabla2Condicion7 } from '../../../interfaces/tabla2Condicion7.interface';
 import { Tabla2Condicion7Service } from '../../../services/tabla2-condicion7.service';
 import { FuncionesCompartidasService } from '../../../services/funciones-compartidas.service';
+import {formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-form-tabla4-condicion7',
   templateUrl: './form-tabla4-condicion7.component.html',
   styleUrls: ['./form-tabla4-condicion7.component.css']
 })
-export class FormTabla4Condicion7Component {
+export class FormTabla4Condicion7Component implements OnInit {
+  year = new Date().getFullYear();
+  yearStrin = '';
+  range = [];
   forma: FormGroup;
   controls: any;
   nuevo = false;
@@ -43,6 +47,17 @@ export class FormTabla4Condicion7Component {
         this._CONDICIONSERVICES.getInvocador( this.id ).subscribe(tabla2cond7 => this.tabla2cond7 = tabla2cond7);
       }
     });
+  }
+  ngOnInit() {
+    this.generateYear();
+  }
+  generateYear() {
+    this.year = this.year - 10;
+    for ( let i = 1; i < 15; i++) {
+      this.yearStrin = String(this.year + i);
+      this.range.push(this.yearStrin);
+    }
+    return this.range;
   }
   guardar() {
     console.log(this.tabla2cond7);

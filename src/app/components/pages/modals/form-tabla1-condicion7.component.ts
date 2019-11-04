@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NgbActiveModal, NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Router, ActivatedRoute} from '@angular/router';
 import { FormGroup, NgForm, FormControl, Validators, FormArray } from '@angular/forms';
@@ -11,8 +11,41 @@ import { FuncionesCompartidasService } from '../../../services/funciones-compart
   templateUrl: './form-tabla1-condicion7.component.html',
   styleUrls: ['./form-tabla1-condicion7.component.css']
 })
-export class FormTabla1Condicion7Component {
+export class FormTabla1Condicion7Component implements OnInit {
+  // Variables para cantidad de profesores
+  tcTecnico = 0;
+  tcTecnologo = 0;
+  tcProfesional = 0;
+  tcEspecialista = 0;
+  tcMagister = 0;
+  tcDoctores = 0;
+  tcPosdoctorado = 0;
+  totalTc = 0;
+  // ----------------
+  mtTecnico = 0;
+  mtTecnologo = 0;
+  mtProfesional = 0;
+  mtEspecialista = 0;
+  mtMagister = 0;
+  mtDoctores = 0;
+  mtPosdoctorado = 0;
+  totalMt = 0;
+  // ----------------
+  cTecnico = 0;
+  cTecnologo = 0;
+  cProfesional = 0;
+  cEspecialista = 0;
+  cMagister = 0;
+  cDoctores = 0;
+  cPosdoctorado = 0;
+  totalC = 0;
+  // Variables para generar fecha en select
+  year = new Date().getFullYear();
+  yearStrin = '';
+  range = [];
+  // Variables para modal
   currentJustify = 'start';
+  // Variables para CRUD
   forma: FormGroup;
   controls: any;
   nuevo = false;
@@ -67,8 +100,34 @@ export class FormTabla1Condicion7Component {
     const modalRef = this.modalService.open(FormTabla1Condicion7Component);
     modalRef.componentInstance.name = 'World';
   }
+  generateYear() {
+    this.year = this.year - 10;
+    for ( let i = 1; i < 15; i++) {
+      this.yearStrin = String(this.year + i);
+      this.range.push(this.yearStrin);
+    }
+    return this.range;
+  }
   agregarNuevo( forma: NgForm) {
     this.router.navigate(['/Modal', 'nuevo']);
     forma.reset({});
+  }
+  ngOnInit() {
+    this.generateYear();
+  }
+  calcularProfesoresTc() {
+    // tslint:disable-next-line:max-line-length
+    this.totalTc = (this.tcTecnico + this.tcTecnologo + this.tcProfesional + this.tcEspecialista + this.tcMagister + this.tcDoctores + this.tcPosdoctorado );
+    return this.totalTc;
+  }
+  calcularProfesoresMt() {
+    // tslint:disable-next-line:max-line-length
+    this.totalMt = (this.mtTecnico + this.mtTecnologo + this.mtProfesional + this.mtEspecialista + this.mtMagister + this.mtDoctores + this.mtPosdoctorado );
+    return this.totalMt;
+  }
+  calcularProfesoresC() {
+    // tslint:disable-next-line:max-line-length
+    this.totalC = (this.cTecnico + this.cTecnologo + this.tcProfesional + this.cEspecialista + this.cMagister + this.cDoctores + this.cPosdoctorado );
+    return this.totalC;
   }
 }

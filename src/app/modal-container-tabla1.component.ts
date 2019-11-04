@@ -12,7 +12,7 @@ import { FormTabla1Condicion7Component } from './components/pages/modals/form-ta
 
 @Component({
   selector: 'app-modal-container-tabla1',
-  template: ''
+  templateUrl: './modal-container.component.html',
 })
 export class ModalContainerTabla1Component implements OnDestroy {
   destroy = new Subject<any>();

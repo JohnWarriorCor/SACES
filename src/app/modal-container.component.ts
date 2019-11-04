@@ -12,7 +12,7 @@ import { FuncionesCompartidasService } from './services/funciones-compartidas.se
 
 @Component({
   selector: 'app-modal-container',
-  template: ''
+  templateUrl: './modal-container.component.html',
 })
 export class ModalContainerComponent implements OnDestroy {
   destroy = new Subject<any>();

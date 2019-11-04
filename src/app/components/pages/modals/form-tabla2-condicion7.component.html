@@ -7,39 +7,39 @@
   <form (ngSubmit)="guardar()" #forma="ngForm">
   <div class="modal-body">
   <div class="form-group">
-    <label class="text-uppercase">Nombre</label>
-    <input id="nombregrupinves" name="nombregrupinves" [(ngModel)]="tabla2cond7.nombregrupinves" type="text" class="form-control" placeholder="Nombre del grupo de investigación">
+    <label class="text-uppercase gray">Nombre</label>
+    <input id="nombregrupinves" name="nombregrupinves" [(ngModel)]="tabla2cond7.nombregrupinves" type="text" class="form-control shadow p-3 inputPaciente" placeholder="Nombre del grupo de investigación">
   </div>
   <div class="form-group">
-    <label class="text-uppercase">Clasificación colciencias</label>
+    <label class="text-uppercase gray">Clasificación colciencias</label>
     <div class="custom-control custom-radio">
-      <input type="radio" id="customRadio1"  [(ngModel)]="tabla2cond7.clasificaciongrupinvesA1" value="X" name="customRadio1" class="custom-control-input">
+      <input type="radio" id="customRadio1"  [(ngModel)]="tabla2cond7.clasificaciongrupinvesA1" value="X" name="customRadio1" class="custom-control-input shadow p-3 inputPaciente">
       <label class="custom-control-label" for="customRadio1">A1</label>
     </div>
-    <div class="custom-control custom-radio">
-      <input type="radio" id="customRadio2" [(ngModel)]="tabla2cond7.clasificaciongrupinvesA" value="X" name="customRadio2" class="custom-control-input">
+    <div class="custom-control custom-radio gray">
+      <input type="radio" id="customRadio2" [(ngModel)]="tabla2cond7.clasificaciongrupinvesA" value="X" name="customRadio2" class="custom-control-input shadow p-3 inputPaciente">
       <label class="custom-control-label" for="customRadio2">A</label>
     </div>
-    <div class="custom-control custom-radio">
-      <input type="radio" id="customRadio3" [(ngModel)]="tabla2cond7.clasificaciongrupinvesB" value="X" name="customRadio3" class="custom-control-input">
+    <div class="custom-control custom-radio gray">
+      <input type="radio" id="customRadio3" [(ngModel)]="tabla2cond7.clasificaciongrupinvesB" value="X" name="customRadio3" class="custom-control-input shadow p-3 inputPaciente">
       <label class="custom-control-label" for="customRadio3">B</label>
     </div>
-    <div class="custom-control custom-radio">
-      <input type="radio" id="customRadio4" [(ngModel)]="tabla2cond7.clasificaciongrupinvesC" value="X" name="customRadio4" class="custom-control-input">
+    <div class="custom-control custom-radio gray">
+      <input type="radio" id="customRadio4" [(ngModel)]="tabla2cond7.clasificaciongrupinvesC" value="X" name="customRadio4" class="custom-control-input shadow p-3 inputPaciente">
       <label class="custom-control-label" for="customRadio4">C</label>
     </div>
-    <div class="custom-control custom-radio">
-      <input type="radio" id="customRadio5" [(ngModel)]="tabla2cond7.clasificaciongrupinvesR" value="X" name="customRadio5" class="custom-control-input">
+    <div class="custom-control custom-radio gray">
+      <input type="radio" id="customRadio5" [(ngModel)]="tabla2cond7.clasificaciongrupinvesR" value="X" name="customRadio5" class="custom-control-input shadow p-3 inputPaciente">
       <label class="custom-control-label" for="customRadio5">Registrado</label>
     </div>
   </div>
   <div class="form-group">
-    <label for="inputAddress" class="text-uppercase">OTROS GRUPOS</label>
-    <input id="otrosgrup" name="otrosgrup" [(ngModel)]="tabla2cond7.otrosgrup" type="text" class="form-control" placeholder="...">
+    <label for="inputAddress" class="text-uppercase gray">OTROS GRUPOS</label>
+    <input id="otrosgrup" name="otrosgrup" [(ngModel)]="tabla2cond7.otrosgrup" type="text" class="form-control shadow p-3 inputPaciente" placeholder="...">
   </div>
   <div class="form-group">
-    <label for="inputAddress" class="text-uppercase">GRUPOS INTERDISCIPLINARIOS</label>
-    <input id="grupinterdis" name="grupinterdis" [(ngModel)]="tabla2cond7.grupinterdis" type="text" class="form-control" placeholder="...">
+    <label for="inputAddress" class="text-uppercase gray">GRUPOS INTERDISCIPLINARIOS</label>
+    <input id="grupinterdis" name="grupinterdis" [(ngModel)]="tabla2cond7.grupinterdis" type="text" class="form-control shadow p-3 inputPaciente" placeholder="...">
   </div>
   
   </div>

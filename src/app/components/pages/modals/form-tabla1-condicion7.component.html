@@ -7,6 +7,23 @@
 <form >
 <div class="modal-body">
 <!--OPCION POR TABLA-->
+<div class="row">
+    <div class="col-sm-2">
+      <div class="form-group">
+        <label for="inputAddress" class="text-uppercase gray">año</label><br><br>
+        <select class="form-control inputPaciente shadow" id="exampleFormControlSelect1">
+          <option value="" disabled="disabled">Año</option>
+          <option *ngFor="let ran of range" [value]="ran">{{ran}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="form-group">
+        <label for="inputAddress" class="text-uppercase gray">periodo</label><br><br>
+        <input id="otrosgrup" min="1" max="2" name="otrosgrup" type="number" class="form-control shadow p-3 inputPaciente" autocomplete="off" placeholder="0">
+      </div>
+    </div>
+  </div>
 <table bordercolor="black" class="table table-bordered">
     <thead>
       <tr class="text-center">
@@ -28,82 +45,82 @@
       <tr>
         <th scope="row" class="text-uppercase align-middle borden text-center" style="font-size: 12px">Tiempo completo</th>
         <td class="align-middle text-center">
-          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control" readonly="false" placement="top" ngbTooltip="Este campo es automático">
+          <input [value]="totalTc" id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control" readonly="false" placement="top" ngbTooltip="Este campo es automático">
         </td>
         <td class="align-middle text-center">
-          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control" autocomplete="off">
+          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control" [(ngModel)]="tcTecnico" autocomplete="off" (input)="calcularProfesoresTc()">
         </td>
         <td class="align-middle text-center">
-          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control" autocomplete="off">
+          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control" [(ngModel)]="tcTecnologo" autocomplete="off" (input)="calcularProfesoresTc()">
         </td>
         <td class="align-middle text-center">
-          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control" autocomplete="off">
+          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control" [(ngModel)]="tcProfesional" autocomplete="off" (input)="calcularProfesoresTc()">
         </td>
         <td class="align-middle text-center">
-          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control" autocomplete="off">
+          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control" [(ngModel)]="tcEspecialista" autocomplete="off" (input)="calcularProfesoresTc()">
         </td>
         <td class="align-middle text-center">
-          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control" autocomplete="off">
+          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control" [(ngModel)]="tcMagister" autocomplete="off" (input)="calcularProfesoresTc()">
         </td>
         <td class="align-middle text-center">
-          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control" autocomplete="off">
+          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control" [(ngModel)]="tcDoctores" autocomplete="off" (input)="calcularProfesoresTc()">
         </td>
         <td class="align-middle text-center">
-          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control" autocomplete="off">
+          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control" [(ngModel)]="tcPosdoctorado" autocomplete="off" (input)="calcularProfesoresTc()">
         </td>
       </tr>
       <tr>
         <th scope="row" class="text-uppercase align-middle borden text-center" style="font-size: 12px">Medio Tiempo</th>
         <td class="align-middle text-center">
-          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control" readonly="false" placement="top" ngbTooltip="Este campo es automático">
+          <input [value]="totalMt" id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control" readonly="false" placement="top" ngbTooltip="Este campo es automático">
         </td>
         <td class="align-middle text-center">
-          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control" autocomplete="off">
+          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control"  [(ngModel)]="mtTecnico" autocomplete="off" (input)="calcularProfesoresMt()">
         </td>
         <td class="align-middle text-center">
-          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control" autocomplete="off">
+          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control"  [(ngModel)]="mtTecnologo" autocomplete="off" (input)="calcularProfesoresMt()">
         </td>
         <td class="align-middle text-center">
-          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control" autocomplete="off">
+          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control"  [(ngModel)]="mtProfesional" autocomplete="off" (input)="calcularProfesoresMt()">
         </td>
         <td class="align-middle text-center">
-          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control" autocomplete="off">
+          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control"  [(ngModel)]="mtEspecialista" autocomplete="off" (input)="calcularProfesoresMt()">
         </td>
         <td class="align-middle text-center">
-          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control" autocomplete="off">
+          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control"  [(ngModel)]="mtMagister" autocomplete="off" (input)="calcularProfesoresMt()">
         </td>
         <td class="align-middle text-center">
-          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control" autocomplete="off">
+          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control"  [(ngModel)]="mtDoctores" autocomplete="off" (input)="calcularProfesoresMt()">
         </td>
         <td class="align-middle text-center">
-          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control" autocomplete="off">
+          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control"  [(ngModel)]="mtPosdoctorado" autocomplete="off" (input)="calcularProfesoresMt()">
         </td>
       </tr>
       <tr>
         <th scope="row" class="text-uppercase align-middle borden text-center" style="font-size: 12px">catedra</th>
         <td class="align-middle text-center">
-          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control" readonly="false" placement="top" ngbTooltip="Este campo es automático">
+          <input [value]="totalC" id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control" readonly="false" placement="top" ngbTooltip="Este campo es automático">
         </td>
         <td class="align-middle text-center">
-          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control" autocomplete="off">
+          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control"  [(ngModel)]="cTecnico" autocomplete="off" (input)="calcularProfesoresC()">
         </td>
         <td class="align-middle text-center">
-          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control" autocomplete="off">
+          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control"  [(ngModel)]="cTecnologo" autocomplete="off" (input)="calcularProfesoresC()">
         </td>
         <td class="align-middle text-center">
-          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control" autocomplete="off">
+          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control"  [(ngModel)]="cProfesional" autocomplete="off" (input)="calcularProfesoresC()">
         </td>
         <td class="align-middle text-center">
-          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control" autocomplete="off">
+          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control"  [(ngModel)]="cEspecialista" autocomplete="off" (input)="calcularProfesoresC()">
         </td>
         <td class="align-middle text-center">
-          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control" autocomplete="off">
+          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control"  [(ngModel)]="cMagister" autocomplete="off" (input)="calcularProfesoresC()">
         </td>
         <td class="align-middle text-center">
-          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control" autocomplete="off">
+          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control"  [(ngModel)]="cDoctores" autocomplete="off" (input)="calcularProfesoresC()">
         </td>
         <td class="align-middle text-center">
-          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control" autocomplete="off">
+          <input id="otrosgrup" type="number" name="otrosgrup" min="0" style="border:0px;width: 100%;" class="form-control"  [(ngModel)]="cPosdoctorado" autocomplete="off" (input)="calcularProfesoresC()">
         </td>
       </tr>
     </tbody>

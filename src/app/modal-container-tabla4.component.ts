@@ -12,7 +12,7 @@ import { FormTabla4Condicion7Component } from './components/pages/modals/form-ta
 
 @Component({
   selector: 'app-modal-container-tabla4',
-  template: ''
+  templateUrl: './modal-container.component.html',
 })
 export class ModalContainerTabla4Component implements OnDestroy {
 
@@ -47,7 +47,7 @@ export class ModalContainerTabla4Component implements OnDestroy {
     });
     this.route.params.pipe(takeUntil(this.destroy)).subscribe(params => {
       // When router navigates on this component is takes the params and opens up the photo detail modal
-      this.currentDialog = this.modalService.open(FormTabla4Condicion7Component, {centered: true, size: 'lg'});
+      this.currentDialog = this.modalService.open(FormTabla4Condicion7Component, {centered: true});
       this.currentDialog.componentInstance.photo = params.id;
 
       // Go back to home page after the modal is closed
