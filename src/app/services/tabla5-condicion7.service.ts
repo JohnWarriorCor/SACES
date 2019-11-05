@@ -1,19 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers  } from '@angular/http';
+import { Tabla2Condicion7 } from '../interfaces/tabla2Condicion7.interface';
 import { map } from 'rxjs/operators';
-import { Tabla1Condicion7 } from '../interfaces/tabla1-condicion7';
 
 @Injectable({
   providedIn: 'root'
 })
-export class Tabla1Condicion7Service {
-
-  condicionRegistroURL = 'https://saces-8f3e0.firebaseio.com/tabla1condicion7.json';
-  condicionURL = 'https://saces-8f3e0.firebaseio.com/tabla1condicion7/';
+export class Tabla5Condicion7Service {
+  condicionRegistroURL = 'https://saces-8f3e0.firebaseio.com/tabla2condicion7.json';
+  condicionURL = 'https://saces-8f3e0.firebaseio.com/tabla2condicion7/';
 
   constructor(private http: Http) { }
-  nuevoInvocador( tabla1condicion7: Tabla1Condicion7) {
-    const body = JSON.stringify(tabla1condicion7);
+  nuevoInvocador( tabla2condicion7: Tabla2Condicion7) {
+    const body = JSON.stringify(tabla2condicion7);
     const headers = new Headers({
       'Content-Type': 'application/json'
     });
@@ -22,7 +21,7 @@ export class Tabla1Condicion7Service {
       return res.json();
     }));
   }
-  actualizarInvocador( invocador: Tabla1Condicion7, key$: string ) {
+  actualizarInvocador( invocador: Tabla2Condicion7, key$: string ) {
     const body = JSON.stringify(invocador);
     const headers = new Headers({
       'Content-Type': 'application/json'
@@ -47,32 +46,14 @@ export class Tabla1Condicion7Service {
     return this.http.delete(url).pipe(map( res => res.json()));
   }
 }
-export interface Tabla1Condicion7 {
+export interface Tabla2Condicion7 {
   idx?: number;
   anio: string;
   periodo: string;
-  totalTC: string;
-  totalMT: string;
-  totalC: string;
-  numTecnTC: string;
-  numTecnMT: string;
-  numTecnC: string;
-  numTeclTC: string;
-  numTeclMT: string;
-  numTeclC: string;
-  numProTC: string;
-  numProMT: string;
-  numProC: string;
-  numEspTC: string;
-  numEspMT: string;
-  numEspC: string;
-  numMagTC: string;
-  numMagMT: string;
-  numMagC: string;
-  numDocTC: string;
-  numDocMT: string;
-  numDocC: string;
-  numPosTC: string;
-  numPosMT: string;
-  numPosC: string;
+  TC: string;
+  MT: string;
+  C: string;
+  tiempoDoc: string;
+  tiempoInv: string;
+  tiempoExt: string;
 }

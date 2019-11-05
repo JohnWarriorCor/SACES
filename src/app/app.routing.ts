@@ -12,7 +12,6 @@ import { CondicionNueveComponent } from './components/pages/condicion-nueve.comp
 import { CronogramaComponent } from './components/pages/cronograma.component';
 import { RegistroCon1Component } from './components/pages/registro-con1.component';
 import { CondicionCeroComponent } from './components/pages/condicion-cero.component';
-import { FormTabla2Condicion7Component } from './components/pages/modals/form-tabla2-condicion7.component';
 import { ModalContainerComponent } from './modal-container.component';
 import { ModalContainerTabla1Component } from './modal-container-tabla1.component';
 import { ModalContainerTabla3Component } from './modal-container-tabla3.component';
@@ -28,10 +27,10 @@ const routes: Routes = [
   { path: 'HistoriaInstitucional', component: CondicionCeroComponent },
   { path: 'DenominacionDelPrograma/:id', component: CondicionUnoComponent },
   { path: 'Modal/:id', component: ModalContainerComponent },
-  { path: 'ModalTabla1', component: ModalContainerTabla1Component },
-  { path: 'ModalTabla3', component: ModalContainerTabla3Component },
-  { path: 'ModalTabla4', component: ModalContainerTabla4Component },
-  { path: 'ModalTabla5', component: ModalContainerTabla5Component },
+  { path: 'ModalTabla1/:id', component: ModalContainerTabla1Component },
+  { path: 'ModalTabla3/:id', component: ModalContainerTabla3Component },
+  { path: 'ModalTabla4/:id', component: ModalContainerTabla4Component },
+  { path: 'ModalTabla5/:id', component: ModalContainerTabla5Component },
   { path: 'ModalTabla6', component: ModalContainerTabla6Component },
   { path: 'Condiciones1', component: RegistroCon1Component },
   { path: 'JustificacionDelPrograma', component: CondicionDosComponent },
