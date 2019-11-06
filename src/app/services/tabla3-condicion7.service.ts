@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers  } from '@angular/http';
-import { Tabla2Condicion7 } from '../interfaces/tabla2Condicion7.interface';
 import { map } from 'rxjs/operators';
+import { Tabla3Condicion7 } from '../interfaces/tabla3-condicion7';
 
 @Injectable({
   providedIn: 'root'
 })
 export class Tabla3Condicion7Service {
-  condicionRegistroURL = 'https://saces-8f3e0.firebaseio.com/tabla2condicion7.json';
-  condicionURL = 'https://saces-8f3e0.firebaseio.com/tabla2condicion7/';
+  condicionRegistroURL = 'https://saces-8f3e0.firebaseio.com/tabla3condicion7.json';
+  condicionURL = 'https://saces-8f3e0.firebaseio.com/tabla3condicion7/';
 
   constructor(private http: Http) { }
-  nuevoInvocador( tabla2condicion7: Tabla2Condicion7) {
-    const body = JSON.stringify(tabla2condicion7);
+  nuevoInvocador( tabla3condicion7: Tabla3Condicion7) {
+    const body = JSON.stringify(tabla3condicion7);
     const headers = new Headers({
       'Content-Type': 'application/json'
     });
@@ -21,7 +21,7 @@ export class Tabla3Condicion7Service {
       return res.json();
     }));
   }
-  actualizarInvocador( invocador: Tabla2Condicion7, key$: string ) {
+  actualizarInvocador( invocador: Tabla3Condicion7, key$: string ) {
     const body = JSON.stringify(invocador);
     const headers = new Headers({
       'Content-Type': 'application/json'
@@ -46,11 +46,10 @@ export class Tabla3Condicion7Service {
     return this.http.delete(url).pipe(map( res => res.json()));
   }
 }
-export interface Tabla2Condicion7 {
+export interface Tabla3Condicion7 {
   idx?: number;
   nombregrup: string;
   tipoA: string;
   tipoTop: string;
   total: string;
-  grupinterdis: string;
 }

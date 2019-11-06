@@ -127,7 +127,7 @@ export class FormTabla1Condicion7Component implements OnInit {
     return this.range;
   }
   agregarNuevo( forma: NgForm) {
-    this.router.navigate(['/Modal', 'nuevo']);
+    this.router.navigate(['/ModalTabla1', 'nuevo']);
     forma.reset({});
   }
   ngOnInit() {

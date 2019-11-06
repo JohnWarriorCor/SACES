@@ -80,7 +80,7 @@ export class ModalContainerTabla1Component implements OnDestroy {
     console.log(this.tabla1cond7);
     if ( this.id === 'nuevo' ) {
       this._CONDICIONSERVICES.nuevoInvocador(this.tabla1cond7 ).subscribe(data => {
-        this.router.navigate(['/Modal', data.name]);
+        this.router.navigate(['/ModalTabla1', data.name]);
       },
       error => console.error(error));
     } else {
@@ -95,7 +95,7 @@ export class ModalContainerTabla1Component implements OnDestroy {
     modalRef.componentInstance.name = 'World';
   }
   agregarNuevo( forma: NgForm) {
-    this.router.navigate(['/Modal', 'nuevo']);
+    this.router.navigate(['/ModalTabla1', 'nuevo']);
     forma.reset({});
   }
   ngOnDestroy() {

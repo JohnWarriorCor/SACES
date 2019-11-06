@@ -3,17 +3,17 @@ import { TituloService } from '../../services/titulo.service';
 import { NavbarService } from '../../services/navbar.service';
 import { PropiedadIntelectualService } from '../../services/propiedad-intelectual.service';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { FormTabla2Condicion7Component } from './modals/form-tabla2-condicion7.component';
 import { ModalUnoComponent } from './modal-uno.component';
-import { Tabla2Condicion7Service } from '../../services/tabla2-condicion7.service';
 // MODAL
 import { Router, ActivatedRoute} from '@angular/router';
 import { FormGroup, NgForm, FormControl, Validators, FormArray } from '@angular/forms';
 import { Tabla2Condicion7 } from '../../interfaces/tabla2Condicion7.interface';
 import { ModalContainerComponent } from 'src/app/modal-container.component';
 import { Routes, RouterModule } from '@angular/router';
-import { FormTabla1Condicion7Component } from './modals/form-tabla1-condicion7.component';
 import { Tabla1Condicion7Service } from '../../services/tabla1-condicion7.service';
+import { Tabla2Condicion7Service } from '../../services/tabla2-condicion7.service';
+import { Tabla3Condicion7Service } from '../../services/tabla3-condicion7.service';
+import { Tabla4Condicion7Service } from '../../services/tabla4-condicion7.service';
 
 @Component({
   selector: 'app-condicion-siete',
@@ -25,10 +25,12 @@ export class CondicionSieteComponent implements OnInit {
   closeResult: string;
   tabla1condicione7: any[] = [];
   tabla2condicione7: any[] = [];
+  tabla3condicione7: any[] = [];
+  tabla4condicione7: any[] = [];
   loading = true;
   modalReference: any;
   // tslint:disable-next-line:max-line-length
-  constructor( private router: Router, private activatedRoute: ActivatedRoute, private ServicioTabla1: Tabla1Condicion7Service, private ServicioTabla2: Tabla2Condicion7Service, private modalService: NgbModal, public prop: PropiedadIntelectualService, private headerTitleService: TituloService, public nav: NavbarService) {
+  constructor( private router: Router, private activatedRoute: ActivatedRoute, private ServicioTabla1: Tabla1Condicion7Service, private ServicioTabla2: Tabla2Condicion7Service, private ServicioTabla3: Tabla3Condicion7Service, private ServicioTabla4: Tabla4Condicion7Service, private modalService: NgbModal, public prop: PropiedadIntelectualService, private headerTitleService: TituloService, public nav: NavbarService) {
     this.ServicioTabla1.getInvocadores().subscribe( data => {
       setTimeout(() => {
         this.loading = false;
@@ -39,6 +41,18 @@ export class CondicionSieteComponent implements OnInit {
       setTimeout(() => {
         this.loading = false;
         this.tabla2condicione7 = data;
+      }, 0);
+    });
+    this.ServicioTabla3.getInvocadores().subscribe( data => {
+      setTimeout(() => {
+        this.loading = false;
+        this.tabla3condicione7 = data;
+      }, 0);
+    });
+    this.ServicioTabla4.getInvocadores().subscribe( data => {
+      setTimeout(() => {
+        this.loading = false;
+        this.tabla4condicione7 = data;
       }, 0);
     });
   }
@@ -62,6 +76,26 @@ export class CondicionSieteComponent implements OnInit {
       }
     });
   }
+  borrarRegistroTabla3( key$: string) {
+    this.ServicioTabla3.borrarInvocador(key$).subscribe( respuesta => {
+      if ( respuesta ) {
+        console.error(respuesta);
+      } else {
+        delete this.tabla3condicione7[key$];
+        this.modalReference.close();
+      }
+    });
+  }
+  borrarRegistroTabla4( key$: string) {
+    this.ServicioTabla4.borrarInvocador(key$).subscribe( respuesta => {
+      if ( respuesta ) {
+        console.error(respuesta);
+      } else {
+        delete this.tabla4condicione7[key$];
+        this.modalReference.close();
+      }
+    });
+  }
   ngOnInit() {
     this.headerTitleService.setTitle('PROFESORES');
     this.nav.show();
@@ -73,13 +107,13 @@ export class CondicionSieteComponent implements OnInit {
   openSm2(content) {
     this.modalReference = this.modalService.open(content, { size: 'sm' });
   }
-  open() {
-    const modalRef = this.modalService.open(FormTabla2Condicion7Component);
-    modalRef.componentInstance.name = 'World';
+  openSm3(content) {
+    this.modalReference = this.modalService.open(content, { size: 'sm' });
   }
-  open2() {
-    const modalRef = this.modalService.open(FormTabla1Condicion7Component);
-    modalRef.componentInstance.name = 'World';
+  openSm4(content) {
+    this.modalReference = this.modalService.open(content, { size: 'sm' });
   }
-
+  openSm5(content) {
+    this.modalReference = this.modalService.open(content, { size: 'sm' });
+  }
 }

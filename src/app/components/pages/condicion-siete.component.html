@@ -1,14 +1,15 @@
 <div class="container animated fadeIn fast">
-  <br>
+  <br><br>
   <h5 class="text-uppercase">NÚMERO DE DOCENTES POR VINCULACIÓN</h5>
+  <br><br>
   <table bordercolor="black" class="table table-bordered" *ngFor="let k of tabla1condicione7 | keys; let i = index">
     <thead>
-      <tr class="text-center">
+      <tr class="text-center navlinkinSolid">
         <th rowspan="2" scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">TIPO DE VINCULACIÓN</th>
         <th rowspan="2" scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">número de docentes</th>
         <th colspan="7" scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">nivel de formación</th>
       </tr>
-      <tr class="text-center">
+      <tr class="text-center navlinkinSolid">
         <th scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">no. técnicos</th>
         <th scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">no. tecnólogos</th>
         <th scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">no. profesionales</th>
@@ -20,7 +21,7 @@
     </thead>
     <tbody>
       <tr>
-        <th scope="row" class="text-uppercase align-middle borden text-center" style="font-size: 11.5px">Tiempo completo</th>
+        <th scope="row" class="text-uppercase align-middle borden text-center navlinkinSolid" style="font-size: 11.5px">Tiempo completo</th>
         <td class="align-middle text-center">
           {{ tabla1condicione7[k].totalTC }}
         </td>
@@ -47,7 +48,7 @@
         </td>
       </tr>
       <tr>
-        <th scope="row" class="text-uppercase align-middle borden text-center" style="font-size: 12px">Medio Tiempo</th>
+        <th scope="row" class="text-uppercase align-middle borden text-center navlinkinSolid" style="font-size: 12px">Medio Tiempo</th>
         <td class="align-middle text-center">
           {{ tabla1condicione7[k].totalMT }}
         </td>
@@ -74,7 +75,7 @@
         </td>
       </tr>
       <tr>
-        <th scope="row" class="text-uppercase align-middle borden text-center" style="font-size: 12px">catedra</th>
+        <th scope="row" class="text-uppercase align-middle borden text-center navlinkinSolid" style="font-size: 12px">catedra</th>
         <td class="align-middle text-center">
           {{ tabla1condicione7[k].totalC }}
         </td>
@@ -133,14 +134,14 @@
   <br>
   <table class="table table-bordered">
     <thead>
-      <tr class="text-center">
+      <tr class="text-center navlinkinSolid">
         <th rowspan="2" scope="col" class="text-uppercase align-middle borden">GRUPOS DE INVESTIGACIÓN NOMBRE</th>
         <th colspan="5" scope="col" class="text-uppercase align-middle borden">CLASIFICACIÓN EN COLCIENCIAS</th>
         <th rowspan="2" scope="col" class="text-uppercase align-middle borden">OTROS GRUPOS</th>
         <th rowspan="2" scope="col" class="text-uppercase align-middle borden">GRUPOS INTERDISCIPLINARIOS</th>
         <th rowspan="2" scope="col" class="text-uppercase align-middle borden">Acciones</th>
       </tr>
-      <tr class="text-center">
+      <tr class="text-center navlinkinSolid">
         <th scope="col" class="text-uppercase align-middle borden">A1</th>
         <th scope="col" class="text-uppercase align-middle borden">A</th>
         <th scope="col" class="text-uppercase align-middle borden">B</th>
@@ -213,51 +214,130 @@
   <h5 class="text-uppercase">publicación revista especializada</h5>
   <table class="table table-bordered">
     <thead>
-      <tr>
-        <th scope="col" rowspan="2" class="text-uppercase align-middle borden text-center">Grupo</th>
-        <th scope="col" colspan="2" class="text-uppercase align-middle borden text-center">Clasificación</th>
-        <th scope="col" rowspan="2" class="text-uppercase align-middle borden text-center">Total</th>
+      <tr class="text-center navlinkinSolid">
+        <th scope="col" rowspan="2" class="text-uppercase align-middle borden">Grupo</th>
+        <th scope="col" colspan="2" class="text-uppercase align-middle borden">Clasificación</th>
+        <th scope="col" rowspan="2" class="text-uppercase align-middle borden">Total</th>
+        <th rowspan="2" scope="col" class="text-uppercase align-middle borden">Acciones</th>
       </tr>
-      <tr>
-        <th scope="col" class="text-uppercase align-middle borden text-center">Tipo A</th>
-        <th scope="col" class="text-uppercase align-middle borden text-center">Tipo Top</th>
+      <tr class="text-center navlinkinSolid">
+        <th scope="col" class="text-uppercase align-middle borden">Tipo A</th>
+        <th scope="col" class="text-uppercase align-middle borden">Tipo Top</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+      <tr *ngFor="let k of tabla3condicione7 | keys; let i = index">
+        <td class="align-middle text-center">
+          {{ tabla3condicione7[k].nombregrup }}
+        </td>
+        <td class="align-middle text-center">
+          {{ tabla3condicione7[k].tipoA }}
+        </td>
+        <td class="align-middle text-center">
+          {{ tabla3condicione7[k].tipoTop }}
+        </td>
+        <td class="align-middle text-center">
+          {{ tabla3condicione7[k].total }}
+        </td>
+        <td class="align-middle text-center">
+              <div class="row justify-content-center">
+                <div class="col" style="margin: 0px; padding: 0px;">
+                    <button class="btn navlinkin" (click)="openSm3(content)" style="width: 80%;margin: 1px;padding: 2px;"><span class="far fa-trash-alt"></span> Borrar</button>
+                    <ng-template #content let-modal>
+                        <div class="modal-header text-center navlinkin">
+                          <h4 class="modal-title" style="margin-left:45px;">¡PRECAUCIÓN!</h4>
+                        </div>
+                        <div class="modal-body text-center">
+                          <p class="alert alert-danger text-uppercase">Está a punto de borrar el registro<br>¿Está seguro de ejecutar la acción?</p>
+                          <div class="row align-content-center">
+                            <div class="col text-center">
+                              <button (click)="borrarRegistroTabla3(k)" class="btn btn-info">Aceptar</button>  
+                            </div>
+                            <div class="col text-center">
+                              <button class="btn btn-danger" (click)="modal.close('Close click')">Cancelar</button>
+                            </div>
+                          </div>
+                        </div>
+                    </ng-template>
+                </div>
+                <div class="col" style="margin: 0px; padding: 0px;">
+                    <button [routerLink]="['/ModalTabla3', k]" class="btn navlinkin" style="width: 80%;margin: 1px;padding: 2px;"><span class="fas fa-pencil-alt"></span> Editar</button>
+                </div>                  
+              </div>
+        </td>
       </tr>
     </tbody>
   </table>
-  <button class="btn botonUscoPerfil" routerLinkActive="active" [routerLink]="['/ModalTabla3']" >Nuevo registro</button>
+  <button class="btn botonUscoPerfil" routerLinkActive="active" [routerLink]="['/ModalTabla3', 'nuevo']" >Nuevo registro</button>
   <hr>
   <h5 class="text-uppercase">Estudiantes por año</h5>
   <table class="table table-bordered">
     <thead>
-      <tr>
-        <th scope="col" class="text-uppercase align-middle borden text-center">Año y periódo</th>
-        <th scope="col" class="text-uppercase align-middle borden text-center">Estudiantes inscritos</th>
-        <th scope="col" class="text-uppercase align-middle borden text-center">Graduados</th>
-        <th scope="col" class="text-uppercase align-middle borden text-center">Egresados</th>
-        <th scope="col" class="text-uppercase align-middle borden text-center">(%) Tasa deserción SPADIES </th>
-        <th scope="col" class="text-uppercase align-middle borden text-center">(%) Tasa deserción </th>
+      <tr class="text-center navlinkinSolid">
+        <th scope="col" class="text-uppercase align-middle borden">Año y periódo</th>
+        <th scope="col" class="text-uppercase align-middle borden">Estudiantes inscritos</th>
+        <th scope="col" class="text-uppercase align-middle borden">Graduados</th>
+        <th scope="col" class="text-uppercase align-middle borden">Egresados</th>
+        <th scope="col" class="text-uppercase align-middle borden">(%) Tasa deserción SPADIES </th>
+        <th scope="col" class="text-uppercase align-middle borden">(%) Tasa deserción </th>
+        <th scope="col" class="text-uppercase align-middle borden">Acciones</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+      <tr *ngFor="let k of tabla4condicione7 | keys; let i = index">
+        <td class="align-middle text-center">
+          {{ tabla4condicione7[k].anio }}-{{ tabla4condicione7[k].periodo }}
+        </td>
+        <td class="align-middle text-center">
+          {{ tabla4condicione7[k].estudiantesIns }}
+        </td>
+        <td class="align-middle text-center">
+          {{ tabla4condicione7[k].graduados }}
+        </td>
+        <td class="align-middle text-center">
+          {{ tabla4condicione7[k].egresados }}
+        </td>
+        <td class="align-middle text-center">
+          {{ tabla4condicione7[k].tasaDesSpa }}
+        </td>
+        <td class="align-middle text-center">
+          {{ tabla4condicione7[k].tasaDes }}
+        </td>
+        <td>
+            <ng-template #popContent>
+              <div class="row justify-content-center">
+                <button [routerLink]="['/ModalTabla4', k]" class="btn navlinkin" style="width: 80%;margin: 1px;padding: 0;"><span class="fas fa-pencil-alt"></span> Editar</button>
+              </div>
+              <div class="row justify-content-center">
+                  <button class="btn navlinkin" (click)="openSm4(content)" style="width: 80%;margin: 1px;padding: 0;"><span class="far fa-trash-alt"></span> Borrar</button>
+                  <ng-template #content let-modal>
+                      <div class="modal-header text-center navlinkin">
+                        <h4 class="modal-title" style="margin-left:45px;">¡PRECAUCIÓN!</h4>
+                      </div>
+                      <div class="modal-body text-center">
+                        <p class="alert alert-danger text-uppercase">Está a punto de borrar el registro<br>¿Está seguro de ejecutar la acción?</p>
+                        <div class="row align-content-center">
+                          <div class="col text-center">
+                            <button (click)="borrarRegistroTabla4(k)" class="btn btn-info">Aceptar</button>  
+                          </div>
+                          <div class="col text-center">
+                            <button class="btn btn-danger" (click)="modal.close('Close click')">Cancelar</button>
+                          </div>
+                        </div>
+                      </div>
+                  </ng-template>
+              </div>
+            </ng-template>
+          <div class="row justify-content-center">
+            <button style="padding: 2px;margin: 2px;" type="button" popoverClass="popUp" class="btn navlinkin" placement="right" popoverTitle="Opciones" [autoClose]="'outside'" [ngbPopover]="popContent">
+              Opciones
+            </button>
+          </div>
+      </td>
       </tr>
     </tbody>
   </table>
-  <button class="btn botonUscoPerfil" routerLinkActive="active" [routerLink]="['/ModalTabla4']" >Nuevo registro</button>
+  <button class="btn botonUscoPerfil" routerLinkActive="active" [routerLink]="['/ModalTabla4', 'nuevo']" >Nuevo registro</button>
   <hr>
   <h5 class="text-uppercase">Porcentaje de dedicación docentes</h5>
   <table class="table table-bordered">

@@ -2,10 +2,10 @@ import { Component, Input, OnInit } from '@angular/core';
 import { NgbActiveModal, NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Router, ActivatedRoute} from '@angular/router';
 import { FormGroup, NgForm, FormControl, Validators, FormArray } from '@angular/forms';
-import { Tabla2Condicion7 } from '../../../interfaces/tabla2Condicion7.interface';
-import { Tabla2Condicion7Service } from '../../../services/tabla2-condicion7.service';
 import { FuncionesCompartidasService } from '../../../services/funciones-compartidas.service';
 import {formatDate } from '@angular/common';
+import { Tabla4Condicion7Service } from '../../../services/tabla4-condicion7.service';
+import { Tabla4Condicion7 } from '../../../interfaces/tabla4-condicion7';
 
 @Component({
   selector: 'app-form-tabla4-condicion7',
@@ -20,20 +20,19 @@ export class FormTabla4Condicion7Component implements OnInit {
   controls: any;
   nuevo = false;
   id: string;
-  tabla2cond7: Tabla2Condicion7 = {
-    nombregrupinves: '',
-    clasificaciongrupinvesA1: '',
-    clasificaciongrupinvesA: '',
-    clasificaciongrupinvesB: '',
-    clasificaciongrupinvesC: '',
-    clasificaciongrupinvesR: '',
-    otrosgrup: '',
-    grupinterdis: '',
+  tabla4cond7: Tabla4Condicion7 = {
+    anio: '',
+    periodo: '',
+    estudiantesIns: '',
+    graduados: '',
+    egresados: '',
+    tasaDesSpa: '',
+    tasaDes: '',
   };
 
 
   // tslint:disable-next-line:max-line-length
-  constructor(private sharedService: FuncionesCompartidasService, private modalService: NgbModal, private _CONDICIONSERVICES: Tabla2Condicion7Service, private router: Router, private activatedRoute: ActivatedRoute, config: NgbModalConfig, public activeModal: NgbActiveModal) {
+  constructor(private sharedService: FuncionesCompartidasService, private modalService: NgbModal, private _CONDICIONSERVICES: Tabla4Condicion7Service, private router: Router, private activatedRoute: ActivatedRoute, config: NgbModalConfig, public activeModal: NgbActiveModal) {
     // customize default values of modals used by this component tree
     config.backdrop = 'static';
     config.keyboard = false;
@@ -44,7 +43,7 @@ export class FormTabla4Condicion7Component implements OnInit {
       console.log('SI PASÓ POR ACÁ');
       console.log(this.id);
       if ( this.id !== 'nuevo' ) {
-        this._CONDICIONSERVICES.getInvocador( this.id ).subscribe(tabla2cond7 => this.tabla2cond7 = tabla2cond7);
+        this._CONDICIONSERVICES.getInvocador( this.id ).subscribe(tabla4cond7 => this.tabla4cond7 = tabla4cond7);
       }
     });
   }
@@ -60,16 +59,16 @@ export class FormTabla4Condicion7Component implements OnInit {
     return this.range;
   }
   guardar() {
-    console.log(this.tabla2cond7);
+    console.log(this.tabla4cond7);
     if ( this.id === 'nuevo' ) {
-      this._CONDICIONSERVICES.nuevoInvocador(this.tabla2cond7 ).subscribe(data => {
+      this._CONDICIONSERVICES.nuevoInvocador(this.tabla4cond7 ).subscribe(data => {
         // this.router.navigate(['/Modal', data.name]);
         this.router.navigate(['/Profesor']);
         this.activeModal.dismiss();
       },
       error => console.error(error));
     } else {
-      this._CONDICIONSERVICES.actualizarInvocador( this.tabla2cond7, this.id ).subscribe(data => {
+      this._CONDICIONSERVICES.actualizarInvocador( this.tabla4cond7, this.id ).subscribe(data => {
         console.log(data);
         this.router.navigate(['/Profesor']);
         this.activeModal.dismiss();
@@ -82,7 +81,7 @@ export class FormTabla4Condicion7Component implements OnInit {
     modalRef.componentInstance.name = 'World';
   }
   agregarNuevo( forma: NgForm) {
-    this.router.navigate(['/Modal', 'nuevo']);
+    this.router.navigate(['/ModalTabla4', 'nuevo']);
     forma.reset({});
   }
 }

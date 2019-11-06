@@ -4,11 +4,11 @@
       <i class="fas fa-times-circle"></i>
     </a>
   </div>
-  <form #forma="ngForm">
+  <form (ngSubmit)="guardar()" #forma="ngForm">
   <div class="modal-body">
   <div class="form-group">
     <label class="text-uppercase gray">grupo</label>
-    <input id="nombregrupinves" name="nombregrupinves" type="text" class="form-control shadow p-3 inputPaciente" placeholder="Nombre del grupo">
+    <input [(ngModel)]="tabla3cond7.nombregrup" id="nombregrupinves" name="nombregrupinves" type="text" class="form-control shadow p-3 inputPaciente" placeholder="Nombre del grupo">
   </div>
   <hr>
   <div class="form-group text-center">
@@ -16,15 +16,15 @@
     <div class="row">
       <div class="col">
           <label class="text-uppercase gray">tipo a</label>
-          <input id="nombregrupinves" autocomplete="false" min="0" name="nombregrupinves" type="number" class="form-control shadow p-3 inputPaciente" autocomplete="off" placeholder="0">
+          <input [(ngModel)]="tabla3cond7.tipoA" [(ngModel)]="tipoa" (input)="calcularTipoClasificacion()" id="nombregrupinves" autocomplete="false" min="0" name="nombregrupinves" type="number" class="form-control shadow p-3 inputPaciente" autocomplete="off" placeholder="0">
       </div>
       <div class="col">
           <label class="text-uppercase gray">Tipo top</label>
-          <input id="nombregrupinves" autocomplete="false" min="0" name="nombregrupinves" type="number" class="form-control shadow p-3 inputPaciente" autocomplete="off" placeholder="0">
+          <input [(ngModel)]="tabla3cond7.tipoTop" [(ngModel)]="tipotop" (input)="calcularTipoClasificacion()" id="nombregrupinves" autocomplete="false" min="0" name="nombregrupinves" type="number" class="form-control shadow p-3 inputPaciente" autocomplete="off" placeholder="0">
       </div>
       <div class="col">
           <label for="inputAddress" class="text-uppercase gray">total</label>
-          <input id="otrosgrup" name="otrosgrup" type="number" class="form-control shadow p-3 inputPaciente" autocomplete="off" placeholder="0" readonly="false" placement="top" ngbTooltip="Este campo es automático">
+          <input [value]="tabla3cond7.total" id="otrosgrup" [(ngModel)]="tabla3cond7.total" name="otrosgrup" type="number" class="form-control shadow p-3 inputPaciente" autocomplete="off" placeholder="0" readonly="false" placement="top" ngbTooltip="Este campo es automático">
       </div>
     </div>
   </div>
