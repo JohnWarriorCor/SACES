@@ -370,8 +370,8 @@
   <hr>
   <h5 class="text-uppercase">Docentes por año y nivel de formación</h5>
   <table class="table table-bordered">
-    <thead>
-      <tr class="text-center">
+    <thead class="text-center navlinkinSolid">
+      <tr>
         <th rowspan="2" scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">Año y periodo</th>
         <th rowspan="2" scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">Dedicación</th>
         <th rowspan="2" scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">Total</th>
@@ -387,22 +387,88 @@
         <th scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">Postdoctorados</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody style="font-size: 12px" *ngFor="let k of tabla1condicione7 | keys; let i = index">
       <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td class="align-middle text-center" rowspan="3">
+          {{ tabla1condicione7[k].anio }}-{{ tabla1condicione7[k].periodo }}
+        </td>
+        <td class="align-middle text-center">TIEMPO COMPLETO</td>
+        <td class="align-middle text-center">{{ tabla1condicione7[k].totalTC }}</td>
+        <td class="align-middle text-center">
+          {{ tabla1condicione7[k].numTecnTC }}
+        </td>
+        <td class="align-middle text-center">
+          {{ tabla1condicione7[k].numTeclTC }}
+        </td>
+        <td class="align-middle text-center">
+          {{ tabla1condicione7[k].numProTC }}
+        </td>
+        <td class="align-middle text-center">
+          {{ tabla1condicione7[k].numEspTC }}
+        </td>
+        <td class="align-middle text-center">
+          {{ tabla1condicione7[k].numMagTC }}
+        </td>
+        <td class="align-middle text-center">
+          {{ tabla1condicione7[k].numDocTC }}
+        </td>
+        <td class="align-middle text-center">
+          {{ tabla1condicione7[k].numPosTC }}
+        </td>
+      </tr>
+      <tr>
+        <td class="align-middle text-center">MEDIO TIEMPO</td>
+        <td class="align-middle text-center">{{ tabla1condicione7[k].totalMT }}</td>
+        <td class="align-middle text-center">
+          {{ tabla1condicione7[k].numTecnMT }}
+        </td>
+        <td class="align-middle text-center">
+          {{ tabla1condicione7[k].numTeclMT }}
+        </td>
+        <td class="align-middle text-center">
+          {{ tabla1condicione7[k].numProMT }}
+        </td>
+        <td class="align-middle text-center">
+          {{ tabla1condicione7[k].numEspMT }}
+        </td>
+        <td class="align-middle text-center">
+          {{ tabla1condicione7[k].numMagMT }}
+        </td>
+        <td class="align-middle text-center">
+          {{ tabla1condicione7[k].numDocMT }}
+        </td>
+        <td class="align-middle text-center">
+          {{ tabla1condicione7[k].numPosMT }}
+        </td>
+      </tr>
+      <tr>
+        <td class="align-middle text-center">CATEDRA</td>
+        <td class="align-middle text-center">{{ tabla1condicione7[k].totalC }}</td>
+        <td class="align-middle text-center">
+          {{ tabla1condicione7[k].numTecnC }}
+        </td>
+        <td class="align-middle text-center">
+          {{ tabla1condicione7[k].numTeclC }}
+        </td>
+        <td class="align-middle text-center">
+          {{ tabla1condicione7[k].numProC }}
+        </td>
+        <td class="align-middle text-center">
+          {{ tabla1condicione7[k].numEspC }}
+        </td>
+        <td class="align-middle text-center">
+          {{ tabla1condicione7[k].numMagC }}
+        </td>
+        <td class="align-middle text-center">
+          {{ tabla1condicione7[k].numDocC }}
+        </td>
+        <td class="align-middle text-center">
+          {{ tabla1condicione7[k].numPosC }}
+        </td>
       </tr>
     </tbody>
   </table>
-  <button class="btn botonUscoPerfil" routerLinkActive="active" [routerLink]="['/ModalTabla6']" >Nuevo registro</button>
+  <br><br>
   <hr>
   <div class="accordion" id="accordionExample" style="border-bottom-style: solid;border-color: #cccccc;;border-width: 1px;">
     <div class="card">
