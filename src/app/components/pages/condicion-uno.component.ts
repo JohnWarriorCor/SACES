@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Runner } from 'protractor';
-import {formatDate } from '@angular/common';
+import { formatDate } from '@angular/common';
 import { Router, ActivatedRoute} from '@angular/router';
 import { invalid } from '@angular/compiler/src/render3/view/util';
 import { of } from 'rxjs';
@@ -16,7 +16,7 @@ import { FormGroup, NgForm, FormControl, Validators, FormArray } from '@angular/
 import { Condicion1 } from '../../interfaces/condicion1.interface';
 import { Condicion1Service } from '../../services/condicion1.service';
 import { PropiedadIntelectualService } from '../../services/propiedad-intelectual.service';
-import {NgbProgressbarConfig} from '@ng-bootstrap/ng-bootstrap';
+import { NgbProgressbarConfig } from '@ng-bootstrap/ng-bootstrap';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalUnoComponent } from './modal-uno.component';
 @Component({

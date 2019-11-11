@@ -18,13 +18,15 @@ import { ModalContainerTabla3Component } from './modal-container-tabla3.componen
 import { ModalContainerTabla4Component } from './modal-container-tabla4.component';
 import { ModalContainerTabla5Component } from './modal-container-tabla5.component';
 import { ModalContainerTabla6Component } from './modal-container-tabla6.component';
+import { CondicionCeroViewComponent } from './components/pages/condicion-cero-view.component';
 
 
 
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'HistoriaInstitucional', component: CondicionCeroComponent },
+  { path: 'HistoriaInstitucionalForm/:id', component: CondicionCeroComponent },
+  { path: 'HistoriaInstitucional', component: CondicionCeroViewComponent },
   { path: 'DenominacionDelPrograma/:id', component: CondicionUnoComponent },
   { path: 'Modal/:id', component: ModalContainerComponent },
   { path: 'ModalTabla1/:id', component: ModalContainerTabla1Component },

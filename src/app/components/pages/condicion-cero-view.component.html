@@ -1,0 +1,47 @@
+<div class="container">
+  <div class=" animated fadeIn fast" *ngFor="let k of historia | keys; let i = index">
+      <br>
+      <h2 class="gray text-left titulosHistoria">Reseña Histórica</h2>
+      <p class="text-justify gray">
+        {{historia[k].reseniaHist}}
+      </p>
+      <h2 class="gray text-left titulosHistoria">Misión</h2>
+      <p class="text-justify gray">
+        {{historia[k].mision}}
+      </p>
+      <h2 class="gray text-left titulosHistoria">Visión</h2>
+      <p class="text-justify gray">
+        {{historia[k].vision}}
+      </p>
+      <h2 class="gray text-left titulosHistoria">Objetivos</h2>
+      <p class="text-justify gray">
+        {{historia[k].objetivos}}
+      </p>
+      <hr>
+      <br>
+      <div class="col-md-12 text-right p-3">
+          <button style="width: 15%; font-size: 100%; margin: 5px;" [routerLink]="['/HistoriaInstitucionalForm', k]" class="btn botonUsco"><span class="fas fa-pencil-alt"> </span> Editar</button>
+          <button style="width: 15%; font-size: 100%; margin: 5px;" class="btn botonUsco" (click)="openSm(content)"><span class="far fa-trash-alt"></span> Borrar</button>
+          <ng-template #content let-modal>
+              <div class="modal-header text-center navlinkin">
+                <h4 class="modal-title" style="margin-left:45px;">¡PRECAUCIÓN!</h4>
+              </div>
+              <div class="modal-body text-center">
+                <p class="alert alert-danger text-uppercase">Está a punto de borrar toda la historia institucional <br> presione aceptar para borrar o cancelar para salir</p>
+                <div class="row align-content-center">
+                  <div class="col text-center">
+                    <button (click)="borrarHistoria(k)" routerLinkActive="router-link-active"  class="btn btn-info">Aceptar</button>  
+                  </div>
+                  <div class="col text-center">
+                    <button class="btn btn-danger" (click)="modal.close('Close click')">Cancelar</button>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+      </div>
+  </div>
+  <div class="col-md-12 text-right p-3">
+    <button style="width: 15%; font-size: 100%; margin: 5px" [routerLink]="['/HistoriaInstitucionalForm', 'nuevo']" class="btn botonUsco" type="button"><i class="fas fa-clipboard-list"></i> Nuevo</button>
+  </div>
+  <a (click)="up()"><i class="irArriba fas fa-chevron-up"></i></a>
+</div>

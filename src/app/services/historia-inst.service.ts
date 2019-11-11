@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers  } from '@angular/http';
 import { map } from 'rxjs/operators';
-import { Tabla5Condicion7 } from '../interfaces/tabla5-condicion7';
+import { HistoriaInst } from '../interfaces/historia-inst';
 
 @Injectable({
   providedIn: 'root'
 })
-export class Tabla5Condicion7Service {
-  condicionRegistroURL = 'https://saces-8f3e0.firebaseio.com/tabla5condicion7.json';
-  condicionURL = 'https://saces-8f3e0.firebaseio.com/tabla5condicion7/';
+export class HistoriaInstService {
 
-  constructor(private http: Http) { }
-  nuevoInvocador( tabla5condicion7: Tabla5Condicion7) {
-    const body = JSON.stringify(tabla5condicion7);
+  condicionRegistroURL = 'https://saces-8f3e0.firebaseio.com/historiaInst.json';
+  condicionURL = 'https://saces-8f3e0.firebaseio.com/historiaInst/';
+
+  constructor( private http: Http) { }
+  nuevoHistoria( condicion1: HistoriaInst) {
+    const body = JSON.stringify(condicion1);
     const headers = new Headers({
       'Content-Type': 'application/json'
     });
@@ -21,7 +22,7 @@ export class Tabla5Condicion7Service {
       return res.json();
     }));
   }
-  actualizarInvocador( invocador: Tabla5Condicion7, key$: string ) {
+  actualizarHistoria( invocador: HistoriaInst, key$: string ) {
     const body = JSON.stringify(invocador);
     const headers = new Headers({
       'Content-Type': 'application/json'
@@ -34,26 +35,22 @@ export class Tabla5Condicion7Service {
     }));
 
   }
-  getInvocador(key$: string) {
+  getHistoria(key$: string) {
     const url = `${ this.condicionURL }/${ key$ }.json`;
     return this.http.get( url ).pipe(map(res => res.json()));
   }
-  getInvocadores() {
+  getHistorias() {
     return this.http.get( this.condicionRegistroURL ).pipe(map(res => res.json()));
   }
-  borrarInvocador( key$: string) {
+  borrarHistoria( key$: string) {
     const url = `${ this.condicionURL }/${ key$ }.json`;
     return this.http.delete(url).pipe(map( res => res.json()));
   }
 }
-export interface Tabla5Condicion7 {
+export interface HistoriaInst {
   idx?: number;
-  anio: string;
-  periodo: string;
-  TC: string;
-  MT: string;
-  C: string;
-  tiempoDoc: string;
-  tiempoInv: string;
-  tiempoExt: string;
+  reseniaHist: string;
+  mision: string;
+  vision: string;
+  objetivos: string;
 }

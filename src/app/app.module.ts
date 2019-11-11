@@ -56,6 +56,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 import { NgDropFilesDirective } from './directives/ng-drop-files.directive';
+import { CondicionCeroViewComponent } from './components/pages/condicion-cero-view.component';
 // import { NgDropFilesDirective } from './directives/ng-drop-files.directive';
 
 @NgModule({
@@ -93,7 +94,8 @@ import { NgDropFilesDirective } from './directives/ng-drop-files.directive';
     FormTabla4Condicion7Component,
     FormTabla5Condicion7Component,
     FormTabla6Condicion7Component,
-    NgDropFilesDirective
+    NgDropFilesDirective,
+    CondicionCeroViewComponent
   ],
   imports: [
     NgbModule,

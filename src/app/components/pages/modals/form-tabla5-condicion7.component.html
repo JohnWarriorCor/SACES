@@ -4,14 +4,14 @@
       <i class="fas fa-times-circle"></i>
     </a>
   </div>
-  <form #forma="ngForm">
+  <form (ngSubmit)="guardar()" #forma="ngForm">
     <hr>
   <div class="modal-body">
     <div class="row">
     <div class="col-sm-2">
       <div class="form-group">
         <label for="inputAddress" class="text-uppercase gray">año</label>
-        <select class="form-control inputPaciente shadow" id="exampleFormControlSelect1">
+        <select [(ngModel)]="tabla5cond7.anio" [ngModelOptions]="{standalone: true}" class="form-control inputPaciente shadow" id="exampleFormControlSelect1">
           <option value="" disabled="disabled">Año</option>
           <option *ngFor="let ran of range" [value]="ran">{{ran}}</option>
         </select>
@@ -20,7 +20,7 @@
     <div class="col-sm-2">
       <div class="form-group">
         <label for="inputAddress" class="text-uppercase gray">periodo</label>
-        <input id="otrosgrup" min="1" max="2" name="otrosgrup" type="number" class="form-control shadow p-3 inputPaciente" autocomplete="off" placeholder="0">
+        <input [(ngModel)]="tabla5cond7.periodo" id="otrosgrup" min="1" max="2" name="otrosgrup" type="number" class="form-control shadow p-3 inputPaciente" autocomplete="off" placeholder="0">
       </div>
     </div>
   </div>
@@ -28,26 +28,26 @@
       <div class="col">
         <div class="form-group">
           <label for="inputAddress" class="text-uppercase gray">tiempo completo (2a)</label>
-          <input id="otrosgrup" name="otrosgrup" type="number" class="form-control shadow p-3 inputPaciente" autocomplete="off" placeholder="0">
+          <input min="0" [(ngModel)]="tabla5cond7.TC" id="otrosgrup" name="otrosgrup" type="number" class="form-control shadow p-3 inputPaciente" autocomplete="off" placeholder="0">
         </div>
       </div>
       <div class="col">
         <div class="form-group">
           <label for="inputAddress" class="text-uppercase gray">medio tiempo (2b)</label>
-          <input id="otrosgrup" name="otrosgrup" type="number" class="form-control shadow p-3 inputPaciente" autocomplete="off" placeholder="0">
+          <input min="0" [(ngModel)]="tabla5cond7.MT" id="otrosgrup" name="otrosgrup" type="number" class="form-control shadow p-3 inputPaciente" autocomplete="off" placeholder="0">
         </div>
       </div>
       <div class="col">
         <div class="form-group">
           <label for="inputAddress" class="text-uppercase gray">catedra (2c)</label>
-          <input id="otrosgrup" name="otrosgrup" type="number" class="form-control shadow p-3 inputPaciente" autocomplete="off" placeholder="0">
+          <input min="0" [(ngModel)]="tabla5cond7.C" id="otrosgrup" name="otrosgrup" type="number" class="form-control shadow p-3 inputPaciente" autocomplete="off" placeholder="0">
         </div>
       </div>
     </div>
     <div class="form-group">
       <label class="text-uppercase gray">DEDICACIÓN DE PROFESORES A LA DOCENCIA DE tiempo completo Y Medio tiempo</label>
       <div class="input-group mb-2">
-        <input id="nombregrupinves" name="nombregrupinves" type="number" min="0" max="100" class="form-control shadow p-3 inputPaciente" placeholder="">
+        <input min="0" autocomplete="off" [(ngModel)]="tabla5cond7.tiempoDoc" id="nombregrupinves" name="nombregrupinves" type="number" min="0" max="100" class="form-control shadow p-3 inputPaciente" placeholder="">
         <div class="input-group-prepend">
           <div class="input-group-text form-control shadow p-3 inputPaciente">%</div>
         </div>
@@ -56,7 +56,7 @@
     <div class="form-group">
       <label class="text-uppercase gray">DEDICACIÓN DE PROFESORES DE tiempo completo Y medio tiempo A LA INVESTIGACIÓN</label>
       <div class="input-group mb-2">
-        <input id="nombregrupinves" name="nombregrupinves" min="0" max="100" type="number" class="form-control shadow p-3 inputPaciente" placeholder="">
+        <input min="0" autocomplete="off" [(ngModel)]="tabla5cond7.tiempoInv" id="nombregrupinves" name="nombregrupinves" min="0" max="100" type="number" class="form-control shadow p-3 inputPaciente" placeholder="">
         <div class="input-group-prepend">
           <div class="input-group-text form-control shadow p-3 inputPaciente">%</div>
         </div>
@@ -65,7 +65,7 @@
     <div class="form-group">
       <label class="text-uppercase gray">DEDICACIÓN DE PROFESORES A LA EXTENSIÓN DE tiempo completo Y medio tiempo</label>
       <div class="input-group mb-2">
-        <input id="nombregrupinves" name="nombregrupinves" type="number" min="0" max="100" class="form-control shadow p-3 inputPaciente" placeholder="">
+        <input min="0" autocomplete="off" [(ngModel)]="tabla5cond7.tiempoExt" id="nombregrupinves" name="nombregrupinves" type="number" min="0" max="100" class="form-control shadow p-3 inputPaciente" placeholder="">
         <div class="input-group-prepend">
           <div class="input-group-text form-control shadow p-3 inputPaciente">%</div>
         </div>

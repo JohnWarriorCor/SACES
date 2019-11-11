@@ -2,18 +2,14 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { TituloService } from '../../services/titulo.service';
 import { NavbarService } from '../../services/navbar.service';
 import { PropiedadIntelectualService } from '../../services/propiedad-intelectual.service';
-import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ModalUnoComponent } from './modal-uno.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 // MODAL
 import { Router, ActivatedRoute} from '@angular/router';
-import { FormGroup, NgForm, FormControl, Validators, FormArray } from '@angular/forms';
-import { Tabla2Condicion7 } from '../../interfaces/tabla2Condicion7.interface';
-import { ModalContainerComponent } from 'src/app/modal-container.component';
-import { Routes, RouterModule } from '@angular/router';
 import { Tabla1Condicion7Service } from '../../services/tabla1-condicion7.service';
 import { Tabla2Condicion7Service } from '../../services/tabla2-condicion7.service';
 import { Tabla3Condicion7Service } from '../../services/tabla3-condicion7.service';
 import { Tabla4Condicion7Service } from '../../services/tabla4-condicion7.service';
+import { Tabla5Condicion7Service } from '../../services/tabla5-condicion7.service';
 
 @Component({
   selector: 'app-condicion-siete',
@@ -27,10 +23,11 @@ export class CondicionSieteComponent implements OnInit {
   tabla2condicione7: any[] = [];
   tabla3condicione7: any[] = [];
   tabla4condicione7: any[] = [];
+  tabla5condicione7: any[] = [];
   loading = true;
   modalReference: any;
   // tslint:disable-next-line:max-line-length
-  constructor( private router: Router, private activatedRoute: ActivatedRoute, private ServicioTabla1: Tabla1Condicion7Service, private ServicioTabla2: Tabla2Condicion7Service, private ServicioTabla3: Tabla3Condicion7Service, private ServicioTabla4: Tabla4Condicion7Service, private modalService: NgbModal, public prop: PropiedadIntelectualService, private headerTitleService: TituloService, public nav: NavbarService) {
+  constructor( private router: Router, private activatedRoute: ActivatedRoute, private ServicioTabla1: Tabla1Condicion7Service, private ServicioTabla2: Tabla2Condicion7Service, private ServicioTabla3: Tabla3Condicion7Service, private ServicioTabla4: Tabla4Condicion7Service, private ServicioTabla5: Tabla5Condicion7Service, private modalService: NgbModal, public prop: PropiedadIntelectualService, private headerTitleService: TituloService, public nav: NavbarService) {
     this.ServicioTabla1.getInvocadores().subscribe( data => {
       setTimeout(() => {
         this.loading = false;
@@ -53,6 +50,12 @@ export class CondicionSieteComponent implements OnInit {
       setTimeout(() => {
         this.loading = false;
         this.tabla4condicione7 = data;
+      }, 0);
+    });
+    this.ServicioTabla5.getInvocadores().subscribe( data => {
+      setTimeout(() => {
+        this.loading = false;
+        this.tabla5condicione7 = data;
       }, 0);
     });
   }
@@ -92,6 +95,16 @@ export class CondicionSieteComponent implements OnInit {
         console.error(respuesta);
       } else {
         delete this.tabla4condicione7[key$];
+        this.modalReference.close();
+      }
+    });
+  }
+  borrarRegistroTabla5( key$: string) {
+    this.ServicioTabla5.borrarInvocador(key$).subscribe( respuesta => {
+      if ( respuesta ) {
+        console.error(respuesta);
+      } else {
+        delete this.tabla5condicione7[key$];
         this.modalReference.close();
       }
     });
