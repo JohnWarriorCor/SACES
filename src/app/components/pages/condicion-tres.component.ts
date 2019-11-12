@@ -9,7 +9,9 @@ import { PropiedadIntelectualService } from '../../services/propiedad-intelectua
   styleUrls: ['./condicion-tres.component.css']
 })
 export class CondicionTresComponent implements OnInit {
-
+  // BOTON ASPECTOS - PREGUNTAS
+  show = false;
+  buttonName = 'Aspectos';
   constructor(public prop: PropiedadIntelectualService, private headerTitleService: TituloService, public nav: NavbarService) { }
 
   ngOnInit() {
@@ -17,5 +19,14 @@ export class CondicionTresComponent implements OnInit {
     this.nav.show();
     this.prop.hide();
   }
+  toggle() {
+    this.show = !this.show;
 
+    // CHANGE THE NAME OF THE BUTTON.
+    if (this.show) {
+      this.buttonName = 'Preguntas';
+    } else {
+      this.buttonName = 'Aspectos';
+    }
+  }
 }

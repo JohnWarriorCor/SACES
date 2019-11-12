@@ -1,9 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Runner } from 'protractor';
+import { Component, OnInit, ViewEncapsulation  } from '@angular/core';
 import { formatDate } from '@angular/common';
 import { Router, ActivatedRoute} from '@angular/router';
-import { invalid } from '@angular/compiler/src/render3/view/util';
-import { of } from 'rxjs';
 /*MODAL FUNCIONAL ERROR CIERRA RAPIDO
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalUnoComponent } from './modal-uno.component';
@@ -17,15 +14,21 @@ import { Condicion1 } from '../../interfaces/condicion1.interface';
 import { Condicion1Service } from '../../services/condicion1.service';
 import { PropiedadIntelectualService } from '../../services/propiedad-intelectual.service';
 import { NgbProgressbarConfig } from '@ng-bootstrap/ng-bootstrap';
-import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ModalUnoComponent } from './modal-uno.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-condicion-uno',
   templateUrl: './condicion-uno.component.html',
   styleUrls: ['./condicion-uno.component.css'],
-  providers: [NgbProgressbarConfig]
+  providers: [NgbProgressbarConfig],
+  encapsulation: ViewEncapsulation.None,
 })
 export class CondicionUnoComponent implements OnInit {
+  // BOTON ASPECTOS - PREGUNTAS
+  show = false;
+  buttonName = 'Aspectos';
+  // MODAL
+  closeResult: string;
+  // BARRA DE PROGRESO
   acumPuntos = 0.0;
   acumPuntos1 = 0.0;
   acumPuntos2 = 0.0;
@@ -43,6 +46,7 @@ export class CondicionUnoComponent implements OnInit {
   id: string;
   cond1: Condicion1 = {
     tipoprograma: '',
+    por1: 0,
     nombreprograma: '',
     respnombre: '',
     datenombre: '',
@@ -73,10 +77,6 @@ export class CondicionUnoComponent implements OnInit {
   constructor(private modalService: NgbModal, config: NgbProgressbarConfig, public prop: PropiedadIntelectualService, public nav: NavbarService, private headerTitleService: TituloService, private _CONDICIONSERVICES: Condicion1Service, private router: Router, private activatedRoute: ActivatedRoute) {
     config.striped = true;
     config.animated = true;
-    console.log(this.today);
-    console.log(this.fecha1);
-    // this.res = diferenciaEntreDiasEnDias(this.fecha1, this.today);
-    // console.log(this.res);
     this.jstoday = formatDate(this.today, 'dd/MM/yyyy', 'en-US', '-0500');
     this.activatedRoute.params.subscribe( parametros => {
       this.id = parametros.id;
@@ -85,18 +85,40 @@ export class CondicionUnoComponent implements OnInit {
       }
     });
   }
-  open() { }
+  ngOnInit() {
+    this.headerTitleService.setTitle('DENOMINACIÓN DEL PROGRAMA');
+    this.nav.show();
+    this.prop.hide();
+    this.myFunc1(this.fecha1Id);
+    this.myFunc2(this.fecha2Id);
+    this.myFunc3(this.fecha3Id);
+    // this.nav.doSomethingElseUseful();
+  }
+  toggle() {
+    this.show = !this.show;
+
+    // CHANGE THE NAME OF THE BUTTON.
+    if (this.show) {
+      this.buttonName = 'Preguntas';
+    } else {
+      this.buttonName = 'Aspectos';
+    }
+  }
+  openLg(content) {
+    this.modalService.open(content, { size: 'lg' });
+  }
+  progreso1() {
+    this.cond1.por1 = 100;
+    this.acumPuntos1 = this.acumPuntos1 + 100;
+    this.textoPuntos = String(this.acumPuntos1);
+    this.textoPuntos = this.textoPuntos + '%';
+    return [this.acumPuntos1, this.textoPuntos];
+  }
   progreso() {
     this.acumPuntos = this.acumPuntos + 8;
     this.textoPuntos = String(this.acumPuntos);
     this.textoPuntos = this.textoPuntos + '%';
     return [this.acumPuntos, this.textoPuntos];
-  }
-  progreso1() {
-    this.acumPuntos1 = this.acumPuntos1 + 100;
-    this.textoPuntos = String(this.acumPuntos1);
-    this.textoPuntos = this.textoPuntos + '%';
-    return [this.acumPuntos1, this.textoPuntos];
   }
   progreso2() {
     this.acumPuntos2 = this.acumPuntos2 + 34;
@@ -186,15 +208,6 @@ export class CondicionUnoComponent implements OnInit {
       const utc2 = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate());
       return Math.floor((utc1 - utc2) / (1000 * 60 * 60 * 24));
     }
-  }
-  ngOnInit() {
-    this.headerTitleService.setTitle('DENOMINACIÓN DEL PROGRAMA');
-    this.nav.show();
-    this.prop.hide();
-    this.myFunc1(this.fecha1Id);
-    this.myFunc2(this.fecha2Id);
-    this.myFunc3(this.fecha3Id);
-    // this.nav.doSomethingElseUseful();
   }
   /*openDialog() {
     const dialogRef = this.dialog.open(ModalUnoComponent);

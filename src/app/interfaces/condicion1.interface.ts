@@ -1,5 +1,6 @@
 export interface Condicion1 {
     tipoprograma: string;
+    por1: number;
     nombreprograma: string;
     respnombre: string;
     datenombre: string;

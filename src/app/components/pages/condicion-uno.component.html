@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container inicio">
   <br>
   <br>
   <form (ngSubmit)="guardar()" #forma="ngForm" class="text-center">
@@ -133,6 +133,20 @@
                         <button class="btn uscoButton" (click)="openFormModal()">Visualizar perfil</button>
                         -->
                         <button class="btn botonUscoPerfil">Ver perfil</button>
+                        <ng-template #content let-modal>
+                            <div class="modal-header">
+                              <h4 class="modal-title">Modal title</h4>
+                              <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <p>One fine body&hellip;</p>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+                            </div>
+                          </ng-template>
                     </div>
                     <div class="col">
                          <div class="row">
@@ -154,26 +168,40 @@
     <hr>
     <div class="accordion" id="accordionExample" style="border-bottom-style: solid;border-color: #cccccc;border-width: 1px;">
     <div class="card">
-      <div class="card-header" id="headingOne" style="background-color: #8F141B" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        <h2 class="mb-0">
-          <button class="btn btn-link navlinkin font-weight-bold text-uppercase" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            aspectos
-          </button>
-        </h2>
+      <div class="card-header" id="headingOne" style="background-color: #8F141B">
+        <div class="row">
+          <div class="col" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"></div>
+          <div class="col">
+            <h2 class="mb-0">
+              <button (click)="toggle()" id="bt" class="btn btn-link navlinkin font-weight-bold text-uppercase" type="button">
+                {{buttonName}}
+              </button>
+            </h2>
+          </div>
+          <div class="col" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"></div>
+        </div>
       </div>
       <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
         <div class="card-body">
               <h5 class="alert-warning text-center">Diligencie los campos y adjunte los archivos respectivos</h5><br>
-              <h6 class="gray text-left">1). Acto administrativo con el que se creó el programa y el órgano interno de dirección que aprobó dicha creación.</h6><br>
+              <h6 class="gray text-left" *ngIf="!show">1). Acto administrativo con el que se creó el programa y el órgano interno de dirección que aprobó dicha creación.</h6>
+              <h6 class="gray text-left" *ngIf="show">1). ¿Mediante qué acto administrativo se creó el programa y que órgano interno de dirección aprobó dicha creación? </h6>
+              <br>
               <textarea (change)="progreso()" (change)="progreso5()" id="pregunta11" name="pregunta11" [(ngModel)]="cond1.pregunta11" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="3"></textarea><br>
               <ngb-progressbar [showValue]="true" class="uscoRojo" type="danger" [value]="acumPuntos5"></ngb-progressbar><br>
-              <h6 class="gray text-left">2). Áreas de formación del programa presentado y la articulación con el alcance de la denominación.</h6><br>
+              <h6 class="gray text-left" *ngIf="!show">2). Áreas de formación del programa presentado y la articulación con el alcance de la denominación.</h6>
+              <h6 class="gray text-left" *ngIf="show">2). ¿Cuáles son las áreas de formación del programa presentado y como éstas se articulan con el alcance de la denominación? </h6>
+              <br>
               <textarea (change)="progreso()" (change)="progreso6()" id="pregunta21" name="pregunta21" [(ngModel)]="cond1.pregunta21" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="3"></textarea><br>
               <ngb-progressbar [showValue]="true" class="uscoRojo" type="danger" [value]="acumPuntos6"></ngb-progressbar><br>
-              <h6 class="gray text-left">3). Soporte del alcance, la especificidad de la denominación y explicación de coherencia entre la denominación, el campo de conocimiento y el nivel de formación.</h6><br>
+              <h6 class="gray text-left" *ngIf="!show">3). Soporte del alcance, la especificidad de la denominación y explicación de coherencia entre la denominación, el campo de conocimiento y el nivel de formación.</h6>
+              <h6 class="gray text-left" *ngIf="show">3). ¿De qué manera las competencias previstas a desarrollar en el programa soportan el alcance y la especificidad de la denominación? ¿Cómo se explica la coherencia entre la denominación, el campo de conocimiento y el nivel de formación? </h6>
+              <br>
               <textarea (change)="progreso()" (change)="progreso7()" id="pregunta31" name="pregunta31" [(ngModel)]="cond1.pregunta31" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="3"></textarea><br>
               <ngb-progressbar [showValue]="true" class="uscoRojo" type="danger" [value]="acumPuntos7"></ngb-progressbar><br>
-              <h6 class="gray text-left">4). Argumentos que la IES presenta para justificar la articulación entre la denominación del título y la del programa.</h6><br>
+              <h6 class="gray text-left" *ngIf="!show">4). Argumentos que la IES presenta para justificar la articulación entre la denominación del título y la del programa.</h6>
+              <h6 class="gray text-left" *ngIf="show">4). ¿Cuáles son los argumentos que la IES presenta para justificar la articulación entre la denominación del título y la del programa, en los casos en los que no se puede evidenciar una correspondencia directa? </h6>
+              <br>
               <textarea (change)="progreso()" (change)="progreso8()" id="pregunta41" name="pregunta41" [(ngModel)]="cond1.pregunta41" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="3"></textarea><br>
               <ngb-progressbar [showValue]="true" class="uscoRojo" type="danger" [value]="acumPuntos8"></ngb-progressbar><br>
         </div>

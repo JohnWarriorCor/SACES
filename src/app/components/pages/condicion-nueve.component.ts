@@ -16,6 +16,10 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   encapsulation: ViewEncapsulation.None,
 })
 export class CondicionNueveComponent implements OnInit {
+  // BOTON ASPECTOS - PREGUNTAS
+  show = false;
+  buttonName = 'Aspectos';
+  // MODAL
   closeResult: string;
   private itemsCollection: AngularFirestoreCollection<Item>;
   items: Observable<Item[]>;
@@ -42,5 +46,14 @@ export class CondicionNueveComponent implements OnInit {
   limpiarArchivos() {
     this.archivos = [];
   }
+  toggle() {
+    this.show = !this.show;
 
+    // CHANGE THE NAME OF THE BUTTON.
+    if (this.show) {
+      this.buttonName = 'Preguntas';
+    } else {
+      this.buttonName = 'Aspectos';
+    }
+  }
 }

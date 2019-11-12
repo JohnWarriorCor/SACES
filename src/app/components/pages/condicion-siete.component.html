@@ -1,7 +1,7 @@
-<div class="container animated fadeIn fast">
-  <br><br>
+<div class="container inicio animated fadeIn fast">
+  <br>
   <h5 class="text-uppercase">NÚMERO DE DOCENTES POR VINCULACIÓN</h5>
-  <br><br>
+  <br>
   <table bordercolor="black" class="table table-bordered" *ngFor="let k of tabla1condicione7 | keys; let i = index">
     <thead>
       <tr class="text-center navlinkinSolid">
@@ -127,6 +127,12 @@
       </div>
   </ng-template>
   </table>
+  <div *ngIf="(tabla1condicione7 | keys).length === 0 && !loading" class="alert alert-success text-center" role="alert">
+    <strong><h4 class="alert-heading">No hay regsitros que mostrar</h4></strong>
+  </div>
+  <div *ngIf="loading" class="alert alert-warning text-center" role="alert">
+    <strong><h4 class="alert-heading">Cargando...</h4></strong>
+  </div>
   <button class="btn botonUscoPerfil" routerLinkActive="active" [routerLink]="['/ModalTabla1', 'nuevo']" >Nuevo registro</button>
   <hr>
   <br>
@@ -209,6 +215,12 @@
       </tr>
     </tbody>
   </table>
+  <div *ngIf="(tabla2condicione7 | keys).length === 0 && !loading" class="alert alert-success text-center" role="alert">
+    <strong><h4 class="alert-heading">No hay regsitros que mostrar</h4></strong>
+  </div>
+  <div *ngIf="loading" class="alert alert-warning text-center" role="alert">
+    <strong><h4 class="alert-heading">Cargando...</h4></strong>
+  </div>
   <button class="btn botonUscoPerfil" routerLinkActive="active" [routerLink]="['/Modal', 'nuevo']" >Nuevo registro</button>
   <hr>
   <h5 class="text-uppercase">publicación revista especializada</h5>
@@ -268,6 +280,12 @@
       </tr>
     </tbody>
   </table>
+  <div *ngIf="(tabla3condicione7 | keys).length === 0 && !loading" class="alert alert-success text-center" role="alert">
+    <strong><h4 class="alert-heading">No hay regsitros que mostrar</h4></strong>
+  </div>
+  <div *ngIf="loading" class="alert alert-warning text-center" role="alert">
+    <strong><h4 class="alert-heading">Cargando...</h4></strong>
+  </div>
   <button class="btn botonUscoPerfil" routerLinkActive="active" [routerLink]="['/ModalTabla3', 'nuevo']" >Nuevo registro</button>
   <hr>
   <h5 class="text-uppercase">Estudiantes por año</h5>
@@ -337,6 +355,12 @@
       </tr>
     </tbody>
   </table>
+  <div *ngIf="(tabla4condicione7 | keys).length === 0 && !loading" class="alert alert-success text-center" role="alert">
+    <strong><h4 class="alert-heading">No hay regsitros que mostrar</h4></strong>
+  </div>
+  <div *ngIf="loading" class="alert alert-warning text-center" role="alert">
+    <strong><h4 class="alert-heading">Cargando...</h4></strong>
+  </div>
   <button class="btn botonUscoPerfil" routerLinkActive="active" [routerLink]="['/ModalTabla4', 'nuevo']" >Nuevo registro</button>
   <hr>
   <h5 class="text-uppercase">Porcentaje de dedicación docentes</h5>
@@ -414,6 +438,12 @@
       </tr>
     </tbody>
   </table>
+  <div *ngIf="(tabla5condicione7 | keys).length === 0 && !loading" class="alert alert-success text-center" role="alert">
+    <strong><h4 class="alert-heading">No hay regsitros que mostrar</h4></strong>
+  </div>
+  <div *ngIf="loading" class="alert alert-warning text-center" role="alert">
+    <strong><h4 class="alert-heading">Cargando...</h4></strong>
+  </div>
   <button class="btn botonUscoPerfil" routerLinkActive="active" [routerLink]="['/ModalTabla5', 'nuevo']" >Nuevo registro</button>
   <hr>
   <h5 class="text-uppercase">Docentes por año y nivel de formación</h5>
@@ -516,34 +546,50 @@
       </tr>
     </tbody>
   </table>
+  <div *ngIf="(tabla1condicione7 | keys).length === 0 && !loading" class="alert alert-success text-center" role="alert">
+    <strong><h4 class="alert-heading">No hay regsitros que mostrar</h4></strong>
+  </div>
+  <div *ngIf="loading" class="alert alert-warning text-center" role="alert">
+    <strong><h4 class="alert-heading">Cargando...</h4></strong>
+  </div>
   <br><br>
   <hr>
-  <div class="accordion" id="accordionExample" style="border-bottom-style: solid;border-color: #cccccc;;border-width: 1px;">
+  <div class="accordion text-center" id="accordionExample" style="border-bottom-style: solid;border-color: #cccccc;;border-width: 1px;">
     <div class="card">
-      <div class="card-header" id="headingOne" style="background-color: #8F141B" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        <h2 class="mb-0 text-center">
-          <button class="btn btn-link navlinkin font-weight-bold text-uppercase" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            aspectos
-          </button>
-        </h2>
-      </div>
+        <div class="card-header" id="headingOne" style="background-color: #8F141B">
+            <div class="row">
+              <div class="col" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"></div>
+              <div class="col">
+                <h2 class="mb-0">
+                  <button (click)="toggle()" id="bt" class="btn btn-link navlinkin font-weight-bold text-uppercase" type="button">
+                    {{buttonName}}
+                  </button>
+                </h2>
+              </div>
+              <div class="col" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"></div>
+            </div>
+          </div>
   
       <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
         <div class="card-body">
           <form action="">
-            <h6 class="gray text-left">1). Sustentación por parte de la Institución la disponibilidad, idoneidad y suficiencia de profesores para atender las diferentes áreas curriculares del Programa, en correspondencia con el número de estudiantes actual y/o proyectado </h6>
+            <h6 class="gray text-left" *ngIf="!show">1). Sustentación por parte de la Institución la disponibilidad, idoneidad y suficiencia de profesores para atender las diferentes áreas curriculares del Programa, en correspondencia con el número de estudiantes actual y/o proyectado </h6>
+            <h6 class="gray text-left" *ngIf="show">1). ¿Cómo sustenta la Institución la disponibilidad, idoneidad y suficiencia de profesores para atender las diferentes áreas curriculares del Programa, en correspondencia con el número de estudiantes actual y/o proyectado? </h6>
             <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
-            <h6 class="gray text-left">2). Sustentación por parte de la Institución la disponibilidad, idoneidad y suficiencia de profesores de Tiempo completo para atender las funciones sustantivas del Programa, en correspondencia con el campo específico, nivel de formación del programa, el número de estudiantes actual y/o proyectado </h6>
+            <h6 class="gray text-left" *ngIf="!show">2). Sustentación por parte de la Institución la disponibilidad, idoneidad y suficiencia de profesores de Tiempo completo para atender las funciones sustantivas del Programa, en correspondencia con el campo específico, nivel de formación del programa, el número de estudiantes actual y/o proyectado </h6>
+            <h6 class="gray text-left" *ngIf="show">2). ¿Cómo sustenta la Institución la disponibilidad, idoneidad y suficiencia de profesores de Tiempo completo para atender las funciones sustantivas del Programa, en correspondencia con el campo específico y nivel de formación del programa, y el número de estudiantes actual y/o proyectado? </h6>
             <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
-            <h6 class="gray text-left">3). Aspectos donde se logra coherencia, sincronía  y suficiencia entre las metas, los plazos y los resultados (alcanzados o esperados) asociados a los planes de contratación docente y de desarrollo profesoral (o formación docente) con las necesidades del programa</h6>
+            <h6 class="gray text-left" *ngIf="!show">3). Aspectos donde se logra coherencia, sincronía  y suficiencia entre las metas, los plazos y los resultados (alcanzados o esperados) asociados a los planes de contratación docente y de desarrollo profesoral (o formación docente) con las necesidades del programa</h6>
+            <h6 class="gray text-left" *ngIf="show">3). ¿En qué aspectos se logra coherencia, sincronía  y suficiencia entre las metas, los plazos y los resultados (alcanzados o esperados) asociados a los planes de contratación docente y de desarrollo profesoral (o formación docente) con las necesidades del programa? </h6>
             <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
-            <h6 class="gray text-left">4). Estrategias y acciones concretas que desarrollará la Institución para fomentar el avance de los docentes en el escalafón o categorías previstas en el Reglamento o Estatuto Docente</h6>
+            <h6 class="gray text-left" *ngIf="!show">4). Estrategias y acciones concretas que desarrollará la Institución para fomentar el avance de los docentes en el escalafón o categorías previstas en el Reglamento o Estatuto Docente</h6>
+            <h6 class="gray text-left" *ngIf="show">4). ¿Qué estrategias y acciones concretas desarrolla o desarrollará la Institución para fomentar el avance de los docentes en el escalafón o categorías previstas en el Reglamento o Estatuto Docente? </h6>
             <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
-            <h6 class="gray text-left">5). Manera en que la Institución garantiza la capacitación de los docentes en el uso de las tecnologías y herramientas de apoyo al proceso de enseñanza-aprendizaje. Indique los perfiles que establece la Institución para el personal docente de manera que se pueda atender adecuadamente la modalidad</h6>
+            <h6 class="gray text-left" *ngIf="!show">5). Manera en que la Institución garantiza la capacitación de los docentes en el uso de las tecnologías y herramientas de apoyo al proceso de enseñanza-aprendizaje. Indique los perfiles que establece la Institución para el personal docente de manera que se pueda atender adecuadamente la modalidad</h6>
+            <h6 class="gray text-left" *ngIf="show">5). ¿De qué manera la Institución garantiza la capacitación de los docentes en el uso de las tecnologías y herramientas de apoyo al proceso de enseñanza-aprendizaje? ¿Qué perfiles establece la Institución para el personal docente de manera que se pueda atender adecuadamente la modalidad? </h6>
             <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
-            <h6 class="gray text-left">6). Manera en que la institución sustenta la complementariedad y secuenciación entre los diferentes niveles de formación que se articulan por ciclos</h6>
-            <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
-            <h6 class="gray text-left">7). Manera en que la institución sustenta la relación de trabajo y distribución de tiempos de los docentes con nivel de formación Maestría y Doctorado para los proyectos de investigación en los que participan los estudiantes</h6>
+            <h6 class="gray text-left" *ngIf="!show">6). Manera en que la institución sustenta la relación de trabajo y distribución de tiempos de los docentes con nivel de formación Maestría y Doctorado para los proyectos de investigación en los que participan los estudiantes</h6>
+            <h6 class="gray text-left" *ngIf="show">6). ¿De qué manera sustenta  la Institución la relación de trabajo y distribución de tiempos de los docentes con nivel de formación Maestría y Doctorado para los proyectos de investigación en los que participan los estudiantes?</h6>
             <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
           </form>
         </div>

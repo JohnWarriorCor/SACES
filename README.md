@@ -1,6 +1,10 @@
 # SACES
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
+Instalación de paqueterías
+npm install --save @ng-bootstrap/ng-bootstrap@4.0.0
+npm install jquery
+
 
 ## Development server
 

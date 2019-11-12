@@ -9,6 +9,9 @@ import { PropiedadIntelectualService } from '../../services/propiedad-intelectua
   styleUrls: ['./condicion-dos.component.css']
 })
 export class CondicionDosComponent implements OnInit {
+  // BOTON ASPECTOS - PREGUNTAS
+  show = false;
+  buttonName = 'Aspectos';
 
   constructor(public prop: PropiedadIntelectualService, private headerTitleService: TituloService, public nav: NavbarService) { }
 
@@ -17,5 +20,14 @@ export class CondicionDosComponent implements OnInit {
     this.nav.show();
     this.prop.hide();
   }
+  toggle() {
+    this.show = !this.show;
 
+    // CHANGE THE NAME OF THE BUTTON.
+    if (this.show) {
+      this.buttonName = 'Preguntas';
+    } else {
+      this.buttonName = 'Aspectos';
+    }
+  }
 }

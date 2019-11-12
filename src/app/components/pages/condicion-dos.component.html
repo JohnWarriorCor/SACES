@@ -1,4 +1,4 @@
-<div class="container animated fadeIn fast">
+<div class="container inicio animated fadeIn fast">
   <br>
   <h5>Descripción del plan de estudios</h5>
   <table class="table table-bordered">
@@ -15,24 +15,33 @@
   </table>
   <br>
   <hr>
-  <div class="accordion" id="accordionExample" style="border-bottom-style: solid;border-color: #cccccc;;border-width: 1px;">
+  <div class="accordion text-center" id="accordionExample" style="border-bottom-style: solid;border-color: #cccccc;;border-width: 1px;">
     <div class="card">
-      <div class="card-header" id="headingOne" style="background-color: #8F141B" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        <h2 class="mb-0 text-center">
-          <button class="btn btn-link navlinkin font-weight-bold text-uppercase" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            aspectos
-          </button>
-        </h2>
-      </div>
+        <div class="card-header" id="headingOne" style="background-color: #8F141B">
+            <div class="row">
+              <div class="col" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"></div>
+              <div class="col">
+                <h2 class="mb-0">
+                  <button (click)="toggle()" id="bt" class="btn btn-link navlinkin font-weight-bold text-uppercase" type="button">
+                    {{buttonName}}
+                  </button>
+                </h2>
+              </div>
+              <div class="col" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"></div>
+            </div>
+          </div>
   
       <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
         <div class="card-body">
           <form action="">
-              <h6 class="gray text-left">1). Soportes y argumentos que utiliza la Institución para justificar la necesidad del programa en el contexto. </h6>
+              <h6 class="gray text-left" *ngIf="!show">1). Soportes y argumentos que utiliza la Institución para justificar la necesidad del programa en el contexto. </h6>
+              <h6 class="gray text-left" *ngIf="show" >1). ¿Cuáles son los soportes y argumentos que utiliza la Institución para justificar la necesidad del programa en el contexto? </h6>
               <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
-              <h6 class="gray text-left">2). Soportes y argumentos que utiliza la Institución para justificar la metodología y modalidad del programa. </h6>
+              <h6 class="gray text-left" *ngIf="!show">2). Soportes y argumentos que utiliza la Institución para justificar la metodología y modalidad del programa. </h6>
+              <h6 class="gray text-left" *ngIf="show" >2). ¿Cuáles son los soportes y argumentos que utiliza la Institución para justificar la metodología y modalidad del programa? </h6>
               <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
-              <h6 class="gray text-left">3). Aspectos académicos distintivos al programa.</h6>
+              <h6 class="gray text-left" *ngIf="!show">3). Aspectos académicos distintivos al programa.</h6>
+              <h6 class="gray text-left" *ngIf="show" >3). ¿De la oferta educativa actual y las tendencias que la Institución analizó, qué elementos diferenciadores entregan aspectos académicos distintivos al programa? </h6>
               <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
           </form>
         </div>

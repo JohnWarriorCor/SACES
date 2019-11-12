@@ -51,6 +51,7 @@ export class Condicion1Service {
 export interface Condicion1 {
   idx?: number;
   tipoprograma: string;
+  por1: number;
   nombreprograma: string;
   respnombre: string;
   datenombre: string;

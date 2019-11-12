@@ -18,6 +18,10 @@ import { Tabla5Condicion7Service } from '../../services/tabla5-condicion7.servic
   encapsulation: ViewEncapsulation.None,
 })
 export class CondicionSieteComponent implements OnInit {
+  // BOTON ASPECTOS - PREGUNTAS
+  show = false;
+  buttonName = 'Aspectos';
+  // TABLAS
   closeResult: string;
   tabla1condicione7: any[] = [];
   tabla2condicione7: any[] = [];
@@ -128,5 +132,15 @@ export class CondicionSieteComponent implements OnInit {
   }
   openSm5(content) {
     this.modalReference = this.modalService.open(content, { size: 'sm' });
+  }
+  toggle() {
+    this.show = !this.show;
+
+    // CHANGE THE NAME OF THE BUTTON.
+    if (this.show) {
+      this.buttonName = 'Preguntas';
+    } else {
+      this.buttonName = 'Aspectos';
+    }
   }
 }
