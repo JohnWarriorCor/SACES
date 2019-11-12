@@ -49,6 +49,7 @@ export class HistoriaInstService {
 }
 export interface HistoriaInst {
   idx?: number;
+  nombrePrograma: string;
   reseniaHist: string;
   mision: string;
   vision: string;

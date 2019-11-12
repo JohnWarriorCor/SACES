@@ -409,7 +409,7 @@ a.activeTab:hover {
     vertical-align: bottom;
     border-bottom: 1px solid #000;
 }
-.irArriba{
+.ir-arriba{
   display: inline-block;
   padding: 20px;
   background-color: #8F141B;
@@ -418,4 +418,8 @@ a.activeTab:hover {
   position: fixed;
   bottom: 20px;
   right: 10px;
+}
+.pre {
+  word-wrap: break-word;      /* IE 5.5-7 */
+  white-space: pre-wrap;      /* Modern browsers */
 }

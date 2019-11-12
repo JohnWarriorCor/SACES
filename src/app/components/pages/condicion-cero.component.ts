@@ -24,6 +24,7 @@ export class CondicionCeroComponent implements OnInit {
   nuevo = false;
   id: string;
   historia: HistoriaInst = {
+    nombrePrograma: '',
     reseniaHist: '',
     mision: '',
     vision: '',
@@ -44,7 +45,7 @@ export class CondicionCeroComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.headerTitleService.setTitle('HISTORIA INSTITUCIONAL Y DE PROGRAMA');
+    this.headerTitleService.setTitle('MODIFICACIÓN DE HISTORIA INSTITUCIONAL Y DE PROGRAMA');
     this.nav.show();
     this.prop.hide();
   }

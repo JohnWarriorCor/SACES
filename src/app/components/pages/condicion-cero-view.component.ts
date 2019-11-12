@@ -36,6 +36,7 @@ export class CondicionCeroViewComponent implements OnInit {
     this.headerTitleService.setTitle('HISTORIA INSTITUCIONAL Y DE PROGRAMA');
     this.nav.show();
     this.prop.hide();
+    // tslint:disable-next-line:only-arrow-functions
   }
   openSm(content) {
     this.modalReference = this.modalService.open(content, { size: 'sm', centered: true });
@@ -51,9 +52,4 @@ export class CondicionCeroViewComponent implements OnInit {
       }
     });
   }
-  up() {
-    window.scroll(0, 0);
-  }
-
-
 }

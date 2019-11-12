@@ -1,20 +1,20 @@
 <div class="container">
   <div class=" animated fadeIn fast" *ngFor="let k of historia | keys; let i = index">
       <br>
-      <h2 class="gray text-left titulosHistoria">Reseña Histórica</h2>
-      <p class="text-justify gray">
+      <h2 class="gray text-left titulosHistoria">Reseña Histórica del programa - {{historia[k].nombrePrograma}}</h2>
+      <p class="text-justify gray pre">
         {{historia[k].reseniaHist}}
       </p>
       <h2 class="gray text-left titulosHistoria">Misión</h2>
-      <p class="text-justify gray">
+      <p class="text-justify gray pre">
         {{historia[k].mision}}
       </p>
       <h2 class="gray text-left titulosHistoria">Visión</h2>
-      <p class="text-justify gray">
+      <p class="text-justify gray pre">
         {{historia[k].vision}}
       </p>
       <h2 class="gray text-left titulosHistoria">Objetivos</h2>
-      <p class="text-justify gray">
+      <p class="text-justify gray pre">
         {{historia[k].objetivos}}
       </p>
       <hr>
@@ -43,5 +43,4 @@
   <div class="col-md-12 text-right p-3">
     <button style="width: 15%; font-size: 100%; margin: 5px" [routerLink]="['/HistoriaInstitucionalForm', 'nuevo']" class="btn botonUsco" type="button"><i class="fas fa-clipboard-list"></i> Nuevo</button>
   </div>
-  <a (click)="up()"><i class="irArriba fas fa-chevron-up"></i></a>
 </div>
