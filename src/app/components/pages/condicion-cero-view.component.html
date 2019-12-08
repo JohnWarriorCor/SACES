@@ -1,19 +1,19 @@
-<div class="container inicio">
-  <div class=" animated fadeIn fast" *ngFor="let k of historia | keys; let i = index">
+<div class="container inicio animated fadeIn fast">
+  <div *ngFor="let k of historia | keys; let i = index">
       <br>
-      <h2 class="gray text-left titulosHistoria">Reseña Histórica del programa - {{historia[k].nombrePrograma}}</h2>
+      <h2 class="gray text-left titulosHistoria">Reseña Histórica del programa - {{historia[k].nombrePrograma}}</h2><br>
       <p class="text-justify gray pre">
         {{historia[k].reseniaHist}}
       </p>
-      <h2 class="gray text-left titulosHistoria">Misión</h2>
+      <h2 class="gray text-left titulosHistoria">Misión</h2><br>
       <p class="text-justify gray pre">
         {{historia[k].mision}}
       </p>
-      <h2 class="gray text-left titulosHistoria">Visión</h2>
+      <h2 class="gray text-left titulosHistoria">Visión</h2><br>
       <p class="text-justify gray pre">
         {{historia[k].vision}}
       </p>
-      <h2 class="gray text-left titulosHistoria">Objetivos</h2>
+      <h2 class="gray text-left titulosHistoria">Objetivos</h2><br>
       <p class="text-justify gray pre">
         {{historia[k].objetivos}}
       </p>

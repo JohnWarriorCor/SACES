@@ -18,6 +18,8 @@ import { Tabla5Condicion7Service } from '../../services/tabla5-condicion7.servic
   encapsulation: ViewEncapsulation.None,
 })
 export class CondicionSieteComponent implements OnInit {
+  page = 1;
+  pageSize = 1;
   // BOTON ASPECTOS - PREGUNTAS
   show = false;
   buttonName = 'Aspectos';
@@ -36,6 +38,7 @@ export class CondicionSieteComponent implements OnInit {
       setTimeout(() => {
         this.loading = false;
         this.tabla1condicione7 = data;
+        console.log(this.tabla1condicione7.length);
       }, 0);
     });
     this.ServicioTabla2.getInvocadores().subscribe( data => {

@@ -45,7 +45,7 @@ export class RegistroCon1Component implements OnInit {
     });
   }
   openSm(content) {
-    this.modalReference = this.modalService.open(content, { size: 'sm' });
+    this.modalReference = this.modalService.open(content, { size: 'sm', centered: true });
   }
   progreso() {
     this.acumPuntos = this.acumPuntos + 8;

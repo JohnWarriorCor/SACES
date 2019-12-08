@@ -14,7 +14,7 @@ export class CondicionCincoComponent implements OnInit {
   constructor(public prop: PropiedadIntelectualService, private headerTitleService: TituloService, public nav: NavbarService) { }
 
   ngOnInit() {
-    this.headerTitleService.setTitle('INVESTIGACIÓN, INNOVACIÓN Y/O CREACIÓN ARTISTICA Y CULTURAL');
+    this.headerTitleService.setTitle('INVESTIGACIÓN, INNOVACIÓN Y/O CREACIÓN ARTÍSTICA Y CULTURAL');
     this.prop.hide();
     this.nav.show();
   }

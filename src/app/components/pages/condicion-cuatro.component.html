@@ -23,10 +23,13 @@
         <div class="card-body">
           <form action="">
             <h6 class="gray text-left" *ngIf="show">1). ¿Qué escenarios coloca la Institución a disposición del programa para lograr un desarrollo adecuado de los tiempos de trabajo propuestos? </h6>
+            <h6 class="gray text-left" *ngIf="!show">1). Escenarios que coloca la Institución a disposición del programa para lograr un desarrollo adecuado de los tiempos de trabajo propuestos.</h6>
             <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
             <h6 class="gray text-left" *ngIf="show">2). ¿Qué estrategias o acciones se prevén para el acompañamiento docente al trabajo de los Estudiantes? </h6>
+            <h6 class="gray text-left" *ngIf="!show">2). Estrategias o acciones que la institución prevén para el acompañamiento docente al trabajo de los Estudiantes.</h6>
             <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
             <h6 class="gray text-left" *ngIf="show">3). ¿Cómo se han previsto los escenarios para los encuentros entre Tutor y Estudiante de tal forma que se garantice el desarrollo de las actividades propuestas en cada componente del plan de estudios? </h6>
+            <h6 class="gray text-left" *ngIf="!show">3). Escenarios para los encuentros entre Tutor y Estudiante de tal forma que se garantice el desarrollo de las actividades propuestas en cada componente del plan de estudios.</h6>
             <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
           </form>
         </div>

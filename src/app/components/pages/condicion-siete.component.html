@@ -2,8 +2,10 @@
   <br>
   <h5 class="text-uppercase">NÚMERO DE DOCENTES POR VINCULACIÓN</h5>
   <br>
-  <table bordercolor="black" class="table table-bordered" *ngFor="let k of tabla1condicione7 | keys; let i = index">
+  <ngb-pagination class="d-flex justify-content-start" [collectionSize]="((tabla1condicione7 | keys).length)*10" [(page)]="page"></ngb-pagination>
+  <table bordercolor="black" class="table table-bordered" *ngFor="let k of tabla1condicione7 | keys | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize ; let i = index">
     <thead>
+      <h5 class="navlinkinSolid text-center" style="padding: 5px;">{{tabla1condicione7[k].anio}}-{{tabla1condicione7[k].periodo}}</h5>
       <tr class="text-center navlinkinSolid">
         <th rowspan="2" scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">TIPO DE VINCULACIÓN</th>
         <th rowspan="2" scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">número de docentes</th>

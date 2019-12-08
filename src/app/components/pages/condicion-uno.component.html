@@ -48,7 +48,7 @@
                             <div class="col">
                               <form action="get"></form>
                                 <h6 class="gray text-left">Fecha:</h6>
-                                <input (change)="progreso()" (change)="progreso2()" id="datenombre" name="datenombre" [(ngModel)]="cond1.datenombre" type="date" [ngClass]="{'atiempo' : res1 > 15,'encurso' : res1 <= 15, 'expira': res1 < 5, 'nulo': res1 == -10000 || res1 < -30}" name="fecha1Id" class="form-control shadow p-3 inputPaciente" [(ngModel)]="fecha1Id" (change)="myFunc1(fecha1Id)">
+                                <input (change)="progreso()" (change)="progreso2()" id="datenombre" name="datenombre" [(ngModel)]="cond1.datenombre" type="date" [ngClass]="{'atiempo' : res1 > 15,'encurso' : res1 <= 15, 'expira': res1 < 5, 'nulo': res1 == -10000 || res1 < -30}" name="fecha1Id" class="form-control shadow p-3 inputPaciente" [(ngModel)]="fecha1Id" (ngModelChange)="myFunc1(fecha1Id)">
                             </div>
                         </div>
                     </div>
@@ -90,8 +90,8 @@
                     <div class="col text-left">
                         <h6 class="gray text-left">Contenido curricular:</h6>
                         <div class="custom-file mb-3">
-                            <input (change)="progreso()" (change)="progreso4()" type="file" class="custom-file-input inputPaciente" id="customFile" name="filename">
-                            <label class="custom-file-label inputPaciente" for="customFile">Elija el archivo</label>
+                            <input (change)="progreso()" (change)="progreso4()" id="uscoRojo" type="file" class="custom-file-input" name="filename">
+                            <label class="custom-file-label inputPaciente" for="customFile">Elija el archivo correspondiente</label>
                         </div>
                         <!--<script>
                             // Add the following code if you want the name of the file appear on select
@@ -132,21 +132,6 @@
                         <button mat-button (click)="openDialog()">Open dialog</button>
                         <button class="btn uscoButton" (click)="openFormModal()">Visualizar perfil</button>
                         -->
-                        <button class="btn botonUscoPerfil">Ver perfil</button>
-                        <ng-template #content let-modal>
-                            <div class="modal-header">
-                              <h4 class="modal-title">Modal title</h4>
-                              <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <div class="modal-body">
-                              <p>One fine body&hellip;</p>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
-                            </div>
-                          </ng-template>
                     </div>
                     <div class="col">
                          <div class="row">
@@ -187,23 +172,39 @@
               <h6 class="gray text-left" *ngIf="!show">1). Acto administrativo con el que se creó el programa y el órgano interno de dirección que aprobó dicha creación.</h6>
               <h6 class="gray text-left" *ngIf="show">1). ¿Mediante qué acto administrativo se creó el programa y que órgano interno de dirección aprobó dicha creación? </h6>
               <br>
-              <textarea (change)="progreso()" (change)="progreso5()" id="pregunta11" name="pregunta11" [(ngModel)]="cond1.pregunta11" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="3"></textarea><br>
-              <ngb-progressbar [showValue]="true" class="uscoRojo" type="danger" [value]="acumPuntos5"></ngb-progressbar><br>
+              <textarea (change)="progreso()" (change)="progreso5()" id="pregunta11" name="pregunta11" [(ngModel)]="cond1.pregunta11" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="3"></textarea>
+              <div class="col-md-6">
+                  <input (change)="progreso()" (change)="progreso4()" id="uscoRojo" type="file" class="custom-file-input" name="filename">
+                  <label class="custom-file-label inputPaciente" for="customFile">Elija el archivo correspondiente</label>
+              </div><br>
+              <ngb-progressbar [showValue]="true" class="uscoRojo" type="danger" [value]="acumPuntos5"></ngb-progressbar><br><hr>
               <h6 class="gray text-left" *ngIf="!show">2). Áreas de formación del programa presentado y la articulación con el alcance de la denominación.</h6>
               <h6 class="gray text-left" *ngIf="show">2). ¿Cuáles son las áreas de formación del programa presentado y como éstas se articulan con el alcance de la denominación? </h6>
               <br>
               <textarea (change)="progreso()" (change)="progreso6()" id="pregunta21" name="pregunta21" [(ngModel)]="cond1.pregunta21" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="3"></textarea><br>
-              <ngb-progressbar [showValue]="true" class="uscoRojo" type="danger" [value]="acumPuntos6"></ngb-progressbar><br>
+              <div class="col-md-6">
+                  <input (change)="progreso()" (change)="progreso4()" id="uscoRojo" type="file" class="custom-file-input" name="filename">
+                  <label class="custom-file-label inputPaciente" for="customFile">Elija el archivo correspondiente</label>
+              </div><br>
+              <ngb-progressbar [showValue]="true" class="uscoRojo" type="danger" [value]="acumPuntos6"></ngb-progressbar><br><hr>
               <h6 class="gray text-left" *ngIf="!show">3). Soporte del alcance, la especificidad de la denominación y explicación de coherencia entre la denominación, el campo de conocimiento y el nivel de formación.</h6>
               <h6 class="gray text-left" *ngIf="show">3). ¿De qué manera las competencias previstas a desarrollar en el programa soportan el alcance y la especificidad de la denominación? ¿Cómo se explica la coherencia entre la denominación, el campo de conocimiento y el nivel de formación? </h6>
               <br>
               <textarea (change)="progreso()" (change)="progreso7()" id="pregunta31" name="pregunta31" [(ngModel)]="cond1.pregunta31" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="3"></textarea><br>
-              <ngb-progressbar [showValue]="true" class="uscoRojo" type="danger" [value]="acumPuntos7"></ngb-progressbar><br>
+              <div class="col-md-6">
+                  <input (change)="progreso()" (change)="progreso4()" id="uscoRojo" type="file" class="custom-file-input" name="filename">
+                  <label class="custom-file-label inputPaciente" for="customFile">Elija el archivo correspondiente</label>
+              </div><br>
+              <ngb-progressbar [showValue]="true" class="uscoRojo" type="danger" [value]="acumPuntos7"></ngb-progressbar><br><hr>
               <h6 class="gray text-left" *ngIf="!show">4). Argumentos que la IES presenta para justificar la articulación entre la denominación del título y la del programa.</h6>
               <h6 class="gray text-left" *ngIf="show">4). ¿Cuáles son los argumentos que la IES presenta para justificar la articulación entre la denominación del título y la del programa, en los casos en los que no se puede evidenciar una correspondencia directa? </h6>
               <br>
               <textarea (change)="progreso()" (change)="progreso8()" id="pregunta41" name="pregunta41" [(ngModel)]="cond1.pregunta41" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="3"></textarea><br>
-              <ngb-progressbar [showValue]="true" class="uscoRojo" type="danger" [value]="acumPuntos8"></ngb-progressbar><br>
+              <div class="col-md-6">
+                  <input (change)="progreso()" (change)="progreso4()" id="uscoRojo" type="file" class="custom-file-input" name="filename">
+                  <label class="custom-file-label inputPaciente" for="customFile">Elija el archivo correspondiente</label>
+              </div><br>
+              <ngb-progressbar [showValue]="true" class="uscoRojo" type="danger" [value]="acumPuntos8"></ngb-progressbar><br><hr>
         </div>
       </div>
     </div>

@@ -23,10 +23,13 @@
         <div class="card-body">
           <form action="">
             <h6 class="gray text-left" *ngIf="show">1). ¿Cuáles son los elementos centrales con los que el programa propone articularse con el sector externo? </h6>
+            <h6 class="gray text-left" *ngIf="!show">1). Elementos centrales con los que el programa propone articularse con el sector externo.</h6>
             <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
             <h6 class="gray text-left" *ngIf="show">2). ¿De qué manera la Institución demuestra el impacto en la sociedad derivado del desempeño y actuación de los graduados del programa? </h6>
+            <h6 class="gray text-left" *ngIf="!show">2). Demostración de la institución hacia el impacto en la sociedad derivado del desempeño y actuación de los graduados del programa</h6>
             <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
             <h6 class="gray text-left" *ngIf="show">3). En caso de renovación de registro calificado ¿Cuáles son las principales evidencias que desde la estrategia de proyección social o extensión la Institución ha logrado para el desarrollo del programa? </h6>
+            <h6 class="gray text-left" *ngIf="!show">3). En caso de renovación de registro calificado. Principales evidencias que desde la estrategia de proyección social o extensión la Institución ha logrado para el desarrollo del programa.</h6>
             <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
           </form>
         </div>

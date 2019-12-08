@@ -86,12 +86,12 @@ export class CondicionUnoComponent implements OnInit {
     });
   }
   ngOnInit() {
-    this.headerTitleService.setTitle('DENOMINACIÓN DEL PROGRAMA');
-    this.nav.show();
-    this.prop.hide();
     this.myFunc1(this.fecha1Id);
     this.myFunc2(this.fecha2Id);
     this.myFunc3(this.fecha3Id);
+    this.headerTitleService.setTitle('DENOMINACIÓN DEL PROGRAMA');
+    this.nav.show();
+    this.prop.hide();
     // this.nav.doSomethingElseUseful();
   }
   toggle() {
@@ -104,8 +104,8 @@ export class CondicionUnoComponent implements OnInit {
       this.buttonName = 'Aspectos';
     }
   }
-  openLg(content) {
-    this.modalService.open(content, { size: 'lg' });
+  openVerticallyCentered(content) {
+    this.modalService.open(content, { centered: true });
   }
   progreso1() {
     this.cond1.por1 = 100;
