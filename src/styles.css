@@ -7,6 +7,13 @@ body {
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     background: #FFF;
 }
+@media print
+{    
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+}
 .inicio{
   margin-top: 20px;
 }

@@ -58,6 +58,8 @@ import { environment } from '../environments/environment';
 import { NgDropFilesDirective } from './directives/ng-drop-files.directive';
 import { CondicionCeroViewComponent } from './components/pages/condicion-cero-view.component';
 // import { NgDropFilesDirective } from './directives/ng-drop-files.directive';
+// Imprimir
+import {NgxPrintModule} from 'ngx-print';
 
 @NgModule({
   declarations: [
@@ -98,6 +100,7 @@ import { CondicionCeroViewComponent } from './components/pages/condicion-cero-vi
     CondicionCeroViewComponent
   ],
   imports: [
+    NgxPrintModule,
     NgbModule,
     FullCalendarModule,
     FormsModule,

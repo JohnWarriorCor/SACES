@@ -45,3 +45,50 @@ thead.tr{
 .nulo{
     background-color: white;
 }
+.popUp{
+    color: #8F141B;
+    border: 1px solid #8F141B;
+}
+.pagination > li > a
+{
+    background-color: #8F141B;
+    color: #DFD4A6;
+}
+.page-item.active .page-link {
+    background-color: rgb(161, 23, 30);
+    border: solid 1px rgb(161, 23, 30);
+}
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > a:active,
+.pagination > li > span:focus,
+.pagination > li > span:hover
+.pagination > li > span:active
+{
+    color: white;
+    background-color:rgb(161, 23, 30);
+    border-color: rgb(161, 23, 30);
+}
+
+.pagination > .active > a
+{
+    color: white;
+    background-color: rgb(161, 23, 30);
+    border: solid 1px rgb(161, 23, 30);
+}
+
+.pagination > .active > a:hover
+{
+    background-color: rgb(161, 23, 30);
+    border: solid 1px rgb(161, 23, 30);
+}
+.pagination ul > li:not(.active) > a
+{
+    background-color: purple;
+    border: solid 1px purple;
+}
+.pagination ul > li.active > a
+{
+    background-color: purple;
+    border: solid 1px purple;
+}

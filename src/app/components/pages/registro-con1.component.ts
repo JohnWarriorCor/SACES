@@ -13,6 +13,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   encapsulation: ViewEncapsulation.None,
 })
 export class RegistroCon1Component implements OnInit {
+  page = 1;
+  pageSize = 1;
   closeResult: string;
   acumFechas = 0;
   comodinAcum = 0;

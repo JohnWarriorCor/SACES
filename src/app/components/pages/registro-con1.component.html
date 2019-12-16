@@ -1,157 +1,198 @@
 <div class="container animated fadeIn fast">
   <br>
-    <div class="row">
-        <div class="col-md-12 text-right p-3">
-          <button style="width: 15%; font-size: 100%;" [routerLink]="['/DenominacionDelPrograma', 'nuevo']" class="btn botonUsco" type="button"><i class="fas fa-clipboard-list"></i> Nuevo</button>
-        </div>
+  <div class="row">
+
+    <div class="col-md-12 text-right p-3">
+      <button style="width: 15%; font-size: 100%;" [routerLink]="['/DenominacionDelPrograma', 'nuevo']"
+        class="btn botonUsco" type="button"><i class="fas fa-clipboard-list"></i> Nuevo</button>
     </div>
-    <div class="row animated fadeIn fast">
-        <div class="col-md-12">
-            <div class="table-responsive-md">
-    <table bordercolor="black" class="table table-bordered" *ngFor="let k of condiciones1 | keys; let i = index">
-    <thead>
-      <tr class="text-center tablaAdmin" style="background-color: #AB121B;color: #D8CEA3">
-        <th colspan="7" style="width: 90%" scope="col" class="text-uppercase align-middle borden">DENOMINACIÓN DEL PROGRAMA</th>
-        <th colspan="1" style="width: 10%" scope="col" class="text-uppercase align-middle borden"  (change)="progreso()">Registro {{ i + 1 }}</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="text-center tablaAdmin">
-        <th colspan="4" style="width: 50%;" scope="row" class="text-uppercase align-middle borden">tipo de programa:</th>
-        <td colspan="4" style="width: 50%" class="align-middle borden"  (change)="progreso()">{{ condiciones1[k].tipoprograma }}</td>
-      </tr>
-      <tr class="text-center tablaAdmin">
-        <th colspan="4" style="width: 50%" scope="row" class="text-uppercase align-middle borden">nombre de programa:</th>
-        <th colspan="2" style="width: 30%" class="text-uppercase align-middle borden">responsable:</th>
-        <th colspan="2" style="width: 20%" class="text-uppercase align-middle borden">fecha:</th>
-      </tr>
-      <tr class="text-center tablaAdmin">
-        <td colspan="4" scope="row" class="align-middle borden" (change)="progreso()">{{ condiciones1[k].nombreprograma }}</td>
-        <td colspan="2" scope="row" class="align-middle borden" (change)="progreso()">{{ condiciones1[k].respnombre }}</td>
-        <td colspan="2" scope="row" class="align-middle borden" [ngClass]="{'atiempo' : res1 > 15,'encurso' : res1 <= 15, 'expira': res1 < 5, 'nulo': res1 == -10000 || res1 < -30}" (ngInit)="myFunc1(condiciones1[k].datenombre)">{{ condiciones1[k].datenombre }}</td>
-      </tr>
-      <tr class="text-center tablaAdmin">
-        <th colspan="4" scope="row" class="text-uppercase align-middle borden">Título a otorgar:</th>
-        <th colspan="2" scope="row" class="text-uppercase align-middle borden">responsable:</th>
-        <th colspan="2" scope="row" class="text-uppercase align-middle borden">fecha:</th>
-      </tr>
-      <tr class="text-center tablaAdmin">
-        <td colspan="4" scope="row" class="align-middle borden">{{ condiciones1[k].titulo }}</td>
-        <td colspan="2" scope="row" class="align-middle borden">{{ condiciones1[k].resptitulo }}</td>
-        <td colspan="2" scope="row" class="align-middle borden" [ngClass]="{'atiempo' : res2 > 15,'encurso' : res2 <= 15, 'expira': res2 < 5, 'nulo': res2 == -10000 || res2 < -30}" (ngInit)="myFunc2(condiciones1[k].datetitulo)">{{ condiciones1[k].datetitulo }}</td>
-      </tr>
-      <tr class="text-center tablaAdmin">
-        <th colspan="4" scope="row" class="text-uppercase align-middle borden">contenido curricular:</th>
-        <th colspan="2" scope="row" class="text-uppercase align-middle borden">responsable:</th>
-        <th colspan="2" scope="row" class="text-uppercase align-middle borden">fecha:</th>
-      </tr>
-      <tr class="text-center tablaAdmin">
-        <td colspan="4" scope="row" class="align-middle borden">C:\Users\jdcor\Documents\ING SOFTWARE\U - DOCTORADO CONDICIONES MINIMAS</td>
-        <td colspan="2" scope="row" class="align-middle borden">{{ condiciones1[k].respcontenido }}</td>
-        <td colspan="2" scope="row" class="align-middle borden" [ngClass]="{'atiempo' : res3 > 15,'encurso' : res3 <= 15, 'expira': res3 < 5, 'nulo': res3 == -10000 || res3 < -30}" (ngInit)="myFunc3(condiciones1[k].datecontenido)">{{ condiciones1[k].datecontenido }}</td>
-      </tr>
-      <tr class="text-center tablaAdmin">
-        <th colspan="8" scope="row" class="text-uppercase align-middle borden">observaciones:</th>
-      </tr>
-      <tr class="text-center tablaAdmin">
-        <td colspan="8" scope="row" class="align-middle borden">{{ condiciones1[k].observa }}</td>
-      </tr>
-      <tr class="text-center tablaAdmin">
-        <th rowspan="2" scope="row" class="text-uppercase align-middle borden"><span class="font-weight-bold">Aspecto 1:</span><br>Acto administrativo con el que se creó el programa y el órgano interno de dirección que aprobó dicha creación.</th>
-        <th colspan="7" scope="row" class="text-uppercase align-middle borden">Adjuntos</th>
-      </tr>
-      <tr class="tablaAdmin">
-        <td colspan="7" scope="row" class="align-middle borden text-justify pre">
-          {{ condiciones1[k].pregunta11 }}
-          <div class="col-md-12 text-right p-3">
-              <a download href="../../../assets/Doctorado.pdf">
-                <button style="width: 22%; font-size: 100%;" class="btn botonUsco" type="button"><i class="fas fa-download"></i> Descargar</button>
-              </a> 
-          </div>
-        </td>
-      </tr>
-      <tr class="tablaAdmin">  
-        <th colspan="1" scope="row" class="text-uppercase align-middle borden text-center"><span class="font-weight-bold">Aspecto 2:</span><br>Áreas de formación del programa presentado y la articulación con el alcance de la denominación.</th>
-        <td colspan="7" scope="row" class="align-middle borden text-justify pre">
-          {{ condiciones1[k].pregunta21 }}
-          <div class="col-md-12 text-right p-3">
-            <a download href="../../../assets/Doctorado.pdf">
-              <button style="width: 22%; font-size: 100%;" class="btn botonUsco" type="button"><i class="fas fa-download"></i> Descargar</button>
-            </a> 
-          </div>
-        </td>
-      </tr>
-      <tr class="tablaAdmin">
-        <th colspan="1" scope="row" class="text-uppercase align-middle borden text-center"><span class="font-weight-bold">Aspecto 3:</span><br>Soporte del alcance, la especificidad de la denominación y explicación de coherencia entre la denominación, el campo de conocimiento y el nivel de formación.</th>
-        <td colspan="7" scope="row" class="align-middle borden text-justify pre">
-          {{ condiciones1[k].pregunta31 }}
-          <div class="col-md-12 text-right p-3">
-              <a download href="../../../assets/Doctorado.pdf">
-                <button style="width: 22%; font-size: 100%;" class="btn botonUsco" type="button"><i class="fas fa-download"></i> Descargar</button>
-              </a> 
-          </div>
-        </td>
-      </tr>
-      <tr class="tablaAdmin">
-        <th colspan="1" scope="row" class="text-uppercase align-middle borden text-center"><span class="font-weight-bold">Aspecto 3:</span><br>Argumentos que la IES presenta para justificar la articulación entre la denominación del título y la del programa.</th>
-        <td colspan="7" scope="row" class="align-middle borden text-justify pre">
-          {{ condiciones1[k].pregunta41 }}
-          <div class="col-md-12 text-right p-3">
-              <a download href="../../../assets/Doctorado.pdf">
-                <button style="width: 22%; font-size: 100%;" class="btn botonUsco" type="button"><i class="fas fa-download"></i> Descargar</button>
-              </a> 
-          </div>
-        </td>
-      </tr>
-      <tr class="tablaAdmin">
-        <th colspan="8" scope="row" class="text-uppercase align-middle borden">
-          <h5 class="font-weight-bold text-uppercase">progreso</h5>
-        </th>
-      </tr>
-      <tr class="text-center tablaAdmin">
-        <th colspan="8" scope="row" class="text-uppercase align-middle borden">
-            <ngb-progressbar [showValue]="true" class="uscoRojo" type="danger" [value]="100"></ngb-progressbar><br>
-        </th>
-      </tr>
-      <tr style="border:0px;" class="text-center tablaAdmin">
-        <td style="border:0px;" style="background-color: #e7e6e6" colspan="8" scope="row" class="text-uppercase align-middle borden">
-            <div class="row">
-            <div class="col text-center">
-                <button [routerLink]="['/DenominacionDelPrograma', k]" class="btn botonUsco"><span class="fas fa-pencil-alt"> </span> Editar</button>
-            </div>
-            <div class="col text-center">
-                <button (click)="borrarInvocador(k)" class="btn botonUsco"  onclick="window.print()"><span class="fas fa-print"></span> Imprimir</button>
-            </div>
-            <div class="col text-center">
-                <!--<button (click)="borrarInvocador(k)" class="btn botonUsco"><span class="far fa-trash-alt"></span> Borrar</button>-->
-                <button class="btn botonUsco" (click)="openSm(content)"><span class="far fa-trash-alt"></span> Borrar</button>
-                <ng-template #content let-modal>
-                    <div class="modal-header text-center navlinkin">
-                      <h4 class="modal-title" style="margin-left:45px;">¡PRECAUCIÓN!</h4>
-                    </div>
-                    <div class="modal-body text-center">
-                      <p class="alert alert-danger text-uppercase">Está a punto de borrar el registro <br> presione aceptar para borrar o cancelar para salir</p>
-                      <div class="row align-content-center">
-                        <div class="col text-center">
-                          <button (click)="borrarInvocador(k)" routerLinkActive="router-link-active"  class="btn btn-info">Aceptar</button>  
-                        </div>
-                        <div class="col text-center">
-                          <button class="btn btn-danger" (click)="modal.close('Close click')">Cancelar</button>
+  </div>
+  <ngb-pagination class="d-flex justify-content-start" [collectionSize]="((condiciones1 | keys).length)*10" [(page)]="page"></ngb-pagination>  
+  <div class="row animated fadeIn fast">
+    <div class="col-md-12">
+      <div class="table-responsive-md" id="print-section">
+        <table bordercolor="black" class="table table-bordered" *ngFor="let k of condiciones1 | keys | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize ; let i = index; let i = index">
+          <thead>
+            <tr class="text-center tablaAdmin" style="background-color: #AB121B;color: #D8CEA3">
+              <th colspan="7" style="width: 90%" scope="col" class="text-uppercase align-middle borden">DENOMINACIÓN DEL
+                PROGRAMA</th>
+              <th colspan="1" style="width: 10%" scope="col" class="text-uppercase align-middle borden"
+                (change)="progreso()">Registro {{ i + 1 }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="text-center tablaAdmin">
+              <th colspan="4" style="width: 50%;" scope="row" class="text-uppercase align-middle borden">tipo de
+                programa:</th>
+              <td colspan="4" style="width: 50%" class="align-middle borden" (change)="progreso()">
+                {{ condiciones1[k].tipoprograma }}</td>
+            </tr>
+            <tr class="text-center tablaAdmin">
+              <th colspan="4" style="width: 50%" scope="row" class="text-uppercase align-middle borden">nombre de
+                programa:</th>
+              <th colspan="2" style="width: 30%" class="text-uppercase align-middle borden">responsable:</th>
+              <th colspan="2" style="width: 20%" class="text-uppercase align-middle borden">fecha:</th>
+            </tr>
+            <tr class="text-center tablaAdmin">
+              <td colspan="4" scope="row" class="align-middle borden" (change)="progreso()">
+                {{ condiciones1[k].nombreprograma }}</td>
+              <td colspan="2" scope="row" class="align-middle borden" (change)="progreso()">
+                {{ condiciones1[k].respnombre }}</td>
+              <td colspan="2" scope="row" class="align-middle borden"
+                [ngClass]="{'atiempo' : res1 > 15,'encurso' : res1 <= 15, 'expira': res1 < 5, 'nulo': res1 == -10000 || res1 < -30}"
+                (ngInit)="myFunc1(condiciones1[k].datenombre)">{{ condiciones1[k].datenombre }}</td>
+            </tr>
+            <tr class="text-center tablaAdmin">
+              <th colspan="4" scope="row" class="text-uppercase align-middle borden">Título a otorgar:</th>
+              <th colspan="2" scope="row" class="text-uppercase align-middle borden">responsable:</th>
+              <th colspan="2" scope="row" class="text-uppercase align-middle borden">fecha:</th>
+            </tr>
+            <tr class="text-center tablaAdmin">
+              <td colspan="4" scope="row" class="align-middle borden">{{ condiciones1[k].titulo }}</td>
+              <td colspan="2" scope="row" class="align-middle borden">{{ condiciones1[k].resptitulo }}</td>
+              <td colspan="2" scope="row" class="align-middle borden"
+                [ngClass]="{'atiempo' : res2 > 15,'encurso' : res2 <= 15, 'expira': res2 < 5, 'nulo': res2 == -10000 || res2 < -30}"
+                (ngInit)="myFunc2(condiciones1[k].datetitulo)">{{ condiciones1[k].datetitulo }}</td>
+            </tr>
+            <tr class="text-center tablaAdmin">
+              <th colspan="4" scope="row" class="text-uppercase align-middle borden">contenido curricular:</th>
+              <th colspan="2" scope="row" class="text-uppercase align-middle borden">responsable:</th>
+              <th colspan="2" scope="row" class="text-uppercase align-middle borden">fecha:</th>
+            </tr>
+            <tr class="text-center tablaAdmin">
+              <td colspan="4" scope="row" class="align-middle borden">C:\Users\jdcor\Documents\ING SOFTWARE\U -
+                DOCTORADO CONDICIONES MINIMAS</td>
+              <td colspan="2" scope="row" class="align-middle borden">{{ condiciones1[k].respcontenido }}</td>
+              <td colspan="2" scope="row" class="align-middle borden"
+                [ngClass]="{'atiempo' : res3 > 15,'encurso' : res3 <= 15, 'expira': res3 < 5, 'nulo': res3 == -10000 || res3 < -30}"
+                (ngInit)="myFunc3(condiciones1[k].datecontenido)">{{ condiciones1[k].datecontenido }}</td>
+            </tr>
+            <tr class="text-center tablaAdmin">
+              <th colspan="8" scope="row" class="text-uppercase align-middle borden">observaciones:</th>
+            </tr>
+            <tr class="text-center tablaAdmin">
+              <td colspan="8" scope="row" class="align-middle borden">{{ condiciones1[k].observa }}</td>
+            </tr>
+            <tr class="text-center tablaAdmin">
+              <th rowspan="2" scope="row" class="text-uppercase align-middle borden"><span
+                  class="font-weight-bold">Aspecto 1:</span><br>Acto administrativo con el que se creó el programa y el
+                órgano interno de dirección que aprobó dicha creación.</th>
+              <th colspan="7" scope="row" class="text-uppercase align-middle borden">Adjuntos</th>
+            </tr>
+            <tr class="tablaAdmin">
+              <td colspan="7" scope="row" class="align-middle borden text-justify pre">
+                {{ condiciones1[k].pregunta11 }}
+                <div class="col-md-12 text-right p-3">
+                  <a download href="../../../assets/Doctorado.pdf">
+                    <button style="width: 22%; font-size: 100%;" class="btn botonUsco no-print" type="button"><i
+                        class="fas fa-download"></i> Descargar</button>
+                  </a>
+                </div>
+              </td>
+            </tr>
+            <tr class="tablaAdmin">
+              <th colspan="1" scope="row" class="text-uppercase align-middle borden text-center"><span
+                  class="font-weight-bold">Aspecto 2:</span><br>Áreas de formación del programa presentado y la
+                articulación con el alcance de la denominación.</th>
+              <td colspan="7" scope="row" class="align-middle borden text-justify pre">
+                {{ condiciones1[k].pregunta21 }}
+                <div class="col-md-12 text-right p-3">
+                  <a download href="../../../assets/Doctorado.pdf">
+                    <button style="width: 22%; font-size: 100%;" class="btn botonUsco no-print" type="button"><i
+                        class="fas fa-download"></i> Descargar</button>
+                  </a>
+                </div>
+              </td>
+            </tr>
+            <tr class="tablaAdmin">
+              <th colspan="1" scope="row" class="text-uppercase align-middle borden text-center"><span
+                  class="font-weight-bold">Aspecto 3:</span><br>Soporte del alcance, la especificidad de la denominación
+                y explicación de coherencia entre la denominación, el campo de conocimiento y el nivel de formación.
+              </th>
+              <td colspan="7" scope="row" class="align-middle borden text-justify pre">
+                {{ condiciones1[k].pregunta31 }}
+                <div class="col-md-12 text-right p-3">
+                  <a download href="../../../assets/Doctorado.pdf">
+                    <button style="width: 22%; font-size: 100%;" class="btn botonUsco no-print" type="button"><i
+                        class="fas fa-download"></i> Descargar</button>
+                  </a>
+                </div>
+              </td>
+            </tr>
+            <tr class="tablaAdmin">
+              <th colspan="1" scope="row" class="text-uppercase align-middle borden text-center"><span
+                  class="font-weight-bold">Aspecto 3:</span><br>Argumentos que la IES presenta para justificar la
+                articulación entre la denominación del título y la del programa.</th>
+              <td colspan="7" scope="row" class="align-middle borden text-justify pre">
+                {{ condiciones1[k].pregunta41 }}
+                <div class="col-md-12 text-right p-3">
+                  <a download href="../../../assets/Doctorado.pdf">
+                    <button style="width: 22%; font-size: 100%;" class="btn botonUsco no-print" type="button"><i
+                        class="fas fa-download"></i> Descargar</button>
+                  </a>
+                </div>
+              </td>
+            </tr>
+            <tr class="tablaAdmin no-print">
+              <th colspan="8" scope="row" class="text-uppercase align-middle borden">
+                <h5 class="font-weight-bold text-uppercase text-center">progreso</h5>
+              </th>
+            </tr>
+            <tr class="text-center tablaAdmin no-print">
+              <th colspan="8" scope="row" class="text-uppercase align-middle borden">
+                <ngb-progressbar [showValue]="true" class="uscoRojo" type="danger" [value]="100"></ngb-progressbar><br>
+              </th>
+            </tr>
+            <tr style="border:0px;" class="text-center tablaAdmin no-print">
+              <td style="border:0px;" style="background-color: #e7e6e6" colspan="8" scope="row"
+                class="text-uppercase align-middle borden">
+                <div class="row">
+                  <div class="col text-center">
+                    <button [routerLink]="['/DenominacionDelPrograma', k]" class="btn botonUsco"><span
+                        class="fas fa-pencil-alt"> </span> Editar</button>
+                  </div>
+                  <div class="col text-center">
+                    <button class="btn botonUsco" [printStyle]="{th : {'color': 'black'}, td : {'color': 'black'}}" printSectionId="print-section" printTitle="Condición 1" [useExistingCss]="true" ngxPrint><span
+                        class="fas fa-print"></span> Imprimir</button>
+                  </div>
+                  <div class="col text-center">
+                    <!--<button (click)="borrarInvocador(k)" class="btn botonUsco"><span class="far fa-trash-alt"></span> Borrar</button>-->
+                    <button class="btn botonUsco" (click)="openSm(content)"><span class="far fa-trash-alt"></span>
+                      Borrar</button>
+                    <ng-template #content let-modal>
+                      <div class="modal-header text-center navlinkin">
+                        <h4 class="modal-title" style="margin-left:45px;">¡PRECAUCIÓN!</h4>
+                      </div>
+                      <div class="modal-body text-center">
+                        <p class="alert alert-danger text-uppercase">Está a punto de borrar el registro <br> presione
+                          aceptar para borrar o cancelar para salir</p>
+                        <div class="row align-content-center">
+                          <div class="col text-center">
+                            <button (click)="borrarInvocador(k)" routerLinkActive="router-link-active"
+                              class="btn btn-info">Aceptar</button>
+                          </div>
+                          <div class="col text-center">
+                            <button class="btn btn-danger" (click)="modal.close('Close click')">Cancelar</button>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </ng-template>
-            </div>
-            </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <div *ngIf="(condiciones1 | keys).length === 0 && !loading" class="alert alert-success text-center" role="alert">
-    <strong><h4 class="alert-heading">No hay regsitros que mostrar</h4></strong>
-</div>
-<div *ngIf="loading" class="alert alert-warning text-center" role="alert">
-    <strong><h4 class="alert-heading">Cargando...</h4></strong>
-</div>
-</div>
-</div>
+                    </ng-template>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div *ngIf="(condiciones1 | keys).length === 0 && !loading" class="alert alert-success text-center"
+          role="alert">
+          <strong>
+            <h4 class="alert-heading">No hay regsitros que mostrar</h4>
+          </strong>
+        </div>
+        <div *ngIf="loading" class="alert alert-warning text-center" role="alert">
+          <strong>
+            <h4 class="alert-heading">Cargando...</h4>
+          </strong>
+        </div>
+      </div>
+    </div>
