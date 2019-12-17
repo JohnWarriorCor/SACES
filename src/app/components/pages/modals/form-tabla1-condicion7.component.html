@@ -5,127 +5,182 @@
   </a>
 </div>
 <form (ngSubmit)="guardar()" #forma="ngForm">
-<div class="modal-body">
-<!--OPCION POR TABLA-->
-<div class="row">
-    <div class="col-sm-2">
-      <div class="form-group">
-        <label for="inputAddress" class="text-uppercase gray">año</label>
-        <select [(ngModel)]="tabla1cond7.anio" [ngModelOptions]="{standalone: true}" class="form-control inputPaciente shadow" id="exampleFormControlSelect1">
-          <option value="" disabled="disabled">Año</option>
-          <option *ngFor="let ran of range" [value]="ran">{{ran}}</option>
-        </select>
+  <div class="modal-body">
+    <!--OPCION POR TABLA-->
+    <div class="row">
+      <div class="col-sm-2">
+        <div class="form-group">
+          <label for="inputAddress" class="text-uppercase gray">año</label>
+          <select [(ngModel)]="tabla1cond7.anio" [ngModelOptions]="{standalone: true}"
+            class="form-control inputPaciente shadow" id="exampleFormControlSelect1">
+            <option value="" disabled="disabled">Año</option>
+            <option *ngFor="let ran of range" [value]="ran">{{ran}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="form-group">
+          <label for="inputAddress" class="text-uppercase gray">periodo</label>
+          <input id="otrosgrup" [(ngModel)]="tabla1cond7.periodo" min="1" max="2" name="periodo" type="number"
+            class="form-control shadow p-3 inputPaciente" autocomplete="off" placeholder="0">
+        </div>
       </div>
     </div>
-    <div class="col-sm-2">
-      <div class="form-group">
-        <label for="inputAddress" class="text-uppercase gray">periodo</label>
-        <input id="otrosgrup" [(ngModel)]="tabla1cond7.periodo" min="1" max="2" name="periodo" type="number" class="form-control shadow p-3 inputPaciente" autocomplete="off" placeholder="0">
-      </div>
-    </div>
-  </div>
-<table bordercolor="black" class="table table-bordered">
-    <thead>
-      <tr class="text-center">
-        <th rowspan="2" scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">TIPO DE VINCULACIÓN</th>
-        <th rowspan="2" scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">número de docentes</th>
-        <th colspan="7" scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">nivel de formación</th>
-      </tr>
-      <tr class="text-center">
-        <th scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">no.<br> técnicos</th>
-        <th scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">no.<br> tecnólogos</th>
-        <th scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">no.<br> profesionales</th>
-        <th scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">no.<br> especialistas</th>
-        <th scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">no.<br> magisters</th>
-        <th scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">no.<br> doctores</th>
-        <th scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">no.<br> Posdoctorados</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row" class="text-uppercase align-middle borden text-center" style="font-size: 12px">Tiempo completo</th>
-        <td class="align-middle text-center">
-          <input [(ngModel)]="tabla1cond7.totalTC" [value]="tabla1cond7.totalTC" id="otrosgrup" type="number" name="totalTC" min="0" style="border:0px;width: 100%;" readonly="false" class="form-control" placement="top" ngbTooltip="Este campo es automático">
-        </td>
-        <td class="align-middle text-center">
-          <input [(ngModel)]="tabla1cond7.numTecnTC" id="otrosgrup" type="number" name="numTecnTC" min="0" style="border:0px;width: 100%;" class="form-control" [(ngModel)]="tcTecnico" autocomplete="off" (input)="calcularProfesoresTc()">
-        </td>
-        <td class="align-middle text-center">
-          <input [(ngModel)]="tabla1cond7.numTeclTC" id="otrosgrup" type="number" name="numTeclTC" min="0" style="border:0px;width: 100%;" class="form-control" [(ngModel)]="tcTecnologo" autocomplete="off" (input)="calcularProfesoresTc()">
-        </td>
-        <td class="align-middle text-center">
-          <input [(ngModel)]="tabla1cond7.numProTC" id="otrosgrup" type="number" name="numProTC" min="0" style="border:0px;width: 100%;" class="form-control" [(ngModel)]="tcProfesional" autocomplete="off" (input)="calcularProfesoresTc()">
-        </td>
-        <td class="align-middle text-center">
-          <input [(ngModel)]="tabla1cond7.numEspTC" id="otrosgrup" type="number" name="numEspTC" min="0" style="border:0px;width: 100%;" class="form-control" [(ngModel)]="tcEspecialista" autocomplete="off" (input)="calcularProfesoresTc()">
-        </td>
-        <td class="align-middle text-center">
-          <input [(ngModel)]="tabla1cond7.numMagTC" id="otrosgrup" type="number" name="numMagTC" min="0" style="border:0px;width: 100%;" class="form-control" [(ngModel)]="tcMagister" autocomplete="off" (input)="calcularProfesoresTc()">
-        </td>
-        <td class="align-middle text-center">
-          <input [(ngModel)]="tabla1cond7.numDocTC" id="otrosgrup" type="number" name="numDocTC" min="0" style="border:0px;width: 100%;" class="form-control" [(ngModel)]="tcDoctores" autocomplete="off" (input)="calcularProfesoresTc()">
-        </td>
-        <td class="align-middle text-center">
-          <input [(ngModel)]="tabla1cond7.numPosTC" id="otrosgrup" type="number" name="numPosTC" min="0" style="border:0px;width: 100%;" class="form-control" [(ngModel)]="tcPosdoctorado" autocomplete="off" (input)="calcularProfesoresTc()">
-        </td>
-      </tr>
-      <tr>
-        <th scope="row" class="text-uppercase align-middle borden text-center" style="font-size: 12px">Medio Tiempo</th>
-        <td class="align-middle text-center">
-          <input [(ngModel)]="tabla1cond7.totalMT" [value]="tabla1cond7.totalMT" id="otrosgrup" type="number" name="totalMT" min="0" style="border:0px;width: 100%;" class="form-control" readonly="false" placement="top" ngbTooltip="Este campo es automático">
-        </td>
-        <td class="align-middle text-center">
-          <input [(ngModel)]="tabla1cond7.numTecnMT" id="otrosgrup" type="number" name="numTecnMT" min="0" style="border:0px;width: 100%;" class="form-control"  [(ngModel)]="mtTecnico" autocomplete="off" (input)="calcularProfesoresMt()">
-        </td>
-        <td class="align-middle text-center">
-          <input [(ngModel)]="tabla1cond7.numTeclMT" id="otrosgrup" type="number" name="numTeclMT" min="0" style="border:0px;width: 100%;" class="form-control"  [(ngModel)]="mtTecnologo" autocomplete="off" (input)="calcularProfesoresMt()">
-        </td>
-        <td class="align-middle text-center">
-          <input [(ngModel)]="tabla1cond7.numProMT"  id="otrosgrup" type="number" name="numProMT" min="0" style="border:0px;width: 100%;" class="form-control"  [(ngModel)]="mtProfesional" autocomplete="off" (input)="calcularProfesoresMt()">
-        </td>
-        <td class="align-middle text-center">
-          <input [(ngModel)]="tabla1cond7.numEspMT"  id="otrosgrup" type="number" name="numEspMT" min="0" style="border:0px;width: 100%;" class="form-control"  [(ngModel)]="mtEspecialista" autocomplete="off" (input)="calcularProfesoresMt()">
-        </td>
-        <td class="align-middle text-center">
-          <input [(ngModel)]="tabla1cond7.numMagMT"  id="otrosgrup" type="number" name="numMagMT" min="0" style="border:0px;width: 100%;" class="form-control"  [(ngModel)]="mtMagister" autocomplete="off" (input)="calcularProfesoresMt()">
-        </td>
-        <td class="align-middle text-center">
-          <input [(ngModel)]="tabla1cond7.numDocMT"  id="otrosgrup" type="number" name="numDocMT" min="0" style="border:0px;width: 100%;" class="form-control"  [(ngModel)]="mtDoctores" autocomplete="off" (input)="calcularProfesoresMt()">
-        </td>
-        <td class="align-middle text-center">
-          <input [(ngModel)]="tabla1cond7.numPosMT"  id="otrosgrup" type="number" name="numPosMT" min="0" style="border:0px;width: 100%;" class="form-control"  [(ngModel)]="mtPosdoctorado" autocomplete="off" (input)="calcularProfesoresMt()">
-        </td>
-      </tr>
-      <tr>
-        <th scope="row" class="text-uppercase align-middle borden text-center" style="font-size: 12px">catedra</th>
-        <td class="align-middle text-center">
-          <input [(ngModel)]="tabla1cond7.totalC" [value]="tabla1cond7.totalC" id="otrosgrup" type="number" name="totalC" min="0" style="border:0px;width: 100%;" class="form-control" readonly="false" placement="top" ngbTooltip="Este campo es automático">
-        </td>
-        <td class="align-middle text-center">
-          <input [(ngModel)]="tabla1cond7.numTecnC" id="otrosgrup" type="number" name="numTecnC" min="0" style="border:0px;width: 100%;" class="form-control"  [(ngModel)]="cTecnico" autocomplete="off" (input)="calcularProfesoresC()">
-        </td>
-        <td class="align-middle text-center">
-          <input [(ngModel)]="tabla1cond7.numTeclC" id="otrosgrup" type="number" name="numTeclC" min="0" style="border:0px;width: 100%;" class="form-control"  [(ngModel)]="cTecnologo" autocomplete="off" (input)="calcularProfesoresC()">
-        </td>
-        <td class="align-middle text-center">
-          <input [(ngModel)]="tabla1cond7.numProC"  id="otrosgrup" type="number" name="numProC" min="0" style="border:0px;width: 100%;" class="form-control"  [(ngModel)]="cProfesional" autocomplete="off" (input)="calcularProfesoresC()">
-        </td>
-        <td class="align-middle text-center">
-          <input [(ngModel)]="tabla1cond7.numEspC"  id="otrosgrup" type="number" name="numEspC" min="0" style="border:0px;width: 100%;" class="form-control"  [(ngModel)]="cEspecialista" autocomplete="off" (input)="calcularProfesoresC()">
-        </td>
-        <td class="align-middle text-center">
-          <input [(ngModel)]="tabla1cond7.numMagC"  id="otrosgrup" type="number" name="numMagC" min="0" style="border:0px;width: 100%;" class="form-control"  [(ngModel)]="cMagister" autocomplete="off" (input)="calcularProfesoresC()">
-        </td>
-        <td class="align-middle text-center">
-          <input [(ngModel)]="tabla1cond7.numDocC"  id="otrosgrup" type="number" name="numDocC" min="0" style="border:0px;width: 100%;" class="form-control"  [(ngModel)]="cDoctores" autocomplete="off" (input)="calcularProfesoresC()">
-        </td>
-        <td class="align-middle text-center">
-          <input [(ngModel)]="tabla1cond7.numPosC"  id="otrosgrup" type="number" name="numPosC" min="0" style="border:0px;width: 100%;" class="form-control"  [(ngModel)]="cPosdoctorado" autocomplete="off" (input)="calcularProfesoresC()">
-        </td>
-      </tr>
-    </tbody>
-  </table>
-<!-- OPCIÓN FORMULARIO
+    <table bordercolor="black" class="table table-bordered">
+      <thead>
+        <tr class="text-center">
+          <th rowspan="2" scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">TIPO DE
+            VINCULACIÓN</th>
+          <th rowspan="2" scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">número de
+            docentes</th>
+          <th colspan="7" scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">nivel de
+            formación</th>
+        </tr>
+        <tr class="text-center">
+          <th scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">no.<br> técnicos</th>
+          <th scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">no.<br> tecnólogos</th>
+          <th scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">no.<br> profesionales</th>
+          <th scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">no.<br> especialistas</th>
+          <th scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">no.<br> magisters</th>
+          <th scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">no.<br> doctores</th>
+          <th scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">no.<br> Posdoctorados</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row" class="text-uppercase align-middle borden text-center" style="font-size: 12px">Tiempo completo
+          </th>
+          <td class="align-middle text-center">
+            <input [(ngModel)]="tabla1cond7.totalTC" [value]="tabla1cond7.totalTC" id="otrosgrup" type="number"
+              name="totalTC" min="0" style="border:0px;width: 100%;" readonly="false" class="form-control"
+              placement="top" ngbTooltip="Este campo es automático">
+          </td>
+          <td class="align-middle text-center">
+            <input [(ngModel)]="tabla1cond7.numTecnTC" id="otrosgrup" type="number" name="numTecnTC" min="0"
+              style="border:0px;width: 100%;" class="form-control" [(ngModel)]="tcTecnico" autocomplete="off"
+              (input)="calcularProfesoresTc()">
+          </td>
+          <td class="align-middle text-center">
+            <input [(ngModel)]="tabla1cond7.numTeclTC" id="otrosgrup" type="number" name="numTeclTC" min="0"
+              style="border:0px;width: 100%;" class="form-control" [(ngModel)]="tcTecnologo" autocomplete="off"
+              (input)="calcularProfesoresTc()">
+          </td>
+          <td class="align-middle text-center">
+            <input [(ngModel)]="tabla1cond7.numProTC" id="otrosgrup" type="number" name="numProTC" min="0"
+              style="border:0px;width: 100%;" class="form-control" [(ngModel)]="tcProfesional" autocomplete="off"
+              (input)="calcularProfesoresTc()">
+          </td>
+          <td class="align-middle text-center">
+            <input [(ngModel)]="tabla1cond7.numEspTC" id="otrosgrup" type="number" name="numEspTC" min="0"
+              style="border:0px;width: 100%;" class="form-control" [(ngModel)]="tcEspecialista" autocomplete="off"
+              (input)="calcularProfesoresTc()">
+          </td>
+          <td class="align-middle text-center">
+            <input [(ngModel)]="tabla1cond7.numMagTC" id="otrosgrup" type="number" name="numMagTC" min="0"
+              style="border:0px;width: 100%;" class="form-control" [(ngModel)]="tcMagister" autocomplete="off"
+              (input)="calcularProfesoresTc()">
+          </td>
+          <td class="align-middle text-center">
+            <input [(ngModel)]="tabla1cond7.numDocTC" id="otrosgrup" type="number" name="numDocTC" min="0"
+              style="border:0px;width: 100%;" class="form-control" [(ngModel)]="tcDoctores" autocomplete="off"
+              (input)="calcularProfesoresTc()">
+          </td>
+          <td class="align-middle text-center">
+            <input [(ngModel)]="tabla1cond7.numPosTC" id="otrosgrup" type="number" name="numPosTC" min="0"
+              style="border:0px;width: 100%;" class="form-control" [(ngModel)]="tcPosdoctorado" autocomplete="off"
+              (input)="calcularProfesoresTc()">
+          </td>
+        </tr>
+        <tr>
+          <th scope="row" class="text-uppercase align-middle borden text-center" style="font-size: 12px">Medio Tiempo
+          </th>
+          <td class="align-middle text-center">
+            <input [(ngModel)]="tabla1cond7.totalMT" [value]="tabla1cond7.totalMT" id="otrosgrup" type="number"
+              name="totalMT" min="0" style="border:0px;width: 100%;" class="form-control" readonly="false"
+              placement="top" ngbTooltip="Este campo es automático">
+          </td>
+          <td class="align-middle text-center">
+            <input [(ngModel)]="tabla1cond7.numTecnMT" id="otrosgrup" type="number" name="numTecnMT" min="0"
+              style="border:0px;width: 100%;" class="form-control" [(ngModel)]="mtTecnico" autocomplete="off"
+              (input)="calcularProfesoresMt()">
+          </td>
+          <td class="align-middle text-center">
+            <input [(ngModel)]="tabla1cond7.numTeclMT" id="otrosgrup" type="number" name="numTeclMT" min="0"
+              style="border:0px;width: 100%;" class="form-control" [(ngModel)]="mtTecnologo" autocomplete="off"
+              (input)="calcularProfesoresMt()">
+          </td>
+          <td class="align-middle text-center">
+            <input [(ngModel)]="tabla1cond7.numProMT" id="otrosgrup" type="number" name="numProMT" min="0"
+              style="border:0px;width: 100%;" class="form-control" [(ngModel)]="mtProfesional" autocomplete="off"
+              (input)="calcularProfesoresMt()">
+          </td>
+          <td class="align-middle text-center">
+            <input [(ngModel)]="tabla1cond7.numEspMT" id="otrosgrup" type="number" name="numEspMT" min="0"
+              style="border:0px;width: 100%;" class="form-control" [(ngModel)]="mtEspecialista" autocomplete="off"
+              (input)="calcularProfesoresMt()">
+          </td>
+          <td class="align-middle text-center">
+            <input [(ngModel)]="tabla1cond7.numMagMT" id="otrosgrup" type="number" name="numMagMT" min="0"
+              style="border:0px;width: 100%;" class="form-control" [(ngModel)]="mtMagister" autocomplete="off"
+              (input)="calcularProfesoresMt()">
+          </td>
+          <td class="align-middle text-center">
+            <input [(ngModel)]="tabla1cond7.numDocMT" id="otrosgrup" type="number" name="numDocMT" min="0"
+              style="border:0px;width: 100%;" class="form-control" [(ngModel)]="mtDoctores" autocomplete="off"
+              (input)="calcularProfesoresMt()">
+          </td>
+          <td class="align-middle text-center">
+            <input [(ngModel)]="tabla1cond7.numPosMT" id="otrosgrup" type="number" name="numPosMT" min="0"
+              style="border:0px;width: 100%;" class="form-control" [(ngModel)]="mtPosdoctorado" autocomplete="off"
+              (input)="calcularProfesoresMt()">
+          </td>
+        </tr>
+        <tr>
+          <th scope="row" class="text-uppercase align-middle borden text-center" style="font-size: 12px">catedra</th>
+          <td class="align-middle text-center">
+            <input [(ngModel)]="tabla1cond7.totalC" [value]="tabla1cond7.totalC" id="otrosgrup" type="number"
+              name="totalC" min="0" style="border:0px;width: 100%;" class="form-control" readonly="false"
+              placement="top" ngbTooltip="Este campo es automático">
+          </td>
+          <td class="align-middle text-center">
+            <input [(ngModel)]="tabla1cond7.numTecnC" id="otrosgrup" type="number" name="numTecnC" min="0"
+              style="border:0px;width: 100%;" class="form-control" [(ngModel)]="cTecnico" autocomplete="off"
+              (input)="calcularProfesoresC()">
+          </td>
+          <td class="align-middle text-center">
+            <input [(ngModel)]="tabla1cond7.numTeclC" id="otrosgrup" type="number" name="numTeclC" min="0"
+              style="border:0px;width: 100%;" class="form-control" [(ngModel)]="cTecnologo" autocomplete="off"
+              (input)="calcularProfesoresC()">
+          </td>
+          <td class="align-middle text-center">
+            <input [(ngModel)]="tabla1cond7.numProC" id="otrosgrup" type="number" name="numProC" min="0"
+              style="border:0px;width: 100%;" class="form-control" [(ngModel)]="cProfesional" autocomplete="off"
+              (input)="calcularProfesoresC()">
+          </td>
+          <td class="align-middle text-center">
+            <input [(ngModel)]="tabla1cond7.numEspC" id="otrosgrup" type="number" name="numEspC" min="0"
+              style="border:0px;width: 100%;" class="form-control" [(ngModel)]="cEspecialista" autocomplete="off"
+              (input)="calcularProfesoresC()">
+          </td>
+          <td class="align-middle text-center">
+            <input [(ngModel)]="tabla1cond7.numMagC" id="otrosgrup" type="number" name="numMagC" min="0"
+              style="border:0px;width: 100%;" class="form-control" [(ngModel)]="cMagister" autocomplete="off"
+              (input)="calcularProfesoresC()">
+          </td>
+          <td class="align-middle text-center">
+            <input [(ngModel)]="tabla1cond7.numDocC" id="otrosgrup" type="number" name="numDocC" min="0"
+              style="border:0px;width: 100%;" class="form-control" [(ngModel)]="cDoctores" autocomplete="off"
+              (input)="calcularProfesoresC()">
+          </td>
+          <td class="align-middle text-center">
+            <input [(ngModel)]="tabla1cond7.numPosC" id="otrosgrup" type="number" name="numPosC" min="0"
+              style="border:0px;width: 100%;" class="form-control" [(ngModel)]="cPosdoctorado" autocomplete="off"
+              (input)="calcularProfesoresC()">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- OPCIÓN FORMULARIO
   <br>
 <button style="color: #DFD4A6;background-color: #8F141B;margin: 1px;" class="btn text-uppercase" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">tiempo completo</button>
 <button style="color: #DFD4A6;background-color: #8F141B;margin: 1px;" class="btn text-uppercase" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">medio tiempo</button>
@@ -287,9 +342,9 @@
   </div>
 
 -->
-</div>
-<div class="modal-footer">
-  <button type="submit" class="btn navlinkin"><span class="far fa-save"></span> Guardar</button>
-  <button type="reset" class="btn navlinkin"><span class="fas fa-backspace"></span> Limpiar</button>
-</div>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" class="btn navlinkin"><span class="far fa-save"></span> Guardar</button>
+    <button type="reset" class="btn navlinkin"><span class="fas fa-backspace"></span> Limpiar</button>
+  </div>
 </form>

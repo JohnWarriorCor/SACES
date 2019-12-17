@@ -1,47 +1,48 @@
 <div class="modal-header navlinkinSolid">
-    <h4 class="modal-title text-uppercase">6</h4>
-    <a class="btn navlinkin fa-2x" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
-      <i class="fas fa-times-circle"></i>
-    </a>
-  </div>
-  <form #forma="ngForm">
+  <h4 class="modal-title text-uppercase">6</h4>
+  <a class="btn navlinkin fa-2x" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <i class="fas fa-times-circle"></i>
+  </a>
+</div>
+<form #forma="ngForm">
   <div class="modal-body">
-  <div class="form-group">
-    <label class="text-uppercase">Nombre</label>
-    <input id="nombregrupinves" name="nombregrupinves" type="text" class="form-control" placeholder="Nombre del grupo de investigación">
-  </div>
-  <div class="form-group">
-    <label class="text-uppercase">Clasificación colciencias</label>
-    <div class="custom-control custom-radio">
-      <input type="radio" id="customRadio1"  value="X" name="customRadio1" class="custom-control-input">
-      <label class="custom-control-label" for="customRadio1">A1</label>
+    <div class="form-group">
+      <label class="text-uppercase">Nombre</label>
+      <input id="nombregrupinves" name="nombregrupinves" type="text" class="form-control"
+        placeholder="Nombre del grupo de investigación">
     </div>
-    <div class="custom-control custom-radio">
-      <input type="radio" id="customRadio2" value="X" name="customRadio2" class="custom-control-input">
-      <label class="custom-control-label" for="customRadio2">A</label>
+    <div class="form-group">
+      <label class="text-uppercase">Clasificación colciencias</label>
+      <div class="custom-control custom-radio">
+        <input type="radio" id="customRadio1" value="X" name="customRadio1" class="custom-control-input">
+        <label class="custom-control-label" for="customRadio1">A1</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input type="radio" id="customRadio2" value="X" name="customRadio2" class="custom-control-input">
+        <label class="custom-control-label" for="customRadio2">A</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input type="radio" id="customRadio3" value="X" name="customRadio3" class="custom-control-input">
+        <label class="custom-control-label" for="customRadio3">B</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input type="radio" id="customRadio4" value="X" name="customRadio4" class="custom-control-input">
+        <label class="custom-control-label" for="customRadio4">C</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input type="radio" id="customRadio5" value="X" name="customRadio5" class="custom-control-input">
+        <label class="custom-control-label" for="customRadio5">Registrado</label>
+      </div>
     </div>
-    <div class="custom-control custom-radio">
-      <input type="radio" id="customRadio3" value="X" name="customRadio3" class="custom-control-input">
-      <label class="custom-control-label" for="customRadio3">B</label>
+    <div class="form-group">
+      <label for="inputAddress" class="text-uppercase">OTROS GRUPOS</label>
+      <input id="otrosgrup" name="otrosgrup" type="text" class="form-control" placeholder="...">
     </div>
-    <div class="custom-control custom-radio">
-      <input type="radio" id="customRadio4" value="X" name="customRadio4" class="custom-control-input">
-      <label class="custom-control-label" for="customRadio4">C</label>
+    <div class="form-group">
+      <label for="inputAddress" class="text-uppercase">GRUPOS INTERDISCIPLINARIOS</label>
+      <input id="grupinterdis" name="grupinterdis" type="text" class="form-control" placeholder="...">
     </div>
-    <div class="custom-control custom-radio">
-      <input type="radio" id="customRadio5" value="X" name="customRadio5" class="custom-control-input">
-      <label class="custom-control-label" for="customRadio5">Registrado</label>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputAddress" class="text-uppercase">OTROS GRUPOS</label>
-    <input id="otrosgrup" name="otrosgrup" type="text" class="form-control" placeholder="...">
-  </div>
-  <div class="form-group">
-    <label for="inputAddress" class="text-uppercase">GRUPOS INTERDISCIPLINARIOS</label>
-    <input id="grupinterdis" name="grupinterdis" type="text" class="form-control" placeholder="...">
-  </div>
-  
+
   </div>
   <div class="modal-footer">
     <button type="submit" class="btn navlinkin"><span class="far fa-save"></span> Guardar</button>

@@ -1,36 +1,35 @@
 <div class="container inicio animated fadeIn fast">
   <div id="print-section1">
     <h5 class="text-uppercase">NÚMERO DE DOCENTES POR VINCULACIÓN</h5>
-    <ngb-pagination class="d-flex justify-content-start no-print" [collectionSize]="((tabla1condicione7 | keys).length)*10"
-      [(page)]="page"></ngb-pagination>
-
-    <table bordercolor="black" class="table table-bordered"
+    <ngb-pagination class="d-flex justify-content-start no-print"
+      [collectionSize]="((tabla1condicione7 | keys).length)*10" [(page)]="page"></ngb-pagination>
+    <table class="table tableBordered"
       *ngFor="let k of tabla1condicione7 | keys | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize ; let i = index">
-      <thead>
-        <h5 class="navlinkinSolid text-center" style="padding: 5px;">
-          {{tabla1condicione7[k].anio}}-{{tabla1condicione7[k].periodo}}</h5>
+      <thead class="tableSolid font-weight-bold">
+        <h6 class="navlinkinSolid text-center" style="padding: 5px;">
+          {{tabla1condicione7[k].anio}}-{{tabla1condicione7[k].periodo}}</h6>
         <tr class="text-center navlinkinSolid">
-          <th rowspan="2" scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">TIPO DE
-            VINCULACIÓN</th>
-          <th rowspan="2" scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">número de
-            docentes</th>
-          <th colspan="7" scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">nivel de
-            formación</th>
+          <td rowspan="2" scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">TIPO DE
+            VINCULACIÓN</td>
+          <td rowspan="2" scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">número de
+            docentes</td>
+          <td colspan="7" scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">nivel de
+            formación</td>
         </tr>
         <tr class="text-center navlinkinSolid">
-          <th scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">no. técnicos</th>
-          <th scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">no. tecnólogos</th>
-          <th scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">no. profesionales</th>
-          <th scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">no. especialistas</th>
-          <th scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">no. magisters</th>
-          <th scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">no. doctores</th>
-          <th scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">no. Posdoctorados</th>
+          <td scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">no. técnicos</td>
+          <td scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">no. tecnólogos</td>
+          <td scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">no. profesionales</td>
+          <td scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">no. especialistas</td>
+          <td scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">no. magisters</td>
+          <td scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">no. doctores</td>
+          <td scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">no. Posdoctorados</td>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <th scope="row" class="text-uppercase align-middle borden text-center navlinkinSolid"
-            style="font-size: 11.5px">Tiempo completo</th>
+          <td scope="row" class="text-uppercase align-middle borden text-center navlinkinSolid"
+            style="font-size: 11.5px">Tiempo completo</td>
           <td class="align-middle text-center">
             {{ tabla1condicione7[k].totalTC }}
           </td>
@@ -57,8 +56,8 @@
           </td>
         </tr>
         <tr>
-          <th scope="row" class="text-uppercase align-middle borden text-center navlinkinSolid" style="font-size: 12px">
-            Medio Tiempo</th>
+          <td scope="row" class="text-uppercase align-middle borden text-center navlinkinSolid" style="font-size: 12px">
+            Medio Tiempo</td>
           <td class="align-middle text-center">
             {{ tabla1condicione7[k].totalMT }}
           </td>
@@ -85,8 +84,8 @@
           </td>
         </tr>
         <tr>
-          <th scope="row" class="text-uppercase align-middle borden text-center navlinkinSolid" style="font-size: 12px">
-            catedra</th>
+          <td scope="row" class="text-uppercase align-middle borden text-center navlinkinSolid" style="font-size: 12px">
+            catedra</td>
           <td class="align-middle text-center">
             {{ tabla1condicione7[k].totalC }}
           </td>
@@ -158,32 +157,40 @@
   <button style="width: auto;" class="btn botonUscoPerfil" routerLinkActive="active"
     [routerLink]="['/ModalTabla1', 'nuevo']"><i class="fas fa-plus-circle"></i> Nuevo registro</button>
   <button style="width: auto;" class="btn botonUscoPerfil"
-    [printStyle]="{th : {'color': 'black'}, td : {'color': 'black'}}" printSectionId="print-section1"
+    [printStyle]="{th : {'color': 'black'}, td : {'color': 'black','border-top':'1px solid #000'}}"
+    printSectionId="print-section1" printTitle="Número de docentes por vinculación" [useExistingCss]="true"
+    ngxPrint><span class="fas fa-print"></span>
+    Imprimir en PDF <i class="fas fa-file-pdf"></i></button>
+  <button style="width: auto;" class="btn botonUscoPerfil"
+    [printStyle]="{th : {'color': 'black'}, td : {'color': 'black'}}" printSectionId="tabla1Todo"
     printTitle="Número de docentes por vinculación" [useExistingCss]="true" ngxPrint><span class="fas fa-print"></span>
-    Imprimir</button>
+    Imprimir todo PDF <i class="fas fa-file-pdf"></i></button>
   <hr>
   <div id="print-section2">
     <h5 class="text-uppercase">Grupos de investigación</h5>
-    <table class="table table-bordered">
-      <thead>
+    <table class="table tableBordered">
+      <thead class="tableSolid font-weight-bold">
         <tr class="text-center navlinkinSolid">
-          <th rowspan="2" scope="col" class="text-uppercase align-middle borden">GRUPOS DE INVESTIGACIÓN NOMBRE</th>
-          <th colspan="5" scope="col" class="text-uppercase align-middle borden">CLASIFICACIÓN EN COLCIENCIAS</th>
-          <th rowspan="2" scope="col" class="text-uppercase align-middle borden">OTROS GRUPOS</th>
-          <th rowspan="2" scope="col" class="text-uppercase align-middle borden">GRUPOS INTERDISCIPLINARIOS</th>
-          <th rowspan="2" scope="col" class="text-uppercase align-middle borden no-print">Acciones</th>
+          <td rowspan="2" scope="col" class="text-uppercase align-middle borden">#</td>
+          <td rowspan="2" scope="col" class="text-uppercase align-middle borden">GRUPOS DE INVESTIGACIÓN NOMBRE</td>
+          <td colspan="5" scope="col" class="text-uppercase align-middle borden">CLASIFICACIÓN EN COLCIENCIAS</td>
+          <td rowspan="2" scope="col" class="text-uppercase align-middle borden">OTROS GRUPOS</td>
+          <td rowspan="2" scope="col" class="text-uppercase align-middle borden">GRUPOS INTERDISCIPLINARIOS</td>
+          <td rowspan="2" scope="col" class="text-uppercase align-middle borden no-print">Acciones</td>
         </tr>
         <tr class="text-center navlinkinSolid">
-          <th scope="col" class="text-uppercase align-middle borden">A1</th>
-          <th scope="col" class="text-uppercase align-middle borden">A</th>
-          <th scope="col" class="text-uppercase align-middle borden">B</th>
-          <th scope="col" class="text-uppercase align-middle borden">C</th>
-          <th scope="col" class="text-uppercase align-middle borden no-print" placement="top" ngbTooltip="Registrado">r
-          </th>
+          <td scope="col" class="text-uppercase align-middle borden">A1</td>
+          <td scope="col" class="text-uppercase align-middle borden">A</td>
+          <td scope="col" class="text-uppercase align-middle borden">B</td>
+          <td scope="col" class="text-uppercase align-middle borden">C</td>
+          <td scope="col" class="text-uppercase align-middle borden" placement="top" ngbTooltip="Registrado">R</td>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let k of tabla2condicione7 | keys; let i = index">
+          <td class="align-middle text-center">
+            {{ i+1 }}
+          </td>
           <td class="align-middle text-center">
             {{ tabla2condicione7[k].nombregrupinves }}
           </td>
@@ -247,7 +254,6 @@
       </tbody>
     </table>
   </div>
-
   <div *ngIf="(tabla2condicione7 | keys).length === 0 && !loading" class="alert alert-success text-center" role="alert">
     <strong>
       <h4 class="alert-heading">No hay regsitros que mostrar</h4>
@@ -261,22 +267,23 @@
   <button style="width: auto;" class="btn botonUscoPerfil" routerLinkActive="active"
     [routerLink]="['/Modal', 'nuevo']"><i class="fas fa-plus-circle"></i> Nuevo registro</button>
   <button style="width: auto;" class="btn botonUscoPerfil"
-    [printStyle]="{th : {'color': 'black'}, td : {'color': 'black'}}" printSectionId="print-section2"
-    printTitle="Grupos de investigación" [useExistingCss]="true" ngxPrint><span class="fas fa-print"></span> Imprimir</button>
+    [printStyle]="{th : {'color': 'black', 'border': '1px solid #000'}, td : {'color': 'black'}}"
+    printSectionId="print-section2" printTitle="Grupos de investigación" [useExistingCss]="true" ngxPrint><span
+      class="fas fa-print"></span> Imprimir</button>
   <hr>
   <div id="print-section3">
     <h5 class="text-uppercase">publicación revista especializada</h5>
-    <table class="table table-bordered">
-      <thead>
+    <table class="table tableBordered">
+      <thead class="tableSolid font-weight-bold" class="tableSolid font-weight-bold">
         <tr class="text-center navlinkinSolid">
-          <th scope="col" rowspan="2" class="text-uppercase align-middle borden">Grupo</th>
-          <th scope="col" colspan="2" class="text-uppercase align-middle borden">Clasificación</th>
-          <th scope="col" rowspan="2" class="text-uppercase align-middle borden">Total</th>
-          <th rowspan="2" scope="col" class="text-uppercase align-middle borden no-print">Acciones</th>
+          <td scope="col" rowspan="2" class="text-uppercase align-middle borden">Grupo</td>
+          <td scope="col" colspan="2" class="text-uppercase align-middle borden">Clasificación</td>
+          <td scope="col" rowspan="2" class="text-uppercase align-middle borden">Total</td>
+          <td rowspan="2" scope="col" class="text-uppercase align-middle borden no-print">Acciones</td>
         </tr>
         <tr class="text-center navlinkinSolid">
-          <th scope="col" class="text-uppercase align-middle borden">Tipo A</th>
-          <th scope="col" class="text-uppercase align-middle borden">Tipo Top</th>
+          <td scope="col" class="text-uppercase align-middle borden">Tipo A</td>
+          <td scope="col" class="text-uppercase align-middle borden">Tipo Top</td>
         </tr>
       </thead>
       <tbody>
@@ -344,16 +351,16 @@
   <hr>
   <div id="print-section4">
     <h5 class="text-uppercase">Estudiantes por año</h5>
-    <table class="table table-bordered">
-      <thead>
+    <table class="table tableBordered">
+      <thead class="tableSolid font-weight-bold">
         <tr class="text-center navlinkinSolid">
-          <th scope="col" class="text-uppercase align-middle borden">Año y periódo</th>
-          <th scope="col" class="text-uppercase align-middle borden">Estudiantes inscritos</th>
-          <th scope="col" class="text-uppercase align-middle borden">Graduados</th>
-          <th scope="col" class="text-uppercase align-middle borden">Egresados</th>
-          <th scope="col" class="text-uppercase align-middle borden">(%) Tasa deserción SPADIES </th>
-          <th scope="col" class="text-uppercase align-middle borden">(%) Tasa deserción </th>
-          <th scope="col" class="text-uppercase align-middle borden no-print">Acciones</th>
+          <td scope="col" class="text-uppercase align-middle borden">Año y periódo</td>
+          <td scope="col" class="text-uppercase align-middle borden">Estudiantes inscritos</td>
+          <td scope="col" class="text-uppercase align-middle borden">Graduados</td>
+          <td scope="col" class="text-uppercase align-middle borden">Egresados</td>
+          <td scope="col" class="text-uppercase align-middle borden">(%) Tasa deserción SPADIES </td>
+          <td scope="col" class="text-uppercase align-middle borden">(%) Tasa deserción </td>
+          <td scope="col" class="text-uppercase align-middle borden no-print">Acciones</td>
         </tr>
       </thead>
       <tbody>
@@ -429,33 +436,34 @@
     [routerLink]="['/ModalTabla4', 'nuevo']"><i class="fas fa-plus-circle"></i> Nuevo registro</button>
   <button style="width: auto;" class="btn botonUscoPerfil"
     [printStyle]="{th : {'color': 'black'}, td : {'color': 'black'}}" printSectionId="print-section4"
-    printTitle="Publicación de revista especializada" [useExistingCss]="true" ngxPrint><span class="fas fa-print"></span> Imprimir</button>
+    printTitle="Publicación de revista especializada" [useExistingCss]="true" ngxPrint><span
+      class="fas fa-print"></span> Imprimir</button>
   <hr>
   <div id="print-section5">
     <h5 class="text-uppercase">Porcentaje de dedicación docentes</h5>
-    <table class="table table-bordered">
-      <thead>
+    <table class="table tableBordered">
+      <thead class="tableSolid font-weight-bold">
         <tr class="text-center navlinkinSolid">
-          <th scope="col" class="text-uppercase align-middle borden">Año</th>
-          <th scope="col" class="text-uppercase align-middle borden">Período</th>
-          <th scope="col" class="text-uppercase align-middle borden"><span placement="top"
-              ngbTooltip="Tiempo completo">T.C. (2A.)</span></th>
-          <th scope="col" class="text-uppercase align-middle borden"><span placement="top"
+          <td scope="col" class="text-uppercase align-middle borden">Año</td>
+          <td scope="col" class="text-uppercase align-middle borden">Período</td>
+          <td scope="col" class="text-uppercase align-middle borden"><span placement="top"
+              ngbTooltip="Tiempo completo">T.C. (2A.)</span></td>
+          <td scope="col" class="text-uppercase align-middle borden"><span placement="top"
               ngbTooltip="Medio tiempo">M.T.
-              (2B)</span></th>
-          <th scope="col" class="text-uppercase align-middle borden"><span placement="top" ngbTooltip="Cátedra">C
-              (2C.)</span></th>
-          <th scope="col" class="text-uppercase align-middle borden">Dedicación de profesores a la docencia de <span
+              (2B)</span></td>
+          <td scope="col" class="text-uppercase align-middle borden"><span placement="top" ngbTooltip="Cátedra">C
+              (2C.)</span></td>
+          <td scope="col" class="text-uppercase align-middle borden">Dedicación de profesores a la docencia de <span
               placement="top" ngbTooltip="Tiempo completo">T.C.</span> y <span placement="top"
-              ngbTooltip="Medio tiempo">M.T.</span> (%)</th>
-          <th scope="col" class="text-uppercase align-middle borden">Dedicación de profesores de <span placement="top"
+              ngbTooltip="Medio tiempo">M.T.</span> (%)</td>
+          <td scope="col" class="text-uppercase align-middle borden">Dedicación de profesores de <span placement="top"
               ngbTooltip="Tiempo completo">T.C.</span> y <span placement="top" ngbTooltip="Medio tiempo">M.T.</span> a
             la
-            investigación (%)</th>
-          <th scope="col" class="text-uppercase align-middle borden">Dedicación de profesores a la extensión de <span
+            investigación (%)</td>
+          <td scope="col" class="text-uppercase align-middle borden">Dedicación de profesores a la extensión de <span
               placement="top" ngbTooltip="Tiempo completo">T.C.</span> y <span placement="top"
-              ngbTooltip="Medio tiempo">M.T.</span> (%)</th>
-          <th scope="col" class="text-uppercase align-middle borden no-print">Acciones</th>
+              ngbTooltip="Medio tiempo">M.T.</span> (%)</td>
+          <td scope="col" class="text-uppercase align-middle borden no-print">Acciones</td>
         </tr>
       </thead>
       <tbody>
@@ -537,28 +545,29 @@
     [routerLink]="['/ModalTabla5', 'nuevo']"><i class="fas fa-plus-circle"></i> Nuevo registro</button>
   <button style="width: auto;" class="btn botonUscoPerfil"
     [printStyle]="{th : {'color': 'black'}, td : {'color': 'black'}}" printSectionId="print-section5"
-    printTitle="Porcentaje de dedicación de los docentes" [useExistingCss]="true" ngxPrint><span class="fas fa-print"></span> Imprimir</button>
+    printTitle="Porcentaje de dedicación de los docentes" [useExistingCss]="true" ngxPrint><span
+      class="fas fa-print"></span> Imprimir</button>
   <hr>
   <div id="print-section6">
     <h5 class="text-uppercase">Docentes por año y nivel de formación</h5>
-    <table class="table table-bordered">
-      <thead class="text-center navlinkinSolid">
-        <tr>
-          <th rowspan="2" scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">Año y periodo
-          </th>
-          <th rowspan="2" scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">Dedicación</th>
-          <th rowspan="2" scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">Total</th>
-          <th colspan="7" scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">Nivel de
-            formación (contabilizar solo el mayor nivel de grado) </th>
+    <table class="table tableBordered">
+      <thead class="tableSolid font-weight-bold">
+        <tr class="text-center navlinkinSolid">
+          <td rowspan="2" scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">Año y periodo
+          </td>
+          <td rowspan="2" scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">Dedicación</td>
+          <td rowspan="2" scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">Total</td>
+          <td colspan="7" scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">Nivel de
+            formación (contabilizar solo el mayor nivel de grado) </td>
         </tr>
-        <tr>
-          <th scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">técnicos</th>
-          <th scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">tecnólogos</th>
-          <th scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">profesionales</th>
-          <th scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">especialistas</th>
-          <th scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">magister</th>
-          <th scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">Doctores</th>
-          <th scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">Postdoctorados</th>
+        <tr class="text-center navlinkinSolid">
+          <td scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">técnicos</td>
+          <td scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">tecnólogos</td>
+          <td scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">profesionales</td>
+          <td scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">especialistas</td>
+          <td scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">magister</td>
+          <td scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">Doctores</td>
+          <td scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">Postdoctorados</td>
         </tr>
       </thead>
       <tbody style="font-size: 12px" *ngFor="let k of tabla1condicione7 | keys; let i = index">
@@ -647,7 +656,8 @@
     [routerLink]="['/ModalTabla1', 'nuevo']"><i class="fas fa-plus-circle"></i> Nuevo registro</button>
   <button style="width: auto;" class="btn botonUscoPerfil"
     [printStyle]="{th : {'color': 'black'}, td : {'color': 'black'}}" printSectionId="print-section6"
-    printTitle="Docentes por año y nivel de formación" [useExistingCss]="true" ngxPrint><span class="fas fa-print"></span> Imprimir</button>
+    printTitle="Docentes por año y nivel de formación" [useExistingCss]="true" ngxPrint><span
+      class="fas fa-print"></span> Imprimir</button>
   <div *ngIf="(tabla1condicione7 | keys).length === 0 && !loading" class="alert alert-success text-center" role="alert">
     <strong>
       <h4 class="alert-heading">No hay regsitros que mostrar</h4>

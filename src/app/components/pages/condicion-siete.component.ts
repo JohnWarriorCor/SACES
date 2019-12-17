@@ -18,6 +18,7 @@ import { Tabla5Condicion7Service } from '../../services/tabla5-condicion7.servic
   encapsulation: ViewEncapsulation.None,
 })
 export class CondicionSieteComponent implements OnInit {
+  tabla1Oculta = false;
   page = 1;
   pageSize = 1;
   // BOTON ASPECTOS - PREGUNTAS
@@ -120,6 +121,9 @@ export class CondicionSieteComponent implements OnInit {
     this.headerTitleService.setTitle('PROFESORES');
     this.nav.show();
     this.prop.hide();
+  }
+  activarPrint() {
+    this.tabla1Oculta = true;
   }
   openSm1(content) {
     this.modalReference = this.modalService.open(content, { size: 'sm' });

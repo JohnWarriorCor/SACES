@@ -1,45 +1,75 @@
 <div class="container text-center"><br>
-  <h4>LINEAMIENTOS PARA EL REGISTRO CALIFICADO</h4>
-  <hr>
-  <div class="row align-items-center text-center" style="display: flex;justify-content: center;align-items: center">
-      <span [routerLink]="['/HistoriaInstitucional']" class="badge badge-primary badge-pill indice">0</span>
-      <h3 (mouseover)="hover0=true" (mouseout)="hover0=false" [ngClass]="{'claro2': hover0}" [routerLink]="['/HistoriaInstitucional']" class="factores">Historia institucional y de programa</h3>
-  </div>
-  <div class="row align-items-center text-center" style="display: flex;justify-content: center;align-items: center">
-      <span [routerLink]="['/DenominacionDelPrograma', 'nuevo']" class="badge badge-primary badge-pill indice">1</span>
-      <h3 (mouseover)="hover1=true" (mouseout)="hover1=false" [ngClass]="{'claro2': hover1}" [routerLink]="['/DenominacionDelPrograma', 'nuevo']" class="factores">Denominación del programa</h3>
-  </div>
-  <div class="row align-items-center text-center" style="display: flex;justify-content: center;align-items: center">
-      <span [routerLink]="['/JustificacionDelPrograma']" routerLinkActive="router-link-active"  class="badge badge-primary badge-pill" style="margin: 5px;font-size: 30px;background-color: #8F141B">2</span>
-      <h3 [routerLink]="['/JustificacionDelPrograma']" routerLinkActive="router-link-active"  (mouseover)="hover2=true" (mouseout)="hover2=false" [ngClass]="{'claro2': hover2}" class="factores">Justificación del programa</h3>
-  </div>
-  <div class="row align-items-center text-center" style="display: flex;justify-content: center;align-items: center">
-      <span [routerLink]="['/AspectosCurriculares']" routerLinkActive="router-link-active"  class="badge badge-primary badge-pill" style="margin: 5px;font-size: 30px;background-color: #8F141B">3</span>
-      <h3 [routerLink]="['/AspectosCurriculares']" routerLinkActive="router-link-active"  (mouseover)="hover3=true" (mouseout)="hover3=false" [ngClass]="{'claro2': hover3}" class="factores">Aspectos curriculares</h3>
-  </div>
-  <div class="row align-items-center text-center" style="display: flex;justify-content: center;align-items: center">
-      <span [routerLink]="['/AcademicasProcesosFormativos']" routerLinkActive="router-link-active"  class="badge badge-primary badge-pill" style="margin: 5px;font-size: 30px;background-color: #8F141B">4</span>
-      <h3 [routerLink]="['/AcademicasProcesosFormativos']" routerLinkActive="router-link-active"  (mouseover)="hover4=true" (mouseout)="hover4=false" [ngClass]="{'claro2': hover4}" class="factores">Organización actividades académicas y proceso formativo</h3>
-  </div>
-  <div class="row align-items-center text-center" style="display: flex;justify-content: center;align-items: center">
-      <span [routerLink]="['/InvestigacionInnovacion']" routerLinkActive="router-link-active"  class="badge badge-primary badge-pill" style="margin: 5px;font-size: 30px;background-color: #8F141B">5</span>
-      <h3 [routerLink]="['/InvestigacionInnovacion']" routerLinkActive="router-link-active"  (mouseover)="hover5=true" (mouseout)="hover5=false" [ngClass]="{'claro2': hover5}" class="factores">Investigación, innovación y/o creación artística y cultural</h3>
-  </div>
-  <div class="row align-items-center text-center" style="display: flex;justify-content: center;align-items: center">
-      <span [routerLink]="['/SectorExerno']" routerLinkActive="router-link-active"  class="badge badge-primary badge-pill" style="margin: 5px;font-size: 30px;background-color: #8F141B">6</span>
-      <h3 [routerLink]="['/SectorExerno']" routerLinkActive="router-link-active"  (mouseover)="hover6=true" (mouseout)="hover6=false" [ngClass]="{'claro2': hover6}" class="factores">Relación con el sector externo</h3>
-  </div>
-  <div class="row align-items-center text-center" style="display: flex;justify-content: center;align-items: center">
-      <span [routerLink]="['/Profesor']" routerLinkActive="router-link-active"  class="badge badge-primary badge-pill" style="margin: 5px;font-size: 30px;background-color: #8F141B">7</span>
-      <h3 [routerLink]="['/Profesor']" routerLinkActive="router-link-active"  (mouseover)="hover7=true" (mouseout)="hover7=false" [ngClass]="{'claro2': hover7}" class="factores">Profesores</h3>
-  </div>
-  <div class="row align-items-center text-center" style="display: flex;justify-content: center;align-items: center">
-      <span [routerLink]="['/MediosEducativos']" routerLinkActive="router-link-active"  class="badge badge-primary badge-pill" style="margin: 5px;font-size: 30px;background-color: #8F141B">8</span>
-      <h3 [routerLink]="['/MediosEducativos']" routerLinkActive="router-link-active"  (mouseover)="hover8=true" (mouseout)="hover8=false" [ngClass]="{'claro2': hover8}" class="factores">Medios educativos</h3>
-  </div>
-  <div class="row align-items-center text-center" style="display: flex;justify-content: center;align-items: center">
-      <span [routerLink]="['/InfraestructuraFisicaTecnologica']" routerLinkActive="router-link-active"  class="badge badge-primary badge-pill" style="margin: 5px;font-size: 30px;background-color: #8F141B">9</span>
-      <h3 [routerLink]="['/InfraestructuraFisicaTecnologica']" routerLinkActive="router-link-active"  (mouseover)="hover9=true" (mouseout)="hover9=false" [ngClass]="{'claro2': hover9}" class="factores">Infraestructura física y tecnológica</h3>
-  </div>
+    <h4>LINEAMIENTOS PARA EL REGISTRO CALIFICADO</h4>
+    <hr>
+    <div class="row align-items-center text-center" style="display: flex;justify-content: center;align-items: center">
+        <span [routerLink]="['/HistoriaInstitucional']" class="badge badge-primary badge-pill indice">0</span>
+        <h3 (mouseover)="hover0=true" (mouseout)="hover0=false" [ngClass]="{'claro2': hover0}"
+            [routerLink]="['/HistoriaInstitucional']" class="factores">Historia institucional y de programa</h3>
+    </div>
+    <div class="row align-items-center text-center" style="display: flex;justify-content: center;align-items: center">
+        <span [routerLink]="['/DenominacionDelPrograma', 'nuevo']"
+            class="badge badge-primary badge-pill indice">1</span>
+        <h3 (mouseover)="hover1=true" (mouseout)="hover1=false" [ngClass]="{'claro2': hover1}"
+            [routerLink]="['/DenominacionDelPrograma', 'nuevo']" class="factores">Denominación del programa</h3>
+    </div>
+    <div class="row align-items-center text-center" style="display: flex;justify-content: center;align-items: center">
+        <span [routerLink]="['/JustificacionDelPrograma']" routerLinkActive="router-link-active"
+            class="badge badge-primary badge-pill"
+            style="margin: 5px;font-size: 30px;background-color: #8F141B">2</span>
+        <h3 [routerLink]="['/JustificacionDelPrograma']" routerLinkActive="router-link-active" (mouseover)="hover2=true"
+            (mouseout)="hover2=false" [ngClass]="{'claro2': hover2}" class="factores">Justificación del programa</h3>
+    </div>
+    <div class="row align-items-center text-center" style="display: flex;justify-content: center;align-items: center">
+        <span [routerLink]="['/AspectosCurriculares']" routerLinkActive="router-link-active"
+            class="badge badge-primary badge-pill"
+            style="margin: 5px;font-size: 30px;background-color: #8F141B">3</span>
+        <h3 [routerLink]="['/AspectosCurriculares']" routerLinkActive="router-link-active" (mouseover)="hover3=true"
+            (mouseout)="hover3=false" [ngClass]="{'claro2': hover3}" class="factores">Aspectos curriculares</h3>
+    </div>
+    <div class="row align-items-center text-center" style="display: flex;justify-content: center;align-items: center">
+        <span [routerLink]="['/AcademicasProcesosFormativos']" routerLinkActive="router-link-active"
+            class="badge badge-primary badge-pill"
+            style="margin: 5px;font-size: 30px;background-color: #8F141B">4</span>
+        <h3 [routerLink]="['/AcademicasProcesosFormativos']" routerLinkActive="router-link-active"
+            (mouseover)="hover4=true" (mouseout)="hover4=false" [ngClass]="{'claro2': hover4}" class="factores">
+            Organización actividades académicas y proceso formativo</h3>
+    </div>
+    <div class="row align-items-center text-center" style="display: flex;justify-content: center;align-items: center">
+        <span [routerLink]="['/InvestigacionInnovacion']" routerLinkActive="router-link-active"
+            class="badge badge-primary badge-pill"
+            style="margin: 5px;font-size: 30px;background-color: #8F141B">5</span>
+        <h3 [routerLink]="['/InvestigacionInnovacion']" routerLinkActive="router-link-active" (mouseover)="hover5=true"
+            (mouseout)="hover5=false" [ngClass]="{'claro2': hover5}" class="factores">Investigación, innovación y/o
+            creación artística y cultural</h3>
+    </div>
+    <div class="row align-items-center text-center" style="display: flex;justify-content: center;align-items: center">
+        <span [routerLink]="['/SectorExerno']" routerLinkActive="router-link-active"
+            class="badge badge-primary badge-pill"
+            style="margin: 5px;font-size: 30px;background-color: #8F141B">6</span>
+        <h3 [routerLink]="['/SectorExerno']" routerLinkActive="router-link-active" (mouseover)="hover6=true"
+            (mouseout)="hover6=false" [ngClass]="{'claro2': hover6}" class="factores">Relación con el sector externo
+        </h3>
+    </div>
+    <div class="row align-items-center text-center" style="display: flex;justify-content: center;align-items: center">
+        <span [routerLink]="['/Profesor']" routerLinkActive="router-link-active" class="badge badge-primary badge-pill"
+            style="margin: 5px;font-size: 30px;background-color: #8F141B">7</span>
+        <h3 [routerLink]="['/Profesor']" routerLinkActive="router-link-active" (mouseover)="hover7=true"
+            (mouseout)="hover7=false" [ngClass]="{'claro2': hover7}" class="factores">Profesores</h3>
+    </div>
+    <div class="row align-items-center text-center" style="display: flex;justify-content: center;align-items: center">
+        <span [routerLink]="['/MediosEducativos']" routerLinkActive="router-link-active"
+            class="badge badge-primary badge-pill"
+            style="margin: 5px;font-size: 30px;background-color: #8F141B">8</span>
+        <h3 [routerLink]="['/MediosEducativos']" routerLinkActive="router-link-active" (mouseover)="hover8=true"
+            (mouseout)="hover8=false" [ngClass]="{'claro2': hover8}" class="factores">Medios educativos</h3>
+    </div>
+    <div class="row align-items-center text-center" style="display: flex;justify-content: center;align-items: center">
+        <span [routerLink]="['/InfraestructuraFisicaTecnologica']" routerLinkActive="router-link-active"
+            class="badge badge-primary badge-pill"
+            style="margin: 5px;font-size: 30px;background-color: #8F141B">9</span>
+        <h3 [routerLink]="['/InfraestructuraFisicaTecnologica']" routerLinkActive="router-link-active"
+            (mouseover)="hover9=true" (mouseout)="hover9=false" [ngClass]="{'claro2': hover9}" class="factores">
+            Infraestructura física y tecnológica</h3>
+    </div>
 </div>
 <hr>

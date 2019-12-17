@@ -9,86 +9,92 @@
       </a>
     </div>
     <div class="modal-body">
-        <div class="row">
+      <div class="row">
 
-            <div class="col-md-4">
-        
-                <h3>Seleccione archivos</h3>
-        
-                <div appNgDropFiles [archivos]="archivos" (mouseSobre)="estaSobreElemento = $event" [ngClass]="{ 'file-over': estaSobreElemento }" class="well drop-zone">
-                    <h4>Deje caer aquí los archivos</h4>
-                    <img src="assets/drop-images.png">
-                </div>
-        
-            </div>
-        
-        
-            <div class="col-md-8">
-        
-                <h4>Cargar archivos</h4>
-        
-                <button (click)="cargarImagenes()" style="margin: 3px;" [disabled]="archivos.length === 0" class="btn navlinkin"><i class="fas fa-upload"></i> Cargar</button>
-                <button (click)="limpiarArchivos()" style="margin: 3px;" class="btn navlinkin"><i class="fas fa-brush"></i> Limpiar</button>
-        
-                <table class="table">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th>Nombre archivo</th>
-                            <th>Tamaño</th>
-                            <th>Progreso</th>
-                        </tr>
-                    </thead>
-        
-                    <tbody>
-                        <tr *ngFor="let archivo of archivos">
-                            <td [ngClass]="{ 'text-green': archivo.progreso >= 100 }">
-                                {{ archivo.nombreArchivo }}
-                            </td>
-                            <td>
-                                {{ archivo.archivo.size / 1024 /1024 | number: '.2-2' }} MB
-                            </td>
-                            <td>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': archivo.progreso + '%' }"></div>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-        
-        
-                </table>
-        
-        
-            </div>
-        
-        
-        
+        <div class="col-md-4">
+
+          <h3>Seleccione archivos</h3>
+
+          <div appNgDropFiles [archivos]="archivos" (mouseSobre)="estaSobreElemento = $event"
+            [ngClass]="{ 'file-over': estaSobreElemento }" class="well drop-zone">
+            <h4>Deje caer aquí los archivos</h4>
+            <img src="assets/drop-images.png">
+          </div>
+
         </div>
+
+
+        <div class="col-md-8">
+
+          <h4>Cargar archivos</h4>
+
+          <button (click)="cargarImagenes()" style="margin: 3px;" [disabled]="archivos.length === 0"
+            class="btn navlinkin"><i class="fas fa-upload"></i> Cargar</button>
+          <button (click)="limpiarArchivos()" style="margin: 3px;" class="btn navlinkin"><i class="fas fa-brush"></i>
+            Limpiar</button>
+
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th>Nombre archivo</th>
+                <th>Tamaño</th>
+                <th>Progreso</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let archivo of archivos">
+                <td [ngClass]="{ 'text-green': archivo.progreso >= 100 }">
+                  {{ archivo.nombreArchivo }}
+                </td>
+                <td>
+                  {{ archivo.archivo.size / 1024 /1024 | number: '.2-2' }} MB
+                </td>
+                <td>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': archivo.progreso + '%' }"></div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+
+
+          </table>
+
+
+        </div>
+
+
+
+      </div>
     </div>
   </ng-template>
-  <button class="btn navlinkin"  (click)="openLg(content)"><i class="fas fa-folder-plus"></i> Agregar imagen a galería</button>
+  <button class="btn navlinkin" (click)="openLg(content)"><i class="fas fa-folder-plus"></i> Agregar imagen a
+    galería</button>
   <br>
   <hr>
   <div class="card-columns">
 
     <div class="card" *ngFor="let item of items | async">
-        <img class="card-img-top" [src]="item.url">
-        <div class="card-body">
-            <h5 class="card-title">{{ item.nombre }}</h5>
-        </div>
+      <img class="card-img-top" [src]="item.url">
+      <div class="card-body">
+        <h5 class="card-title">{{ item.nombre }}</h5>
+      </div>
     </div>
 
-</div>
-<br>
-<hr>
-<h3>Galería tipo 2</h3>
-<div class="bd-example" style="display: block;margin-left: auto;margin-right: auto;width: 60%;">
+  </div>
+  <br>
+  <hr>
+  <h3>Galería tipo 2</h3>
+  <div class="bd-example" style="display: block;margin-left: auto;margin-right: auto;width: 60%;">
     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
-        <li data-target="#carouselExampleCaptions"  *ngFor="let item of items | async let j = index" [attr.data-slide-to]="j" [ngClass]="{'active' : j == 0}"></li>
+        <li data-target="#carouselExampleCaptions" *ngFor="let item of items | async let j = index"
+          [attr.data-slide-to]="j" [ngClass]="{'active' : j == 0}"></li>
       </ol>
       <div class="carousel-inner">
-        <div [ngClass]="i == 0 ? 'carousel-item active' : 'carousel-item'" *ngFor="let item of items | async let i = index ">
+        <div [ngClass]="i == 0 ? 'carousel-item active' : 'carousel-item'"
+          *ngFor="let item of items | async let i = index ">
           <img [src]="item.url" class="d-block w-100" alt="">
           <div class="carousel-caption d-none d-md-block">
             <h5 style="background-color: black; color: white;">{{ item.nombre }}</h5>
@@ -106,37 +112,62 @@
     </div>
   </div>
   <hr>
-  <div class="accordion text-center" id="accordionExample" style="border-bottom-style: solid;border-color: #cccccc;;border-width: 1px;">
+  <div class="accordion text-center" id="accordionExample"
+    style="border-bottom-style: solid;border-color: #cccccc;;border-width: 1px;">
     <div class="card">
-        <div class="card-header" id="headingOne" style="background-color: #8F141B">
-            <div class="row">
-              <div class="col" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"></div>
-              <div class="col">
-                <h2 class="mb-0">
-                  <button (click)="toggle()" id="bt" class="btn btn-link navlinkin font-weight-bold text-uppercase" type="button">
-                    {{buttonName}}
-                  </button>
-                </h2>
-              </div>
-              <div class="col" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"></div>
-            </div>
+      <div class="card-header" id="headingOne" style="background-color: #8F141B">
+        <div class="row">
+          <div class="col" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+            aria-controls="collapseOne"></div>
+          <div class="col">
+            <h2 class="mb-0">
+              <button (click)="toggle()" id="bt" class="btn btn-link navlinkin font-weight-bold text-uppercase"
+                type="button">
+                {{buttonName}}
+              </button>
+            </h2>
           </div>
-  
+          <div class="col" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+            aria-controls="collapseOne"></div>
+        </div>
+      </div>
+
       <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
         <div class="card-body">
           <form action="">
-            <h6 class="gray text-left" *ngIf="!show">1). Disponibilidad de una planta física de adecuado acceso para la comunidad en general, incluyendo a las personas con discapacidades o limitaciones físicas.</h6>
-            <h6 class="gray text-left" *ngIf="show">1). ¿De qué manera garantiza la Institución la disponibilidad de una planta física de adecuado acceso para la comunidad en general, incluyendo a las personas con discapacidades o limitaciones físicas? </h6>            
-            <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
-            <h6 class="gray text-left" *ngIf="!show">2). Elementos que verifican y permiten a la Institución garantizar que la infraestructura física (Aulas, Biblioteca, Auditorios, Laboratorios, Escenarios para el bienestar universitario) es adecuada, y suficiente para el programa según su naturaleza, y cumple con las normas vigentes.</h6>
-            <h6 class="gray text-left" *ngIf="show">2). ¿Cuáles son los elementos que al verificarse permiten a la Institución garantizar que la infraestructura física (Aulas, Biblioteca, Auditorios, Laboratorios, Escenarios para el bienestar universitario) es adecuada, y suficiente para el programa según su naturaleza, y cumple con las normas vigentes? </h6>
-            <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
-            <h6 class="gray text-left" *ngIf="!show">3). Elementos que verifican la disponibilidad y suficiencia en los escenarios de práctica académica, profesional o de docencia servicio en coherencia con la cantidad de estudiantes y profesores actual o proyectada.</h6>
-            <h6 class="gray text-left" *ngIf="show">3). ¿Cómo se logra verificar la disponibilidad y suficiencia en los escenarios de práctica académica, profesional o de docencia servicio en coherencia con la cantidad de estudiantes y profesores actual o proyectada? </h6>
-            <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
-            <h6 class="gray text-left" *ngIf="!show">4). Elementos del contenido general de las actividades que permiten verificar coherencia con el plan de estudios, las competencias propuestas y el área de conocimiento o disciplina propios del programa.</h6>
-            <h6 class="gray text-left" *ngIf="show">4). ¿Cuáles elementos del contenido general de las actividades permiten verificar coherencia con el plan de estudios, las competencias propuestas y el área de conocimiento o disciplina propios del programa? </h6>
-            <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
+            <h6 class="gray text-left" *ngIf="!show">1). Disponibilidad de una planta física de adecuado acceso para la
+              comunidad en general, incluyendo a las personas con discapacidades o limitaciones físicas.</h6>
+            <h6 class="gray text-left" *ngIf="show">1). ¿De qué manera garantiza la Institución la disponibilidad de una
+              planta física de adecuado acceso para la comunidad en general, incluyendo a las personas con
+              discapacidades o limitaciones físicas? </h6>
+            <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..."
+              rows="1"></textarea>
+            <h6 class="gray text-left" *ngIf="!show">2). Elementos que verifican y permiten a la Institución garantizar
+              que la infraestructura física (Aulas, Biblioteca, Auditorios, Laboratorios, Escenarios para el bienestar
+              universitario) es adecuada, y suficiente para el programa según su naturaleza, y cumple con las normas
+              vigentes.</h6>
+            <h6 class="gray text-left" *ngIf="show">2). ¿Cuáles son los elementos que al verificarse permiten a la
+              Institución garantizar que la infraestructura física (Aulas, Biblioteca, Auditorios, Laboratorios,
+              Escenarios para el bienestar universitario) es adecuada, y suficiente para el programa según su
+              naturaleza, y cumple con las normas vigentes? </h6>
+            <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..."
+              rows="1"></textarea>
+            <h6 class="gray text-left" *ngIf="!show">3). Elementos que verifican la disponibilidad y suficiencia en los
+              escenarios de práctica académica, profesional o de docencia servicio en coherencia con la cantidad de
+              estudiantes y profesores actual o proyectada.</h6>
+            <h6 class="gray text-left" *ngIf="show">3). ¿Cómo se logra verificar la disponibilidad y suficiencia en los
+              escenarios de práctica académica, profesional o de docencia servicio en coherencia con la cantidad de
+              estudiantes y profesores actual o proyectada? </h6>
+            <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..."
+              rows="1"></textarea>
+            <h6 class="gray text-left" *ngIf="!show">4). Elementos del contenido general de las actividades que permiten
+              verificar coherencia con el plan de estudios, las competencias propuestas y el área de conocimiento o
+              disciplina propios del programa.</h6>
+            <h6 class="gray text-left" *ngIf="show">4). ¿Cuáles elementos del contenido general de las actividades
+              permiten verificar coherencia con el plan de estudios, las competencias propuestas y el área de
+              conocimiento o disciplina propios del programa? </h6>
+            <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..."
+              rows="1"></textarea>
             <!--<h6 class="gray text-left" *ngIf="!show">1). Disponibilidad de una planta física de adecuado acceso para la comunidad en general, incluyendo a las personas con discapacidades o limitaciones físicas.</h6>
             <h6 class="gray text-left" *ngIf="show">5). ¿De qué manera garantiza la Institución una infraestructura apropiada, legal y actualizada para los programas de esta naturaleza en cuanto a plataforma, conectividad, producción de materiales, disponibilidad del material producido y los medios educativos, herramientas de comunicación, interacción y evaluación de los procesos académicos? En caso de que el programa requiera la presencia de estudiantes en centros de tutoría, aprendizaje, centros de práctica, granjas, clínicas, talleres y similares ¿Cuáles son los escenarios que garantizan dichos espacios según la cantidad de estudiantes y sus sitios de residencia? </h6>
             <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>-->
@@ -148,9 +179,9 @@
   <br>
   <div class="row">
     <div class="col text-right">
-        <div class="form-group">
-          <button class="btn botonUsco"><span class="far fa-save"></span> Guardar</button>
-        </div>
+      <div class="form-group">
+        <button class="btn botonUsco"><span class="far fa-save"></span> Guardar</button>
+      </div>
     </div>
     <div class="col text-left">
       <div class="form-group">

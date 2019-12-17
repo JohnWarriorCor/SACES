@@ -1,16 +1,17 @@
 <div class="modal-header navlinkinSolid">
-    <h4 class="modal-title text-uppercase">Tabla 4</h4>
-    <a class="btn navlinkin fa-2x" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
-      <i class="fas fa-times-circle"></i>
-    </a>
-  </div>
-  <form (ngSubmit)="guardar()" #forma="ngForm">
+  <h4 class="modal-title text-uppercase">Tabla 4</h4>
+  <a class="btn navlinkin fa-2x" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <i class="fas fa-times-circle"></i>
+  </a>
+</div>
+<form (ngSubmit)="guardar()" #forma="ngForm">
   <div class="modal-body">
     <div class="row">
       <div class="col">
         <div class="form-group">
           <label for="inputAddress" class="text-uppercase gray">año</label><br><br>
-          <select [(ngModel)]="tabla4cond7.anio" [ngModelOptions]="{standalone: true}" class="form-control inputPaciente shadow" id="exampleFormControlSelect1">
+          <select [(ngModel)]="tabla4cond7.anio" [ngModelOptions]="{standalone: true}"
+            class="form-control inputPaciente shadow" id="exampleFormControlSelect1">
             <option value="" disabled="disabled">Año</option>
             <option *ngFor="let ran of range" [value]="ran">{{ran}}</option>
           </select>
@@ -19,54 +20,60 @@
       <div class="col">
         <div class="form-group">
           <label for="inputAddress" class="text-uppercase gray">periodo</label><br><br>
-          <input [(ngModel)]="tabla4cond7.periodo" id="otrosgrup" min="1" max="2" name="periodo" type="number" class="form-control shadow p-3 inputPaciente" autocomplete="off" placeholder="0">
+          <input [(ngModel)]="tabla4cond7.periodo" id="otrosgrup" min="1" max="2" name="periodo" type="number"
+            class="form-control shadow p-3 inputPaciente" autocomplete="off" placeholder="0">
         </div>
       </div>
       <div class="col">
         <div class="form-group">
           <label for="inputAddress" class="text-uppercase gray">estudiantes inscritos</label>
-          <input [(ngModel)]="tabla4cond7.estudiantesIns" id="otrosgrup" name="estudiantesIns" min="0" type="number" class="form-control shadow p-3 inputPaciente" autocomplete="off" placeholder="0">
+          <input [(ngModel)]="tabla4cond7.estudiantesIns" id="otrosgrup" name="estudiantesIns" min="0" type="number"
+            class="form-control shadow p-3 inputPaciente" autocomplete="off" placeholder="0">
         </div>
       </div>
     </div>
     <div class="row">
-        <div class="col">
-          <div class="form-group">
-            <label for="inputAddress" class="text-uppercase gray">graduados</label>
-            <input [(ngModel)]="tabla4cond7.graduados" id="otrosgrup" name="graduados" min="0" type="number" class="form-control shadow p-3 inputPaciente" autocomplete="off" placeholder="0">
-          </div>
-        </div>
-        <div class="col">
-          <div class="form-group">
-            <label for="inputAddress" class="text-uppercase gray">egresados</label>
-            <input [(ngModel)]="tabla4cond7.egresados" id="otrosgrup" name="egresados" min="0" type="number" class="form-control shadow p-3 inputPaciente" autocomplete="off" placeholder="0">
-          </div>
+      <div class="col">
+        <div class="form-group">
+          <label for="inputAddress" class="text-uppercase gray">graduados</label>
+          <input [(ngModel)]="tabla4cond7.graduados" id="otrosgrup" name="graduados" min="0" type="number"
+            class="form-control shadow p-3 inputPaciente" autocomplete="off" placeholder="0">
         </div>
       </div>
-      <div class="row">
-        <div class="col">
-          <div class="form-group">
-            <label for="inputAddress" class="text-uppercase gray">TASA DESERCIÓN SPADIES</label>
-            <div class="input-group mb-2">
-              <input [(ngModel)]="tabla4cond7.tasaDesSpa" id="nombregrupinves" name="tasaDesSpa" type="number" min="0" max="100" class="form-control shadow p-3 inputPaciente" placeholder="">
-              <div class="input-group-prepend">
-                <div class="input-group-text form-control shadow p-3 inputPaciente">%</div>
-              </div>
-            </div>
-          </div>
+      <div class="col">
+        <div class="form-group">
+          <label for="inputAddress" class="text-uppercase gray">egresados</label>
+          <input [(ngModel)]="tabla4cond7.egresados" id="otrosgrup" name="egresados" min="0" type="number"
+            class="form-control shadow p-3 inputPaciente" autocomplete="off" placeholder="0">
         </div>
-        <div class="col">
-          <div class="form-group">
-            <label for="inputAddress" class="text-uppercase gray">TASA DESERCIÓN</label>
-            <div class="input-group mb-2">
-              <input [(ngModel)]="tabla4cond7.tasaDes" id="nombregrupinves" name="tasaDes" type="number" min="0" max="100" class="form-control shadow p-3 inputPaciente" placeholder="">
-              <div class="input-group-prepend">
-                <div class="input-group-text form-control shadow p-3 inputPaciente">%</div>
-              </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label for="inputAddress" class="text-uppercase gray">TASA DESERCIÓN SPADIES</label>
+          <div class="input-group mb-2">
+            <input [(ngModel)]="tabla4cond7.tasaDesSpa" id="nombregrupinves" name="tasaDesSpa" type="number" min="0"
+              max="100" class="form-control shadow p-3 inputPaciente" placeholder="">
+            <div class="input-group-prepend">
+              <div class="input-group-text form-control shadow p-3 inputPaciente">%</div>
             </div>
           </div>
         </div>
       </div>
+      <div class="col">
+        <div class="form-group">
+          <label for="inputAddress" class="text-uppercase gray">TASA DESERCIÓN</label>
+          <div class="input-group mb-2">
+            <input [(ngModel)]="tabla4cond7.tasaDes" id="nombregrupinves" name="tasaDes" type="number" min="0" max="100"
+              class="form-control shadow p-3 inputPaciente" placeholder="">
+            <div class="input-group-prepend">
+              <div class="input-group-text form-control shadow p-3 inputPaciente">%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="modal-footer">
     <button type="submit" class="btn navlinkin"><span class="far fa-save"></span> Guardar</button>

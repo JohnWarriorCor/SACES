@@ -1,56 +1,74 @@
 <nav *ngIf="nav.visible" class="navbar navbar-expand-lg navcon">
-  <a class="navbar-brand" [routerLink]="['/home']" style="color: #8F141B"><i class="fas fa-arrow-left"></i> Menú</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="fas fa-bars" style="color: #8F141B"></span>
-  </button>
-  
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav">
-        <li>
-          <a routerLinkActive="active" class="nav-link navlinkout" [routerLink]="['/HistoriaInstitucional']">Condición 0</a>
-        </li>
-        <li>
-            <a routerLinkActive="active" class="nav-link navlinkout" [routerLink]="['/DenominacionDelPrograma', 'nuevo']">Condición 1</a>
-        </li>
-        <li>
-            <a routerLinkActive="active" class="nav-link navlinkout" [routerLink]="['/JustificacionDelPrograma']">Condición 2</a>
-        </li>
-        <li>
-            <a routerLinkActive="active" class="nav-link navlinkout" [routerLink]="['/AspectosCurriculares']">Condición 3</a>
-        </li>
-        <li>
-            <a routerLinkActive="active" class="nav-link navlinkout" [routerLink]="['/AcademicasProcesosFormativos']">Condición 4</a>
-        </li>
-        <li> 
-            <a routerLinkActive="active" class="nav-link navlinkout" [routerLink]="['/InvestigacionInnovacion']">Condición 5</a>
-        </li>
-        <li>
-            <a routerLinkActive="active" class="nav-link navlinkout" [routerLink]="['/SectorExerno']">Condición 6</a>
-        </li>
-        <li>
-            <a routerLinkActive="active" class="nav-link navlinkout" [routerLink]="['/Profesor']" >Condición 7</a>
-        </li>
-        <li>
-            <a routerLinkActive="active" class="nav-link navlinkout" [routerLink]="['/MediosEducativos']" >Condición 8</a>
-        </li>
-        <li>
-            <a routerLinkActive="active" class="nav-link navlinkout" [routerLink]="['/InfraestructuraFisicaTecnologica']" >Condición 9</a>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link navlinkout" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Enlaces
-            </a>
-            <div class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
-                <a target="_blank" class="dropdown-item" href="https://www.usco.edu.co/es/"><img style="width: 200px;" src="assets/universidad-surcolombiana.png" title="Página oficial de la Universidad Surcolombiana"></a>
-                <div class="dropdown-divider" style="background-color: #8F141B;"></div>
-                <a target="_blank" class="dropdown-item" href="https://www.mineducacion.gov.co/sistemasinfo/snies/"><img style="width: 200px;" src="assets/snies2019.jpg" title="Sistema Nacional de Informacion de la Educacion Superior (SNIES)"></a>
-                <div class="dropdown-divider" style="background-color: #8F141B;"></div>
-                <a target="_blank" class="dropdown-item" href="https://www.mineducacion.gov.co/portal/Educacion-superior/"><img style="width: 200px;" src="assets/minedu.png" title="Ministerio de educación - Educación superior"></a>
-            </div>
-        </li>
-        <li>
-            <a routerLinkActive="active" class="nav-link navlinkout" [routerLink]="['/Cronograma']">Cronograma</a>
-        </li>
-      </ul>
-  </div>
+    <a class="navbar-brand" [routerLink]="['/home']" style="color: #8F141B"><i class="fas fa-arrow-left"></i> Menú</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fas fa-bars" style="color: #8F141B"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+            <li>
+                <a routerLinkActive="active" class="nav-link navlinkout"
+                    [routerLink]="['/HistoriaInstitucional']">Condición 0</a>
+            </li>
+            <li>
+                <a routerLinkActive="active" class="nav-link navlinkout"
+                    [routerLink]="['/DenominacionDelPrograma', 'nuevo']">Condición 1</a>
+            </li>
+            <li>
+                <a routerLinkActive="active" class="nav-link navlinkout"
+                    [routerLink]="['/JustificacionDelPrograma']">Condición 2</a>
+            </li>
+            <li>
+                <a routerLinkActive="active" class="nav-link navlinkout"
+                    [routerLink]="['/AspectosCurriculares']">Condición 3</a>
+            </li>
+            <li>
+                <a routerLinkActive="active" class="nav-link navlinkout"
+                    [routerLink]="['/AcademicasProcesosFormativos']">Condición 4</a>
+            </li>
+            <li>
+                <a routerLinkActive="active" class="nav-link navlinkout"
+                    [routerLink]="['/InvestigacionInnovacion']">Condición 5</a>
+            </li>
+            <li>
+                <a routerLinkActive="active" class="nav-link navlinkout" [routerLink]="['/SectorExerno']">Condición
+                    6</a>
+            </li>
+            <li>
+                <a routerLinkActive="active" class="nav-link navlinkout" [routerLink]="['/Profesor']">Condición 7</a>
+            </li>
+            <li>
+                <a routerLinkActive="active" class="nav-link navlinkout" [routerLink]="['/MediosEducativos']">Condición
+                    8</a>
+            </li>
+            <li>
+                <a routerLinkActive="active" class="nav-link navlinkout"
+                    [routerLink]="['/InfraestructuraFisicaTecnologica']">Condición 9</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link navlinkout" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Enlaces
+                </a>
+                <div class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
+                    <a target="_blank" class="dropdown-item" href="https://www.usco.edu.co/es/"><img
+                            style="width: 200px;" src="assets/universidad-surcolombiana.png"
+                            title="Página oficial de la Universidad Surcolombiana"></a>
+                    <div class="dropdown-divider" style="background-color: #8F141B;"></div>
+                    <a target="_blank" class="dropdown-item"
+                        href="https://www.mineducacion.gov.co/sistemasinfo/snies/"><img style="width: 200px;"
+                            src="assets/snies2019.jpg"
+                            title="Sistema Nacional de Informacion de la Educacion Superior (SNIES)"></a>
+                    <div class="dropdown-divider" style="background-color: #8F141B;"></div>
+                    <a target="_blank" class="dropdown-item"
+                        href="https://www.mineducacion.gov.co/portal/Educacion-superior/"><img style="width: 200px;"
+                            src="assets/minedu.png" title="Ministerio de educación - Educación superior"></a>
+                </div>
+            </li>
+            <li>
+                <a routerLinkActive="active" class="nav-link navlinkout" [routerLink]="['/Cronograma']">Cronograma</a>
+            </li>
+        </ul>
+    </div>
 </nav>

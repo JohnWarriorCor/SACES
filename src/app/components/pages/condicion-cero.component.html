@@ -1,28 +1,35 @@
 <div class="container inicio">
     <div class=" animated fadeIn fast">
-        <form (ngSubmit)="guardar()" #forma="ngForm" >
-                <br><br>
-                <div class="row">
-                    <div class="col-md-auto text-left" style="padding-right: 0px; margin-right: 5px;">
-                        <h2 class="titulosHistoria" style="padding-right: 0px; margin: 0px;">Reseña histórica del programa: </h2>
-                    </div>
-                    <div class="col text-left" style="padding-left: 0px; margin-left: 0px;">
-                        <input name="nombrePrograma" [(ngModel)]="historia.nombrePrograma" placeholder="Nombre del programa" maxlength="100" type="text" class="form-control shadow p-3">
-                    </div>
+        <form (ngSubmit)="guardar()" #forma="ngForm">
+            <br><br>
+            <div class="row">
+                <div class="col-md-auto text-left" style="padding-right: 0px; margin-right: 5px;">
+                    <h2 class="titulosHistoria" style="padding-right: 0px; margin: 0px;">Reseña histórica del programa:
+                    </h2>
                 </div>
-                <br>
-                <textarea [(ngModel)]="historia.reseniaHist" maxlength="4500" name="reseniaHist" class="form-control shadow p-3" placeholder="..." rows="30"></textarea><br><br>
-                <h2 class="gray text-left titulosHistoria">Misión</h2>
-                <textarea [(ngModel)]="historia.mision" maxlength="2000" name="mision" class="form-control shadow p-3" placeholder="..." rows="5"></textarea><br><br>
-                <h2 class="gray text-left titulosHistoria">Visión</h2>
-                <textarea [(ngModel)]="historia.vision" axlength="2000" name="vision" class="form-control shadow p-3" placeholder="..." rows="5"></textarea><br><br>
-                <h2 class="gray text-left titulosHistoria">Objetivos</h2>
-                <textarea [(ngModel)]="historia.objetivos" maxlength="2000" name="objetivos" class="form-control shadow p-3" placeholder="..." rows="10"></textarea><br><br>
-                <div class="text-center"><br>
-                    <button style="width: 20%; font-size: 100%;" type="submit" class="btn botonUsco"><span class="far fa-save fa-2x"> Guardar</span></button>
+                <div class="col text-left" style="padding-left: 0px; margin-left: 0px;">
+                    <input name="nombrePrograma" [(ngModel)]="historia.nombrePrograma" placeholder="Nombre del programa"
+                        maxlength="100" type="text" class="form-control shadow p-3">
                 </div>
-                <hr>
-                <br>
+            </div>
+            <br>
+            <textarea [(ngModel)]="historia.reseniaHist" maxlength="4500" name="reseniaHist"
+                class="form-control shadow p-3" placeholder="..." rows="30"></textarea><br><br>
+            <h2 class="gray text-left titulosHistoria">Misión</h2>
+            <textarea [(ngModel)]="historia.mision" maxlength="2000" name="mision" class="form-control shadow p-3"
+                placeholder="..." rows="5"></textarea><br><br>
+            <h2 class="gray text-left titulosHistoria">Visión</h2>
+            <textarea [(ngModel)]="historia.vision" axlength="2000" name="vision" class="form-control shadow p-3"
+                placeholder="..." rows="5"></textarea><br><br>
+            <h2 class="gray text-left titulosHistoria">Objetivos</h2>
+            <textarea [(ngModel)]="historia.objetivos" maxlength="2000" name="objetivos" class="form-control shadow p-3"
+                placeholder="..." rows="10"></textarea><br><br>
+            <div class="text-center"><br>
+                <button style="width: 20%; font-size: 100%;" type="submit" class="btn botonUsco"><span
+                        class="far fa-save fa-2x"> Guardar</span></button>
+            </div>
+            <hr>
+            <br>
         </form>
     </div>
 </div>

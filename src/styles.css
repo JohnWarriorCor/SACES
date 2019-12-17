@@ -1,410 +1,419 @@
 /* You can add global styles to this file, and also import other style files */
 /* You can add global styles to this file, and also import other style files */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 body {
-    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-    background: #FFF;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  background: #fff;
 }
-@media print
-{    
-    .no-print, .no-print *
-    {
-        display: none !important;
-    }
+@media print {
+  .table {
+    border: solid 2px black;
+  }
+  h5 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .tables thead th {
+    vertical-align: bottom;
+    border-bottom: 1px solid #000;
+  }
+  .no-print,
+  .no-print * {
+    display: none !important;
+  }
 }
-.inicio{
+.inicio {
   margin-top: 20px;
 }
-.fuenteUsco{
-    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+.fuenteUsco {
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
 }
 .centro {
-    clear: both;
-    margin: 0 auto;
-    width: 990px;
+  clear: both;
+  margin: 0 auto;
+  width: 990px;
 }
 
 .txtcenter {
-    text-align: center;
+  text-align: center;
 }
 
 header .logos .figure {
-    float: center;
+  float: center;
 }
 
-header{
-    /* Enable flex mode. */
-    display: flex; 
-    
-    /* Spread out the elements inside the header. */
-    justify-content: space-between;
+header {
+  /* Enable flex mode. */
+  display: flex;
 
-    /* Align items vertically in the center. */
-    align-items: center;
-    background-color: #8F141B;
+  /* Spread out the elements inside the header. */
+  justify-content: space-between;
+
+  /* Align items vertically in the center. */
+  align-items: center;
+  background-color: #8f141b;
 }
 
 .footer {
-    /* Enable flex mode. */
-    display: flex; 
-    
-    /* Spread out the elements inside the header. */
-    justify-content: space-between;
+  /* Enable flex mode. */
+  display: flex;
 
-    /* Align items vertically in the center. */
-    align-items: center;
+  /* Spread out the elements inside the header. */
+  justify-content: space-between;
+
+  /* Align items vertically in the center. */
+  align-items: center;
 }
 
 .usco-card {
-    width: 45%;
-    margin: 0 auto;
-    position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-clip: border-box;
-    border-radius: 0.25rem;
+  width: 45%;
+  margin: 0 auto;
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-clip: border-box;
+  border-radius: 0.25rem;
 }
 
 .card-uscoHeader {
-    background-color: #8f141b;
-    border-color: #707070;
-    border-width: 1px;
-    color: #CAB691;
-    padding: 0.9rem;
-    text-align: center;
+  background-color: #8f141b;
+  border-color: #707070;
+  border-width: 1px;
+  color: #cab691;
+  padding: 0.9rem;
+  text-align: center;
 }
 
-
 .card-uscoContent {
-    background-color: #F9E4E4;
-    color: #000;
-    border-color: #8F141B;
-    border-width: 1px;
-    padding: 0.9rem;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
+  background-color: #f9e4e4;
+  color: #000;
+  border-color: #8f141b;
+  border-width: 1px;
+  padding: 0.9rem;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
 .uscoInputs {
-    width: 100%;
-    border-radius: 20px;
-    background-color: #fff;
-    font-family: Segoe UI;
-    color: black;
-    font-style: italic;
-    display: block;
-    padding: 0.375rem 0.75rem;
-    line-height: 1.5;
-    color: #495057;
-    background-clip: padding-box;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  width: 100%;
+  border-radius: 20px;
+  background-color: #fff;
+  font-family: Segoe UI;
+  color: black;
+  font-style: italic;
+  display: block;
+  padding: 0.375rem 0.75rem;
+  line-height: 1.5;
+  color: #495057;
+  background-clip: padding-box;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .uscoButton {
-    background-color: #8F141B;
-    border-color: #707070;
-    border-width: 1px;
-    color: #DFD4A6;
-    padding: .375rem .75rem;
-    margin: 1em 1em 1em 1em;
-    cursor: pointer;
+  background-color: #8f141b;
+  border-color: #707070;
+  border-width: 1px;
+  color: #dfd4a6;
+  padding: 0.375rem 0.75rem;
+  margin: 1em 1em 1em 1em;
+  cursor: pointer;
 }
 
 .uscolink {
-    color: #8F141B;
-    text-decoration: none;
+  color: #8f141b;
+  text-decoration: none;
 }
 
 input:invalid {
-    border: 1px solid red;
-    box-shadow: 0 0 3px 1px red;
+  border: 1px solid red;
+  box-shadow: 0 0 3px 1px red;
 }
 
 .input-inside-button {
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-color: red;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-color: red;
 }
 
 .uscoSearchTitulo {
-    width: 100%;
-    border-radius: 20px;
-    background-color: #fff;
-    padding: 0.4rem;
-    font-family: Segoe UI;
-    color: black;
+  width: 100%;
+  border-radius: 20px;
+  background-color: #fff;
+  padding: 0.4rem;
+  font-family: Segoe UI;
+  color: black;
 }
 
 .uscoMenuNav {
-    width: 100%;
-    padding: 0.4rem;
-    font-family: Segoe UI;
-    color: black;
-    padding: 10px;
-    font-size: 20px;
+  width: 100%;
+  padding: 0.4rem;
+  font-family: Segoe UI;
+  color: black;
+  padding: 10px;
+  font-size: 20px;
 }
 
 .uscoSesion {
-    width: 100%;
-    padding: 0.4rem;
-    font-family: Segoe UI;
-    color: #8F141B;
-    padding: 10px;
-    font-size: 20px;
-    font-weight: 500;
+  width: 100%;
+  padding: 0.4rem;
+  font-family: Segoe UI;
+  color: #8f141b;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .focus {
-    background-color: #ffecec;
+  background-color: #ffecec;
 }
 
 .flechaSelect {
-    background-image: url(/assets/flechaSelect.png);
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
+  background-image: url(/assets/flechaSelect.png);
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .iconoSelect {
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 100px 100px 0 100px;
-    border-color: #8f141a transparent transparent transparent;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 100px 100px 0 100px;
+  border-color: #8f141a transparent transparent transparent;
 }
 
 .categoriasSearch {
-    background-color: #8f141b;
-    border-width: 1px;
-    padding: 0.9rem;
-    text-align: center;
-    border-radius: 20px;
+  background-color: #8f141b;
+  border-width: 1px;
+  padding: 0.9rem;
+  text-align: center;
+  border-radius: 20px;
 }
 
 .colorCategoria {
-    color: #dfd9bf;
-    text-align: center;
+  color: #dfd9bf;
+  text-align: center;
 }
 
 .uscoInputSearch {
-    width: 100%;
-    border-radius: 20px;
-    background-color: #fff;
-    padding: 0.6rem;
-    font-family: Segoe UI;
-    color: black;
-    font-style: italic;
+  width: 100%;
+  border-radius: 20px;
+  background-color: #fff;
+  padding: 0.6rem;
+  font-family: Segoe UI;
+  color: black;
+  font-style: italic;
 }
 
 .selectSearch {
-    width: 100%;
-    background-color: #fff;
-    padding: 0.6rem;
-    font-family: Segoe UI;
-    color: black;
-    font-style: italic;
+  width: 100%;
+  background-color: #fff;
+  padding: 0.6rem;
+  font-family: Segoe UI;
+  color: black;
+  font-style: italic;
 }
 
 .flechaSelect {
-    border: 1px solid #ccc;
-    background: URL(/assets/flechaSelect.png) no-repeat 298px 3px #fff !important;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
+  border: 1px solid #ccc;
+  background: URL(/assets/flechaSelect.png) no-repeat 298px 3px #fff !important;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .activeTab {
-    color: #8f141b;
-    border-bottom: 5px solid #8f141b;
-    border-radius: 5px;
+  color: #8f141b;
+  border-bottom: 5px solid #8f141b;
+  border-radius: 5px;
 }
 
 a.activeTab:hover {
-    color: #CAB691;
+  color: #cab691;
 }
-.colorRojo{
-    background-color: #8F141B;
+.colorRojo {
+  background-color: #8f141b;
 }
-.colorCafe{
-    background-color: #DFD4A6;
+.colorCafe {
+  background-color: #dfd4a6;
 }
-.colorNegro{
-    color: black;
+.colorNegro {
+  color: black;
 }
-.colorRojoContorno{
-    color: #8F141B;
+.colorRojoContorno {
+  color: #8f141b;
 }
 .iconRadio {
-    display: inline-block;
-    border-radius: 60px;
-    box-shadow: 0px 0px 5px black;
-    padding: 0.5em 0.6em;
+  display: inline-block;
+  border-radius: 60px;
+  box-shadow: 0px 0px 5px black;
+  padding: 0.5em 0.6em;
 }
 .divUpload {
-    position: relative;
-    overflow: hidden;
-  }
+  position: relative;
+  overflow: hidden;
+}
 .inputUpload {
-    position: absolute;
-    font-size: 50px;
-    opacity: 0;
-    right: 0;
-    top: 0;
+  position: absolute;
+  font-size: 50px;
+  opacity: 0;
+  right: 0;
+  top: 0;
 }
-.menuAdmin{
-    background-color: white;
-    padding: 10px;
-    font-style: italic;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #000;
-    color: #8fc8ee;
+.menuAdmin {
+  background-color: white;
+  padding: 10px;
+  font-style: italic;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #000;
+  color: #8fc8ee;
 }
-.selectAdmin{
-    font-size: 12px;
-    width: 15%;
-    margin-bottom: 5%;
-    margin-left: 1%;
-    margin-right: 1%;
-    margin-top: 1%;
+.selectAdmin {
+  font-size: 12px;
+  width: 15%;
+  margin-bottom: 5%;
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-top: 1%;
 }
-.main-container{
-    margin-top: 40px;
-    margin-bottom: 150px;
-  }
-  
-  .puntero{
-    cursor: pointer;
-  }
-  
-  .w120{
-    width: 120px;
-  }
-  
-  /* Animaciones */
-  .animated {
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-  }
-  
-  .fast {
-    -webkit-animation-duration: 0.3s;
-    animation-duration: 0.3s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-  
-    to {
-      opacity: 1;
-    }
-  }
-  
-.fadeIn {
-    animation-name: fadeIn;
-}
-.caki{
-    color: #DFD4A6
-}
-.factores{
-    font-size: 20px;
-    height: 50px;
-    width: 600px;
-    border-radius:15px 0px 15px 0px;
-    background-color: #8F141B;
-    padding: 10px;
-    color: #DFD4A6;
+.main-container {
+  margin-top: 40px;
+  margin-bottom: 150px;
 }
 
-.claro2{
-    background-color: rgb(167, 25, 32);
-    color: rgb(236, 224, 176)
+.puntero {
+  cursor: pointer;
 }
-.indice{
-    margin: 5px;
-    font-size: 30px;
-    background-color: #8F141B;
+
+.w120 {
+  width: 120px;
 }
-.navcon{
-    background-color: #DFD4A6;
-    color: #8F141B;
-    border-bottom-style: solid;
-    border-color: #ccc;
-    border-width: 1px;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 0px;
-    padding-bottom: 0px;
+
+/* Animaciones */
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
 }
-.navlinkin{
-    background-color: #8F141B;
-    color: #DFD4A6;
+
+.fast {
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
 }
-.navlinkinSolid{
-    background-color: #8F141B;
-    color: #DFD4A6;
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
-.navlinkout{
-    background-color: #DFD4A6;
-    color: #8f141b;
+
+.fadeIn {
+  animation-name: fadeIn;
 }
-.navlinkin:hover{
-    background-color: rgb(179, 27, 34);
-    color: rgb(255, 242, 191);
+.caki {
+  color: #dfd4a6;
 }
-.navlinkout:hover{
-    color: #DFD4A6;
-    background-color: #8F141B;
+.factores {
+  font-size: 20px;
+  height: 50px;
+  width: 600px;
+  border-radius: 15px 0px 15px 0px;
+  background-color: #8f141b;
+  padding: 10px;
+  color: #dfd4a6;
 }
-.fondoTitulo{
-    background-color: rgb(72, 153, 228);
-    color: white;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    border: 2px solid;
-    border-radius: 20px;
-    padding: 10px;
-    width: 100%;
+
+.claro2 {
+  background-color: rgb(167, 25, 32);
+  color: rgb(236, 224, 176);
 }
-.inputPaciente{
-    border-radius: 50px;
-    width: 20%px;
-    margin-bottom: 15px
+.indice {
+  margin: 5px;
+  font-size: 30px;
+  background-color: #8f141b;
 }
-.gray{
-    color: #626567;
+.navcon {
+  background-color: #dfd4a6;
+  color: #8f141b;
+  border-bottom-style: solid;
+  border-color: #ccc;
+  border-width: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
-.botonUsco{
-    background-color: #8F141B;
-    color: #DFD4A6;
-    width: 50%;
-    font-size: 2vw;
+.navlinkin {
+  background-color: #8f141b;
+  color: #dfd4a6;
 }
-.botonUsco:hover{
-    background-color: rgb(179, 27, 34);
-    color: rgb(255, 242, 191);
+.navlinkinSolid {
+  background-color: #8f141b;
+  color: #dfd4a6;
 }
-.botonUscoPerfil{
-    background-color: #8F141B;
-    color: #DFD4A6;
-    width: 20%;
-    font-size: 12px;
-    margin: 5px;
+.navlinkout {
+  background-color: #dfd4a6;
+  color: #8f141b;
 }
-.botonUscoPerfil:hover{
-    background-color: rgb(179, 27, 34);
-    color: rgb(255, 242, 191);
+.navlinkin:hover {
+  background-color: rgb(179, 27, 34);
+  color: rgb(255, 242, 191);
+}
+.navlinkout:hover {
+  color: #dfd4a6;
+  background-color: #8f141b;
+}
+.fondoTitulo {
+  background-color: rgb(72, 153, 228);
+  color: white;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  border: 2px solid;
+  border-radius: 20px;
+  padding: 10px;
+  width: 100%;
+}
+.inputPaciente {
+  border-radius: 50px;
+  width: 20%px;
+  margin-bottom: 15px;
+}
+.gray {
+  color: #626567;
+}
+.botonUsco {
+  background-color: #8f141b;
+  color: #dfd4a6;
+  width: 50%;
+  font-size: 2vw;
+}
+.botonUsco:hover {
+  background-color: rgb(179, 27, 34);
+  color: rgb(255, 242, 191);
+}
+.botonUscoPerfil {
+  background-color: #8f141b;
+  color: #dfd4a6;
+  width: 20%;
+  font-size: 12px;
+  margin: 5px;
+}
+.botonUscoPerfil:hover {
+  background-color: rgb(179, 27, 34);
+  color: rgb(255, 242, 191);
 }
 @media (min-width: 768px) {
   .hugeModal > .modal-dialog {
@@ -412,24 +421,28 @@ a.activeTab:hover {
     max-width: 1200px; /* or 90% or whatever */
   }
 }
-.table-bordered td, .table-bordered th {
-    border: 1px solid #000;
+.tableBordered td,
+.tableBordered th {
+  border: 1px solid #000;
+  border-top: 1px solid #000;
 }
 .table thead th {
-    vertical-align: bottom;
-    border-bottom: 1px solid #000;
+  vertical-align: bottom;
+  border-bottom: 1px solid #000;
 }
-.ir-arriba{
+.ir-arriba {
   display: inline-block;
   padding: 20px;
-  background-color: #8F141B;
+  background-color: #8f141b;
   color: #fff;
   cursor: pointer;
   position: fixed;
   bottom: 20px;
   right: 10px;
+  float: none;
+  z-index: 100;
 }
 .pre {
-  word-wrap: break-word;      /* IE 5.5-7 */
-  white-space: pre-wrap;      /* Modern browsers */
+  word-wrap: break-word; /* IE 5.5-7 */
+  white-space: pre-wrap; /* Modern browsers */
 }

@@ -3,62 +3,94 @@
   <h3 class="text-uppercase">Contenidos Curriculares</h3>
   <br>
   <hr>
-  <div class="accordion text-center" id="accordionExample" style="border-bottom-style: solid;border-color: #cccccc;;border-width: 1px;">
+  <div class="accordion text-center" id="accordionExample"
+    style="border-bottom-style: solid;border-color: #cccccc;;border-width: 1px;">
     <div class="card">
-        <div class="card-header" id="headingOne" style="background-color: #8F141B">
-            <div class="row">
-              <div class="col" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"></div>
-              <div class="col">
-                <h2 class="mb-0">
-                  <button (click)="toggle()" id="bt" class="btn btn-link navlinkin font-weight-bold text-uppercase" type="button">
-                    {{buttonName}}
-                  </button>
-                </h2>
-              </div>
-              <div class="col" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"></div>
-            </div>
+      <div class="card-header" id="headingOne" style="background-color: #8F141B">
+        <div class="row">
+          <div class="col" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+            aria-controls="collapseOne"></div>
+          <div class="col">
+            <h2 class="mb-0">
+              <button (click)="toggle()" id="bt" class="btn btn-link navlinkin font-weight-bold text-uppercase"
+                type="button">
+                {{buttonName}}
+              </button>
+            </h2>
           </div>
-  
+          <div class="col" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+            aria-controls="collapseOne"></div>
+        </div>
+      </div>
+
       <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
         <div class="card-body">
           <form action="">
-              <h6 class="gray text-left" *ngIf="show">1). ¿Qué elementos permiten verificar la coherencia entre: los perfiles establecidos para el programa, las competencias y el plan de estudios, se articula con la justificación para la oferta del programa? </h6>
-              <h6 class="gray text-left" *ngIf="!show">1). Elementos de verificación de la coherencia entre: los perfiles establecidos para el programa, las competencias y el plan de estudios.</h6>
-              <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
-              <h6 class="gray text-left" *ngIf="show">2). ¿Cómo sustenta la Institución la correspondencia entre la distribución de los créditos académicos de las distintas áreas curriculares con los perfiles del programa? </h6>
-              <h6 class="gray text-left" *ngIf="!show">2). Correspondencia entre la distribución de los créditos académicos de las distintas áreas curriculares con los perfiles del programa.</h6>
-              <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
-              <h6 class="gray text-left" *ngIf="show">3). ¿Qué estrategias permiten lograr las competencias propuestas desde el plan de estudios?</h6>
-              <h6 class="gray text-left" *ngIf="!show">3). Competencias propuestas desde el plan de estudios</h6>
-              <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
-              <h6 class="gray text-left" *ngIf="show">4). ¿Cuáles elementos del contenido general de las actividades permiten verificar coherencia con el plan de estudios, las competencias propuestas y el área de conocimiento o disciplina propios del programa? </h6>
-              <h6 class="gray text-left" *ngIf="!show">4). Elementos del contenido general para las actividades de verificación de la coherencia con el plan de estudios, las competencias propuestas y el área de conocimiento o disciplina propios del programa</h6>
-              <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
-              <h6 class="gray text-left" *ngIf="show">5). ¿Cuáles componentes curriculares permiten justificar la existencia apropiada de características de interdisciplinariedad, flexibilidad y competencias comunicativas en segunda lengua? </h6>
-              <h6 class="gray text-left" *ngIf="!show">5). Componentes curriculares que permiten justificar la existencia apropiada de características de interdisciplinariedad, flexibilidad y competencias comunicativas en segunda lengua.</h6>
-              <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
-              <h6 class="gray text-left" *ngIf="show">6). ¿De qué manera la institución sustenta la complementariedad y secuenciación entre los diferentes niveles de formación que se articulan por ciclos? </h6>
-              <h6 class="gray text-left" *ngIf="!show">6). Sustentación de la complementariedad y secuenciación entre los diferentes niveles de formación que se articulan por ciclos.</h6>
-              <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
-              <h6 class="gray text-left" *ngIf="show">7). ¿Cuáles son los elementos que permiten justificar coherencia entre los créditos académicos, la distribución de las horas de trabajo académico, la naturaleza del programa y el modelo pedagógico institucional? </h6>
-              <h6 class="gray text-left" *ngIf="!show">7). Elementos que permiten justificar coherencia entre los créditos académicos, la distribución de las horas de trabajo académico, la naturaleza del programa y el modelo pedagógico institucional.</h6>
-              <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
+            <h6 class="gray text-left" *ngIf="show">1). ¿Qué elementos permiten verificar la coherencia entre: los
+              perfiles establecidos para el programa, las competencias y el plan de estudios, se articula con la
+              justificación para la oferta del programa? </h6>
+            <h6 class="gray text-left" *ngIf="!show">1). Elementos de verificación de la coherencia entre: los perfiles
+              establecidos para el programa, las competencias y el plan de estudios.</h6>
+            <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..."
+              rows="1"></textarea>
+            <h6 class="gray text-left" *ngIf="show">2). ¿Cómo sustenta la Institución la correspondencia entre la
+              distribución de los créditos académicos de las distintas áreas curriculares con los perfiles del programa?
+            </h6>
+            <h6 class="gray text-left" *ngIf="!show">2). Correspondencia entre la distribución de los créditos
+              académicos de las distintas áreas curriculares con los perfiles del programa.</h6>
+            <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..."
+              rows="1"></textarea>
+            <h6 class="gray text-left" *ngIf="show">3). ¿Qué estrategias permiten lograr las competencias propuestas
+              desde el plan de estudios?</h6>
+            <h6 class="gray text-left" *ngIf="!show">3). Competencias propuestas desde el plan de estudios</h6>
+            <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..."
+              rows="1"></textarea>
+            <h6 class="gray text-left" *ngIf="show">4). ¿Cuáles elementos del contenido general de las actividades
+              permiten verificar coherencia con el plan de estudios, las competencias propuestas y el área de
+              conocimiento o disciplina propios del programa? </h6>
+            <h6 class="gray text-left" *ngIf="!show">4). Elementos del contenido general para las actividades de
+              verificación de la coherencia con el plan de estudios, las competencias propuestas y el área de
+              conocimiento o disciplina propios del programa</h6>
+            <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..."
+              rows="1"></textarea>
+            <h6 class="gray text-left" *ngIf="show">5). ¿Cuáles componentes curriculares permiten justificar la
+              existencia apropiada de características de interdisciplinariedad, flexibilidad y competencias
+              comunicativas en segunda lengua? </h6>
+            <h6 class="gray text-left" *ngIf="!show">5). Componentes curriculares que permiten justificar la existencia
+              apropiada de características de interdisciplinariedad, flexibilidad y competencias comunicativas en
+              segunda lengua.</h6>
+            <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..."
+              rows="1"></textarea>
+            <h6 class="gray text-left" *ngIf="show">6). ¿De qué manera la institución sustenta la complementariedad y
+              secuenciación entre los diferentes niveles de formación que se articulan por ciclos? </h6>
+            <h6 class="gray text-left" *ngIf="!show">6). Sustentación de la complementariedad y secuenciación entre los
+              diferentes niveles de formación que se articulan por ciclos.</h6>
+            <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..."
+              rows="1"></textarea>
+            <h6 class="gray text-left" *ngIf="show">7). ¿Cuáles son los elementos que permiten justificar coherencia
+              entre los créditos académicos, la distribución de las horas de trabajo académico, la naturaleza del
+              programa y el modelo pedagógico institucional? </h6>
+            <h6 class="gray text-left" *ngIf="!show">7). Elementos que permiten justificar coherencia entre los créditos
+              académicos, la distribución de las horas de trabajo académico, la naturaleza del programa y el modelo
+              pedagógico institucional.</h6>
+            <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..."
+              rows="1"></textarea>
           </form>
         </div>
       </div>
     </div>
   </div>
   <br>
-<div class="row">
-  <div class="col text-right">
+  <div class="row">
+    <div class="col text-right">
       <div class="form-group">
         <button class="btn botonUsco"><span class="far fa-save"></span> Guardar</button>
       </div>
-  </div>
-  <div class="col text-left">
-    <div class="form-group">
-      <button class="btn botonUsco"><span class="fas fa-atlas"></span> Registros</button>
+    </div>
+    <div class="col text-left">
+      <div class="form-group">
+        <button class="btn botonUsco"><span class="fas fa-atlas"></span> Registros</button>
+      </div>
     </div>
   </div>
-</div>
 </div>

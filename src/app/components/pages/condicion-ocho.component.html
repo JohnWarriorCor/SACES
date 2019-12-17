@@ -3,50 +3,72 @@
   <h3 class="text-uppercase">medios educativos</h3>
   <br>
   <hr>
-  <div class="accordion text-center" id="accordionExample" style="border-bottom-style: solid;border-color: #cccccc;;border-width: 1px;">
+  <div class="accordion text-center" id="accordionExample"
+    style="border-bottom-style: solid;border-color: #cccccc;;border-width: 1px;">
     <div class="card">
-        <div class="card-header" id="headingOne" style="background-color: #8F141B">
-            <div class="row">
-              <div class="col" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"></div>
-              <div class="col">
-                <h2 class="mb-0">
-                  <button (click)="toggle()" id="bt" class="btn btn-link navlinkin font-weight-bold text-uppercase" type="button">
-                    {{buttonName}}
-                  </button>
-                </h2>
-              </div>
-              <div class="col" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"></div>
-            </div>
+      <div class="card-header" id="headingOne" style="background-color: #8F141B">
+        <div class="row">
+          <div class="col" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+            aria-controls="collapseOne"></div>
+          <div class="col">
+            <h2 class="mb-0">
+              <button (click)="toggle()" id="bt" class="btn btn-link navlinkin font-weight-bold text-uppercase"
+                type="button">
+                {{buttonName}}
+              </button>
+            </h2>
           </div>
-  
+          <div class="col" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+            aria-controls="collapseOne"></div>
+        </div>
+      </div>
+
       <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
         <div class="card-body">
           <form action="">
-              <h6 class="gray text-left" *ngIf="show">1). ¿Qué soportes permiten verificar la suficiencia, legalidad y nivel de actualización en recursos bibliográficos (libros, revistas, bases de datos especializadas  u otros) en relación a la naturaleza del programa y la cantidad de estudiantes actual o proyectada? </h6>
-              <h6 class="gray text-left" *ngIf="!show">1). Soportes que permiten verificar la suficiencia, legalidad y nivel de actualización en recursos bibliográficos (libros, revistas, bases de datos especializadas u otros) en relación a la naturaleza del programa y la cantidad de estudiantes actual o proyectada.</h6>
-              <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
-              <h6 class="gray text-left" *ngIf="show">2). ¿Según la naturaleza del programa, cómo se demuestra la suficiencia en: equipos, software, conectividad, laboratorios físicos y simulados para la experimentación, talleres e insumos; a partir del desarrollo de competencias propuestas y la cantidad de estudiantes actual o proyectada? </h6>
-              <h6 class="gray text-left" *ngIf="!show">2). Demostración de suficiencia en: equipos, software, conectividad, laboratorios físicos y simulados para la experimentación, talleres e insumos; a partir del desarrollo de competencias propuestas y la cantidad de estudiantes actual o proyectada.</h6>
-              <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
-              <h6 class="gray text-left" *ngIf="show">3). ¿Cómo soporta la Institución el proceso de diseño, gestión, producción, distribución y uso de materiales y recursos educativos durante el desarrollo del programa? ¿Cuál es el nivel de desarrollo de la producción de módulos (a distancia) y créditos virtualizados (virtuales) y su disponibilidad para estudiantes y profesores en medios coherentes con la modalidad? </h6>
-              <h6 class="gray text-left" *ngIf="!show">3). Soporte de la Institución en el proceso de diseño, gestión, producción, distribución y uso de materiales y recursos educativos durante el desarrollo del programa. Nivel de desarrollo de la producción de módulos (a distancia) y créditos virtualizados (virtuales) y su disponibilidad para estudiantes y profesores en medios coherentes con la modalidad.</h6>
-              <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="1"></textarea>
+            <h6 class="gray text-left" *ngIf="show">1). ¿Qué soportes permiten verificar la suficiencia, legalidad y
+              nivel de actualización en recursos bibliográficos (libros, revistas, bases de datos especializadas u
+              otros) en relación a la naturaleza del programa y la cantidad de estudiantes actual o proyectada? </h6>
+            <h6 class="gray text-left" *ngIf="!show">1). Soportes que permiten verificar la suficiencia, legalidad y
+              nivel de actualización en recursos bibliográficos (libros, revistas, bases de datos especializadas u
+              otros) en relación a la naturaleza del programa y la cantidad de estudiantes actual o proyectada.</h6>
+            <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..."
+              rows="1"></textarea>
+            <h6 class="gray text-left" *ngIf="show">2). ¿Según la naturaleza del programa, cómo se demuestra la
+              suficiencia en: equipos, software, conectividad, laboratorios físicos y simulados para la experimentación,
+              talleres e insumos; a partir del desarrollo de competencias propuestas y la cantidad de estudiantes actual
+              o proyectada? </h6>
+            <h6 class="gray text-left" *ngIf="!show">2). Demostración de suficiencia en: equipos, software,
+              conectividad, laboratorios físicos y simulados para la experimentación, talleres e insumos; a partir del
+              desarrollo de competencias propuestas y la cantidad de estudiantes actual o proyectada.</h6>
+            <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..."
+              rows="1"></textarea>
+            <h6 class="gray text-left" *ngIf="show">3). ¿Cómo soporta la Institución el proceso de diseño, gestión,
+              producción, distribución y uso de materiales y recursos educativos durante el desarrollo del programa?
+              ¿Cuál es el nivel de desarrollo de la producción de módulos (a distancia) y créditos virtualizados
+              (virtuales) y su disponibilidad para estudiantes y profesores en medios coherentes con la modalidad? </h6>
+            <h6 class="gray text-left" *ngIf="!show">3). Soporte de la Institución en el proceso de diseño, gestión,
+              producción, distribución y uso de materiales y recursos educativos durante el desarrollo del programa.
+              Nivel de desarrollo de la producción de módulos (a distancia) y créditos virtualizados (virtuales) y su
+              disponibilidad para estudiantes y profesores en medios coherentes con la modalidad.</h6>
+            <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..."
+              rows="1"></textarea>
           </form>
         </div>
       </div>
     </div>
   </div>
   <br>
-<div class="row">
-  <div class="col text-right">
+  <div class="row">
+    <div class="col text-right">
       <div class="form-group">
         <button class="btn botonUsco"><span class="far fa-save"></span> Guardar</button>
       </div>
-  </div>
-  <div class="col text-left">
-    <div class="form-group">
-      <button class="btn botonUsco"><span class="fas fa-atlas"></span> Registros</button>
+    </div>
+    <div class="col text-left">
+      <div class="form-group">
+        <button class="btn botonUsco"><span class="fas fa-atlas"></span> Registros</button>
+      </div>
     </div>
   </div>
-</div>
 </div>

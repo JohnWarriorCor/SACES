@@ -1,94 +1,90 @@
-table,tr,th,td{
-    border-color: black;
+table,
+tr,
+th,
+td {
+  border-color: black;
 }
-thead.tr{
-    border-color: black;
+thead.tr {
+  border-color: black;
 }
-.borden{
-    border-width: 1px;
-    border-color: black;
+.borden {
+  border-width: 1px;
+  border-color: black;
 }
-.fondoTitulo{
-    color: white;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    border: 2px solid;
-    border-radius: 20px;
-    padding: 10px;
-    width: 100%;
+.fondoTitulo {
+  color: white;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  border: 2px solid;
+  border-radius: 20px;
+  padding: 10px;
+  width: 100%;
 }
-.inputPaciente{
-    border-radius: 50px;
-    width: 20%px;
-    margin-bottom: 15px
+.inputPaciente {
+  border-radius: 50px;
+  width: 20%px;
+  margin-bottom: 15px;
 }
-.tablaAdmin{
-    font-size: 13px;
-    color: black;
+.tablaAdmin {
+  font-size: 13px;
+  color: black;
 }
-.botonTablaRegistro{
-    background-color: #8D191D;
-    color: #D8CEA3;
+.botonTablaRegistro {
+  background-color: #8d191d;
+  color: #d8cea3;
 }
-.botonTablaRegistro:hover{
-    background-color: rgb(165, 30, 35);
-    color: rgb(241, 231, 182);
+.botonTablaRegistro:hover {
+  background-color: rgb(165, 30, 35);
+  color: rgb(241, 231, 182);
 }
-.encurso{
-    background-color: rgb(252, 252, 149);
+.encurso {
+  background-color: rgb(252, 252, 149);
 }
-.atiempo{
-    background-color: rgb(184, 255, 184);
+.atiempo {
+  background-color: rgb(184, 255, 184);
 }
-.expira{
-    background-color: rgb(255, 157, 157);
+.expira {
+  background-color: rgb(255, 157, 157);
 }
-.nulo{
-    background-color: white;
+.nulo {
+  background-color: white;
 }
-.popUp{
-    color: #8F141B;
-    border: 1px solid #8F141B;
+.popUp {
+  color: #8f141b;
+  border: 1px solid #8f141b;
 }
-.pagination > li > a
-{
-    background-color: #8F141B;
-    color: #DFD4A6;
+.pagination > li > a {
+  background-color: #8f141b;
+  color: #dfd4a6;
 }
 .page-item.active .page-link {
-    background-color: rgb(161, 23, 30);
-    border: solid 1px rgb(161, 23, 30);
+  background-color: rgb(161, 23, 30);
+  border: solid 1px rgb(161, 23, 30);
 }
 .pagination > li > a:focus,
 .pagination > li > a:hover,
 .pagination > li > a:active,
 .pagination > li > span:focus,
-.pagination > li > span:hover
-.pagination > li > span:active
-{
-    color: white;
-    background-color:rgb(161, 23, 30);
-    border-color: rgb(161, 23, 30);
+.pagination > li > span:hover .pagination > li > span:active {
+  color: white;
+  background-color: rgb(161, 23, 30);
+  border-color: rgb(161, 23, 30);
 }
 
-.pagination > .active > a
-{
-    color: white;
-    background-color: rgb(161, 23, 30);
-    border: solid 1px rgb(161, 23, 30);
+.pagination > .active > a {
+  color: white;
+  background-color: rgb(161, 23, 30);
+  border: solid 1px rgb(161, 23, 30);
 }
 
-.pagination > .active > a:hover
-{
-    background-color: rgb(161, 23, 30);
-    border: solid 1px rgb(161, 23, 30);
+.pagination > .active > a:hover {
+  background-color: rgb(161, 23, 30);
+  border: solid 1px rgb(161, 23, 30);
 }
-.pagination ul > li:not(.active) > a
-{
-    background-color: purple;
-    border: solid 1px purple;
+.pagination ul > li:not(.active) > a {
+  background-color: purple;
+  border: solid 1px purple;
 }
-.pagination ul > li.active > a
-{
-    background-color: purple;
-    border: solid 1px purple;
+.pagination ul > li.active > a {
+  background-color: purple;
+  border: solid 1px purple;
 }

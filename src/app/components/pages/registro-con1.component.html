@@ -7,17 +7,19 @@
         class="btn botonUsco" type="button"><i class="fas fa-clipboard-list"></i> Nuevo</button>
     </div>
   </div>
-  <ngb-pagination class="d-flex justify-content-start" [collectionSize]="((condiciones1 | keys).length)*10" [(page)]="page"></ngb-pagination>  
+  <ngb-pagination class="d-flex justify-content-start" [collectionSize]="((condiciones1 | keys).length)*10"
+    [(page)]="page"></ngb-pagination>
   <div class="row animated fadeIn fast">
     <div class="col-md-12">
       <div class="table-responsive-md" id="print-section">
-        <table bordercolor="black" class="table table-bordered" *ngFor="let k of condiciones1 | keys | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize ; let i = index; let i = index">
-          <thead>
+        <table class="table tableBordered"
+          *ngFor="let k of condiciones1 | keys | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize ; let i = index; let i = index">
+          <thead class="font-weight-bold">
             <tr class="text-center tablaAdmin" style="background-color: #AB121B;color: #D8CEA3">
-              <th colspan="7" style="width: 90%" scope="col" class="text-uppercase align-middle borden">DENOMINACIÓN DEL
-                PROGRAMA</th>
-              <th colspan="1" style="width: 10%" scope="col" class="text-uppercase align-middle borden"
-                (change)="progreso()">Registro {{ i + 1 }}</th>
+              <td colspan="7" style="width: 90%" scope="col" class="text-uppercase align-middle borden">DENOMINACIÓN DEL
+                PROGRAMA</td>
+              <td colspan="1" style="width: 10%" scope="col" class="text-uppercase align-middle borden"
+                (change)="progreso()">Registro {{ i + 1 }}</td>
             </tr>
           </thead>
           <tbody>
@@ -152,7 +154,8 @@
                         class="fas fa-pencil-alt"> </span> Editar</button>
                   </div>
                   <div class="col text-center">
-                    <button class="btn botonUsco" [printStyle]="{th : {'color': 'black'}, td : {'color': 'black'}}" printSectionId="print-section" printTitle="Condición 1" [useExistingCss]="true" ngxPrint><span
+                    <button class="btn botonUsco" [printStyle]="{th : {'color': 'black'}, td : {'color': 'black'}}"
+                      printSectionId="print-section" printTitle="Condición 1" [useExistingCss]="true" ngxPrint><span
                         class="fas fa-print"></span> Imprimir</button>
                   </div>
                   <div class="col text-center">
