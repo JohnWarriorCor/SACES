@@ -2,9 +2,9 @@
   <div id="print-section1">
     <h5 class="text-uppercase">NÚMERO DE DOCENTES POR VINCULACIÓN</h5>
     <ngb-pagination class="d-flex justify-content-start no-print"
-      [collectionSize]="((tabla1condicione7 | keys).length)*10" [(page)]="page"></ngb-pagination>
+      [collectionSize]="((tabla1condicione7 | keys).length)*10" [(page)]="pageTabla1"></ngb-pagination>
     <table class="table tableBordered"
-      *ngFor="let k of tabla1condicione7 | keys | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize ; let i = index">
+      *ngFor="let k of tabla1condicione7 | keys | slice: (pageTabla1-1) * pageSizeTabla1 : (pageTabla1-1) * pageSizeTabla1 + pageSizeTabla1 ; let i = index">
       <thead class="tableSolid font-weight-bold">
         <h6 class="navlinkinSolid text-center" style="padding: 5px;">
           {{tabla1condicione7[k].anio}}-{{tabla1condicione7[k].periodo}}</h6>
@@ -168,6 +168,8 @@
   <hr>
   <div id="print-section2">
     <h5 class="text-uppercase">Grupos de investigación</h5>
+    <ngb-pagination class="d-flex justify-content-start no-print"
+      [collectionSize]="(((tabla2condicione7 | keys).length)/10)*10" [(page)]="pageTabla2"></ngb-pagination>
     <table class="table tableBordered">
       <thead class="tableSolid font-weight-bold">
         <tr class="text-center navlinkinSolid">
@@ -187,7 +189,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let k of tabla2condicione7 | keys; let i = index">
+        <tr *ngFor="let k of tabla2condicione7 | keys | slice: (pageTabla2-1) * pageSizeTabla2 : (pageTabla2-1) * pageSizeTabla2 + pageSizeTabla2 ; let i = index">
           <td class="align-middle text-center">
             {{ i+1 }}
           </td>
@@ -273,6 +275,8 @@
   <hr>
   <div id="print-section3">
     <h5 class="text-uppercase">publicación revista especializada</h5>
+    <ngb-pagination class="d-flex justify-content-start no-print"
+      [collectionSize]="(((tabla3condicione7 | keys).length)/10)*10" [(page)]="pageTabla3"></ngb-pagination>
     <table class="table tableBordered">
       <thead class="tableSolid font-weight-bold" class="tableSolid font-weight-bold">
         <tr class="text-center navlinkinSolid">
@@ -287,7 +291,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let k of tabla3condicione7 | keys; let i = index">
+        <tr *ngFor="let k of tabla3condicione7 | keys| slice: (pageTabla3-1) * pageSizeTabla3 : (pageTabla3-1) * pageSizeTabla3 + pageSizeTabla3 ; let i = index">
           <td class="align-middle text-center">
             {{ tabla3condicione7[k].nombregrup }}
           </td>
@@ -351,6 +355,8 @@
   <hr>
   <div id="print-section4">
     <h5 class="text-uppercase">Estudiantes por año</h5>
+    <ngb-pagination class="d-flex justify-content-start no-print"
+      [collectionSize]="(((tabla4condicione7 | keys).length)/10)*10" [(page)]="pageTabla4"></ngb-pagination>
     <table class="table tableBordered">
       <thead class="tableSolid font-weight-bold">
         <tr class="text-center navlinkinSolid">
@@ -364,7 +370,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let k of tabla4condicione7 | keys; let i = index">
+        <tr *ngFor="let k of tabla4condicione7 | keys| slice: (pageTabla4-1) * pageSizeTabla4 : (pageTabla4-1) * pageSizeTabla4 + pageSizeTabla4 ; let i = index">
           <td class="align-middle text-center">
             {{ tabla4condicione7[k].anio }}-{{ tabla4condicione7[k].periodo }}
           </td>
@@ -441,6 +447,8 @@
   <hr>
   <div id="print-section5">
     <h5 class="text-uppercase">Porcentaje de dedicación docentes</h5>
+    <ngb-pagination class="d-flex justify-content-start no-print"
+      [collectionSize]="(((tabla5condicione7 | keys).length)/10)*10" [(page)]="pageTabla5"></ngb-pagination>
     <table class="table tableBordered">
       <thead class="tableSolid font-weight-bold">
         <tr class="text-center navlinkinSolid">
@@ -467,7 +475,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let k of tabla5condicione7 | keys; let i = index">
+        <tr *ngFor="let k of tabla5condicione7 | keys| slice: (pageTabla5-1) * pageSizeTabla5 : (pageTabla5-1) * pageSizeTabla5 + pageSizeTabla5 ; let i = index">
           <td class="align-middle text-center">
             {{ tabla5condicione7[k].anio }}
           </td>
@@ -550,6 +558,8 @@
   <hr>
   <div id="print-section6">
     <h5 class="text-uppercase">Docentes por año y nivel de formación</h5>
+    <ngb-pagination class="d-flex justify-content-start no-print"
+      [collectionSize]="(((tabla1condicione7 | keys).length)/5)*10" [(page)]="pageTabla6"></ngb-pagination>
     <table class="table tableBordered">
       <thead class="tableSolid font-weight-bold">
         <tr class="text-center navlinkinSolid">
@@ -570,7 +580,7 @@
           <td scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">Postdoctorados</td>
         </tr>
       </thead>
-      <tbody style="font-size: 12px" *ngFor="let k of tabla1condicione7 | keys; let i = index">
+      <tbody style="font-size: 12px" *ngFor="let k of tabla1condicione7 | keys | slice: (pageTabla6-1) * pageSizeTabla6 : (pageTabla6-1) * pageSizeTabla6 + pageSizeTabla6 ; let i = index">
         <tr>
           <td class="align-middle text-center" rowspan="3">
             {{ tabla1condicione7[k].anio }}-{{ tabla1condicione7[k].periodo }}

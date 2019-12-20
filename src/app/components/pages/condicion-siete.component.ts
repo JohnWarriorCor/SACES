@@ -19,8 +19,18 @@ import { Tabla5Condicion7Service } from '../../services/tabla5-condicion7.servic
 })
 export class CondicionSieteComponent implements OnInit {
   tabla1Oculta = false;
-  page = 1;
-  pageSize = 1;
+  pageTabla1 = 1;
+  pageSizeTabla1 = 1;
+  pageTabla2 = 1;
+  pageSizeTabla2 = 10;
+  pageTabla3 = 1;
+  pageSizeTabla3 = 10;
+  pageTabla4 = 1;
+  pageSizeTabla4 = 10;
+  pageTabla5 = 1;
+  pageSizeTabla5 = 10;
+  pageTabla6 = 1;
+  pageSizeTabla6 = 5;
   // BOTON ASPECTOS - PREGUNTAS
   show = false;
   buttonName = 'Aspectos';
@@ -126,19 +136,19 @@ export class CondicionSieteComponent implements OnInit {
     this.tabla1Oculta = true;
   }
   openSm1(content) {
-    this.modalReference = this.modalService.open(content, { size: 'sm' });
+    this.modalReference = this.modalService.open(content, { size: 'sm', centered: true });
   }
   openSm2(content) {
-    this.modalReference = this.modalService.open(content, { size: 'sm' });
+    this.modalReference = this.modalService.open(content, { size: 'sm', centered: true });
   }
   openSm3(content) {
-    this.modalReference = this.modalService.open(content, { size: 'sm' });
+    this.modalReference = this.modalService.open(content, { size: 'sm', centered: true });
   }
   openSm4(content) {
-    this.modalReference = this.modalService.open(content, { size: 'sm' });
+    this.modalReference = this.modalService.open(content, { size: 'sm', centered: true });
   }
   openSm5(content) {
-    this.modalReference = this.modalService.open(content, { size: 'sm' });
+    this.modalReference = this.modalService.open(content, { size: 'sm', centered: true });
   }
   toggle() {
     this.show = !this.show;
