@@ -1,12 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { TituloService } from '../../services/titulo.service';
+import { TituloService } from '../../../services/titulo.service';
 import { FullCalendarComponent } from '@fullcalendar/angular';
 import { EventInput } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGrigPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
-import { NavbarService } from '../../services/navbar.service';
-import { PropiedadIntelectualService } from '../../services/propiedad-intelectual.service';
+import { NavbarService } from '../../../services/navbar.service';
+import { PropiedadIntelectualService } from '../../../services/propiedad-intelectual.service';
 
 
 

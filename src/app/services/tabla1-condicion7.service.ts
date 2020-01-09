@@ -47,32 +47,4 @@ export class Tabla1Condicion7Service {
     return this.http.delete(url).pipe(map( res => res.json()));
   }
 }
-export interface Tabla1Condicion7 {
-  idx?: number;
-  anio: string;
-  periodo: string;
-  totalTC: string;
-  totalMT: string;
-  totalC: string;
-  numTecnTC: string;
-  numTecnMT: string;
-  numTecnC: string;
-  numTeclTC: string;
-  numTeclMT: string;
-  numTeclC: string;
-  numProTC: string;
-  numProMT: string;
-  numProC: string;
-  numEspTC: string;
-  numEspMT: string;
-  numEspC: string;
-  numMagTC: string;
-  numMagMT: string;
-  numMagC: string;
-  numDocTC: string;
-  numDocMT: string;
-  numDocC: string;
-  numPosTC: string;
-  numPosMT: string;
-  numPosC: string;
-}
+

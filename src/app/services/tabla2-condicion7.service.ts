@@ -46,14 +46,3 @@ export class Tabla2Condicion7Service {
     return this.http.delete(url).pipe(map( res => res.json()));
   }
 }
-export interface Tabla2Condicion7 {
-  idx?: number;
-  nombregrupinves: string;
-  clasificaciongrupinvesA1: string;
-  clasificaciongrupinvesA: string;
-  clasificaciongrupinvesB: string;
-  clasificaciongrupinvesC: string;
-  clasificaciongrupinvesR: string;
-  otrosgrup: string;
-  grupinterdis: string;
-}

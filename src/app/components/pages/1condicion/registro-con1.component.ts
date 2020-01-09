@@ -1,9 +1,9 @@
 import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
-import { Condicion1Service } from '../../services/condicion1.service';
-import { NavbarService } from '../../services/navbar.service';
-import { TituloService } from '../../services/titulo.service';
+import { Condicion1Service } from '../../../services/condicion1.service';
+import { NavbarService } from '../../../services/navbar.service';
+import { TituloService } from '../../../services/titulo.service';
 import { formatDate } from '@fullcalendar/core';
-import { PropiedadIntelectualService } from '../../services/propiedad-intelectual.service';
+import { PropiedadIntelectualService } from '../../../services/propiedad-intelectual.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({

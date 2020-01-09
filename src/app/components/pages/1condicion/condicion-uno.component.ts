@@ -7,12 +7,12 @@ import { ModalUnoComponent } from './modal-uno.component';
 */
 // import { ModalUnoComponent } from './modal-uno.component';
 // import {MatDialog} from '@angular/material/dialog';
-import { NavbarService } from '../../services/navbar.service';
-import { TituloService } from '../../services/titulo.service';
+import { NavbarService } from '../../../services/navbar.service';
+import { TituloService } from '../../../services/titulo.service';
 import { FormGroup, NgForm, FormControl, Validators, FormArray } from '@angular/forms';
-import { Condicion1 } from '../../interfaces/condicion1.interface';
-import { Condicion1Service } from '../../services/condicion1.service';
-import { PropiedadIntelectualService } from '../../services/propiedad-intelectual.service';
+import { Condicion1 } from '../../../interfaces/condicion1.interface';
+import { Condicion1Service } from '../../../services/condicion1.service';
+import { PropiedadIntelectualService } from '../../../services/propiedad-intelectual.service';
 import { NgbProgressbarConfig } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({

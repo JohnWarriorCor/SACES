@@ -46,10 +46,3 @@ export class Tabla3Condicion7Service {
     return this.http.delete(url).pipe(map( res => res.json()));
   }
 }
-export interface Tabla3Condicion7 {
-  idx?: number;
-  nombregrup: string;
-  tipoA: string;
-  tipoTop: string;
-  total: string;
-}

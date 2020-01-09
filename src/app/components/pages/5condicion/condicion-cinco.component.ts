@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { TituloService } from '../../services/titulo.service';
-import { NavbarService } from '../../services/navbar.service';
-import { PropiedadIntelectualService } from '../../services/propiedad-intelectual.service';
+import { TituloService } from '../../../services/titulo.service';
+import { NavbarService } from '../../../services/navbar.service';
+import { PropiedadIntelectualService } from '../../../services/propiedad-intelectual.service';
 @Component({
   selector: 'app-condicion-cinco',
   templateUrl: './condicion-cinco.component.html',

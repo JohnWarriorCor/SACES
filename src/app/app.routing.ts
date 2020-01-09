@@ -1,24 +1,25 @@
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home.component';
-import { CondicionUnoComponent } from './components/pages/condicion-uno.component';
-import { CondicionDosComponent } from './components/pages/condicion-dos.component';
-import { CondicionTresComponent } from './components/pages/condicion-tres.component';
-import { CondicionCuatroComponent } from './components/pages/condicion-cuatro.component';
-import { CondicionCincoComponent } from './components/pages/condicion-cinco.component';
-import { CondicionSeisComponent } from './components/pages/condicion-seis.component';
-import { CondicionSieteComponent } from './components/pages/condicion-siete.component';
-import { CondicionOchoComponent } from './components/pages/condicion-ocho.component';
-import { CondicionNueveComponent } from './components/pages/condicion-nueve.component';
-import { CronogramaComponent } from './components/pages/cronograma.component';
-import { RegistroCon1Component } from './components/pages/registro-con1.component';
-import { CondicionCeroComponent } from './components/pages/condicion-cero.component';
+import { CondicionCeroComponent } from './components/pages/0condicion/condicion-cero.component';
+import { CondicionCeroViewComponent } from './components/pages/0condicion/condicion-cero-view.component';
+import { CondicionUnoComponent } from './components/pages/1condicion/condicion-uno.component';
+import { CondicionDosComponent } from './components/pages/2condicion/condicion-dos.component';
+import { CondicionTresComponent } from './components/pages/3condicion/condicion-tres.component';
+import { CondicionCuatroComponent } from './components/pages/4condicion/condicion-cuatro.component';
+import { CondicionCincoComponent } from './components/pages/5condicion/condicion-cinco.component';
+import { CondicionSeisComponent } from './components/pages/6condicion/condicion-seis.component';
+import { CondicionSieteComponent } from './components/pages/7condicion/condicion-siete.component';
+import { CondicionOchoComponent } from './components/pages/8condicion/condicion-ocho.component';
+import { CondicionNueveComponent } from './components/pages/9condicion/condicion-nueve.component';
+import { CronogramaComponent } from './components/pages/cronograma/cronograma.component';
+import { RegistroCon1Component } from './components/pages/1condicion/registro-con1.component';
 import { ModalContainerComponent } from './modal-container.component';
 import { ModalContainerTabla1Component } from './modal-container-tabla1.component';
 import { ModalContainerTabla3Component } from './modal-container-tabla3.component';
 import { ModalContainerTabla4Component } from './modal-container-tabla4.component';
 import { ModalContainerTabla5Component } from './modal-container-tabla5.component';
 import { ModalContainerTabla6Component } from './modal-container-tabla6.component';
-import { CondicionCeroViewComponent } from './components/pages/condicion-cero-view.component';
+
 
 
 

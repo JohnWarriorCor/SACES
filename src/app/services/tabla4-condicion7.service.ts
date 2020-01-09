@@ -46,13 +46,3 @@ export class Tabla4Condicion7Service {
     return this.http.delete(url).pipe(map( res => res.json()));
   }
 }
-export interface Tabla4Condicion7 {
-  idx?: number;
-  anio: string;
-  periodo: string;
-  estudiantesIns: string;
-  graduados: string;
-  egresados: string;
-  tasaDesSpa: string;
-  tasaDes: string;
-}

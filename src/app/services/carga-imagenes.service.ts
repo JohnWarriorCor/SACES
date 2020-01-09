@@ -44,6 +44,7 @@ export class CargaImagenesService {
           // tslint:disable-next-line:max-line-length
           // uploadTask.snapshot.ref.getDownloadURL().then(function( downloadURL) { return  downloadURL; } );
           // tslint:disable-next-line:max-line-length
+          // tslint:disable-next-line:only-arrow-functions
           uploadTask.snapshot.ref.getDownloadURL().then(function( downloadURL ) { console.log(downloadURL); }  );
           console.log('URL=>', item.url);
           item.url = '';

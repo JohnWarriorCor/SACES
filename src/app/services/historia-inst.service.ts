@@ -47,11 +47,4 @@ export class HistoriaInstService {
     return this.http.delete(url).pipe(map( res => res.json()));
   }
 }
-export interface HistoriaInst {
-  idx?: number;
-  nombrePrograma: string;
-  reseniaHist: string;
-  mision: string;
-  vision: string;
-  objetivos: string;
-}
+

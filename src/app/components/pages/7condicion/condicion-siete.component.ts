@@ -1,15 +1,15 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { TituloService } from '../../services/titulo.service';
-import { NavbarService } from '../../services/navbar.service';
-import { PropiedadIntelectualService } from '../../services/propiedad-intelectual.service';
+import { TituloService } from '../../../services/titulo.service';
+import { NavbarService } from '../../../services/navbar.service';
+import { PropiedadIntelectualService } from '../../../services/propiedad-intelectual.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 // MODAL
 import { Router, ActivatedRoute} from '@angular/router';
-import { Tabla1Condicion7Service } from '../../services/tabla1-condicion7.service';
-import { Tabla2Condicion7Service } from '../../services/tabla2-condicion7.service';
-import { Tabla3Condicion7Service } from '../../services/tabla3-condicion7.service';
-import { Tabla4Condicion7Service } from '../../services/tabla4-condicion7.service';
-import { Tabla5Condicion7Service } from '../../services/tabla5-condicion7.service';
+import { Tabla1Condicion7Service } from '../../../services/tabla1-condicion7.service';
+import { Tabla2Condicion7Service } from '../../../services/tabla2-condicion7.service';
+import { Tabla3Condicion7Service } from '../../../services/tabla3-condicion7.service';
+import { Tabla4Condicion7Service } from '../../../services/tabla4-condicion7.service';
+import { Tabla5Condicion7Service } from '../../../services/tabla5-condicion7.service';
 
 @Component({
   selector: 'app-condicion-siete',

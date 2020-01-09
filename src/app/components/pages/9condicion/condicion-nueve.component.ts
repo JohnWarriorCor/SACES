@@ -1,9 +1,9 @@
 import { Component, ViewEncapsulation, OnInit, Directive } from '@angular/core';
-import { TituloService } from '../../services/titulo.service';
-import { NavbarService } from '../../services/navbar.service';
-import { PropiedadIntelectualService } from '../../services/propiedad-intelectual.service';
-import { FileItem } from '../models/file-item';
-import { CargaImagenesService } from '../../services/carga-imagenes.service';
+import { TituloService } from '../../../services/titulo.service';
+import { NavbarService } from '../../../services/navbar.service';
+import { PropiedadIntelectualService } from '../../../services/propiedad-intelectual.service';
+import { FileItem } from '../../models/file-item';
+import { CargaImagenesService } from '../../../services/carga-imagenes.service';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 export interface Item { nombre: string; url: string; }

@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { NavbarService } from 'src/app/services/navbar.service';
-import { TituloService } from '../../services/titulo.service';
-import { PropiedadIntelectualService } from '../../services/propiedad-intelectual.service';
+import { TituloService } from '../../../services/titulo.service';
+import { PropiedadIntelectualService } from '../../../services/propiedad-intelectual.service';
 import { formatDate } from '@angular/common';
 import { Router, ActivatedRoute} from '@angular/router';
 
 import { FormGroup, NgForm, FormControl, Validators, FormArray } from '@angular/forms';
 import { NgbProgressbarConfig } from '@ng-bootstrap/ng-bootstrap';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ModalUnoComponent } from './modal-uno.component';
-import { HistoriaInstService } from '../../services/historia-inst.service';
-import { HistoriaInst } from '../../interfaces/historia-inst';
+import { ModalUnoComponent } from '../modals/modal-uno.component';
+import { HistoriaInstService } from '../../../services/historia-inst.service';
+import { HistoriaInst } from '../../../interfaces/historia-inst';
 
 @Component({
   selector: 'app-condicion-cero',

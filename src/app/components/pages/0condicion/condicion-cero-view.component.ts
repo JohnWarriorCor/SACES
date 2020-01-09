@@ -1,10 +1,10 @@
 import { Component, OnInit, Input, ViewEncapsulation  } from '@angular/core';
 import { NavbarService } from 'src/app/services/navbar.service';
-import { TituloService } from '../../services/titulo.service';
-import { PropiedadIntelectualService } from '../../services/propiedad-intelectual.service';
+import { TituloService } from '../../../services/titulo.service';
+import { PropiedadIntelectualService } from '../../../services/propiedad-intelectual.service';
 import { formatDate } from '@fullcalendar/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { HistoriaInstService } from '../../services/historia-inst.service';
+import { HistoriaInstService } from '../../../services/historia-inst.service';
 
 @Component({
   selector: 'app-condicion-cero-view',

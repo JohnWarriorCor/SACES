@@ -46,14 +46,3 @@ export class Tabla5Condicion7Service {
     return this.http.delete(url).pipe(map( res => res.json()));
   }
 }
-export interface Tabla5Condicion7 {
-  idx?: number;
-  anio: string;
-  periodo: string;
-  TC: string;
-  MT: string;
-  C: string;
-  tiempoDoc: string;
-  tiempoInv: string;
-  tiempoExt: string;
-}
