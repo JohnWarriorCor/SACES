@@ -2,9 +2,9 @@ import { Component, Input } from '@angular/core';
 import { NgbActiveModal, NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Router, ActivatedRoute} from '@angular/router';
 import { FormGroup, NgForm, FormControl, Validators, FormArray } from '@angular/forms';
-import { Tabla2Condicion7 } from '../../../interfaces/tabla2Condicion7.interface';
-import { Tabla2Condicion7Service } from '../../../services/tabla2-condicion7.service';
-import { FuncionesCompartidasService } from '../../../services/funciones-compartidas.service';
+import { Tabla2Condicion7 } from '../../../../interfaces/tabla2Condicion7.interface';
+import { Tabla2Condicion7Service } from '../../../../services/tabla2-condicion7.service';
+import { FuncionesCompartidasService } from '../../../../services/funciones-compartidas.service';
 
 @Component({
   selector: 'app-form-tabla6-condicion7',

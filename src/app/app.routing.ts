@@ -13,12 +13,12 @@ import { CondicionOchoComponent } from './components/pages/8condicion/condicion-
 import { CondicionNueveComponent } from './components/pages/9condicion/condicion-nueve.component';
 import { CronogramaComponent } from './components/pages/cronograma/cronograma.component';
 import { RegistroCon1Component } from './components/pages/1condicion/registro-con1.component';
-import { ModalContainerComponent } from './modal-container.component';
-import { ModalContainerTabla1Component } from './modal-container-tabla1.component';
-import { ModalContainerTabla3Component } from './modal-container-tabla3.component';
-import { ModalContainerTabla4Component } from './modal-container-tabla4.component';
-import { ModalContainerTabla5Component } from './modal-container-tabla5.component';
-import { ModalContainerTabla6Component } from './modal-container-tabla6.component';
+import { ModalContainerComponent } from './components/pages/modals/tabla2cond7/modal-container.component';
+import { ModalContainerTabla1Component } from './components/pages/modals/tabla1cond7/modal-container-tabla1.component';
+import { ModalContainerTabla3Component } from './components/pages/modals/tabla3cond7/modal-container-tabla3.component';
+import { ModalContainerTabla4Component } from './components/pages/modals/tabla4cond7/modal-container-tabla4.component';
+import { ModalContainerTabla5Component } from './components/pages/modals/tabla5cond7/modal-container-tabla5.component';
+import { ModalContainerTabla6Component } from './components/pages/modals/tabla6cond7/modal-container-tabla6.component';
 
 
 

@@ -36,19 +36,19 @@ import { Condicion1Service } from './services/condicion1.service';
 import { TituloService } from './services/titulo.service';
 import { PropiedadIntelectualComponent } from './components/shared/footer/propiedad-intelectual.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { FormTabla2Condicion7Component } from './components/pages/modals/form-tabla2-condicion7.component';
-import { ModalContainerComponent } from './modal-container.component';
 import { NgInitDirective } from './components/ng-init.directive';
-import { ModalContainerTabla1Component } from './modal-container-tabla1.component';
-import { FormTabla1Condicion7Component } from './components/pages/modals/form-tabla1-condicion7.component';
-import { ModalContainerTabla3Component } from './modal-container-tabla3.component';
-import { ModalContainerTabla4Component } from './modal-container-tabla4.component';
-import { ModalContainerTabla5Component } from './modal-container-tabla5.component';
-import { ModalContainerTabla6Component } from './modal-container-tabla6.component';
-import { FormTabla3Condicion7Component } from './components/pages/modals/form-tabla3-condicion7.component';
-import { FormTabla4Condicion7Component } from './components/pages/modals/form-tabla4-condicion7.component';
-import { FormTabla5Condicion7Component } from './components/pages/modals/form-tabla5-condicion7.component';
-import { FormTabla6Condicion7Component } from './components/pages/modals/form-tabla6-condicion7.component';
+import { ModalContainerTabla1Component } from './components/pages/modals/tabla1cond7/modal-container-tabla1.component';
+import { ModalContainerComponent } from './components/pages/modals/tabla2cond7/modal-container.component';
+import { ModalContainerTabla3Component } from './components/pages/modals/tabla3cond7/modal-container-tabla3.component';
+import { ModalContainerTabla4Component } from './components/pages/modals/tabla4cond7/modal-container-tabla4.component';
+import { ModalContainerTabla5Component } from './components/pages/modals/tabla5cond7/modal-container-tabla5.component';
+import { ModalContainerTabla6Component } from './components/pages/modals/tabla6cond7/modal-container-tabla6.component';
+import { FormTabla1Condicion7Component } from './components/pages/modals/tabla1cond7/form-tabla1-condicion7.component';
+import { FormTabla2Condicion7Component } from './components/pages/modals/tabla2cond7/form-tabla2-condicion7.component';
+import { FormTabla3Condicion7Component } from './components/pages/modals/tabla3cond7/form-tabla3-condicion7.component';
+import { FormTabla4Condicion7Component } from './components/pages/modals/tabla4cond7/form-tabla4-condicion7.component';
+import { FormTabla5Condicion7Component } from './components/pages/modals/tabla5cond7/form-tabla5-condicion7.component';
+import { FormTabla6Condicion7Component } from './components/pages/modals/tabla6cond7/form-tabla6-condicion7.component';
 // Firebase
 import { CargaImagenesService } from './services/carga-imagenes.service';
 import { AngularFireModule } from '@angular/fire';
@@ -99,7 +99,7 @@ import { LoginComponent } from './components/pages/login/login.component';
     FormTabla6Condicion7Component,
     NgDropFilesDirective,
     CondicionCeroViewComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     NgxPrintModule,

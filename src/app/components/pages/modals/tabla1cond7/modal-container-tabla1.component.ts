@@ -5,14 +5,14 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 import { FormGroup, NgForm, FormControl, Validators, FormArray } from '@angular/forms';
-import { FuncionesCompartidasService } from './services/funciones-compartidas.service';
-import { FormTabla1Condicion7Component } from './components/pages/modals/form-tabla1-condicion7.component';
-import { Tabla1Condicion7 } from './interfaces/tabla1-condicion7';
-import { Tabla1Condicion7Service } from './services/tabla1-condicion7.service';
+import { FuncionesCompartidasService } from '../../../../services/funciones-compartidas.service';
+import { FormTabla1Condicion7Component } from './form-tabla1-condicion7.component';
+import { Tabla1Condicion7 } from '../../../../interfaces/tabla1-condicion7';
+import { Tabla1Condicion7Service } from '../../../../services/tabla1-condicion7.service';
 
 @Component({
   selector: 'app-modal-container-tabla1',
-  templateUrl: './modal-container.component.html',
+  templateUrl: '../tabla2cond7/modal-container.component.html',
 })
 export class ModalContainerTabla1Component implements OnDestroy {
   destroy = new Subject<any>();

@@ -10,6 +10,7 @@ import { Tabla2Condicion7Service } from '../../../services/tabla2-condicion7.ser
 import { Tabla3Condicion7Service } from '../../../services/tabla3-condicion7.service';
 import { Tabla4Condicion7Service } from '../../../services/tabla4-condicion7.service';
 import { Tabla5Condicion7Service } from '../../../services/tabla5-condicion7.service';
+import { Tabla2Condicion7 } from '../../../interfaces/tabla2Condicion7.interface';
 
 @Component({
   selector: 'app-condicion-siete',
@@ -38,6 +39,7 @@ export class CondicionSieteComponent implements OnInit {
   closeResult: string;
   tabla1condicione7: any[] = [];
   tabla2condicione7: any[] = [];
+  headElements = ['nombregrupinves'];
   tabla3condicione7: any[] = [];
   tabla4condicione7: any[] = [];
   tabla5condicione7: any[] = [];
@@ -49,7 +51,6 @@ export class CondicionSieteComponent implements OnInit {
       setTimeout(() => {
         this.loading = false;
         this.tabla1condicione7 = data;
-        console.log(this.tabla1condicione7.length);
       }, 0);
     });
     this.ServicioTabla2.getInvocadores().subscribe( data => {

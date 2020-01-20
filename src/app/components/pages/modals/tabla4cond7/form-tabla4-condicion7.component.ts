@@ -2,10 +2,10 @@ import { Component, Input, OnInit } from '@angular/core';
 import { NgbActiveModal, NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Router, ActivatedRoute} from '@angular/router';
 import { FormGroup, NgForm, FormControl, Validators, FormArray } from '@angular/forms';
-import { FuncionesCompartidasService } from '../../../services/funciones-compartidas.service';
+import { FuncionesCompartidasService } from '../../../../services/funciones-compartidas.service';
 import {formatDate } from '@angular/common';
-import { Tabla4Condicion7Service } from '../../../services/tabla4-condicion7.service';
-import { Tabla4Condicion7 } from '../../../interfaces/tabla4-condicion7';
+import { Tabla4Condicion7Service } from '../../../../services/tabla4-condicion7.service';
+import { Tabla4Condicion7 } from '../../../../interfaces/tabla4-condicion7';
 
 @Component({
   selector: 'app-form-tabla4-condicion7',
