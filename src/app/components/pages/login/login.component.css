@@ -1,0 +1,23 @@
+.clean-block.clean-form form {
+    border-top: 2px solid #8f141b;
+    background-color: #fff;
+    max-width: 500px;
+    margin: auto;
+    padding: 40px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.075);
+}
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.clean-block.dark {
+    background-color: #f6f6f6;
+}
+.clean-block .block-heading {
+    padding-top: 50px;
+    margin-bottom: 40px;
+    text-align: center;
+}

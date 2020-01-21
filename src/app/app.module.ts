@@ -61,6 +61,10 @@ import { NgDropFilesDirective } from './directives/ng-drop-files.directive';
 // Imprimir
 import {NgxPrintModule} from 'ngx-print';
 import { LoginComponent } from './components/pages/login/login.component';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { SortPipe } from './pipes/sort.pipe';
+import { OrderModule } from 'ngx-order-pipe';
+import { BitacoraComponent } from './components/pages/bitacora/bitacora.component';
 
 @NgModule({
   declarations: [
@@ -100,6 +104,8 @@ import { LoginComponent } from './components/pages/login/login.component';
     NgDropFilesDirective,
     CondicionCeroViewComponent,
     LoginComponent,
+    SortPipe,
+    BitacoraComponent,
   ],
   imports: [
     NgxPrintModule,
@@ -114,9 +120,11 @@ import { LoginComponent } from './components/pages/login/login.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
-    AngularFireStorageModule // imports firebase/storage only needed for storage features
+    AngularFireStorageModule, // imports firebase/storage only needed for storage features
     // NgbModule,
     // MatDialogModule
+    MDBBootstrapModule.forRoot(),
+    OrderModule
   ],
   exports: [
     // MatDialogModule

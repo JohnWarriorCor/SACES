@@ -173,8 +173,6 @@
     <table class="table tableBordered">
       <thead class="tableSolid font-weight-bold">
         <tr class="text-center navlinkinSolid">
-          <!--<th *ngFor="let head of headElements; let i = index" aria-controls="tableSortExample" scope="col" [mdbTableSort]="elements" [sortBy]="headElements[i]">{{head | titlecase}}
-          </th>-->
         </tr>
         <tr class="text-center navlinkinSolid">
           <td rowspan="2" scope="col" class="text-uppercase align-middle borden">#</td>
@@ -195,7 +193,7 @@
       <tbody>
         <tr *ngFor="let k of tabla2condicione7 | keys | slice: (pageTabla2-1) * pageSizeTabla2 : (pageTabla2-1) * pageSizeTabla2 + pageSizeTabla2 ; let i = index">
           <td class="align-middle text-center">
-            {{ i+1 }}
+            {{ (i+1)+((pageTabla2-1)*10) }}
           </td>
           <td class="align-middle text-center">
             {{ tabla2condicione7[k].nombregrupinves }}

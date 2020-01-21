@@ -19,6 +19,8 @@ import { ModalContainerTabla3Component } from './components/pages/modals/tabla3c
 import { ModalContainerTabla4Component } from './components/pages/modals/tabla4cond7/modal-container-tabla4.component';
 import { ModalContainerTabla5Component } from './components/pages/modals/tabla5cond7/modal-container-tabla5.component';
 import { ModalContainerTabla6Component } from './components/pages/modals/tabla6cond7/modal-container-tabla6.component';
+import { BitacoraComponent } from './components/pages/bitacora/bitacora.component';
+import { LoginComponent } from './components/pages/login/login.component';
 
 
 
@@ -26,6 +28,7 @@ import { ModalContainerTabla6Component } from './components/pages/modals/tabla6c
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
+  { path: 'Login', component: LoginComponent },
   { path: 'HistoriaInstitucionalForm/:id', component: CondicionCeroComponent },
   { path: 'HistoriaInstitucional', component: CondicionCeroViewComponent },
   { path: 'DenominacionDelPrograma/:id', component: CondicionUnoComponent },
@@ -45,6 +48,7 @@ const routes: Routes = [
   { path: 'MediosEducativos', component: CondicionOchoComponent },
   { path: 'InfraestructuraFisicaTecnologica', component: CondicionNueveComponent },
   { path: 'Cronograma', component: CronogramaComponent },
+  { path: 'Bitacora', component: BitacoraComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 

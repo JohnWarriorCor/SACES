@@ -39,7 +39,7 @@ export class CondicionSieteComponent implements OnInit {
   closeResult: string;
   tabla1condicione7: any[] = [];
   tabla2condicione7: any[] = [];
-  headElements = ['nombregrupinves'];
+  order = 'nombregrupinves';
   tabla3condicione7: any[] = [];
   tabla4condicione7: any[] = [];
   tabla5condicione7: any[] = [];
