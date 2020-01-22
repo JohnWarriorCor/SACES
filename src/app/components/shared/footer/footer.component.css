@@ -1,0 +1,26 @@
+.page-footer.dark {
+    background-color: #2b2f31;
+}
+.page-footer {
+    background-color: #fff;
+    padding-top: 30px;
+    text-align: center;
+}
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+    display: block;
+}
+.page-footer.dark .footer-copyright {
+    background-color: #222425;
+    border-color: #222425;
+}
+.page-footer .footer-copyright {
+    background-color: #fff;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: center;
+    margin-top: 50px;
+    border: 1px solid #ededed;
+}
+#sp-allied {
+    padding: 10px 0 0 0;
+}

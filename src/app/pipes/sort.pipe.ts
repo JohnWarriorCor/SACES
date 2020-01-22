@@ -1,6 +1,6 @@
 /*
- *ngFor="let c of oneDimArray | sortBy:'asc'"
- *ngFor="let c of arrayOfObjects | sortBy:'asc':'propertyName'"
+ *ngFor="let c of oneDimArray | sort:'asc'"
+ *ngFor="let c of arrayOfObjects | sort:'asc':'propertyName'"
 */
 import { Pipe, PipeTransform } from '@angular/core';
 import { sortBy } from 'lodash';

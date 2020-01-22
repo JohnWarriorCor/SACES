@@ -8,9 +8,6 @@ import { Router, ActivatedRoute} from '@angular/router';
 import { FormGroup, NgForm, FormControl, Validators, FormArray } from '@angular/forms';
 import { NgbProgressbarConfig } from '@ng-bootstrap/ng-bootstrap';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ModalUnoComponent } from '../modals/modal-uno.component';
-import { HistoriaInstService } from '../../../services/historia-inst.service';
-import { HistoriaInst } from '../../../interfaces/historia-inst';
 
 @Component({
   selector: 'app-login',
