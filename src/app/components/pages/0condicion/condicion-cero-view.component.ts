@@ -22,21 +22,17 @@ export class CondicionCeroViewComponent implements OnInit {
   loading = true;
 
   // tslint:disable-next-line:max-line-length
-  constructor(private modalService: NgbModal, public prop: PropiedadIntelectualService, private headerTitleService: TituloService, public nav: NavbarService, private _CONDICIONES1SERVICE: HistoriaInstService) {
+  constructor(private modalService: NgbModal, public prop: PropiedadIntelectualService, public foot: PropiedadIntelectualService, private headerTitleService: TituloService, public nav: NavbarService, private _CONDICIONES1SERVICE: HistoriaInstService) {
     this._CONDICIONES1SERVICE.getHistorias().subscribe( data => {
-      setTimeout(() => {
-        this.loading = false;
-        this.historia = data;
-        console.log(this.historia);
-      }, 0);
+      this.historia = data;
     });
   }
 
   ngOnInit() {
     this.headerTitleService.setTitle('HISTORIA INSTITUCIONAL Y DE PROGRAMA');
     this.nav.show();
-    this.prop.hide();
-    // tslint:disable-next-line:only-arrow-functions
+    this.prop.hidePropiedad();
+    this.foot.showFooter();
   }
   openSm(content) {
     this.modalReference = this.modalService.open(content, { size: 'sm', centered: true });

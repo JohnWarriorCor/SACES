@@ -46,7 +46,7 @@ export class CondicionSieteComponent implements OnInit {
   loading = true;
   modalReference: any;
   // tslint:disable-next-line:max-line-length
-  constructor( private router: Router, private activatedRoute: ActivatedRoute, private ServicioTabla1: Tabla1Condicion7Service, private ServicioTabla2: Tabla2Condicion7Service, private ServicioTabla3: Tabla3Condicion7Service, private ServicioTabla4: Tabla4Condicion7Service, private ServicioTabla5: Tabla5Condicion7Service, private modalService: NgbModal, public prop: PropiedadIntelectualService, private headerTitleService: TituloService, public nav: NavbarService) {
+  constructor( private router: Router, private activatedRoute: ActivatedRoute, private ServicioTabla1: Tabla1Condicion7Service, private ServicioTabla2: Tabla2Condicion7Service, private ServicioTabla3: Tabla3Condicion7Service, private ServicioTabla4: Tabla4Condicion7Service, private ServicioTabla5: Tabla5Condicion7Service, private modalService: NgbModal, public prop: PropiedadIntelectualService, public foot: PropiedadIntelectualService, private headerTitleService: TituloService, public nav: NavbarService) {
     this.ServicioTabla1.getInvocadores().subscribe( data => {
       setTimeout(() => {
         this.loading = false;
@@ -130,8 +130,8 @@ export class CondicionSieteComponent implements OnInit {
   }
   ngOnInit() {
     this.headerTitleService.setTitle('PROFESORES');
-    this.nav.show();
-    this.prop.hide();
+    this.prop.hidePropiedad();
+    this.foot.showFooter();
   }
   activarPrint() {
     this.tabla1Oculta = true;

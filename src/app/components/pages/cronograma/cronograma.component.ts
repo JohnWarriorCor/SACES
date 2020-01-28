@@ -47,12 +47,12 @@ export class CronogramaComponent implements OnInit {
       });
     }
   }
-  constructor(public prop: PropiedadIntelectualService, private headerTitleService: TituloService, public nav: NavbarService) { }
+  constructor(public prop: PropiedadIntelectualService, public foot: PropiedadIntelectualService, private headerTitleService: TituloService, public nav: NavbarService) { }
 
   ngOnInit() {
     this.headerTitleService.setTitle('cronograma');
-    this.prop.hide();
-    this.nav.show();
+    this.prop.hidePropiedad();
+    this.foot.showFooter();
   }
 
 }

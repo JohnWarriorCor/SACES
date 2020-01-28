@@ -32,7 +32,7 @@ export class CondicionCeroComponent implements OnInit {
   };
 
   // tslint:disable-next-line:max-line-length
-  constructor(public prop: PropiedadIntelectualService, private headerTitleService: TituloService, public nav: NavbarService, private modalService: NgbModal, config: NgbProgressbarConfig, private _CONDICIONSERVICES: HistoriaInstService, private router: Router, private activatedRoute: ActivatedRoute) {
+  constructor(public prop: PropiedadIntelectualService, public foot: PropiedadIntelectualService, private headerTitleService: TituloService, public nav: NavbarService, private modalService: NgbModal, config: NgbProgressbarConfig, private _CONDICIONSERVICES: HistoriaInstService, private router: Router, private activatedRoute: ActivatedRoute) {
     this.activatedRoute.params.subscribe( parametros => {
       this.id = parametros.id;
       console.log('Los supuestos parametros', parametros.id);
@@ -47,7 +47,8 @@ export class CondicionCeroComponent implements OnInit {
   ngOnInit() {
     this.headerTitleService.setTitle('MODIFICACIÓN DE HISTORIA INSTITUCIONAL Y DE PROGRAMA');
     this.nav.show();
-    this.prop.hide();
+    this.prop.hidePropiedad();
+    this.foot.showFooter();
   }
 
   guardar() {

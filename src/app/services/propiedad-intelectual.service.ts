@@ -5,15 +5,22 @@ import { Injectable } from '@angular/core';
 })
 export class PropiedadIntelectualService {
 
-  visible: boolean;
+  visiblePropiedad: boolean;
+  visibleFooter: boolean;
 
-  constructor() { this.visible = false; }
+  constructor() { this.visiblePropiedad = false; this.visibleFooter = false; }
 
-  hide() { this.visible = false; }
+  hidePropiedad() { this.visiblePropiedad = false; }
 
-  show() { this.visible = true; }
+  showPropiedad() { this.visiblePropiedad = true; }
 
-  toggle() { this.visible = !this.visible; }
+  togglePropiedad() { this.visiblePropiedad = !this.visiblePropiedad; }
+
+  hideFooter() { this.visibleFooter = false; }
+
+  showFooter() { this.visibleFooter = true; }
+
+  toggleFooter() { this.visibleFooter = !this.visibleFooter; }
 
   doSomethingElseUseful() { }
 }

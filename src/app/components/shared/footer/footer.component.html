@@ -1,5 +1,5 @@
 <!--FOOTER V2.0 IMPLEMENTAR ENLACES DE IMAGENES-->
-<footer class="page-footer light">
+<footer class="page-footer light" *ngIf="footer.visibleFooter">
     <div class="container">
         <div class="row">
             <article class="centro txtcenter">
@@ -10,43 +10,10 @@
                         Nacional</strong></p><br>
             </article>
         </div>
-        <div class="row">
-            <div class="col-sm-3">
-                <h5>Get started</h5>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Sign up</a></li>
-                    <li><a href="#">Downloads</a></li>
-                </ul>
-            </div>
-            <div class="col-sm-3">
-                <h5>About us</h5>
-                <ul>
-                    <li><a href="#">Company Information</a></li>
-                    <li><a href="#">Contact us</a></li>
-                    <li><a href="#">Reviews</a></li>
-                </ul>
-            </div>
-            <div class="col-sm-3">
-                <h5>Support</h5>
-                <ul>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Help desk</a></li>
-                    <li><a href="#">Forums</a></li>
-                </ul>
-            </div>
-            <div class="col-sm-3">
-                <h5>Legal</h5>
-                <ul>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Terms of Use</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                </ul>
-            </div>
-        </div>
+       
     </div>
-    <div class="footer-copyright dark text-black-50">
-        <p>© {{today | date:'yyyy'}} Copyright Text</p>
+    <div class="footer-copyright" style="background-color: dimgray; color: white;">
+        <p style="margin-top: 20px;">© {{today | date:'yyyy'}} Copyright DOCTORADO EN CIENCIAS DE LA SALUD</p>
     </div>
 </footer>
 

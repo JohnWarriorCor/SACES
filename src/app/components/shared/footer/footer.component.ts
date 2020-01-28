@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { formatDate } from '@fullcalendar/core';
+import { PropiedadIntelectualService } from '../../../services/propiedad-intelectual.service';
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
@@ -7,7 +8,7 @@ import { formatDate } from '@fullcalendar/core';
 })
 export class FooterComponent implements OnInit {
   today = new Date();
-  constructor() { }
+  constructor(public footer: PropiedadIntelectualService ) { }
 
   ngOnInit() {
   }

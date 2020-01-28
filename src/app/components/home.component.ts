@@ -19,12 +19,14 @@ export class HomeComponent implements OnInit {
   hover7 = false;
   hover8 = false;
   hover9 = false;
-  constructor(private headerTitleService: TituloService, public nav: NavbarService, public prop: PropiedadIntelectualService) { }
+  // tslint:disable-next-line:max-line-length
+  constructor(private headerTitleService: TituloService, public nav: NavbarService, public prop: PropiedadIntelectualService, public foot: PropiedadIntelectualService) { }
 
   ngOnInit() {
     this.headerTitleService.setTitle('Condiciones de Calidad para la Creación y Funcionamiento de Programas Académicos');
     this.nav.hide();
-    this.prop.show();
+    this.prop.showPropiedad();
+    this.foot.hideFooter();
   }
 
 }

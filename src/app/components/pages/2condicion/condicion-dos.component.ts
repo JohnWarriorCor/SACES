@@ -13,12 +13,13 @@ export class CondicionDosComponent implements OnInit {
   show = false;
   buttonName = 'Aspectos';
 
-  constructor(public prop: PropiedadIntelectualService, private headerTitleService: TituloService, public nav: NavbarService) { }
+  // tslint:disable-next-line:max-line-length
+  constructor(public prop: PropiedadIntelectualService, public foot: PropiedadIntelectualService, private headerTitleService: TituloService, public nav: NavbarService) { }
 
   ngOnInit() {
     this.headerTitleService.setTitle('JUSTIFICACIÓN DEL PROGRAMA');
-    this.nav.show();
-    this.prop.hide();
+    this.prop.hidePropiedad();
+    this.foot.showFooter();
   }
   toggle() {
     this.show = !this.show;

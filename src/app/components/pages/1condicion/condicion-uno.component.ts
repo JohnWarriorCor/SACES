@@ -74,7 +74,7 @@ export class CondicionUnoComponent implements OnInit {
   fecha3Id = 0;
   jstoday = '';
   // tslint:disable-next-line:max-line-length
-  constructor(private modalService: NgbModal, config: NgbProgressbarConfig, public prop: PropiedadIntelectualService, public nav: NavbarService, private headerTitleService: TituloService, private _CONDICIONSERVICES: Condicion1Service, private router: Router, private activatedRoute: ActivatedRoute) {
+  constructor(private modalService: NgbModal, config: NgbProgressbarConfig, public prop: PropiedadIntelectualService, public foot: PropiedadIntelectualService, public nav: NavbarService, private headerTitleService: TituloService, private _CONDICIONSERVICES: Condicion1Service, private router: Router, private activatedRoute: ActivatedRoute) {
     config.striped = true;
     config.animated = true;
     this.jstoday = formatDate(this.today, 'dd/MM/yyyy', 'en-US', '-0500');
@@ -91,7 +91,8 @@ export class CondicionUnoComponent implements OnInit {
     this.myFunc3(this.fecha3Id);
     this.headerTitleService.setTitle('DENOMINACIÓN DEL PROGRAMA');
     this.nav.show();
-    this.prop.hide();
+    this.prop.hidePropiedad();
+    this.foot.showFooter();
     // this.nav.doSomethingElseUseful();
   }
   toggle() {

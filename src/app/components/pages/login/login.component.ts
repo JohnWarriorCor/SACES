@@ -16,12 +16,12 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(public prop: PropiedadIntelectualService, private headerTitleService: TituloService, public nav: NavbarService) { }
+  constructor(public prop: PropiedadIntelectualService, public foot: PropiedadIntelectualService, private headerTitleService: TituloService, public nav: NavbarService) { }
 
   ngOnInit() {
     this.headerTitleService.setTitle('INGRESO DE USUARIO');
-    this.nav.hide();
-    this.prop.hide();
+    this.prop.hidePropiedad();
+    this.foot.showFooter();
   }
 
 }

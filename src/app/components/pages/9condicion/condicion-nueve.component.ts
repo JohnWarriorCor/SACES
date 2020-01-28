@@ -26,18 +26,18 @@ export class CondicionNueveComponent implements OnInit {
   estaSobreElemento = false;
   archivos: FileItem[] = [];
   // tslint:disable-next-line:max-line-length
-  constructor(private modalService: NgbModal, private afs: AngularFirestore, public cargaImagenes: CargaImagenesService, public prop: PropiedadIntelectualService, private headerTitleService: TituloService, public nav: NavbarService) {
+  constructor(private modalService: NgbModal, private afs: AngularFirestore, public cargaImagenes: CargaImagenesService, public prop: PropiedadIntelectualService, public foot: PropiedadIntelectualService, private headerTitleService: TituloService, public nav: NavbarService) {
     this.itemsCollection = afs.collection<Item>('img');
     this.items = this.itemsCollection.valueChanges();
   }
 
   ngOnInit() {
     this.headerTitleService.setTitle('INFRAESTRUCTURA FÍSICA Y TECNOLÓGICA');
-    this.nav.show();
-    this.prop.hide();
+    this.prop.hidePropiedad();
+    this.foot.showFooter();
   }
   openLg(content) {
-    this.modalService.open(content, { size: 'lg' });
+    this.modalService.open(content, { size: 'lg', centered: true });
   }
   cargarImagenes() {
     this.cargaImagenes.cargarImagenesFirebase( this.archivos );
