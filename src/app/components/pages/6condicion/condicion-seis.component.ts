@@ -17,6 +17,7 @@ export class CondicionSeisComponent implements OnInit {
 
   ngOnInit() {
     this.headerTitleService.setTitle('RELACIÓN CON EL SECTOR EXTERNO');
+    this.nav.show();
     this.prop.hidePropiedad();
     this.foot.showFooter();
   }

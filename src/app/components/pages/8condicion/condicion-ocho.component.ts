@@ -16,6 +16,7 @@ export class CondicionOchoComponent implements OnInit {
 
   ngOnInit() {
     this.headerTitleService.setTitle('MEDIOS EDUCATIVOS');
+    this.nav.show();
     this.prop.hidePropiedad();
     this.foot.showFooter();
   }

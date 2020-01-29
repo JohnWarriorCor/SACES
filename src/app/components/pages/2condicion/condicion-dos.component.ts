@@ -18,6 +18,7 @@ export class CondicionDosComponent implements OnInit {
 
   ngOnInit() {
     this.headerTitleService.setTitle('JUSTIFICACIÓN DEL PROGRAMA');
+    this.nav.show();
     this.prop.hidePropiedad();
     this.foot.showFooter();
   }

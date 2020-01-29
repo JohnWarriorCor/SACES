@@ -16,6 +16,7 @@ export class CondicionTresComponent implements OnInit {
 
   ngOnInit() {
     this.headerTitleService.setTitle('CONTENIDOS CURRICULARES');
+    this.nav.show();
     this.prop.hidePropiedad();
     this.foot.showFooter();
   }

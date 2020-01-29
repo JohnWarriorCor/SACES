@@ -130,6 +130,7 @@ export class CondicionSieteComponent implements OnInit {
   }
   ngOnInit() {
     this.headerTitleService.setTitle('PROFESORES');
+    this.nav.show();
     this.prop.hidePropiedad();
     this.foot.showFooter();
   }

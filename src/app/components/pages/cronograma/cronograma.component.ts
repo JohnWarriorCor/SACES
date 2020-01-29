@@ -51,6 +51,7 @@ export class CronogramaComponent implements OnInit {
 
   ngOnInit() {
     this.headerTitleService.setTitle('cronograma');
+    this.nav.show();
     this.prop.hidePropiedad();
     this.foot.showFooter();
   }

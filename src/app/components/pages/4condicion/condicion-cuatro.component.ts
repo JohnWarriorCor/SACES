@@ -15,6 +15,7 @@ export class CondicionCuatroComponent implements OnInit {
 
   ngOnInit() {
     this.headerTitleService.setTitle('ORGANIZACIÓN ACTIVIDADES ACADÉMICAS Y PROCESO FORMATIVO');
+    this.nav.show();
     this.prop.hidePropiedad();
     this.foot.showFooter();
   }

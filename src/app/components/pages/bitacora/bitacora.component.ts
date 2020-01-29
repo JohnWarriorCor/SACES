@@ -20,6 +20,7 @@ export class BitacoraComponent implements OnInit {
 
   ngOnInit() {
     this.headerTitleService.setTitle('INGRESO DE USUARIO');
+    this.nav.show();
     this.prop.hidePropiedad();
     this.foot.showFooter();
   }

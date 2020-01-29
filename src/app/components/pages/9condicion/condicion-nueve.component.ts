@@ -33,6 +33,7 @@ export class CondicionNueveComponent implements OnInit {
 
   ngOnInit() {
     this.headerTitleService.setTitle('INFRAESTRUCTURA FÍSICA Y TECNOLÓGICA');
+    this.nav.show();
     this.prop.hidePropiedad();
     this.foot.showFooter();
   }
