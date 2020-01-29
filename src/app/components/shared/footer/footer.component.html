@@ -1,6 +1,28 @@
 <!--FOOTER V2.0 IMPLEMENTAR ENLACES DE IMAGENES-->
 <footer class="page-footer light" *ngIf="footer.visibleFooter">
-    <div class="container">
+    <div class="container-fluid" style="background-color: #e6e6e6;height: 60px;">
+        <div class="row">
+            <div class="col">
+                <a href="https://www.usco.edu.co/es/" target="_blank">
+                    <img class="rounded" src="assets/universidad-surcolombiana.png" alt=""
+                        style="width: 50%;height: 50%;margin-top: 10px;">
+                </a>
+            </div>
+            <div class="col">
+                <a href="https://www.mineducacion.gov.co/sistemasinfo/snies/" target="_blank">
+                    <img class="rounded" src="assets/snies2019.jpg" alt=""
+                        style="width: 60%;height: 50%;margin-top: 10px;">
+                </a>
+            </div>
+            <div class="col">
+                <a href="https://www.mineducacion.gov.co/portal/Educacion-superior/" target="_blank">
+                    <img class="rounded" src="assets/minedu.png" alt=""
+                        style="width: 60%;height: 50%;margin-top: 10px;">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="margin-top: 30px;">
         <div class="row">
             <article class="centro txtcenter">
                 <figure class="espacio"><img src="assets/universidad-surcolombiana.png" alt="Universidad Surcolombian"
@@ -10,25 +32,8 @@
                         Nacional</strong></p><br>
             </article>
         </div>
-       
     </div>
-    <div class="footer-copyright" style="background-color: dimgray; color: white;">
-        <p style="margin-top: 20px;">© {{today | date:'yyyy'}} Copyright DOCTORADO EN CIENCIAS DE LA SALUD</p>
+    <div class="footer-copyright text-uppercase" style="background-color: dimgray; color: white;margin: 0;">
+        <p style="margin-top: 20px;"> <b> Derechos reservados DOCTORADO EN CIENCIAS DE LA SALUD</b>© {{today | date:'yyyy'}} </p>
     </div>
 </footer>
-
-<!--
-    <section id="sp-allied"><div class="container" style="background-color: #e6e6e6;"><div class="row"><div id="sp-aliado1" class="col-xs-6 col-sm-4 col-md-2"><div class="sp-column "><div class="sp-module "><div class="sp-module-content">
-
-        <div class="custom">
-            <p><a title="Universidad Surcolombiana" href="https://www.usco.edu.co/es/" target="_blank" rel="noopener noreferrer"><img title="Universidad Surcolombiana" src="assets/footer-universidad-surcolombiana.png" alt="Universidad Surcolombiana"></a></p></div>
-        </div></div></div></div><div id="sp-aliado2" class="col-xs-6 col-sm-4 col-md-2"><div class="sp-column "><div class="sp-module "><div class="sp-module-content">
-        
-        <div class="custom">
-            <p><a href="https://www.mineducacion.gov.co/sistemasinfo/snies/" target="_blank" rel="noopener noreferrer"><img title="Ministerio de Educación" src="assets/footer-snies2019.png" alt="Sistema Nacional de Informacion de la Educacion Superior (SNIES)"></a></p></div>
-        </div></div></div></div><div id="sp-aliado3" class="col-xs-6 col-sm-4 col-md-2"><div class="sp-column "><div class="sp-module "><div class="sp-module-content">
-        
-        <div class="custom">
-            <p><a title="Colciencias" href="https://www.mineducacion.gov.co/portal/Educacion-superior/" target="_blank" rel="noopener noreferrer"><img title="Colciencias" src="assets/footer-minedu.png" alt="Ministerio de educación - Educación superior"></a></p></div>
-        </div></div></div></div></div></div></section>
--->
