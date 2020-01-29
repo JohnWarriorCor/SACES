@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers  } from '@angular/http';
-import { Condicion2 } from '../interfaces/condicion2';
+import { Condicion3 } from '../interfaces/condicion3';
 import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
-export class Condicion2Service {
+export class Condicion3Service {
 
   constructor() { }
 }
