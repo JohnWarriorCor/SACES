@@ -3,10 +3,12 @@ import { formatDate } from '@angular/common';
 import { Router, ActivatedRoute} from '@angular/router';
 /*MODAL FUNCIONAL ERROR CIERRA RAPIDO
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { CargarArchivoService } from '../../../services/cargar-archivo.service';
 import { ModalUnoComponent } from './modal-uno.component';
 */
 // import { ModalUnoComponent } from './modal-uno.component';
 // import {MatDialog} from '@angular/material/dialog';
+import { CargarArchivoService } from '../../../services/cargar-archivo.service';
 import { NavbarService } from '../../../services/navbar.service';
 import { TituloService } from '../../../services/titulo.service';
 import { FormGroup, NgForm, FormControl, Validators, FormArray } from '@angular/forms';
@@ -53,6 +55,7 @@ export class CondicionUnoComponent implements OnInit {
     titulo: '',
     resptitulo: '',
     datetitulo: '',
+    contenidoCurricular: '',
     respcontenido: '',
     datecontenido: '',
     observa: '',
@@ -60,6 +63,10 @@ export class CondicionUnoComponent implements OnInit {
     pregunta21: '',
     pregunta31: '',
     pregunta41: '',
+    archivoAspecto1: '',
+    archivoAspecto2: '',
+    archivoAspecto3: '',
+    archivoAspecto4: '',
   };
   // FECHA
   formato = 1000 * 60 * 60 * 24;
@@ -73,8 +80,58 @@ export class CondicionUnoComponent implements OnInit {
   fecha2Id = 0;
   fecha3Id = 0;
   jstoday = '';
+  // CARGA DE ARCHIVOS A FIRESTORE CONTENIDO CURRICULAR
+  public mensajeArchivo = 'No hay un archivo';
+  public datosFormulario = new FormData();
+  public nombreArchivo = '';
+  public URLPublica = '';
+  public porcentaje = 0;
+  public finalizado = false;
+  public archivoForm = new FormGroup({
+    archivo: new FormControl(null, Validators.required),
+  });
+  // CARGA DE ARCHIVOS A FIRESTORE ASPECTO 1
+  public mensajeArchivo1 = 'No hay un archivo seleccionado';
+  public datosFormulario1 = new FormData();
+  public nombreArchivo1 = '';
+  public URLPublica1 = '';
+  public porcentaje1 = 0;
+  public finalizado1 = false;
+  public archivoForm1 = new FormGroup({
+    archivo1: new FormControl(null, Validators.required),
+  });
+  // CARGA DE ARCHIVOS A FIRESTORE ASPECTO 2
+  public mensajeArchivo2 = 'No hay un archivo seleccionado';
+  public datosFormulario2 = new FormData();
+  public nombreArchivo2 = '';
+  public URLPublica2 = '';
+  public porcentaje2 = 0;
+  public finalizado2 = false;
+  public archivoForm2 = new FormGroup({
+    archivo2: new FormControl(null, Validators.required),
+  });
+  // CARGA DE ARCHIVOS A FIRESTORE ASPECTO 3
+  public mensajeArchivo3 = 'No hay un archivo seleccionado';
+  public datosFormulario3 = new FormData();
+  public nombreArchivo3 = '';
+  public URLPublica3 = '';
+  public porcentaje3 = 0;
+  public finalizado3 = false;
+  public archivoForm3 = new FormGroup({
+    archivo3: new FormControl(null, Validators.required),
+  });
+  // CARGA DE ARCHIVOS A FIRESTORE ASPECTO 4
+  public mensajeArchivo4 = 'No hay un archivo seleccionado';
+  public datosFormulario4 = new FormData();
+  public nombreArchivo4 = '';
+  public URLPublica4 = '';
+  public porcentaje4 = 0;
+  public finalizado4 = false;
+  public archivoForm4 = new FormGroup({
+    archivo4: new FormControl(null, Validators.required),
+  });
   // tslint:disable-next-line:max-line-length
-  constructor(private modalService: NgbModal, config: NgbProgressbarConfig, public prop: PropiedadIntelectualService, public foot: PropiedadIntelectualService, public nav: NavbarService, private headerTitleService: TituloService, private _CONDICIONSERVICES: Condicion1Service, private router: Router, private activatedRoute: ActivatedRoute) {
+  constructor(private firebaseStorage: CargarArchivoService, private modalService: NgbModal, config: NgbProgressbarConfig, public prop: PropiedadIntelectualService, public foot: PropiedadIntelectualService, public nav: NavbarService, private headerTitleService: TituloService, private _CONDICIONSERVICES: Condicion1Service, private router: Router, private activatedRoute: ActivatedRoute) {
     config.striped = true;
     config.animated = true;
     this.jstoday = formatDate(this.today, 'dd/MM/yyyy', 'en-US', '-0500');
@@ -93,7 +150,6 @@ export class CondicionUnoComponent implements OnInit {
     this.nav.show();
     this.prop.hidePropiedad();
     this.foot.showFooter();
-    // this.nav.doSomethingElseUseful();
   }
   toggle() {
     this.show = !this.show;
@@ -210,24 +266,192 @@ export class CondicionUnoComponent implements OnInit {
       return Math.floor((utc1 - utc2) / (1000 * 60 * 60 * 24));
     }
   }
-  /*openDialog() {
-    const dialogRef = this.dialog.open(ModalUnoComponent);
+  openLg(content) {
+    this.modalService.open(content, { size: 'lg', centered: true });
+  }
+  // Contenido Curricular
+  // Evento que se gatilla cuando el input de tipo archivo cambia
+  public cambioArchivo(event) {
+    if (event.target.files.length > 0) {
+      // tslint:disable-next-line:prefer-for-of
+      for (let i = 0; i < event.target.files.length; i++) {
+        this.mensajeArchivo = `${event.target.files[i].name}`;
+        this.nombreArchivo = event.target.files[i].name;
+        this.datosFormulario.delete('archivo');
+        this.datosFormulario.append('archivo', event.target.files[i], event.target.files[i].name);
+      }
+    } else {
+      this.mensajeArchivo = 'No hay un archivo';
+    }
+  }
+  // Sube el archivo a Cloud Storage
+  subirArchivo() {
+    const archivo = this.datosFormulario.get('archivo');
+    const referencia = this.firebaseStorage.referenciaCloudStorage(this.nombreArchivo);
+    const tarea = this.firebaseStorage.tareaCloudStorage(this.nombreArchivo, archivo);
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
-  }*/
-/*
-  constructor(
-    private modalService: NgbModal
-  ) { }
-  openFormModal() {
-    const modalRef = this.modalService.open(ModalUnoComponent);
-    modalRef.result.then((result) => {
-      console.log(result);
-    }).catch((error) => {
-      console.log(error);
+    // Cambia el porcentaje
+    tarea.percentageChanges().subscribe((porcentaje) => {
+      this.porcentaje = Math.round(porcentaje);
+      if (this.porcentaje === 100) {
+        setTimeout(() => {
+          referencia.getDownloadURL().subscribe((URL) => {
+            this.URLPublica = URL;
+            console.log(this.URLPublica);
+            this.finalizado = true;
+            this.cond1.contenidoCurricular = this.URLPublica;
+            return [this.URLPublica, this.finalizado, this.cond1.contenidoCurricular];
+          });
+        }, 5000);
+      }
     });
   }
-*/
+  // ASPECTO 1
+  // Evento que se gatilla cuando el input de tipo archivo cambia
+  public cambioArchivo1(event) {
+    if (event.target.files.length > 0) {
+      // tslint:disable-next-line:prefer-for-of
+      for (let i = 0; i < event.target.files.length; i++) {
+        this.mensajeArchivo1 = `Archivo: ${event.target.files[i].name}`;
+        this.nombreArchivo1 = event.target.files[i].name;
+        this.datosFormulario1.delete('archivo1');
+        this.datosFormulario1.append('archivo1', event.target.files[i], event.target.files[i].name);
+      }
+    } else {
+      this.mensajeArchivo1 = 'No hay un archivo seleccionado';
+    }
+  }
+  // Sube el archivo a Cloud Storage
+  subirArchivo1() {
+    const archivo1 = this.datosFormulario1.get('archivo1');
+    const referencia1 = this.firebaseStorage.referenciaCloudStorage(this.nombreArchivo1);
+    const tarea1 = this.firebaseStorage.tareaCloudStorage(this.nombreArchivo1, archivo1);
+
+    // Cambia el porcentaje
+    tarea1.percentageChanges().subscribe((porcentaje1) => {
+      this.porcentaje1 = Math.round(porcentaje1);
+      if (this.porcentaje1 === 100) {
+        setTimeout(() => {
+          referencia1.getDownloadURL().subscribe((URL) => {
+            this.URLPublica1 = URL;
+            console.log(this.URLPublica1);
+            this.finalizado1 = true;
+            this.cond1.archivoAspecto1 = this.URLPublica1;
+            return [this.URLPublica1, this.finalizado1, this.cond1.archivoAspecto1];
+          });
+        }, 5000);
+      }
+    });
+  }
+  // ASPECTO 2
+  // Evento que se gatilla cuando el input de tipo archivo cambia
+  public cambioArchivo2(event) {
+    if (event.target.files.length > 0) {
+      // tslint:disable-next-line:prefer-for-of
+      for (let i = 0; i < event.target.files.length; i++) {
+        this.mensajeArchivo2 = `Archivo: ${event.target.files[i].name}`;
+        this.nombreArchivo2 = event.target.files[i].name;
+        this.datosFormulario2.delete('archivo2');
+        this.datosFormulario2.append('archivo2', event.target.files[i], event.target.files[i].name);
+      }
+    } else {
+      this.mensajeArchivo2 = 'No hay un archivo seleccionado';
+    }
+  }
+  // Sube el archivo a Cloud Storage
+  subirArchivo2() {
+    const archivo2 = this.datosFormulario2.get('archivo2');
+    const referencia2 = this.firebaseStorage.referenciaCloudStorage(this.nombreArchivo2);
+    const tarea2 = this.firebaseStorage.tareaCloudStorage(this.nombreArchivo2, archivo2);
+
+    // Cambia el porcentaje
+    tarea2.percentageChanges().subscribe((porcentaje2) => {
+      this.porcentaje2 = Math.round(porcentaje2);
+      if (this.porcentaje2 === 100) {
+        setTimeout(() => {
+          referencia2.getDownloadURL().subscribe((URL) => {
+            this.URLPublica2 = URL;
+            console.log(this.URLPublica2);
+            this.finalizado2 = true;
+            this.cond1.archivoAspecto2 = this.URLPublica2;
+            return [this.URLPublica2, this.finalizado2, this.cond1.archivoAspecto2];
+          });
+        }, 5000);
+      }
+    });
+  }
+  // ASPECTO 3
+  // Evento que se gatilla cuando el input de tipo archivo cambia
+  public cambioArchivo3(event) {
+    if (event.target.files.length > 0) {
+      // tslint:disable-next-line:prefer-for-of
+      for (let i = 0; i < event.target.files.length; i++) {
+        this.mensajeArchivo3 = `Archivo: ${event.target.files[i].name}`;
+        this.nombreArchivo3 = event.target.files[i].name;
+        this.datosFormulario3.delete('archivo3');
+        this.datosFormulario3.append('archivo3', event.target.files[i], event.target.files[i].name);
+      }
+    } else {
+      this.mensajeArchivo3 = 'No hay un archivo seleccionado';
+    }
+  }
+  // Sube el archivo a Cloud Storage
+  subirArchivo3() {
+    const archivo3 = this.datosFormulario3.get('archivo3');
+    const referencia3 = this.firebaseStorage.referenciaCloudStorage(this.nombreArchivo3);
+    const tarea3 = this.firebaseStorage.tareaCloudStorage(this.nombreArchivo3, archivo3);
+
+    // Cambia el porcentaje
+    tarea3.percentageChanges().subscribe((porcentaje3) => {
+      this.porcentaje3 = Math.round(porcentaje3);
+      if (this.porcentaje3 === 100) {
+        setTimeout(() => {
+          referencia3.getDownloadURL().subscribe((URL) => {
+            this.URLPublica3 = URL;
+            console.log(this.URLPublica3);
+            this.finalizado3 = true;
+            this.cond1.archivoAspecto3 = this.URLPublica3;
+            return [this.URLPublica3, this.finalizado3, this.cond1.archivoAspecto3];
+          });
+        }, 5000);
+      }
+    });
+  }
+  // ASPECTO 4
+  // Evento que se gatilla cuando el input de tipo archivo cambia
+  public cambioArchivo4(event) {
+    if (event.target.files.length > 0) {
+      // tslint:disable-next-line:prefer-for-of
+      for (let i = 0; i < event.target.files.length; i++) {
+        this.mensajeArchivo4 = `Archivo: ${event.target.files[i].name}`;
+        this.nombreArchivo4 = event.target.files[i].name;
+        this.datosFormulario4.delete('archivo4');
+        this.datosFormulario4.append('archivo4', event.target.files[i], event.target.files[i].name);
+      }
+    } else {
+      this.mensajeArchivo4 = 'No hay un archivo seleccionado';
+    }
+  }
+  // Sube el archivo a Cloud Storage
+  subirArchivo4() {
+    const archivo4 = this.datosFormulario4.get('archivo4');
+    const referencia4 = this.firebaseStorage.referenciaCloudStorage(this.nombreArchivo4);
+    const tarea4 = this.firebaseStorage.tareaCloudStorage(this.nombreArchivo4, archivo4);
+
+    // Cambia el porcentaje
+    tarea4.percentageChanges().subscribe((porcentaje4) => {
+      this.porcentaje4 = Math.round(porcentaje4);
+      if (this.porcentaje4 === 100) {
+        setTimeout(() => {
+          referencia4.getDownloadURL().subscribe((URL) => {
+            this.URLPublica4 = URL;
+            console.log(this.URLPublica4);
+            this.finalizado4 = true;
+            this.cond1.archivoAspecto4 = this.URLPublica4;
+            return [this.URLPublica4, this.finalizado4, this.cond1.archivoAspecto4];
+          });
+        }, 5000);
+      }
+    });
+  }
 }

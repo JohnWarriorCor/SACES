@@ -1,7 +1,6 @@
 <div class="container animated fadeIn fast">
   <br>
   <div class="row">
-
     <div class="col-md-12 text-right p-3">
       <button style="width: 15%; font-size: 100%;" [routerLink]="['/DenominacionDelPrograma', 'nuevo']"
         class="btn botonUsco" type="button"><i class="fas fa-clipboard-list"></i> Nuevo</button>
@@ -62,8 +61,12 @@
               <th colspan="2" scope="row" class="text-uppercase align-middle borden">fecha:</th>
             </tr>
             <tr class="text-center tablaAdmin">
-              <td colspan="4" scope="row" class="align-middle borden">C:\Users\jdcor\Documents\ING SOFTWARE\U -
-                DOCTORADO CONDICIONES MINIMAS</td>
+              <td colspan="4" scope="row" class="align-middle borden">
+                <a download [href]="condiciones1[k].contenidoCurricular">
+                  <button style="width: 22%; font-size: 100%;" class="btn botonUsco no-print" type="button"><i
+                      class="fas fa-download"></i> Descargar</button>
+                </a>
+              </td>
               <td colspan="2" scope="row" class="align-middle borden">{{ condiciones1[k].respcontenido }}</td>
               <td colspan="2" scope="row" class="align-middle borden"
                 [ngClass]="{'atiempo' : res3 > 15,'encurso' : res3 <= 15, 'expira': res3 < 5, 'nulo': res3 == -10000 || res3 < -30}"
@@ -85,9 +88,9 @@
               <td colspan="7" scope="row" class="align-middle borden text-justify pre">
                 {{ condiciones1[k].pregunta11 }}
                 <div class="col-md-12 text-right p-3">
-                  <a download href="../../../assets/Doctorado.pdf">
+                  <a download [href]="condiciones1[k].archivoAspecto1">
                     <button style="width: 22%; font-size: 100%;" class="btn botonUsco no-print" type="button"><i
-                        class="fas fa-download"></i> Descargar</button>
+                        class="fas fa-download"></i>Soporte</button>
                   </a>
                 </div>
               </td>
@@ -99,9 +102,9 @@
               <td colspan="7" scope="row" class="align-middle borden text-justify pre">
                 {{ condiciones1[k].pregunta21 }}
                 <div class="col-md-12 text-right p-3">
-                  <a download href="../../../assets/Doctorado.pdf">
+                  <a download [href]="condiciones1[k].archivoAspecto2">
                     <button style="width: 22%; font-size: 100%;" class="btn botonUsco no-print" type="button"><i
-                        class="fas fa-download"></i> Descargar</button>
+                        class="fas fa-download"></i>Soporte</button>
                   </a>
                 </div>
               </td>
@@ -114,9 +117,9 @@
               <td colspan="7" scope="row" class="align-middle borden text-justify pre">
                 {{ condiciones1[k].pregunta31 }}
                 <div class="col-md-12 text-right p-3">
-                  <a download href="../../../assets/Doctorado.pdf">
+                  <a download [href]="condiciones1[k].archivoAspecto3">
                     <button style="width: 22%; font-size: 100%;" class="btn botonUsco no-print" type="button"><i
-                        class="fas fa-download"></i> Descargar</button>
+                        class="fas fa-download"></i>Soporte</button>
                   </a>
                 </div>
               </td>
@@ -128,9 +131,9 @@
               <td colspan="7" scope="row" class="align-middle borden text-justify pre">
                 {{ condiciones1[k].pregunta41 }}
                 <div class="col-md-12 text-right p-3">
-                  <a download href="../../../assets/Doctorado.pdf">
+                  <a download [href]="condiciones1[k].archivoAspecto4">
                     <button style="width: 22%; font-size: 100%;" class="btn botonUsco no-print" type="button"><i
-                        class="fas fa-download"></i> Descargar</button>
+                        class="fas fa-download"></i>Soporte</button>
                   </a>
                 </div>
               </td>

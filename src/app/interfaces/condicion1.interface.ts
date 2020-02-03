@@ -7,6 +7,7 @@ export interface Condicion1 {
     titulo: string;
     resptitulo: string;
     datetitulo: string;
+    contenidoCurricular: string;
     respcontenido: string;
     datecontenido: string;
     observa: string;
@@ -14,5 +15,9 @@ export interface Condicion1 {
     pregunta21: string;
     pregunta31: string;
     pregunta41: string;
+    archivoAspecto1: string;
+    archivoAspecto2: string;
+    archivoAspecto3: string;
+    archivoAspecto4: string;
     key$?: string;
 }

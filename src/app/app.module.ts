@@ -35,7 +35,7 @@ import { KeysPipe } from './pipes/keys.pipe';
 import { Condicion1Service } from './services/condicion1.service';
 import { TituloService } from './services/titulo.service';
 import { PropiedadIntelectualComponent } from './components/shared/footer/propiedad-intelectual.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgInitDirective } from './components/ng-init.directive';
 import { ModalContainerTabla1Component } from './components/pages/modals/tabla1cond7/modal-container-tabla1.component';
 import { ModalContainerComponent } from './components/pages/modals/tabla2cond7/modal-container.component';
