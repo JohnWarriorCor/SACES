@@ -11,9 +11,9 @@ export class Condicion1Service {
   condicionRegistroURL = 'https://saces-8f3e0.firebaseio.com/condicion1.json';
   condicionURL = 'https://saces-8f3e0.firebaseio.com/condicion1/';
 
-  constructor( private http: Http) { }
+  constructor(private http: Http) { }
 
-  nuevoInvocador( condicion1: Condicion1) {
+  nuevoCondicion1( condicion1: Condicion1) {
     const body = JSON.stringify(condicion1);
     const headers = new Headers({
       'Content-Type': 'application/json'
@@ -23,8 +23,8 @@ export class Condicion1Service {
       return res.json();
     }));
   }
-  actualizarInvocador( invocador: Condicion1, key$: string ) {
-    const body = JSON.stringify(invocador);
+  actualizarCondicion1( condicion1: Condicion1, key$: string ) {
+    const body = JSON.stringify(condicion1);
     const headers = new Headers({
       'Content-Type': 'application/json'
     });
@@ -36,14 +36,14 @@ export class Condicion1Service {
     }));
 
   }
-  getInvocador(key$: string) {
+  getCondicion1(key$: string) {
     const url = `${ this.condicionURL }/${ key$ }.json`;
     return this.http.get( url ).pipe(map(res => res.json()));
   }
-  getInvocadores() {
+  getCondiciones1() {
     return this.http.get( this.condicionRegistroURL ).pipe(map(res => res.json()));
   }
-  borrarInvocador( key$: string) {
+  borrarCondicion1( key$: string) {
     const url = `${ this.condicionURL }/${ key$ }.json`;
     return this.http.delete(url).pipe(map( res => res.json()));
   }

@@ -138,7 +138,7 @@ export class CondicionUnoComponent implements OnInit {
     this.activatedRoute.params.subscribe( parametros => {
       this.id = parametros.id;
       if ( this.id !== 'nuevo' ) {
-        this._CONDICIONSERVICES.getInvocador( this.id ).subscribe(cond1 => this.cond1 = cond1);
+        this._CONDICIONSERVICES.getCondicion1( this.id ).subscribe(cond1 => this.cond1 = cond1);
       }
     });
   }
@@ -221,12 +221,12 @@ export class CondicionUnoComponent implements OnInit {
   }
   guardar() {
     if ( this.id === 'nuevo' ) {
-      this._CONDICIONSERVICES.nuevoInvocador(this.cond1 ).subscribe(data => {
+      this._CONDICIONSERVICES.nuevoCondicion1(this.cond1 ).subscribe(data => {
         this.router.navigate(['/DenominacionDelPrograma', data.name]);
       },
       error => console.error(error));
     } else {
-      this._CONDICIONSERVICES.actualizarInvocador( this.cond1, this.id ).subscribe(data => {
+      this._CONDICIONSERVICES.actualizarCondicion1( this.cond1, this.id ).subscribe(data => {
         console.log(data);
       },
       error => console.error(error));

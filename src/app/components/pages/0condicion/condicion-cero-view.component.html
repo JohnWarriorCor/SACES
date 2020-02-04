@@ -1,25 +1,26 @@
 <div class="container inicio animated fadeIn fast">
   <div *ngFor="let k of historia | keys; let i = index">
     <br>
-    <h2 class="gray text-left titulosHistoria">Reseña Histórica del programa - {{historia[k].nombrePrograma}}</h2><br>
+    <h2 class="gray text-left titulosHistoria">Reseña Histórica del programa - {{historia[k].nombrePrograma}}</h2><hr><br>
     <p class="text-justify gray pre">
       {{historia[k].reseniaHist}}
     </p>
-    <h2 class="gray text-left titulosHistoria">Misión</h2><br>
+    <h2 class="gray text-left titulosHistoria">Misión</h2>
+    <hr><br>
     <p class="text-justify gray pre">
       {{historia[k].mision}}
     </p>
-    <h2 class="gray text-left titulosHistoria">Visión</h2><br>
+    <h2 class="gray text-left titulosHistoria">Visión</h2><hr><br>
     <p class="text-justify gray pre">
       {{historia[k].vision}}
     </p>
-    <h2 class="gray text-left titulosHistoria">Objetivos</h2><br>
+    <h2 class="gray text-left titulosHistoria">Objetivos</h2><hr><br>
     <p class="text-justify gray pre">
       {{historia[k].objetivos}}
     </p>
-    <hr>
     <br>
     <div class="col-md-12 text-right p-3">
+      <!--<i class="fas fa-wrench fa-2x" style="color: #8f141b;"></i>-->
       <button style="width: 15%; font-size: 100%; margin: 5px;" [routerLink]="['/HistoriaInstitucionalForm', k]"
         class="btn botonUsco"><span class="fas fa-pencil-alt"> </span> Editar</button>
       <button style="width: 15%; font-size: 100%; margin: 5px;" class="btn botonUsco" (click)="openSm(content)"><span
@@ -44,7 +45,7 @@
       </ng-template>
     </div>
   </div>
-  <div class="col-md-12 text-right p-3">
+  <div *ngIf="(historia.length) === 0" class="col-md-12 text-right p-3">
     <button style="width: 15%; font-size: 100%; margin: 5px" [routerLink]="['/HistoriaInstitucionalForm', 'nuevo']"
       class="btn botonUsco" type="button"><i class="fas fa-clipboard-list"></i> Nuevo</button>
   </div>

@@ -238,7 +238,9 @@
                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                     data-parent="#accordionExample">
                     <div class="card-body">
-                        <h5 class="alert-warning text-center">Diligencie los campos y adjunte los archivos respectivos
+                        <h5 class="alert-warning text-center">Diligencie los campos, adjunte los archivos respectivos y
+                            suba (<span class="fas fa-upload"></span>) los archivos antes de guardar (<span
+                                class="far fa-save"></span>)
                         </h5><br>
                         <h6 class="gray text-left" *ngIf="!show">1). Acto administrativo con el que se creó el programa
                             y el órgano interno de dirección que aprobó dicha creación.</h6>
@@ -269,12 +271,14 @@
                                             </span>
                                         </span>
                                     </label>
-                                    <h5 *ngIf="porcentaje1 === 100" class="alert-primary text-center">Archivo cargado
+                                    <h5 *ngIf="porcentaje1 === 100" class="text-center"
+                                        style="background-color: #dfd4a6;color: #8F141B;">Archivo cargado
                                         exitosamente</h5>
                                     <br>
                                 </div>
                                 <div class="col text-left">
-                                    <button class="btn navlinkin" type="submit" [disabled]="!archivoForm1.valid"><i
+                                    <button class="btn navlinkin" ngbTooltip="Subir archivo"
+                                        tooltipClass="my-custom-class" type="submit" [disabled]="!archivoForm1.valid"><i
                                             class="fas fa-upload"></i></button>
                                     <a href="{{ URLPublica1 }}" target="_blank" class="btn navlinkin"
                                         *ngIf="finalizado1" style="margin-left: 5px;"><i class="far fa-eye"></i></a>
@@ -284,7 +288,7 @@
                         <br>
                         <ngb-progressbar [showValue]="true" class="uscoRojo" type="danger" [value]="acumPuntos5">
                         </ngb-progressbar><br>
-                        <hr style="border-top: 2px solid black;">
+                        <hr style="border-top: 1px solid black;">
                         <h6 class="gray text-left" *ngIf="!show">2). Áreas de formación del programa presentado y la
                             articulación con el alcance de la denominación.</h6>
                         <h6 class="gray text-left" *ngIf="show">2). ¿Cuáles son las áreas de formación del programa
@@ -314,22 +318,23 @@
                                             </span>
                                         </span>
                                     </label>
-                                    <h5 *ngIf="porcentaje2 === 100" class="alert-primary text-center">Archivo cargado
+                                    <h5 *ngIf="porcentaje2 === 100" class="text-center"
+                                        style="background-color: #dfd4a6;color: #8F141B;">Archivo cargado
                                         exitosamente</h5>
                                     <br>
                                 </div>
                                 <div class="col text-left">
                                     <button class="btn navlinkin" type="submit" [disabled]="!archivoForm2.valid"><i
                                             class="fas fa-upload"></i></button>
-                                    <a href="{{ URLPublica2 }}" target="_blank" class="btn navlinkin" *ngIf="finalizado2"
-                                        style="margin-left: 5px;"><i class="far fa-eye"></i></a>
+                                    <a href="{{ URLPublica2 }}" target="_blank" class="btn navlinkin"
+                                        *ngIf="finalizado2" style="margin-left: 5px;"><i class="far fa-eye"></i></a>
                                 </div>
                             </div>
                         </form>
                         <br>
                         <ngb-progressbar [showValue]="true" class="uscoRojo" type="danger" [value]="acumPuntos6">
                         </ngb-progressbar><br>
-                        <hr style="border-top: 2px solid black;">
+                        <hr style="border-top: 1px solid black;">
                         <h6 class="gray text-left" *ngIf="!show">3). Soporte del alcance, la especificidad de la
                             denominación y explicación de coherencia entre la denominación, el campo de conocimiento y
                             el nivel de formación.</h6>
@@ -362,22 +367,23 @@
                                             </span>
                                         </span>
                                     </label>
-                                    <h5 *ngIf="porcentaje3 === 100" class="alert-primary text-center">Archivo cargado
+                                    <h5 *ngIf="porcentaje3 === 100" class="text-center"
+                                        style="background-color: #dfd4a6;color: #8F141B;">Archivo cargado
                                         exitosamente</h5>
                                     <br>
                                 </div>
                                 <div class="col text-left">
                                     <button class="btn navlinkin" type="submit" [disabled]="!archivoForm3.valid"><i
                                             class="fas fa-upload"></i></button>
-                                    <a href="{{ URLPublica3 }}" target="_blank" class="btn navlinkin" *ngIf="finalizado3"
-                                        style="margin-left: 5px;"><i class="far fa-eye"></i></a>
+                                    <a href="{{ URLPublica3 }}" target="_blank" class="btn navlinkin"
+                                        *ngIf="finalizado3" style="margin-left: 5px;"><i class="far fa-eye"></i></a>
                                 </div>
                             </div>
                         </form>
                         <br>
                         <ngb-progressbar [showValue]="true" class="uscoRojo" type="danger" [value]="acumPuntos7">
                         </ngb-progressbar><br>
-                        <hr style="border-top: 2px solid black;">
+                        <hr style="border-top: 1px solid black;">
                         <h6 class="gray text-left" *ngIf="!show">4). Argumentos que la IES presenta para justificar la
                             articulación entre la denominación del título y la del programa.</h6>
                         <h6 class="gray text-left" *ngIf="show">4). ¿Cuáles son los argumentos que la IES presenta para
@@ -408,15 +414,16 @@
                                             </span>
                                         </span>
                                     </label>
-                                    <h5 *ngIf="porcentaje4 === 100" class="alert-primary text-center">Archivo cargado
+                                    <h5 *ngIf="porcentaje4 === 100" class="text-center"
+                                        style="background-color: #dfd4a6;color: #8F141B;">Archivo cargado
                                         exitosamente</h5>
                                     <br>
                                 </div>
                                 <div class="col text-left">
                                     <button class="btn navlinkin" type="submit" [disabled]="!archivoForm4.valid"><i
                                             class="fas fa-upload"></i></button>
-                                    <a href="{{ URLPublica4 }}" target="_blank" class="btn navlinkin" *ngIf="finalizado4"
-                                        style="margin-left: 5px;"><i class="far fa-eye"></i></a>
+                                    <a href="{{ URLPublica4 }}" target="_blank" class="btn navlinkin"
+                                        *ngIf="finalizado4" style="margin-left: 5px;"><i class="far fa-eye"></i></a>
                                 </div>
                             </div>
                         </form>

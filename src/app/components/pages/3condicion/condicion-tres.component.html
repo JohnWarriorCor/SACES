@@ -1,10 +1,57 @@
 <div class="container inicio animated fadeIn fast">
   <br>
-  <h3 class="text-uppercase">Contenidos Curriculares</h3>
+  <h5>Descripción del plan de estudios</h5>
+  <table class="table tableBordered">
+    <thead class="tableSolid font-weight-bold text-center navlinkinSolid">
+      <th>Numero de créditos</th>
+    <th>No. Horas presenciales</th>
+    <th>No. de horas de trabajo independiente</th>
+    <th>Total Horas</th>
+    <th>Opciones</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="align-middle text-center no-print">
+          <div class="row justify-content-center">
+            <div class="col" style="margin: 0px; padding: 0px;">
+              <button class="btn navlinkin" (click)="openSm3(content)"
+                style="width: 80%;margin: 1px;padding: 2px;"><span class="far fa-trash-alt"></span> Borrar</button>
+              <ng-template #content let-modal>
+                <div class="modal-header text-center navlinkin">
+                  <h4 class="modal-title" style="margin-left:45px;">¡PRECAUCIÓN!</h4>
+                </div>
+                <div class="modal-body text-center">
+                  <p class="alert alert-danger text-uppercase">Está a punto de borrar el registro<br>¿Está seguro de
+                    ejecutar la acción?</p>
+                  <div class="row align-content-center">
+                    <div class="col text-center">
+                      <button class="btn btn-info">Aceptar</button>
+                    </div>
+                    <div class="col text-center">
+                      <button class="btn btn-danger" (click)="modal.close('Close click')">Cancelar</button>
+                    </div>
+                  </div>
+                </div>
+              </ng-template>
+            </div>
+            <div class="col" style="margin: 0px; padding: 0px;">
+              <button class="btn navlinkin"
+                style="width: 80%;margin: 1px;padding: 2px;"><span class="fas fa-pencil-alt"></span> Editar</button>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
   <br>
   <hr>
+  <hr>
   <div class="accordion text-center" id="accordionExample"
-    style="border-bottom-style: solid;border-color: #cccccc;;border-width: 1px;">
+    style="border-bottom-style: solid;border-color: #cccccc;border-width: 1px;">
     <div class="card">
       <div class="card-header" id="headingOne" style="background-color: #8F141B">
         <div class="row">
@@ -25,56 +72,310 @@
 
       <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
         <div class="card-body">
+          <h5 class="alert-warning text-center">Diligencie los campos, adjunte los archivos respectivos y
+            suba (<span class="fas fa-upload"></span>) los archivos antes de guardar (<span
+                class="far fa-save"></span>)
+        </h5><br>
           <form action="">
-            <h6 class="gray text-left" *ngIf="show">1). ¿Qué elementos permiten verificar la coherencia entre: los
+            <h6 class="text-left" *ngIf="show">1). ¿Qué elementos permiten verificar la coherencia entre: los
               perfiles establecidos para el programa, las competencias y el plan de estudios, se articula con la
               justificación para la oferta del programa? </h6>
-            <h6 class="gray text-left" *ngIf="!show">1). Elementos de verificación de la coherencia entre: los perfiles
+            <h6 class="text-left" *ngIf="!show">1). Elementos de verificación de la coherencia entre: los perfiles
               establecidos para el programa, las competencias y el plan de estudios.</h6>
             <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..."
               rows="1"></textarea>
-            <h6 class="gray text-left" *ngIf="show">2). ¿Cómo sustenta la Institución la correspondencia entre la
+            <br>
+            <form [formGroup]="archivoForm1" (ngSubmit)="subirArchivo1()">
+              <div class="row">
+                <div class="col">
+                  <ngb-progressbar *ngIf="porcentaje1 > -1 && porcentaje1 < 101" [showValue]="true" type="danger"
+                    [value]="porcentaje1"></ngb-progressbar><br>
+                </div>
+                <div class="col"></div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label class="file-label">
+                    <input type="file" class="custom-file-input" formControlName="archivo1"
+                      (change)="cambioArchivo1($event)" id="customFileLang" lang="es" required>
+                    <span class="file-cta">
+                      <span class="custom-file-label text-left inputPaciente" style="margin-left: 16px;"
+                        for="customFileLang">
+                        {{ mensajeArchivo1 }}
+                      </span>
+                    </span>
+                  </label>
+                  <h5 *ngIf="porcentaje1 === 100" class="text-center" style="background-color: #dfd4a6;color: #8F141B;">Archivo cargado
+                    exitosamente</h5>
+                  <br>
+                </div>
+                <div class="col text-left">
+                  <button class="btn navlinkin" ngbTooltip="Subir archivo" tooltipClass="my-custom-class" type="submit"
+                    [disabled]="!archivoForm1.valid"><i class="fas fa-upload"></i></button>
+                  <a href="{{ URLPublica1 }}" target="_blank" class="btn navlinkin" ngbTooltip="Vista previa"
+                    tooltipClass="my-custom-class" *ngIf="finalizado1" style="margin-left: 5px;"><i
+                      class="far fa-eye"></i></a>
+                </div>
+              </div>
+            </form>
+            <br>
+            <hr style="border-top: 1px solid black;">
+            <h6 class="text-left" *ngIf="show">2). ¿Cómo sustenta la Institución la correspondencia entre la
               distribución de los créditos académicos de las distintas áreas curriculares con los perfiles del programa?
             </h6>
-            <h6 class="gray text-left" *ngIf="!show">2). Correspondencia entre la distribución de los créditos
+            <h6 class="text-left" *ngIf="!show">2). Correspondencia entre la distribución de los créditos
               académicos de las distintas áreas curriculares con los perfiles del programa.</h6>
             <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..."
               rows="1"></textarea>
-            <h6 class="gray text-left" *ngIf="show">3). ¿Qué estrategias permiten lograr las competencias propuestas
+            <br>
+            <form [formGroup]="archivoForm2" (ngSubmit)="subirArchivo2()">
+              <div class="row">
+                <div class="col">
+                  <ngb-progressbar *ngIf="porcentaje2 > -1 && porcentaje2 < 101" [showValue]="true" type="danger"
+                    [value]="porcentaje2"></ngb-progressbar><br>
+                </div>
+                <div class="col"></div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label class="file-label">
+                    <input type="file" class="custom-file-input" formControlName="archivo2"
+                      (change)="cambioArchivo2($event)" id="customFileLang" lang="es" required>
+                    <span class="file-cta">
+                      <span class="custom-file-label text-left inputPaciente" style="margin-left: 16px;"
+                        for="customFileLang">
+                        {{ mensajeArchivo2 }}
+                      </span>
+                    </span>
+                  </label>
+                  <h5 *ngIf="porcentaje2 === 100" class="text-center" style="background-color: #dfd4a6;color: #8F141B;">Archivo cargado
+                    exitosamente</h5>
+                  <br>
+                </div>
+                <div class="col text-left">
+                  <button class="btn navlinkin" ngbTooltip="Subir archivo" tooltipClass="my-custom-class" type="submit"
+                    [disabled]="!archivoForm2.valid"><i class="fas fa-upload"></i></button>
+                  <a href="{{ URLPublica2 }}" target="_blank" class="btn navlinkin" ngbTooltip="Vista previa"
+                    tooltipClass="my-custom-class" *ngIf="finalizado2" style="margin-left: 5px;"><i
+                      class="far fa-eye"></i></a>
+                </div>
+              </div>
+            </form>
+            <br>
+            <hr style="border-top: 1px solid black;">
+            <h6 class="text-left" *ngIf="show">3). ¿Qué estrategias permiten lograr las competencias propuestas
               desde el plan de estudios?</h6>
-            <h6 class="gray text-left" *ngIf="!show">3). Competencias propuestas desde el plan de estudios</h6>
+            <h6 class="text-left" *ngIf="!show">3). Competencias propuestas desde el plan de estudios</h6>
             <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..."
               rows="1"></textarea>
-            <h6 class="gray text-left" *ngIf="show">4). ¿Cuáles elementos del contenido general de las actividades
+              <br>
+            <form [formGroup]="archivoForm3" (ngSubmit)="subirArchivo3()">
+              <div class="row">
+                <div class="col">
+                  <ngb-progressbar *ngIf="porcentaje3 > -1 && porcentaje3 < 101" [showValue]="true" type="danger"
+                    [value]="porcentaje3"></ngb-progressbar><br>
+                </div>
+                <div class="col"></div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label class="file-label">
+                    <input type="file" class="custom-file-input" formControlName="archivo3"
+                      (change)="cambioArchivo3($event)" id="customFileLang" lang="es" required>
+                    <span class="file-cta">
+                      <span class="custom-file-label text-left inputPaciente" style="margin-left: 16px;"
+                        for="customFileLang">
+                        {{ mensajeArchivo3 }}
+                      </span>
+                    </span>
+                  </label>
+                  <h5 *ngIf="porcentaje3 === 100" class="text-center" style="background-color: #dfd4a6;color: #8F141B;">Archivo cargado
+                    exitosamente</h5>
+                  <br>
+                </div>
+                <div class="col text-left">
+                  <button class="btn navlinkin" ngbTooltip="Subir archivo" tooltipClass="my-custom-class" type="submit"
+                    [disabled]="!archivoForm3.valid"><i class="fas fa-upload"></i></button>
+                  <a href="{{ URLPublica3 }}" target="_blank" class="btn navlinkin" ngbTooltip="Vista previa"
+                    tooltipClass="my-custom-class" *ngIf="finalizado3" style="margin-left: 5px;"><i
+                      class="far fa-eye"></i></a>
+                </div>
+              </div>
+            </form>
+            <br>
+            <hr style="border-top: 1px solid black;">  
+            <h6 class="text-left" *ngIf="show">4). ¿Cuáles elementos del contenido general de las actividades
               permiten verificar coherencia con el plan de estudios, las competencias propuestas y el área de
               conocimiento o disciplina propios del programa? </h6>
-            <h6 class="gray text-left" *ngIf="!show">4). Elementos del contenido general para las actividades de
+            <h6 class="text-left" *ngIf="!show">4). Elementos del contenido general para las actividades de
               verificación de la coherencia con el plan de estudios, las competencias propuestas y el área de
               conocimiento o disciplina propios del programa</h6>
             <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..."
               rows="1"></textarea>
-            <h6 class="gray text-left" *ngIf="show">5). ¿Cuáles componentes curriculares permiten justificar la
+            <br>
+            <form [formGroup]="archivoForm4" (ngSubmit)="subirArchivo4()">
+              <div class="row">
+                <div class="col">
+                  <ngb-progressbar *ngIf="porcentaje4 > -1 && porcentaje4 < 101" [showValue]="true" type="danger"
+                    [value]="porcentaje4"></ngb-progressbar><br>
+                </div>
+                <div class="col"></div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label class="file-label">
+                    <input type="file" class="custom-file-input" formControlName="archivo4"
+                      (change)="cambioArchivo4($event)" id="customFileLang" lang="es" required>
+                    <span class="file-cta">
+                      <span class="custom-file-label text-left inputPaciente" style="margin-left: 16px;"
+                        for="customFileLang">
+                        {{ mensajeArchivo4 }}
+                      </span>
+                    </span>
+                  </label>
+                  <h5 *ngIf="porcentaje4 === 100" class="text-center" style="background-color: #dfd4a6;color: #8F141B;">Archivo cargado
+                    exitosamente</h5>
+                  <br>
+                </div>
+                <div class="col text-left">
+                  <button class="btn navlinkin" ngbTooltip="Subir archivo" tooltipClass="my-custom-class" type="submit"
+                    [disabled]="!archivoForm4.valid"><i class="fas fa-upload"></i></button>
+                  <a href="{{ URLPublica4 }}" target="_blank" class="btn navlinkin" ngbTooltip="Vista previa"
+                    tooltipClass="my-custom-class" *ngIf="finalizado4" style="margin-left: 5px;"><i
+                      class="far fa-eye"></i></a>
+                </div>
+              </div>
+            </form>
+            <br>
+            <hr style="border-top: 1px solid black;">
+            <h6 class="text-left" *ngIf="show">5). ¿Cuáles componentes curriculares permiten justificar la
               existencia apropiada de características de interdisciplinariedad, flexibilidad y competencias
               comunicativas en segunda lengua? </h6>
-            <h6 class="gray text-left" *ngIf="!show">5). Componentes curriculares que permiten justificar la existencia
+            <h6 class="text-left" *ngIf="!show">5). Componentes curriculares que permiten justificar la existencia
               apropiada de características de interdisciplinariedad, flexibilidad y competencias comunicativas en
               segunda lengua.</h6>
             <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..."
               rows="1"></textarea>
-            <h6 class="gray text-left" *ngIf="show">6). ¿De qué manera la institución sustenta la complementariedad y
+            <br>
+            <form [formGroup]="archivoForm5" (ngSubmit)="subirArchivo5()">
+              <div class="row">
+                <div class="col">
+                  <ngb-progressbar *ngIf="porcentaje5 > -1 && porcentaje5 < 101" [showValue]="true" type="danger"
+                    [value]="porcentaje5"></ngb-progressbar><br>
+                </div>
+                <div class="col"></div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label class="file-label">
+                    <input type="file" class="custom-file-input" formControlName="archivo5"
+                      (change)="cambioArchivo5($event)" id="customFileLang" lang="es" required>
+                    <span class="file-cta">
+                      <span class="custom-file-label text-left inputPaciente" style="margin-left: 16px;"
+                        for="customFileLang">
+                        {{ mensajeArchivo5 }}
+                      </span>
+                    </span>
+                  </label>
+                  <h5 *ngIf="porcentaje5 === 100" class="alert-primary text-center">Archivo cargado
+                    exitosamente</h5>
+                  <br>
+                </div>
+                <div class="col text-left">
+                  <button class="btn navlinkin" ngbTooltip="Subir archivo" tooltipClass="my-custom-class" type="submit"
+                    [disabled]="!archivoForm1.valid"><i class="fas fa-upload"></i></button>
+                  <a href="{{ URLPublica5 }}" target="_blank" class="btn navlinkin" ngbTooltip="Vista previa"
+                    tooltipClass="my-custom-class" *ngIf="finalizado5" style="margin-left: 5px;"><i
+                      class="far fa-eye"></i></a>
+                </div>
+              </div>
+            </form>
+            <br>
+            <hr style="border-top: 1px solid black;">
+            <h6 class="text-left" *ngIf="show">6). ¿De qué manera la institución sustenta la complementariedad y
               secuenciación entre los diferentes niveles de formación que se articulan por ciclos? </h6>
-            <h6 class="gray text-left" *ngIf="!show">6). Sustentación de la complementariedad y secuenciación entre los
+            <h6 class="text-left" *ngIf="!show">6). Sustentación de la complementariedad y secuenciación entre los
               diferentes niveles de formación que se articulan por ciclos.</h6>
             <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..."
               rows="1"></textarea>
-            <h6 class="gray text-left" *ngIf="show">7). ¿Cuáles son los elementos que permiten justificar coherencia
+            <br>
+            <form [formGroup]="archivoForm6" (ngSubmit)="subirArchivo6()">
+              <div class="row">
+                <div class="col">
+                  <ngb-progressbar *ngIf="porcentaje6 > -1 && porcentaje6 < 101" [showValue]="true" type="danger"
+                    [value]="porcentaje6"></ngb-progressbar><br>
+                </div>
+                <div class="col"></div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label class="file-label">
+                    <input type="file" class="custom-file-input" formControlName="archivo6"
+                      (change)="cambioArchivo6($event)" id="customFileLang" lang="es" required>
+                    <span class="file-cta">
+                      <span class="custom-file-label text-left inputPaciente" style="margin-left: 16px;"
+                        for="customFileLang">
+                        {{ mensajeArchivo6 }}
+                      </span>
+                    </span>
+                  </label>
+                  <h5 *ngIf="porcentaje6 === 100" class="text-center" style="background-color: #dfd4a6;color: #8F141B;">Archivo cargado
+                    exitosamente</h5>
+                  <br>
+                </div>
+                <div class="col text-left">
+                  <button class="btn navlinkin" ngbTooltip="Subir archivo" tooltipClass="my-custom-class" type="submit"
+                    [disabled]="!archivoForm6.valid"><i class="fas fa-upload"></i></button>
+                  <a href="{{ URLPublica6 }}" target="_blank" class="btn navlinkin" ngbTooltip="Vista previa"
+                    tooltipClass="my-custom-class" *ngIf="finalizado6" style="margin-left: 5px;"><i
+                      class="far fa-eye"></i></a>
+                </div>
+              </div>
+            </form>
+            <br>
+            <hr style="border-top: 1px solid black;">
+            <h6 class="text-left" *ngIf="show">7). ¿Cuáles son los elementos que permiten justificar coherencia
               entre los créditos académicos, la distribución de las horas de trabajo académico, la naturaleza del
               programa y el modelo pedagógico institucional? </h6>
-            <h6 class="gray text-left" *ngIf="!show">7). Elementos que permiten justificar coherencia entre los créditos
+            <h6 class="text-left" *ngIf="!show">7). Elementos que permiten justificar coherencia entre los créditos
               académicos, la distribución de las horas de trabajo académico, la naturaleza del programa y el modelo
               pedagógico institucional.</h6>
             <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..."
               rows="1"></textarea>
+            <br>
+            <form [formGroup]="archivoForm7" (ngSubmit)="subirArchivo7()">
+              <div class="row">
+                <div class="col">
+                  <ngb-progressbar *ngIf="porcentaje7 > -1 && porcentaje7 < 101" [showValue]="true" type="danger"
+                    [value]="porcentaje7"></ngb-progressbar><br>
+                </div>
+                <div class="col"></div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label class="file-label">
+                    <input type="file" class="custom-file-input" formControlName="archivo7"
+                      (change)="cambioArchivo7($event)" id="customFileLang" lang="es" required>
+                    <span class="file-cta">
+                      <span class="custom-file-label text-left inputPaciente" style="margin-left: 16px;"
+                        for="customFileLang">
+                        {{ mensajeArchivo7 }}
+                      </span>
+                    </span>
+                  </label>
+                  <h5 *ngIf="porcentaje7 === 100" class="text-center" style="background-color: #dfd4a6;color: #8F141B;">Archivo cargado
+                    exitosamente</h5>
+                  <br>
+                </div>
+                <div class="col text-left">
+                  <button class="btn navlinkin" ngbTooltip="Subir archivo" tooltipClass="my-custom-class" type="submit"
+                    [disabled]="!archivoForm7.valid"><i class="fas fa-upload"></i></button>
+                  <a href="{{ URLPublica7 }}" target="_blank" class="btn navlinkin" ngbTooltip="Vista previa"
+                    tooltipClass="my-custom-class" *ngIf="finalizado7" style="margin-left: 5px;"><i
+                      class="far fa-eye"></i></a>
+                </div>
+              </div>
+            </form>
           </form>
         </div>
       </div>

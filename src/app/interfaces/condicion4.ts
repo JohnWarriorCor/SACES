@@ -1,6 +1,9 @@
 export interface Condicion4 {
-    aspecto1: string;
-    aspecto2: string;
-    aspecto3: string;
+    condicion4Aspecto1: string;
+    condicion4Aspecto2: string;
+    condicion4Aspecto3: string;
+    archivoAspecto1: string;
+    archivoAspecto2: string;
+    archivoAspecto3: string;
     key$?: string;
 }

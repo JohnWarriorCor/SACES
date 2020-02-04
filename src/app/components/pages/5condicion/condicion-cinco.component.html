@@ -4,7 +4,7 @@
   <br>
   <hr>
   <div class="accordion text-center" id="accordionExample"
-    style="border-bottom-style: solid;border-color: #cccccc;;border-width: 1px;">
+    style="border-bottom-style: solid;border-color: #cccccc;border-width: 1px;">
     <div class="card">
       <div class="card-header" id="headingOne" style="background-color: #8F141B">
         <div class="row">
@@ -25,6 +25,10 @@
 
       <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
         <div class="card-body">
+          <h5 class="alert-warning text-center">Diligencie los campos, adjunte los archivos respectivos y
+            suba (<span class="fas fa-upload"></span>) los archivos antes de guardar (<span
+                class="far fa-save"></span>)
+        </h5><br>
           <form action="">
             <h6 class="gray text-left" *ngIf="show">1). ¿Cómo se alcanza coherencia entre los objetivos, estrategias,
               actividades, metas, recursos y responsables que propone la Institución en el Plan para el desarrollo de la
@@ -35,12 +39,84 @@
               con el nivel de formación del Programa y las capacidades institucionales.</h6>
             <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..."
               rows="1"></textarea>
+              <br>
+              <form [formGroup]="archivoForm1" (ngSubmit)="subirArchivo1()">
+                <div class="row">
+                  <div class="col">
+                    <ngb-progressbar *ngIf="porcentaje1 > -1 && porcentaje1 < 101" [showValue]="true" type="danger"
+                      [value]="porcentaje1"></ngb-progressbar><br>
+                  </div>
+                  <div class="col"></div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <label class="file-label">
+                      <input type="file" class="custom-file-input" formControlName="archivo1"
+                        (change)="cambioArchivo1($event)" id="customFileLang" lang="es" required>
+                      <span class="file-cta">
+                        <span class="custom-file-label text-left inputPaciente" style="margin-left: 16px;"
+                          for="customFileLang">
+                          {{ mensajeArchivo1 }}
+                        </span>
+                      </span>
+                    </label>
+                    <h5 *ngIf="porcentaje1 === 100" class="alert-primary text-center">Archivo cargado
+                      exitosamente</h5>
+                    <br>
+                  </div>
+                  <div class="col text-left">
+                    <button class="btn navlinkin" ngbTooltip="Subir archivo" tooltipClass="my-custom-class" type="submit"
+                      [disabled]="!archivoForm1.valid"><i class="fas fa-upload"></i></button>
+                    <a href="{{ URLPublica1 }}" target="_blank" class="btn navlinkin" ngbTooltip="Vista previa"
+                      tooltipClass="my-custom-class" *ngIf="finalizado1" style="margin-left: 5px;"><i
+                        class="far fa-eye"></i></a>
+                  </div>
+                </div>
+              </form>
+              <br>
+              <hr style="border-top: 1px solid black;">
             <h6 class="gray text-left" *ngIf="show">2). ¿Mediante qué estrategias y actividades académicas se promueve
               la participación de estudiantes y profesores del Programa en Investigación? </h6>
             <h6 class="gray text-left" *ngIf="!show">2). Estrategias y actividades académicas que promueve la
               participación de estudiantes y profesores del Programa en Investigación.</h6>
             <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..."
               rows="1"></textarea>
+              <br>
+              <form [formGroup]="archivoForm2" (ngSubmit)="subirArchivo2()">
+                <div class="row">
+                  <div class="col">
+                    <ngb-progressbar *ngIf="porcentaje2 > -1 && porcentaje2 < 101" [showValue]="true" type="danger"
+                      [value]="porcentaje2"></ngb-progressbar><br>
+                  </div>
+                  <div class="col"></div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <label class="file-label">
+                      <input type="file" class="custom-file-input" formControlName="archivo2"
+                        (change)="cambioArchivo2($event)" id="customFileLang" lang="es" required>
+                      <span class="file-cta">
+                        <span class="custom-file-label text-left inputPaciente" style="margin-left: 16px;"
+                          for="customFileLang">
+                          {{ mensajeArchivo2 }}
+                        </span>
+                      </span>
+                    </label>
+                    <h5 *ngIf="porcentaje2 === 100" class="alert-primary text-center">Archivo cargado
+                      exitosamente</h5>
+                    <br>
+                  </div>
+                  <div class="col text-left">
+                    <button class="btn navlinkin" ngbTooltip="Subir archivo" tooltipClass="my-custom-class" type="submit"
+                      [disabled]="!archivoForm2.valid"><i class="fas fa-upload"></i></button>
+                    <a href="{{ URLPublica2 }}" target="_blank" class="btn navlinkin" ngbTooltip="Vista previa"
+                      tooltipClass="my-custom-class" *ngIf="finalizado2" style="margin-left: 5px;"><i
+                        class="far fa-eye"></i></a>
+                  </div>
+                </div>
+              </form>
+              <br>
+              <hr style="border-top: 1px solid black;">
             <h6 class="gray text-left" *ngIf="show">3). ¿Cuáles actividades, proyectos y productos, afines al campo de
               conocimiento del Programa, permiten comprobar la participación de estudiantes y profesores del Programa
               con la investigación? </h6>
@@ -49,6 +125,42 @@
               con la investigación.</h6>
             <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..."
               rows="1"></textarea>
+              <br>
+              <form [formGroup]="archivoForm3" (ngSubmit)="subirArchivo3()">
+                <div class="row">
+                  <div class="col">
+                    <ngb-progressbar *ngIf="porcentaje3 > -1 && porcentaje3 < 101" [showValue]="true" type="danger"
+                      [value]="porcentaje3"></ngb-progressbar><br>
+                  </div>
+                  <div class="col"></div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <label class="file-label">
+                      <input type="file" class="custom-file-input" formControlName="archivo3"
+                        (change)="cambioArchivo3($event)" id="customFileLang" lang="es" required>
+                      <span class="file-cta">
+                        <span class="custom-file-label text-left inputPaciente" style="margin-left: 16px;"
+                          for="customFileLang">
+                          {{ mensajeArchivo3 }}
+                        </span>
+                      </span>
+                    </label>
+                    <h5 *ngIf="porcentaje3 === 100" class="alert-primary text-center">Archivo cargado
+                      exitosamente</h5>
+                    <br>
+                  </div>
+                  <div class="col text-left">
+                    <button class="btn navlinkin" ngbTooltip="Subir archivo" tooltipClass="my-custom-class" type="submit"
+                      [disabled]="!archivoForm3.valid"><i class="fas fa-upload"></i></button>
+                    <a href="{{ URLPublica3 }}" target="_blank" class="btn navlinkin" ngbTooltip="Vista previa"
+                      tooltipClass="my-custom-class" *ngIf="finalizado3" style="margin-left: 5px;"><i
+                        class="far fa-eye"></i></a>
+                  </div>
+                </div>
+              </form>
+              <br>
+              <hr style="border-top: 1px solid black;"> 
             <h6 class="gray text-left" *ngIf="show">4). ¿Cómo sustenta la Institución la disponibilidad e idoneidad de
               profesores orientados al fomento de la Investigación en áreas afines a la naturaleza del Programa? </h6>
             <h6 class="gray text-left" *ngIf="!show">4). Sustentación de la Institución con la disponibilidad e
@@ -56,12 +168,84 @@
               Programa.</h6>
             <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..."
               rows="1"></textarea>
+              <br>
+              <form [formGroup]="archivoForm4" (ngSubmit)="subirArchivo4()">
+                <div class="row">
+                  <div class="col">
+                    <ngb-progressbar *ngIf="porcentaje4 > -1 && porcentaje4 < 101" [showValue]="true" type="danger"
+                      [value]="porcentaje4"></ngb-progressbar><br>
+                  </div>
+                  <div class="col"></div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <label class="file-label">
+                      <input type="file" class="custom-file-input" formControlName="archivo4"
+                        (change)="cambioArchivo4($event)" id="customFileLang" lang="es" required>
+                      <span class="file-cta">
+                        <span class="custom-file-label text-left inputPaciente" style="margin-left: 16px;"
+                          for="customFileLang">
+                          {{ mensajeArchivo4 }}
+                        </span>
+                      </span>
+                    </label>
+                    <h5 *ngIf="porcentaje4 === 100" class="alert-primary text-center">Archivo cargado
+                      exitosamente</h5>
+                    <br>
+                  </div>
+                  <div class="col text-left">
+                    <button class="btn navlinkin" ngbTooltip="Subir archivo" tooltipClass="my-custom-class" type="submit"
+                      [disabled]="!archivoForm4.valid"><i class="fas fa-upload"></i></button>
+                    <a href="{{ URLPublica4 }}" target="_blank" class="btn navlinkin" ngbTooltip="Vista previa"
+                      tooltipClass="my-custom-class" *ngIf="finalizado4" style="margin-left: 5px;"><i
+                        class="far fa-eye"></i></a>
+                  </div>
+                </div>
+              </form>
+              <br>
+              <hr style="border-top: 1px solid black;">
             <h6 class="gray text-left" *ngIf="show">5). ¿Cuáles son las estrategias de la función de investigación que
               acompañan el desarrollo académico propio de este nivel? </h6>
             <h6 class="gray text-left" *ngIf="!show">5). Estrategias de la función de investigación que acompañan el
               desarrollo académico propio de este nivel.</h6>
             <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..."
               rows="1"></textarea>
+              <br>
+              <form [formGroup]="archivoForm5" (ngSubmit)="subirArchivo5()">
+                <div class="row">
+                  <div class="col">
+                    <ngb-progressbar *ngIf="porcentaje5 > -1 && porcentaje5 < 101" [showValue]="true" type="danger"
+                      [value]="porcentaje5"></ngb-progressbar><br>
+                  </div>
+                  <div class="col"></div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <label class="file-label">
+                      <input type="file" class="custom-file-input" formControlName="archivo5"
+                        (change)="cambioArchivo5($event)" id="customFileLang" lang="es" required>
+                      <span class="file-cta">
+                        <span class="custom-file-label text-left inputPaciente" style="margin-left: 16px;"
+                          for="customFileLang">
+                          {{ mensajeArchivo5 }}
+                        </span>
+                      </span>
+                    </label>
+                    <h5 *ngIf="porcentaje5 === 100" class="alert-primary text-center">Archivo cargado
+                      exitosamente</h5>
+                    <br>
+                  </div>
+                  <div class="col text-left">
+                    <button class="btn navlinkin" ngbTooltip="Subir archivo" tooltipClass="my-custom-class" type="submit"
+                      [disabled]="!archivoForm1.valid"><i class="fas fa-upload"></i></button>
+                    <a href="{{ URLPublica5 }}" target="_blank" class="btn navlinkin" ngbTooltip="Vista previa"
+                      tooltipClass="my-custom-class" *ngIf="finalizado5" style="margin-left: 5px;"><i
+                        class="far fa-eye"></i></a>
+                  </div>
+                </div>
+              </form>
+              <br>
+              <hr style="border-top: 1px solid black;">
             <h6 class="gray text-left" *ngIf="show">6). ¿Cómo explica la Institución la articulación y correspondencia
               entre las capacidades y fortalezas que tienen los Grupos de Investigación que apoyan al Programa y los
               Profesores asociados al programa, con el nivel de formación, el currículo y los años de funcionamiento del
@@ -72,6 +256,41 @@
               funcionamiento del Programa.</h6>
             <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..."
               rows="1"></textarea>
+              <br>
+            <form [formGroup]="archivoForm6" (ngSubmit)="subirArchivo6()">
+              <div class="row">
+                <div class="col">
+                  <ngb-progressbar *ngIf="porcentaje6 > -1 && porcentaje6 < 101" [showValue]="true" type="danger"
+                    [value]="porcentaje6"></ngb-progressbar><br>
+                </div>
+                <div class="col"></div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label class="file-label">
+                    <input type="file" class="custom-file-input" formControlName="archivo6"
+                      (change)="cambioArchivo6($event)" id="customFileLang" lang="es" required>
+                    <span class="file-cta">
+                      <span class="custom-file-label text-left inputPaciente" style="margin-left: 16px;"
+                        for="customFileLang">
+                        {{ mensajeArchivo6 }}
+                      </span>
+                    </span>
+                  </label>
+                  <h5 *ngIf="porcentaje6 === 100" class="alert-primary text-center">Archivo cargado
+                    exitosamente</h5>
+                  <br>
+                </div>
+                <div class="col text-left">
+                  <button class="btn navlinkin" ngbTooltip="Subir archivo" tooltipClass="my-custom-class" type="submit"
+                    [disabled]="!archivoForm6.valid"><i class="fas fa-upload"></i></button>
+                  <a href="{{ URLPublica6 }}" target="_blank" class="btn navlinkin" ngbTooltip="Vista previa"
+                    tooltipClass="my-custom-class" *ngIf="finalizado6" style="margin-left: 5px;"><i
+                      class="far fa-eye"></i></a>
+                </div>
+              </div>
+            </form>
+            <br>
           </form>
         </div>
       </div>

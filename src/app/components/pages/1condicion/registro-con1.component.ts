@@ -38,7 +38,7 @@ export class RegistroCon1Component implements OnInit {
   acumPuntos = 0.0;
   // tslint:disable-next-line:max-line-length
   constructor(private modalService: NgbModal, public prop: PropiedadIntelectualService, public foot: PropiedadIntelectualService, private _CONDICIONES1SERVICE: Condicion1Service, public nav: NavbarService, public headerTitleService: TituloService ) {
-    this._CONDICIONES1SERVICE.getInvocadores().subscribe( data => {
+    this._CONDICIONES1SERVICE.getCondiciones1().subscribe( data => {
       setTimeout(() => {
         this.loading = false;
         this.condiciones1 = data;
@@ -62,8 +62,8 @@ export class RegistroCon1Component implements OnInit {
   hello() {
     console.log('Hola mundo');
   }
-  borrarInvocador( key$: string) {
-    this._CONDICIONES1SERVICE.borrarInvocador(key$).subscribe( respuesta => {
+  borrarCondicion1( key$: string) {
+    this._CONDICIONES1SERVICE.borrarCondicion1(key$).subscribe( respuesta => {
       if ( respuesta ) {
         console.error(respuesta);
       } else {
