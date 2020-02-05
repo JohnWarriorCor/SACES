@@ -21,6 +21,7 @@ import { ModalContainerTabla5Component } from './components/pages/modals/tabla5c
 import { ModalContainerTabla6Component } from './components/pages/modals/tabla6cond7/modal-container-tabla6.component';
 import { BitacoraComponent } from './components/pages/bitacora/bitacora.component';
 import { LoginComponent } from './components/pages/login/login.component';
+import { RegistroCon2Component } from './components/pages/2condicion/registro-con2.component';
 
 
 
@@ -32,14 +33,7 @@ const routes: Routes = [
   { path: 'HistoriaInstitucionalForm/:id', component: CondicionCeroComponent },
   { path: 'HistoriaInstitucional', component: CondicionCeroViewComponent },
   { path: 'DenominacionDelPrograma/:id', component: CondicionUnoComponent },
-  { path: 'Modal/:id', component: ModalContainerComponent },
-  { path: 'ModalTabla1/:id', component: ModalContainerTabla1Component },
-  { path: 'ModalTabla3/:id', component: ModalContainerTabla3Component },
-  { path: 'ModalTabla4/:id', component: ModalContainerTabla4Component },
-  { path: 'ModalTabla5/:id', component: ModalContainerTabla5Component },
-  { path: 'ModalTabla6', component: ModalContainerTabla6Component },
-  { path: 'Condiciones1', component: RegistroCon1Component },
-  { path: 'JustificacionDelPrograma', component: CondicionDosComponent },
+  { path: 'JustificacionDelPrograma/:id', component: CondicionDosComponent },
   { path: 'AspectosCurriculares', component: CondicionTresComponent },
   { path: 'AcademicasProcesosFormativos', component: CondicionCuatroComponent },
   { path: 'InvestigacionInnovacion', component: CondicionCincoComponent },
@@ -49,6 +43,14 @@ const routes: Routes = [
   { path: 'InfraestructuraFisicaTecnologica', component: CondicionNueveComponent },
   { path: 'Cronograma', component: CronogramaComponent },
   { path: 'Bitacora', component: BitacoraComponent },
+  { path: 'Modal/:id', component: ModalContainerComponent },
+  { path: 'ModalTabla1/:id', component: ModalContainerTabla1Component },
+  { path: 'ModalTabla3/:id', component: ModalContainerTabla3Component },
+  { path: 'ModalTabla4/:id', component: ModalContainerTabla4Component },
+  { path: 'ModalTabla5/:id', component: ModalContainerTabla5Component },
+  { path: 'ModalTabla6', component: ModalContainerTabla6Component },
+  { path: 'Condiciones1', component: RegistroCon1Component },
+  { path: 'Condiciones2', component: RegistroCon2Component },
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 

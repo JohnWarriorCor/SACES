@@ -4,10 +4,10 @@
   <table class="table tableBordered">
     <thead class="tableSolid font-weight-bold text-center navlinkinSolid">
       <th>Numero de créditos</th>
-    <th>No. Horas presenciales</th>
-    <th>No. de horas de trabajo independiente</th>
-    <th>Total Horas</th>
-    <th>Opciones</th>
+      <th>No. Horas presenciales</th>
+      <th>No. de horas de trabajo independiente</th>
+      <th>Total Horas</th>
+      <th>Opciones</th>
     </thead>
     <tbody>
       <tr>
@@ -39,8 +39,8 @@
               </ng-template>
             </div>
             <div class="col" style="margin: 0px; padding: 0px;">
-              <button class="btn navlinkin"
-                style="width: 80%;margin: 1px;padding: 2px;"><span class="fas fa-pencil-alt"></span> Editar</button>
+              <button class="btn navlinkin" style="width: 80%;margin: 1px;padding: 2px;"><span
+                  class="fas fa-pencil-alt"></span> Editar</button>
             </div>
           </div>
         </td>
@@ -73,9 +73,8 @@
       <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
         <div class="card-body">
           <h5 class="alert-warning text-center">Diligencie los campos, adjunte los archivos respectivos y
-            suba (<span class="fas fa-upload"></span>) los archivos antes de guardar (<span
-                class="far fa-save"></span>)
-        </h5><br>
+            suba (<span class="fas fa-upload"></span>) los archivos antes de guardar (<span class="far fa-save"></span>)
+          </h5><br>
           <form action="">
             <h6 class="text-left" *ngIf="show">1). ¿Qué elementos permiten verificar la coherencia entre: los
               perfiles establecidos para el programa, las competencias y el plan de estudios, se articula con la
@@ -105,7 +104,8 @@
                       </span>
                     </span>
                   </label>
-                  <h5 *ngIf="porcentaje1 === 100" class="text-center" style="background-color: #dfd4a6;color: #8F141B;">Archivo cargado
+                  <h5 *ngIf="porcentaje1 === 100" class="text-center" style="background-color: #dfd4a6;color: #8F141B;">
+                    Archivo cargado
                     exitosamente</h5>
                   <br>
                 </div>
@@ -148,7 +148,8 @@
                       </span>
                     </span>
                   </label>
-                  <h5 *ngIf="porcentaje2 === 100" class="text-center" style="background-color: #dfd4a6;color: #8F141B;">Archivo cargado
+                  <h5 *ngIf="porcentaje2 === 100" class="text-center" style="background-color: #dfd4a6;color: #8F141B;">
+                    Archivo cargado
                     exitosamente</h5>
                   <br>
                 </div>
@@ -168,7 +169,7 @@
             <h6 class="text-left" *ngIf="!show">3). Competencias propuestas desde el plan de estudios</h6>
             <textarea name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..."
               rows="1"></textarea>
-              <br>
+            <br>
             <form [formGroup]="archivoForm3" (ngSubmit)="subirArchivo3()">
               <div class="row">
                 <div class="col">
@@ -189,7 +190,8 @@
                       </span>
                     </span>
                   </label>
-                  <h5 *ngIf="porcentaje3 === 100" class="text-center" style="background-color: #dfd4a6;color: #8F141B;">Archivo cargado
+                  <h5 *ngIf="porcentaje3 === 100" class="text-center" style="background-color: #dfd4a6;color: #8F141B;">
+                    Archivo cargado
                     exitosamente</h5>
                   <br>
                 </div>
@@ -203,7 +205,7 @@
               </div>
             </form>
             <br>
-            <hr style="border-top: 1px solid black;">  
+            <hr style="border-top: 1px solid black;">
             <h6 class="text-left" *ngIf="show">4). ¿Cuáles elementos del contenido general de las actividades
               permiten verificar coherencia con el plan de estudios, las competencias propuestas y el área de
               conocimiento o disciplina propios del programa? </h6>
@@ -233,7 +235,8 @@
                       </span>
                     </span>
                   </label>
-                  <h5 *ngIf="porcentaje4 === 100" class="text-center" style="background-color: #dfd4a6;color: #8F141B;">Archivo cargado
+                  <h5 *ngIf="porcentaje4 === 100" class="text-center" style="background-color: #dfd4a6;color: #8F141B;">
+                    Archivo cargado
                     exitosamente</h5>
                   <br>
                 </div>
@@ -319,7 +322,8 @@
                       </span>
                     </span>
                   </label>
-                  <h5 *ngIf="porcentaje6 === 100" class="text-center" style="background-color: #dfd4a6;color: #8F141B;">Archivo cargado
+                  <h5 *ngIf="porcentaje6 === 100" class="text-center" style="background-color: #dfd4a6;color: #8F141B;">
+                    Archivo cargado
                     exitosamente</h5>
                   <br>
                 </div>
@@ -363,7 +367,8 @@
                       </span>
                     </span>
                   </label>
-                  <h5 *ngIf="porcentaje7 === 100" class="text-center" style="background-color: #dfd4a6;color: #8F141B;">Archivo cargado
+                  <h5 *ngIf="porcentaje7 === 100" class="text-center" style="background-color: #dfd4a6;color: #8F141B;">
+                    Archivo cargado
                     exitosamente</h5>
                   <br>
                 </div>

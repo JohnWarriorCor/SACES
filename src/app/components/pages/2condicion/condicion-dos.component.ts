@@ -24,6 +24,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./condicion-dos.component.css']
 })
 export class CondicionDosComponent implements OnInit {
+  id: string;
   cond2: Condicion2 = {
     condicion2Aspecto1: '',
     condicion2Aspecto2: '',
@@ -66,8 +67,35 @@ export class CondicionDosComponent implements OnInit {
     archivo3: new FormControl(null, Validators.required),
   });
   // tslint:disable-next-line:max-line-length
-  constructor(private firebaseStorage: CargarArchivoService, public prop: PropiedadIntelectualService, public foot: PropiedadIntelectualService, private headerTitleService: TituloService, public nav: NavbarService) { }
-
+  constructor(private firebaseStorage: CargarArchivoService, public prop: PropiedadIntelectualService, public foot: PropiedadIntelectualService, private headerTitleService: TituloService, public nav: NavbarService, private modalService: NgbModal, config: NgbProgressbarConfig, private router: Router, private activatedRoute: ActivatedRoute, private _CONDICIONSERVICES: Condicion2Service) {
+    config.striped = true;
+    config.animated = true;
+    this.activatedRoute.params.subscribe( parametros => {
+      this.id = parametros.id;
+      if ( this.id !== 'nuevo' ) {
+        this._CONDICIONSERVICES.getCondicion2( this.id ).subscribe(cond2 => this.cond2 = cond2);
+      }
+    });
+  }
+  // COLECCIONES A FIREBASE
+  guardar() {
+    if ( this.id === 'nuevo' ) {
+      this._CONDICIONSERVICES.nuevoCondicion2(this.cond2 ).subscribe(data => {
+        this.router.navigate(['/JustificacionDelPrograma', data.name]);
+      },
+      error => console.error(error));
+    } else {
+      this._CONDICIONSERVICES.actualizarCondicion2( this.cond2, this.id ).subscribe(data => {
+        console.log(data);
+      },
+      error => console.error(error));
+    }
+  }
+  agregarNuevo( forma: NgForm) {
+    this.router.navigate(['/JustificacionDelPrograma', 'nuevo']);
+    forma.reset({});
+  }
+  // FIN COLECCIONES A FIREBASE
   ngOnInit() {
     this.headerTitleService.setTitle('JUSTIFICACIÓN DEL PROGRAMA');
     this.nav.show();

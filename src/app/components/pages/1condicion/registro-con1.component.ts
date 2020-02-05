@@ -54,7 +54,7 @@ export class RegistroCon1Component implements OnInit {
     return this.acumPuntos;
   }
   ngOnInit() {
-    this.headerTitleService.setTitle('Registro condición 1');
+    this.headerTitleService.setTitle('DENOMINACIÓN DEL PROGRAMA');
     this.nav.show();
     this.prop.hidePropiedad();
     this.foot.showFooter();

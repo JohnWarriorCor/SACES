@@ -191,7 +191,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let k of tabla2condicione7 | keys | slice: (pageTabla2-1) * pageSizeTabla2 : (pageTabla2-1) * pageSizeTabla2 + pageSizeTabla2 ; let i = index">
+        <tr
+          *ngFor="let k of tabla2condicione7 | keys | slice: (pageTabla2-1) * pageSizeTabla2 : (pageTabla2-1) * pageSizeTabla2 + pageSizeTabla2 ; let i = index">
           <td class="align-middle text-center">
             {{ (i+1)+((pageTabla2-1)*10) }}
           </td>
@@ -293,7 +294,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let k of tabla3condicione7 | keys| slice: (pageTabla3-1) * pageSizeTabla3 : (pageTabla3-1) * pageSizeTabla3 + pageSizeTabla3 ; let i = index">
+        <tr
+          *ngFor="let k of tabla3condicione7 | keys| slice: (pageTabla3-1) * pageSizeTabla3 : (pageTabla3-1) * pageSizeTabla3 + pageSizeTabla3 ; let i = index">
           <td class="align-middle text-center">
             {{ tabla3condicione7[k].nombregrup }}
           </td>
@@ -372,7 +374,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let k of tabla4condicione7 | keys| slice: (pageTabla4-1) * pageSizeTabla4 : (pageTabla4-1) * pageSizeTabla4 + pageSizeTabla4 ; let i = index">
+        <tr
+          *ngFor="let k of tabla4condicione7 | keys| slice: (pageTabla4-1) * pageSizeTabla4 : (pageTabla4-1) * pageSizeTabla4 + pageSizeTabla4 ; let i = index">
           <td class="align-middle text-center">
             {{ tabla4condicione7[k].anio }}-{{ tabla4condicione7[k].periodo }}
           </td>
@@ -477,7 +480,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let k of tabla5condicione7 | keys| slice: (pageTabla5-1) * pageSizeTabla5 : (pageTabla5-1) * pageSizeTabla5 + pageSizeTabla5 ; let i = index">
+        <tr
+          *ngFor="let k of tabla5condicione7 | keys| slice: (pageTabla5-1) * pageSizeTabla5 : (pageTabla5-1) * pageSizeTabla5 + pageSizeTabla5 ; let i = index">
           <td class="align-middle text-center">
             {{ tabla5condicione7[k].anio }}
           </td>
@@ -582,7 +586,8 @@
           <td scope="col" class="text-uppercase align-middle borden" style="font-size: 12px">Postdoctorados</td>
         </tr>
       </thead>
-      <tbody style="font-size: 12px" *ngFor="let k of tabla1condicione7 | keys | slice: (pageTabla6-1) * pageSizeTabla6 : (pageTabla6-1) * pageSizeTabla6 + pageSizeTabla6 ; let i = index">
+      <tbody style="font-size: 12px"
+        *ngFor="let k of tabla1condicione7 | keys | slice: (pageTabla6-1) * pageSizeTabla6 : (pageTabla6-1) * pageSizeTabla6 + pageSizeTabla6 ; let i = index">
         <tr>
           <td class="align-middle text-center" rowspan="3">
             {{ tabla1condicione7[k].anio }}-{{ tabla1condicione7[k].periodo }}

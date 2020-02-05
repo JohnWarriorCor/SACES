@@ -1,0 +1,122 @@
+<div class="container animated fadeIn fast">
+  <br>
+  <div class="row">
+    <div class="col-md-12 text-right p-3">
+      <button style="width: 15%; font-size: 100%;" [routerLink]="['/DenominacionDelPrograma', 'nuevo']"
+        class="btn botonUsco" type="button"><i class="fas fa-clipboard-list"></i> Nuevo</button>
+    </div>
+  </div>
+  <ngb-pagination class="d-flex justify-content-start" [collectionSize]="((condiciones2 | keys).length)*10"
+    [(page)]="page"></ngb-pagination>
+  <div class="row animated fadeIn fast">
+    <div class="col-md-12">
+      <div class="table-responsive-md" id="print-section">
+        <table class="table tableBordered"
+          *ngFor="let k of condiciones2 | keys | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize ; let i = index; let i = index">
+          <thead class="font-weight-bold">
+            <tr class="text-center tablaAdmin" style="background-color: #AB121B;color: #D8CEA3">
+              <td colspan="7" style="width: 90%" scope="col" class="text-uppercase align-middle borden">JUSTIFICACIÓN
+                DEL PROGRAMA</td>
+              <td colspan="1" style="width: 10%" scope="col" class="text-uppercase align-middle borden">Registro
+                {{ i + 1 }}</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="text-center tablaAdmin">
+              <th rowspan="2" scope="row" class="text-uppercase align-middle borden"><span
+                  class="font-weight-bold">Aspecto 1:</span><br>Soportes y argumentos que utiliza la Institución para
+                justificar la necesidad del programa en el contexto.</th>
+              <th colspan="7" scope="row" class="text-uppercase align-middle borden">Adjuntos</th>
+            </tr>
+            <tr class="tablaAdmin">
+              <td colspan="7" scope="row" class="align-middle borden text-justify pre">
+                {{ condiciones2[k].pregunta11 }}
+                <div class="col-md-12 text-right p-3">
+                  <a download [href]="condiciones2[k].archivoAspecto1">
+                    <button style="width: 22%; font-size: 100%;" class="btn botonUsco no-print" type="button"><i
+                        class="fas fa-download"></i>Soporte</button>
+                  </a>
+                </div>
+              </td>
+            </tr>
+            <tr class="tablaAdmin">
+              <th colspan="1" scope="row" class="text-uppercase align-middle borden text-center"><span
+                  class="font-weight-bold">Aspecto 2:</span><br>Soportes y argumentos que utiliza la Institución para
+                justificar la metodología y modalidad del programa.</th>
+              <td colspan="7" scope="row" class="align-middle borden text-justify pre">
+                {{ condiciones2[k].pregunta21 }}
+                <div class="col-md-12 text-right p-3">
+                  <a download [href]="condiciones2[k].archivoAspecto2">
+                    <button style="width: 22%; font-size: 100%;" class="btn botonUsco no-print" type="button"><i
+                        class="fas fa-download"></i>Soporte</button>
+                  </a>
+                </div>
+              </td>
+            </tr>
+            <tr class="tablaAdmin">
+              <th colspan="1" scope="row" class="text-uppercase align-middle borden text-center"><span
+                  class="font-weight-bold">Aspecto 3:</span><br>Aspectos académicos distintivos al programa.
+              </th>
+              <td colspan="7" scope="row" class="align-middle borden text-justify pre">
+                {{ condiciones2[k].pregunta31 }}
+                <div class="col-md-12 text-right p-3">
+                  <a download [href]="condiciones2[k].archivoAspecto3">
+                    <button style="width: 22%; font-size: 100%;" class="btn botonUsco no-print" type="button"><i
+                        class="fas fa-download"></i>Soporte</button>
+                  </a>
+                </div>
+              </td>
+            </tr>
+            <tr style="border:0px;" class="text-center tablaAdmin no-print">
+              <td style="border:0px;" style="background-color: #e7e6e6" colspan="8" scope="row"
+                class="text-uppercase align-middle borden">
+                <div class="row">
+                  <div class="col text-center">
+                    <button [routerLink]="['/DenominacionDelPrograma', k]" class="btn botonUsco"><span
+                        class="fas fa-pencil-alt"> </span> Editar</button>
+                  </div>
+                  <div class="col text-center">
+                    <button class="btn botonUsco" [printStyle]="{th : {'color': 'black'}, td : {'color': 'black'}}"
+                      printSectionId="print-section" printTitle="Condición 1" [useExistingCss]="true" ngxPrint><span
+                        class="fas fa-print"></span> Imprimir</button>
+                  </div>
+                  <div class="col text-center">
+                    <!--<button (click)="borrarInvocador(k)" class="btn botonUsco"><span class="far fa-trash-alt"></span> Borrar</button>-->
+                    <button class="btn botonUsco" (click)="openSm(content)"><span class="far fa-trash-alt"></span>
+                      Borrar</button>
+                    <ng-template #content let-modal>
+                      <div class="modal-header text-center navlinkin">
+                        <h4 class="modal-title" style="margin-left:45px;">¡PRECAUCIÓN!</h4>
+                      </div>
+                      <div class="modal-body text-center">
+                        <p class="alert alert-danger text-uppercase">Está a punto de borrar el registro <br> presione
+                          aceptar para borrar o cancelar para salir</p>
+                        <div class="row align-content-center">
+                          <div class="col text-center">
+                            <button (click)="borrarCondicion2(k)" routerLinkActive="router-link-active"
+                              class="btn btn-info">Aceptar</button>
+                          </div>
+                          <div class="col text-center">
+                            <button class="btn btn-danger" (click)="modal.close('Close click')">Cancelar</button>
+                          </div>
+                        </div>
+                      </div>
+                    </ng-template>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div *ngIf="(condiciones2 | keys).length === 0" class="alert alert-warning text-center" role="alert">
+          <strong>
+            <h4 class="alert-heading" style="color: #8f141b;">No hay regsitros que mostrar</h4>
+          </strong>
+        </div>
+        <div *ngIf="loading" class="alert alert-warning text-center" role="alert">
+          <strong>
+            <h4 class="alert-heading">Cargando...</h4>
+          </strong>
+        </div>
+      </div>
+    </div>

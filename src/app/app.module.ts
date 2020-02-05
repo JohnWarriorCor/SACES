@@ -65,6 +65,14 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { SortPipe } from './pipes/sort.pipe';
 import { OrderModule } from 'ngx-order-pipe';
 import { BitacoraComponent } from './components/pages/bitacora/bitacora.component';
+import { RegistroCon2Component } from './components/pages/2condicion/registro-con2.component';
+import { RegistroCon3Component } from './components/pages/3condicion/registro-con3.component';
+import { RegistroCon4Component } from './components/pages/4condicion/registro-con4.component';
+import { RegistroCon5Component } from './components/pages/5condicion/registro-con5.component';
+import { RegistroCon6Component } from './components/pages/6condicion/registro-con6.component';
+import { RegistroCon7Component } from './components/pages/7condicion/registro-con7.component';
+import { RegistroCon8Component } from './components/pages/8condicion/registro-con8.component';
+import { RegistroCon9Component } from './components/pages/9condicion/registro-con9.component';
 
 @NgModule({
   declarations: [
@@ -106,6 +114,14 @@ import { BitacoraComponent } from './components/pages/bitacora/bitacora.componen
     LoginComponent,
     SortPipe,
     BitacoraComponent,
+    RegistroCon2Component,
+    RegistroCon3Component,
+    RegistroCon4Component,
+    RegistroCon5Component,
+    RegistroCon6Component,
+    RegistroCon7Component,
+    RegistroCon8Component,
+    RegistroCon9Component,
   ],
   imports: [
     NgxPrintModule,

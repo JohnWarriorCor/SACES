@@ -1,25 +1,18 @@
 <div class="container inicio animated fadeIn fast">
   <div class="app">
-
     <div class="app-top">
-      <button (click)='toggleVisible()' class="btn btn-dark" style="margin: 5px;"><i class="far fa-eye-slash"></i></button>
+      <button (click)='toggleVisible()' class="btn btn-dark" style="margin: 5px;"><i
+          class="far fa-eye-slash"></i></button>
       <button (click)='toggleWeekends()' class="btn btn-dark" style="margin: 5px;">OCULTAR FINES DE SEMANAS</button>
       <button (click)='gotoPast()' class="btn btn-dark" style="margin: 5px;">ÚLTIMA FECHA</button>
     </div>
-  
     <div class="app-calendar" *ngIf="calendarVisible">
-      <full-calendar #calendar defaultView="dayGridMonth"
-        [header]="{
+      <full-calendar #calendar defaultView="dayGridMonth" [header]="{
           left: 'prev,next today',
           center: 'title',
           right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
-        }"
-        [plugins]="calendarPlugins"
-        [weekends]="calendarWeekends"
-        [events]="calendarEvents"
-        (dateClick)="handleDateClick($event)"
-      ></full-calendar>
+        }" [plugins]="calendarPlugins" [weekends]="calendarWeekends" [events]="calendarEvents"
+        (dateClick)="handleDateClick($event)"></full-calendar>
     </div>
-  
   </div>
 </div>

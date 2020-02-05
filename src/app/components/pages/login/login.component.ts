@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.headerTitleService.setTitle('INGRESO DE USUARIO');
+    this.nav.hide();
     this.prop.hidePropiedad();
     this.foot.showFooter();
   }

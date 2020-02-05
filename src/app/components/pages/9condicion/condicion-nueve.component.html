@@ -10,29 +10,20 @@
     </div>
     <div class="modal-body">
       <div class="row">
-
         <div class="col-md-4">
-
           <h3>Seleccione archivos</h3>
-
           <div appNgDropFiles [archivos]="archivos" (mouseSobre)="estaSobreElemento = $event"
             [ngClass]="{ 'file-over': estaSobreElemento }" class="well drop-zone">
             <h4>Deje caer aquí los archivos</h4>
             <img src="assets/drop-images.png">
           </div>
-
         </div>
-
-
         <div class="col-md-8">
-
           <h4>Cargar archivos</h4>
-
           <button (click)="cargarImagenes()" style="margin: 3px;" [disabled]="archivos.length === 0"
             class="btn navlinkin"><i class="fas fa-upload"></i> Cargar</button>
           <button (click)="limpiarArchivos()" style="margin: 3px;" class="btn navlinkin"><i class="fas fa-brush"></i>
             Limpiar</button>
-
           <table class="table">
             <thead class="thead-dark">
               <tr>
@@ -41,7 +32,6 @@
                 <th>Progreso</th>
               </tr>
             </thead>
-
             <tbody>
               <tr *ngFor="let archivo of archivos">
                 <td [ngClass]="{ 'text-green': archivo.progreso >= 100 }">
@@ -57,15 +47,8 @@
                 </td>
               </tr>
             </tbody>
-
-
           </table>
-
-
         </div>
-
-
-
       </div>
     </div>
   </ng-template>
@@ -81,7 +64,6 @@
         <h5 class="card-title">{{ item.nombre }}</h5>
       </div>
     </div>
-
   </div>
   <br>
   <hr>
@@ -131,7 +113,6 @@
             aria-controls="collapseOne"></div>
         </div>
       </div>
-
       <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
         <div class="card-body">
           <form action="">
