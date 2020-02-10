@@ -47,22 +47,36 @@ export class CondicionUnoComponent implements OnInit {
   nuevo = false;
   id: string;
   cond1: Condicion1 = {
-    tipoprograma: '',
-    por1: 0,
-    nombreprograma: '',
-    respnombre: '',
-    datenombre: '',
-    titulo: '',
-    resptitulo: '',
-    datetitulo: '',
-    contenidoCurricular: '',
-    respcontenido: '',
-    datecontenido: '',
-    observa: '',
-    pregunta11: '',
-    pregunta21: '',
-    pregunta31: '',
-    pregunta41: '',
+    nivelFormacion: '',
+    nombrePrograma: '',
+    responsableNombre: '',
+    fechaNombre: '',
+    tituloOtorgar: '',
+    responsableTitulo: '',
+    fechaTitulo: '',
+    archivoContenidoCurricular: '',
+    responsableContenidoCurricular: '',
+    fechaContenidoCurricular: '',
+    nivelAcademico: '',
+    areaConocimiento: '',
+    localizacionPrograma: '',
+    direccionGeografica: '',
+    telefonos: '',
+    fax: '',
+    paginaWeb: '',
+    mail: '',
+    entidadOferente: '',
+    metodologia: '',
+    numeroCreditos: '',
+    duracion: '',
+    numeroEstudiantes: '',
+    periocidadAdmision: '',
+    costoMatricula: '',
+    observaciones: '',
+    aspecto1Condicion1: '',
+    aspecto2Condicion1: '',
+    aspecto3Condicion1: '',
+    aspecto4Condicion1: '',
     archivoAspecto1: '',
     archivoAspecto2: '',
     archivoAspecto3: '',
@@ -164,60 +178,60 @@ export class CondicionUnoComponent implements OnInit {
   openVerticallyCentered(content) {
     this.modalService.open(content, { centered: true });
   }
-  progreso1() {
+  progreso1() {/*
     this.cond1.por1 = 100;
     this.acumPuntos1 = this.acumPuntos1 + 100;
     this.textoPuntos = String(this.acumPuntos1);
     this.textoPuntos = this.textoPuntos + '%';
-    return [this.acumPuntos1, this.textoPuntos];
+    return [this.acumPuntos1, this.textoPuntos];*/
   }
-  progreso() {
+  progreso() {/*
     this.acumPuntos = this.acumPuntos + 8;
     this.textoPuntos = String(this.acumPuntos);
     this.textoPuntos = this.textoPuntos + '%';
-    return [this.acumPuntos, this.textoPuntos];
+    return [this.acumPuntos, this.textoPuntos];*/
   }
-  progreso2() {
+  progreso2() {/*
     this.acumPuntos2 = this.acumPuntos2 + 34;
     this.textoPuntos = String(this.acumPuntos2);
     this.textoPuntos = this.textoPuntos + '%';
-    return [this.acumPuntos2, this.textoPuntos];
+    return [this.acumPuntos2, this.textoPuntos];*/
   }
-  progreso3() {
+  progreso3() {/*
     this.acumPuntos3 = this.acumPuntos3 + 34;
     this.textoPuntos = String(this.acumPuntos3);
     this.textoPuntos = this.textoPuntos + '%';
-    return [this.acumPuntos3, this.textoPuntos];
+    return [this.acumPuntos3, this.textoPuntos];*/
   }
-  progreso4() {
+  progreso4() {/*
     this.acumPuntos4 = this.acumPuntos4 + 34;
     this.textoPuntos = String(this.acumPuntos4);
     this.textoPuntos = this.textoPuntos + '%';
-    return [this.acumPuntos4, this.textoPuntos];
+    return [this.acumPuntos4, this.textoPuntos];*/
   }
-  progreso5() {
+  progreso5() {/*
     this.acumPuntos5 = this.acumPuntos5 + 50;
     this.textoPuntos = String(this.acumPuntos5);
     this.textoPuntos = this.textoPuntos + '%';
-    return [this.acumPuntos5, this.textoPuntos];
+    return [this.acumPuntos5, this.textoPuntos];*/
   }
-  progreso6() {
+  progreso6() {/*
     this.acumPuntos6 = this.acumPuntos6 + 50;
     this.textoPuntos = String(this.acumPuntos6);
     this.textoPuntos = this.textoPuntos + '%';
-    return [this.acumPuntos6, this.textoPuntos];
+    return [this.acumPuntos6, this.textoPuntos];*/
   }
-  progreso7() {
+  progreso7() {/*
     this.acumPuntos7 = this.acumPuntos7 + 50;
     this.textoPuntos = String(this.acumPuntos7);
     this.textoPuntos = this.textoPuntos + '%';
-    return [this.acumPuntos7, this.textoPuntos];
+    return [this.acumPuntos7, this.textoPuntos];*/
   }
-  progreso8() {
+  progreso8() {/*
     this.acumPuntos8 = this.acumPuntos8 + 50;
     this.textoPuntos = String(this.acumPuntos8);
     this.textoPuntos = this.textoPuntos + '%';
-    return [this.acumPuntos8, this.textoPuntos];
+    return [this.acumPuntos8, this.textoPuntos];*/
   }
   guardar() {
     if ( this.id === 'nuevo' ) {
@@ -299,8 +313,8 @@ export class CondicionUnoComponent implements OnInit {
             this.URLPublica = URL;
             console.log(this.URLPublica);
             this.finalizado = true;
-            this.cond1.contenidoCurricular = this.URLPublica;
-            return [this.URLPublica, this.finalizado, this.cond1.contenidoCurricular];
+            this.cond1.archivoContenidoCurricular = this.URLPublica;
+            return [this.URLPublica, this.finalizado, this.cond1.archivoContenidoCurricular];
           });
         }, 5000);
       }

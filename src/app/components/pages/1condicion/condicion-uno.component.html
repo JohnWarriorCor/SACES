@@ -7,8 +7,8 @@
                 <div class="row">
                     <div class="col">
                         <h6 class="text-left gray">Tipo de programa:</h6>
-                        <select class="custom-select shadow inputPaciente" id="tipoprograma" name="tipoprograma"
-                            [(ngModel)]="cond1.tipoprograma" (change)="progreso()" (change)="progreso1()">
+                        <select class="custom-select shadow inputPaciente" id="nivelFormacion" name="nivelFormacion"
+                            [(ngModel)]="cond1.nivelFormacion" (change)="progreso()" (change)="progreso1()">
                             <option value="" disabled="disabled">Elija el tipo de programa</option>
                             <option value="Técnico">Técnico</option>
                             <option value="Tecnológico">Tecnológico</option>
@@ -39,7 +39,7 @@
                     <div class="col">
                         <h6 class="gray text-left">Nombre del programa:</h6>
                         <input type="text" (change)="progreso()" (change)="progreso2()"
-                            [(ngModel)]="cond1.nombreprograma" name="nombreprograma" id="nombreprograma"
+                            [(ngModel)]="cond1.nombrePrograma" name="nombrePrograma" id="nombrePrograma"
                             class="form-control shadow p-3 inputPaciente" placeholder="...">
                     </div>
                     <div class="col">
@@ -47,8 +47,8 @@
                             <div class="col">
                                 <h6 class="gray text-left">Responsable:</h6>
                                 <select (change)="progreso()" (change)="progreso2()"
-                                    class="custom-select shadow inputPaciente gray" id="respnombre" name="respnombre"
-                                    [(ngModel)]="cond1.respnombre">
+                                    class="custom-select shadow inputPaciente gray" id="responsableNombre" name="responsableNombre"
+                                    [(ngModel)]="cond1.responsableNombre">
                                     <option value="" disabled="disabled">Elija el responsable</option>
                                     <option value="Jefe de programa">Jefe de programa</option>
                                     <option value="Coordinador de currículo">Coordinador de currículo</option>
@@ -59,8 +59,8 @@
                             <div class="col">
                                 <form action="get"></form>
                                 <h6 class="gray text-left">Fecha:</h6>
-                                <input (change)="progreso()" (change)="progreso2()" id="datenombre" name="datenombre"
-                                    [(ngModel)]="cond1.datenombre" type="date"
+                                <input (change)="progreso()" (change)="progreso2()" id="fechaNombre" name="fechaNombre"
+                                    [(ngModel)]="cond1.fechaNombre" type="date"
                                     [ngClass]="{'atiempo' : res1 > 15,'encurso' : res1 <= 15, 'expira': res1 < 5, 'nulo': res1 == -10000 || res1 < -30}"
                                     name="fecha1Id" class="form-control shadow p-3 inputPaciente" [(ngModel)]="fecha1Id"
                                     (ngModelChange)="myFunc1(fecha1Id)">
@@ -77,8 +77,8 @@
                 <div class="row">
                     <div class="col">
                         <h6 class="gray text-left">Título a otorgar:</h6>
-                        <input (change)="progreso()" (change)="progreso3()" type="text" id="titulo" name="titulo"
-                            [(ngModel)]="cond1.titulo" class="form-control shadow p-3 inputPaciente"
+                        <input (change)="progreso()" (change)="progreso3()" type="text" id="tituloOtorgar" name="tituloOtorgar"
+                            [(ngModel)]="cond1.tituloOtorgar" class="form-control shadow p-3 inputPaciente"
                             placeholder="Nombre del título">
                     </div>
                     <div class="col">
@@ -86,8 +86,8 @@
                             <div class="col">
                                 <h6 class="gray text-left">Responsable:</h6>
                                 <select (change)="progreso()" (change)="progreso3()"
-                                    class="custom-select shadow inputPaciente gray" id="resptitulo" name="resptitulo"
-                                    [(ngModel)]="cond1.resptitulo">
+                                    class="custom-select shadow inputPaciente gray" id="responsableTitulo" name="responsableTitulo"
+                                    [(ngModel)]="cond1.responsableTitulo">
                                     <option value="" disabled="disabled">Elija el responsable</option>
                                     <option value="Jefe de programa">Jefe de programa</option>
                                     <option value="Coordinador de currículo">Coordinador de currículo</option>
@@ -97,8 +97,8 @@
                             </div>
                             <div class="col">
                                 <h6 class="gray text-left">Fecha:</h6>
-                                <input (change)="progreso()" (change)="progreso3()" id="datetitulo" name="datetitulo"
-                                    [(ngModel)]="cond1.datetitulo" type="date"
+                                <input (change)="progreso()" (change)="progreso3()" id="fechaTitulo" name="fechaTitulo"
+                                    [(ngModel)]="cond1.fechaTitulo" type="date"
                                     [ngClass]="{'atiempo' : res2 > 15,'encurso' : res2 <= 15, 'expira': res2 <5, 'nulo': res2 == -10000 || res2 < -30}"
                                     name="fecha2Id" class="form-control shadow p-3 inputPaciente" [(ngModel)]="fecha2Id"
                                     (change)="myFunc2(fecha2Id)">
@@ -155,8 +155,8 @@
                             <div class="col">
                                 <h6 class="gray text-left">Responsable:</h6>
                                 <select (change)="progreso()" (change)="progreso4()"
-                                    class="custom-select shadow inputPaciente gray" id="respcontenido"
-                                    name="respcontenido" [(ngModel)]="cond1.respcontenido">
+                                    class="custom-select shadow inputPaciente gray" id="responsableContenidoCurricular"
+                                    name="responsableContenidoCurricular" [(ngModel)]="cond1.responsableContenidoCurricular">
                                     <option value="" disabled="disabled">Elija el responsable</option>
                                     <option value="Jefe de programa">Jefe de programa</option>
                                     <option value="Coordinador de currículo">Coordinador de currículo</option>
@@ -166,8 +166,8 @@
                             </div>
                             <div class="col">
                                 <h6 class="gray text-left">Fecha:</h6>
-                                <input (change)="progreso()" (change)="progreso4()" id="datecontenido"
-                                    name="datecontenido" [(ngModel)]="cond1.datecontenido" type="date"
+                                <input (change)="progreso()" (change)="progreso4()" id="fechaContenidoCurricular"
+                                    name="fechaContenidoCurricular" [(ngModel)]="cond1.fechaContenidoCurricular" type="date"
                                     [ngClass]="{'atiempo' : res3 > 15,'encurso' : res3 <= 15, 'expira': res3 <5, 'nulo': res3 == -10000 || res3 < -30}"
                                     name="fecha3Id" class="form-control shadow p-3 inputPaciente" [(ngModel)]="fecha3Id"
                                     (change)="myFunc3(fecha3Id)">
@@ -181,10 +181,113 @@
                         </ngb-progressbar><br>
                     </div>
                 </div>
+                <div>
+                    <div class="row">
+                        <div class="col">
+                            <h6 class="gray text-left">Nivel Académico:</h6>
+                            <input (change)="progreso()" (change)="progreso3()" type="text" name="nivelAcademico"
+                                [(ngModel)]="cond1.nivelAcademico" class="form-control shadow p-3 inputPaciente"
+                                placeholder="">
+                        </div>
+                        <div class="col">
+                            <h6 class="gray text-left">Área del Conocimiento:</h6>
+                            <input (change)="progreso()" (change)="progreso3()" type="text" name="areaConocimiento"
+                                [(ngModel)]="cond1.areaConocimiento" class="form-control shadow p-3 inputPaciente"
+                                placeholder="">
+                        </div>
+                        <div class="col">
+                            <h6 class="gray text-left">Dirección:</h6>
+                            <input (change)="progreso()" (change)="progreso3()" type="text" name="direccionGeografica"
+                                [(ngModel)]="cond1.direccionGeografica" class="form-control shadow p-3 inputPaciente"
+                                placeholder="">
+                        </div>
+                    </div><br>
+                    <div class="row">
+                        <div class="col">
+                            <h6 class="gray text-left">Teléfonos:</h6>
+                            <input (change)="progreso()" (change)="progreso3()" type="text" name="telefonos"
+                                [(ngModel)]="cond1.telefonos" class="form-control shadow p-3 inputPaciente"
+                                placeholder="">
+                        </div>
+                        <div class="col">
+                            <h6 class="gray text-left">Fax:</h6>
+                            <input (change)="progreso()" (change)="progreso3()" type="text" name="fax"
+                                [(ngModel)]="cond1.fax" class="form-control shadow p-3 inputPaciente"
+                                placeholder="">
+                        </div>
+                        <div class="col">
+                            <h6 class="gray text-left">Página Web institucional:</h6>
+                            <input (change)="progreso()" (change)="progreso3()" type="text" name="paginaWeb"
+                                [(ngModel)]="cond1.paginaWeb" class="form-control shadow p-3 inputPaciente"
+                                placeholder="">
+                        </div>
+                    </div><br>
+                    <div class="row">
+                        <div class="col">
+                            <h6 class="gray text-left">E Mail:</h6>
+                            <input (change)="progreso()" (change)="progreso3()" type="text" name="mail"
+                                [(ngModel)]="cond1.mail" class="form-control shadow p-3 inputPaciente"
+                                placeholder="">
+                        </div>
+                        <div class="col">
+                            <h6 class="gray text-left">Entidad oferente:</h6>
+                            <input (change)="progreso()" (change)="progreso3()" type="text" name="entidadOferente"
+                                [(ngModel)]="cond1.entidadOferente" class="form-control shadow p-3 inputPaciente"
+                                placeholder="">
+                        </div>
+                        <div class="col">
+                            <h6 class="gray text-left">Metodología:</h6>
+                            <input (change)="progreso()" (change)="progreso3()" type="text" name="metodologia"
+                                [(ngModel)]="cond1.metodologia" class="form-control shadow p-3 inputPaciente"
+                                placeholder="">
+                        </div>
+                    </div><br>
+                    <div class="row">
+                        <div class="col">
+                            <h6 class="gray text-left">Número de créditos:</h6>
+                            <input (change)="progreso()" (change)="progreso3()" type="text" name="numeroCreditos"
+                                [(ngModel)]="cond1.numeroCreditos" class="form-control shadow p-3 inputPaciente"
+                                placeholder="">
+                        </div><br>
+                        <div class="col">
+                            <h6 class="gray text-left">Duración:</h6>
+                            <input (change)="progreso()" (change)="progreso3()" type="text" name="duracion"
+                                [(ngModel)]="cond1.duracion" class="form-control shadow p-3 inputPaciente"
+                                placeholder="">
+                        </div>
+                        <div class="col">
+                            <h6 class="gray text-left">Número de estudiantes:</h6>
+                            <input (change)="progreso()" (change)="progreso3()" type="text" name="numeroEstudiantes"
+                                [(ngModel)]="cond1.numeroEstudiantes" class="form-control shadow p-3 inputPaciente"
+                                placeholder="">
+                        </div>
+                    </div><br>
+                    <div class="row">
+                        <div class="col">
+                            <h6 class="gray text-left">Periodicidad de admisiones:</h6>
+                            <input (change)="progreso()" (change)="progreso3()" type="text" name="periocidadAdmision"
+                                [(ngModel)]="cond1.periocidadAdmision" class="form-control shadow p-3 inputPaciente"
+                                placeholder="">
+                        </div>
+                        <div class="col">
+                            <h6 class="gray text-left">Costo de matrícula semestral:</h6>
+                            <input (change)="progreso()" (change)="progreso3()" type="text" name="costoMatricula"
+                                [(ngModel)]="cond1.costoMatricula" class="form-control shadow p-3 inputPaciente"
+                                placeholder="">
+                        </div>
+                        <div class="col">
+                            <h6 class="gray text-left">Localización del Programa:</h6>
+                            <input (change)="progreso()" (change)="progreso3()" type="text" name="localizacionPrograma"
+                                [(ngModel)]="cond1.localizacionPrograma" class="form-control shadow p-3 inputPaciente"
+                                placeholder="">
+                        </div>
+                    </div>
+                    <br>
+                </div>
                 <div class="row">
                     <div class="col-8">
                         <h6 class="gray text-left">Observaciones:</h6>
-                        <textarea id="observa" name="observa" [(ngModel)]="cond1.observa"
+                        <textarea id="observaciones" name="observaciones" [(ngModel)]="cond1.observaciones"
                             class="form-control shadow p-3 inputPaciente" placeholder="..." rows="3"></textarea>
                     </div>
                     <div class="col-4 text-left">
@@ -248,7 +351,7 @@
                             programa y que órgano interno de dirección aprobó dicha creación? </h6>
                         <br>
                         <textarea (change)="progreso()" (change)="progreso5()" id="pregunta11" name="pregunta11"
-                            [(ngModel)]="cond1.pregunta11" class="form-control shadow p-3 inputPaciente"
+                            [(ngModel)]="cond1.aspecto1Condicion1" class="form-control shadow p-3 inputPaciente"
                             placeholder="..." rows="3"></textarea>
                         <br>
                         <form [formGroup]="archivoForm1" (ngSubmit)="subirArchivo1()">
@@ -294,8 +397,8 @@
                         <h6 class="gray text-left" *ngIf="show">2). ¿Cuáles son las áreas de formación del programa
                             presentado y como éstas se articulan con el alcance de la denominación? </h6>
                         <br>
-                        <textarea (change)="progreso()" (change)="progreso6()" id="pregunta21" name="pregunta21"
-                            [(ngModel)]="cond1.pregunta21" class="form-control shadow p-3 inputPaciente"
+                        <textarea (change)="progreso()" (change)="progreso6()" name="aspecto2Condicion1"
+                            [(ngModel)]="cond1.aspecto2Condicion1" class="form-control shadow p-3 inputPaciente"
                             placeholder="..." rows="3"></textarea><br>
                         <br>
                         <form [formGroup]="archivoForm2" (ngSubmit)="subirArchivo2()">
@@ -343,8 +446,8 @@
                             se explica la coherencia entre la denominación, el campo de conocimiento y el nivel de
                             formación? </h6>
                         <br>
-                        <textarea (change)="progreso()" (change)="progreso7()" id="pregunta31" name="pregunta31"
-                            [(ngModel)]="cond1.pregunta31" class="form-control shadow p-3 inputPaciente"
+                        <textarea (change)="progreso()" (change)="progreso7()" name="aspecto3Condicion1"
+                            [(ngModel)]="cond1.aspecto3Condicion1" class="form-control shadow p-3 inputPaciente"
                             placeholder="..." rows="3"></textarea><br>
                         <br>
                         <form [formGroup]="archivoForm3" (ngSubmit)="subirArchivo3()">
@@ -390,8 +493,8 @@
                             justificar la articulación entre la denominación del título y la del programa, en los casos
                             en los que no se puede evidenciar una correspondencia directa? </h6>
                         <br>
-                        <textarea (change)="progreso()" (change)="progreso8()" id="pregunta41" name="pregunta41"
-                            [(ngModel)]="cond1.pregunta41" class="form-control shadow p-3 inputPaciente"
+                        <textarea (change)="progreso()" (change)="progreso8()" name="aspecto4Condicion1"
+                            [(ngModel)]="cond1.aspecto4Condicion1" class="form-control shadow p-3 inputPaciente"
                             placeholder="..." rows="3"></textarea><br>
                         <br>
                         <form [formGroup]="archivoForm4" (ngSubmit)="subirArchivo4()">

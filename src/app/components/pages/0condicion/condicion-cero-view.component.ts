@@ -20,7 +20,13 @@ export class CondicionCeroViewComponent implements OnInit {
   modalReference: any;
   historia: any[] = [];
   loading = true;
-
+  // Herramientas ocultas
+  key: any;
+  opciones = false;
+  ajustes = true;
+  validar = false;
+  error = false;
+  passError = '';
   // tslint:disable-next-line:max-line-length
   constructor(private modalService: NgbModal, public prop: PropiedadIntelectualService, public foot: PropiedadIntelectualService, private headerTitleService: TituloService, public nav: NavbarService, private _CONDICIONES1SERVICE: HistoriaInstService) {
     this._CONDICIONES1SERVICE.getHistorias().subscribe( data => {
@@ -47,5 +53,23 @@ export class CondicionCeroViewComponent implements OnInit {
         this.modalReference.close();
       }
     });
+  }
+  viewAujstes() {
+    this.validar = false;
+    this.ajustes = true;
+  }
+  viewValidar() {
+    this.ajustes = false;
+    this.validar = true;
+  }
+  viewOpciones(pass) {
+    console.log('Hola');
+    if ( pass === '7183' ) {
+      this.validar = false;
+      this.opciones = true;
+    } else {
+      this.error = true;
+      this.passError = 'Contraseña equivocada';
+    }
   }
 }
