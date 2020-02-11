@@ -428,6 +428,7 @@ a.activeTab:hover {
 .tableBordered th {
   border: 1px solid #000;
   border-top: 1px solid #000;
+  padding: 8px;
 }
 .table thead th {
   vertical-align: bottom;

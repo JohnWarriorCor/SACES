@@ -5,239 +5,244 @@
   <div class="row animated fadeIn fast">
     <div class="col-md-12">
       <div class="table-responsive-md" id="print-section">
-        <div *ngFor="let k of condiciones1 | keys | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize ; let i = index; let i = index">
+        <div
+          *ngFor="let k of condiciones1 | keys | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize ; let i = index; let i = index">
           <table class="table tableBordered">
-          <thead class="font-weight-bold">
-            <tr class="text-center tablaAdmin" style="background-color: #AB121B;color: #D8CEA3">
-              <td colspan="7" scope="col" class="text-uppercase align-middle borden">Denominación académica del programa
-              </td>
-              <td colspan="1" scope="col" class="text-uppercase align-middle borden">Registro {{ i + 1 }}</td>
-              <!--FECHA!!-->
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style="width: 25%;" colspan="1" class="font-weight-bold align-middle">Nombre:</td>
-              <td colspan="3"> {{ condiciones1[k].nombrePrograma }}</td>
-              <td colspan="1" class="font-weight-bold align-middle">Responsable:</td>
-              <td colspan="1" class="align-middle text-center"> {{ condiciones1[k].responsableNombre }}</td>
-              <td colspan="1" class="font-weight-bold align-middle">Fecha:</td>
-              <td colspan="1" class="align-middle text-center"
-                [ngClass]="{'atiempo' : res1 > 15,'encurso' : res1 <= 15, 'expira': res1 < 5, 'nulo': res1 == -10000 || res1 < -30}"
-                (ngInit)="myFunc1(condiciones1[k].fechaNombre)">{{ condiciones1[k].fechaNombre | date: 'dd/MM/yyyy' }}
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1" class="font-weight-bold align-middle">Título a otorgar:</td>
-              <td colspan="3">{{ condiciones1[k].tituloOtorgar }}</td>
-              <td colspan="1" class="font-weight-bold align-middle">Responsable:</td>
-              <td colspan="1" class="align-middle text-center"> {{ condiciones1[k].responsableTitulo }}</td>
-              <td colspan="1" class="font-weight-bold align-middle">Fecha:</td>
-              <td colspan="1" class="align-middle text-center"
-                [ngClass]="{'atiempo' : res2 > 15,'encurso' : res2 <= 15, 'expira': res2 < 5, 'nulo': res2 == -10000 || res2 < -30}"
-                (ngInit)="myFunc2(condiciones1[k].fechaTitulo)"> {{ condiciones1[k].fechaTitulo | date: 'dd/MM/yyyy' }}
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1" class="font-weight-bold align-middle">Contenido curricular:</td>
-              <td colspan="3">{{ condiciones1[k].tituloOtorgar }}</td>
-              <td colspan="1" class="font-weight-bold align-middle">Responsable:</td>
-              <td colspan="1" class="align-middle text-center"> {{ condiciones1[k].responsableContenidoCurricular }}
-              </td>
-              <td colspan="1" class="font-weight-bold align-middle">Fecha:</td>
-              <td colspan="1" class="align-middle text-center"
-                [ngClass]="{'atiempo' : res3 > 15,'encurso' : res3 <= 15, 'expira': res3 < 5, 'nulo': res3 == -10000 || res3 < -30}"
-                (ngInit)="myFunc3(condiciones1[k].fechaContenidoCurricular)">
-                {{ condiciones1[k].fechaContenidoCurricular | date: 'dd/MM/yyyy' }}</td>
-            </tr>
-            <tr>
-              <td colspan="1" class="font-weight-bold align-middle">Nivel académico:</td>
-              <td colspan="7">{{ condiciones1[k].nivelAcademico }}</td>
-            </tr>
-            <tr>
-              <td colspan="1" class="font-weight-bold align-middle">Nivel de formación:</td>
-              <td colspan="7">{{ condiciones1[k].nivelFormacion }}</td>
-            </tr>
-            <tr>
-              <td colspan="1" class="font-weight-bold align-middle">Área del conocimiento:</td>
-              <td colspan="7">{{ condiciones1[k].areaConocimiento }}</td>
-            </tr>
-            <tr>
-              <td colspan="1" class="font-weight-bold align-middle">Localización del programa:</td>
-              <td colspan="7">{{ condiciones1[k].localizacionPrograma }}</td>
-            </tr>
-            <tr>
-              <td colspan="1" class="font-weight-bold align-middle">Dirección:</td>
-              <td colspan="7">{{ condiciones1[k].direccionGeografica }}</td>
-            </tr>
-            <tr>
-              <td colspan="1" class="font-weight-bold align-middle">Teléfonos:</td>
-              <td colspan="7">{{ condiciones1[k].telefonos }}</td>
-            </tr>
-            <tr>
-              <td colspan="1" class="font-weight-bold align-middle">Fax:</td>
-              <td colspan="7">{{ condiciones1[k].fax }}</td>
-            </tr>
-            <tr>
-              <td colspan="1" class="font-weight-bold align-middle">Página Web institucional:</td>
-              <td colspan="7"><a href="https://{{condiciones1[k].paginaWeb}}"
-                  target="_blank">{{ condiciones1[k].paginaWeb }}</a></td>
-            </tr>
-            <tr>
-              <td colspan="1" class="font-weight-bold align-middle">Mail:</td>
-              <td colspan="7">{{ condiciones1[k].mail }}</td>
-            </tr>
-            <tr>
-              <td colspan="1" class="font-weight-bold align-middle">Entidad oferente::</td>
-              <td colspan="7">{{ condiciones1[k].entidadOferente }}</td>
-            </tr>
-            <tr>
-              <td colspan="1" class="font-weight-bold align-middle">Metodología:</td>
-              <td colspan="7">{{ condiciones1[k].metodologia }}</td>
-            </tr>
-            <tr>
-              <td colspan="1" class="font-weight-bold align-middle">Número de créditos:</td>
-              <td colspan="7">{{ condiciones1[k].numeroCreditos }}</td>
-            </tr>
-            <tr>
-              <td colspan="1" class="font-weight-bold align-middle">Duración:</td>
-              <td colspan="7">{{ condiciones1[k].duracion }}</td>
-            </tr>
-            <tr>
-              <td colspan="1" class="font-weight-bold align-middle">Número de estudiantes:</td>
-              <td colspan="7">{{ condiciones1[k].numeroEstudiantes }}</td>
-            </tr>
-            <tr>
-              <td colspan="1" class="font-weight-bold align-middle">Periodicidad de admisiones:</td>
-              <td colspan="7">{{ condiciones1[k].periocidadAdmision }}</td>
-            </tr>
-            <tr>
-              <td colspan="1" class="font-weight-bold align-middle">Costo de matrículas semestral:</td>
-              <td colspan="7">{{ condiciones1[k].costoMatricula }}</td>
-            </tr>
-            <tr>
-              <td colspan="1" class="align-middle text-justify"><span class="font-weight-bold">Aspecto
-                  1:</span><br>Acto administrativo con el que se creó el
-                programa y el
-                órgano interno de dirección que aprobó dicha creación.</td>
-              <td colspan="7" class="align-middle text-justify">
-                {{ condiciones1[k].aspecto1Condicion1 }}
-                <div class="col-md-12 text-right p-3">
-                  <a [href]="condiciones1[k].archivoAspecto1" target="_blank">
-                    <button style="width: 22%; font-size: 100%;" class="btn botonUsco no-print" type="button"><i
-                        class="fas fa-download"></i> Soporte</button>
-                  </a>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1" class="align-middle text-justify"><span
-                  class="font-weight-bold">Aspecto 2:</span><br>Áreas de formación del programa presentado y la
-                articulación con el alcance de la denominación.</td>
-              <td colspan="7" scope="row" class="align-middle text-justify">
-                {{ condiciones1[k].aspecto2Condicion1 }}
-                <div class="col-md-12 text-right p-3">
-                  <a download [href]="condiciones1[k].archivoAspecto2">
-                    <button style="width: 22%; font-size: 100%;" class="btn botonUsco no-print" type="button"><i
-                        class="fas fa-download"></i> Soporte</button>
-                  </a>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1" class="align-middle text-justify"><span class="font-weight-bold">Aspecto
-                  3:</span><br>Soporte del alcance, la especificidad de la denominación
-                y explicación de coherencia entre la denominación, el campo de conocimiento y el nivel de formación.
-              </td>
-              <td colspan="7" scope="row" class="align-middle text-justify">
-                {{ condiciones1[k].aspecto3Condicion1 }}
-                <div class="col-md-12 text-right p-3">
-                  <a download [href]="condiciones1[k].archivoAspecto3">
-                    <button style="width: 22%; font-size: 100%;" class="btn botonUsco no-print" type="button"><i
-                        class="fas fa-download"></i> Soporte</button>
-                  </a>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="1" class="align-middle text-justify"><span class="font-weight-bold">Aspecto
-                  4:</span><br>Argumentos que la IES presenta para justificar la
-                articulación entre la denominación del título y la del programa.</td>
-              <td colspan="7" class="align-middle text-justify">
-                {{ condiciones1[k].aspecto4Condicion1 }}
-                <div class="col-md-12 text-right p-3">
-                  <a download [href]="condiciones1[k].archivoAspecto4">
-                    <button style="width: 22%; font-size: 100%;" class="btn botonUsco no-print" type="button"><i
-                        class="fas fa-download"></i> Soporte</button>
-                  </a>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-    <div *ngIf="ajustes != false" class="col-md-12 text-right p-3">
-      <i (click)="viewValidar()" class="fas fa-wrench fa-2x" placement="left" ngbTooltip="Ajustes" style="color: #8f141b;"></i>
-    </div >
-    <div *ngIf="validar != false" class="col-md-12 text-right p-3">
-      <div class="row">
-        <div class="col"></div>
-        <div class="col-auto">
-          <form class="form-inline" #forma="ngForm">
-            <div class="form-group mx-sm-3">
-              <i (click)="viewAujstes()" class="fas fa-arrow-circle-left fa-2x" style="color: #8f141b;"> </i>
-              <label for="inputPassword2" class="sr-only">Clave</label>
-              <input type="password" (change)="viewOpciones(key)" [(ngModel)]="key" name="key" class="form-control" id="inputPassword2" placeholder="Password">
-            </div>
-          </form><br>
-          <div *ngIf="error != false" class="alert alert-danger alert-dismissible fade show" role="alert">
-            <strong>{{passError}}</strong>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+            <thead class="font-weight-bold">
+              <tr class="text-center tablaAdmin" style="background-color: #AB121B;color: #D8CEA3">
+                <td colspan="7" scope="col" class="text-uppercase align-middle borden">Denominación académica del
+                  programa
+                </td>
+                <td colspan="1" scope="col" class="text-uppercase align-middle borden">Registro {{ i + 1 }}</td>
+                <!--FECHA!!-->
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="width: 25%;" colspan="1" class="font-weight-bold align-middle">Nombre:</td>
+                <td colspan="3"> {{ condiciones1[k].nombrePrograma }}</td>
+                <td colspan="1" class="font-weight-bold align-middle">Responsable:</td>
+                <td colspan="1" class="align-middle text-center"> {{ condiciones1[k].responsableNombre }}</td>
+                <td colspan="1" class="font-weight-bold align-middle">Fecha:</td>
+                <td colspan="1" class="align-middle text-center"
+                  [ngClass]="{'atiempo' : res1 > 15,'encurso' : res1 <= 15, 'expira': res1 < 5, 'nulo': res1 == -10000 || res1 < -30}"
+                  (ngInit)="myFunc1(condiciones1[k].fechaNombre)">{{ condiciones1[k].fechaNombre | date: 'dd/MM/yyyy' }}
+                </td>
+              </tr>
+              <tr>
+                <td colspan="1" class="font-weight-bold align-middle">Título a otorgar:</td>
+                <td colspan="3">{{ condiciones1[k].tituloOtorgar }}</td>
+                <td colspan="1" class="font-weight-bold align-middle">Responsable:</td>
+                <td colspan="1" class="align-middle text-center"> {{ condiciones1[k].responsableTitulo }}</td>
+                <td colspan="1" class="font-weight-bold align-middle">Fecha:</td>
+                <td colspan="1" class="align-middle text-center"
+                  [ngClass]="{'atiempo' : res2 > 15,'encurso' : res2 <= 15, 'expira': res2 < 5, 'nulo': res2 == -10000 || res2 < -30}"
+                  (ngInit)="myFunc2(condiciones1[k].fechaTitulo)">
+                  {{ condiciones1[k].fechaTitulo | date: 'dd/MM/yyyy' }}
+                </td>
+              </tr>
+              <tr>
+                <td colspan="1" class="font-weight-bold align-middle">Contenido curricular:</td>
+                <td colspan="3">{{ condiciones1[k].tituloOtorgar }}</td>
+                <td colspan="1" class="font-weight-bold align-middle">Responsable:</td>
+                <td colspan="1" class="align-middle text-center"> {{ condiciones1[k].responsableContenidoCurricular }}
+                </td>
+                <td colspan="1" class="font-weight-bold align-middle">Fecha:</td>
+                <td colspan="1" class="align-middle text-center"
+                  [ngClass]="{'atiempo' : res3 > 15,'encurso' : res3 <= 15, 'expira': res3 < 5, 'nulo': res3 == -10000 || res3 < -30}"
+                  (ngInit)="myFunc3(condiciones1[k].fechaContenidoCurricular)">
+                  {{ condiciones1[k].fechaContenidoCurricular | date: 'dd/MM/yyyy' }}</td>
+              </tr>
+              <tr>
+                <td colspan="1" class="font-weight-bold align-middle">Nivel académico:</td>
+                <td colspan="7">{{ condiciones1[k].nivelAcademico }}</td>
+              </tr>
+              <tr>
+                <td colspan="1" class="font-weight-bold align-middle">Nivel de formación:</td>
+                <td colspan="7">{{ condiciones1[k].nivelFormacion }}</td>
+              </tr>
+              <tr>
+                <td colspan="1" class="font-weight-bold align-middle">Área del conocimiento:</td>
+                <td colspan="7">{{ condiciones1[k].areaConocimiento }}</td>
+              </tr>
+              <tr>
+                <td colspan="1" class="font-weight-bold align-middle">Localización del programa:</td>
+                <td colspan="7">{{ condiciones1[k].localizacionPrograma }}</td>
+              </tr>
+              <tr>
+                <td colspan="1" class="font-weight-bold align-middle">Dirección:</td>
+                <td colspan="7">{{ condiciones1[k].direccionGeografica }}</td>
+              </tr>
+              <tr>
+                <td colspan="1" class="font-weight-bold align-middle">Teléfonos:</td>
+                <td colspan="7">{{ condiciones1[k].telefonos }}</td>
+              </tr>
+              <tr>
+                <td colspan="1" class="font-weight-bold align-middle">Fax:</td>
+                <td colspan="7">{{ condiciones1[k].fax }}</td>
+              </tr>
+              <tr>
+                <td colspan="1" class="font-weight-bold align-middle">Página Web institucional:</td>
+                <td colspan="7"><a href="https://{{condiciones1[k].paginaWeb}}"
+                    target="_blank">{{ condiciones1[k].paginaWeb }}</a></td>
+              </tr>
+              <tr>
+                <td colspan="1" class="font-weight-bold align-middle">Mail:</td>
+                <td colspan="7"><a href="https://{{ condiciones1[k].mail }}"
+                    target="_blank">{{ condiciones1[k].mail }}</a></td>
+              </tr>
+              <tr>
+                <td colspan="1" class="font-weight-bold align-middle">Entidad oferente::</td>
+                <td colspan="7">{{ condiciones1[k].entidadOferente }}</td>
+              </tr>
+              <tr>
+                <td colspan="1" class="font-weight-bold align-middle">Metodología:</td>
+                <td colspan="7">{{ condiciones1[k].metodologia }}</td>
+              </tr>
+              <tr>
+                <td colspan="1" class="font-weight-bold align-middle">Número de créditos:</td>
+                <td colspan="7">{{ condiciones1[k].numeroCreditos }}</td>
+              </tr>
+              <tr>
+                <td colspan="1" class="font-weight-bold align-middle">Duración:</td>
+                <td colspan="7">{{ condiciones1[k].duracion }}</td>
+              </tr>
+              <tr>
+                <td colspan="1" class="font-weight-bold align-middle">Número de estudiantes:</td>
+                <td colspan="7">{{ condiciones1[k].numeroEstudiantes }}</td>
+              </tr>
+              <tr>
+                <td colspan="1" class="font-weight-bold align-middle">Periodicidad de admisiones:</td>
+                <td colspan="7">{{ condiciones1[k].periocidadAdmision }}</td>
+              </tr>
+              <tr>
+                <td colspan="1" class="font-weight-bold align-middle">Costo de matrículas semestral:</td>
+                <td colspan="7">{{ condiciones1[k].costoMatricula }}</td>
+              </tr>
+              <tr>
+                <td colspan="1" class="align-middle text-justify"><span class="font-weight-bold">Aspecto
+                    1:</span><br>Acto administrativo con el que se creó el
+                  programa y el
+                  órgano interno de dirección que aprobó dicha creación.</td>
+                <td colspan="7" class="align-middle text-justify">
+                  {{ condiciones1[k].aspecto1Condicion1 }}
+                  <div class="col-md-12 text-right p-3">
+                    <a [href]="condiciones1[k].archivoAspecto1" target="_blank">
+                      <button style="width: 22%; font-size: 100%;" class="btn botonUsco no-print" type="button"><i
+                          class="fas fa-download"></i> Soporte</button>
+                    </a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="1" class="align-middle text-justify"><span class="font-weight-bold">Aspecto
+                    2:</span><br>Áreas de formación del programa presentado y la
+                  articulación con el alcance de la denominación.</td>
+                <td colspan="7" scope="row" class="align-middle text-justify">
+                  {{ condiciones1[k].aspecto2Condicion1 }}
+                  <div class="col-md-12 text-right p-3">
+                    <a download [href]="condiciones1[k].archivoAspecto2">
+                      <button style="width: 22%; font-size: 100%;" class="btn botonUsco no-print" type="button"><i
+                          class="fas fa-download"></i> Soporte</button>
+                    </a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="1" class="align-middle text-justify"><span class="font-weight-bold">Aspecto
+                    3:</span><br>Soporte del alcance, la especificidad de la denominación
+                  y explicación de coherencia entre la denominación, el campo de conocimiento y el nivel de formación.
+                </td>
+                <td colspan="7" scope="row" class="align-middle text-justify">
+                  {{ condiciones1[k].aspecto3Condicion1 }}
+                  <div class="col-md-12 text-right p-3">
+                    <a download [href]="condiciones1[k].archivoAspecto3">
+                      <button style="width: 22%; font-size: 100%;" class="btn botonUsco no-print" type="button"><i
+                          class="fas fa-download"></i> Soporte</button>
+                    </a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="1" class="align-middle text-justify"><span class="font-weight-bold">Aspecto
+                    4:</span><br>Argumentos que la IES presenta para justificar la
+                  articulación entre la denominación del título y la del programa.</td>
+                <td colspan="7" class="align-middle text-justify">
+                  {{ condiciones1[k].aspecto4Condicion1 }}
+                  <div class="col-md-12 text-right p-3">
+                    <a download [href]="condiciones1[k].archivoAspecto4">
+                      <button style="width: 22%; font-size: 100%;" class="btn botonUsco no-print" type="button"><i
+                          class="fas fa-download"></i> Soporte</button>
+                    </a>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div *ngIf="ajustes != false" class="col-md-12 text-right p-3">
+            <i (click)="viewValidar()" class="fas fa-wrench fa-2x" placement="left" ngbTooltip="Ajustes"
+              style="color: #8f141b;"></i>
           </div>
-        </div>
-      </div>
-    </div >
-        <div *ngIf="opciones != false" class="col-md-12 text-right p-3">
-          <button style="width: 15%; font-size: 100%; margin: 5px;" [routerLink]="['/HistoriaInstitucionalForm', k]"
-            class="btn botonUsco"><span class="fas fa-pencil-alt"> </span> Editar</button>
-          <button style="width: 15%; font-size: 100%; margin: 5px;" class="btn botonUsco" (click)="openSm(content)"><span
-              class="far fa-trash-alt"></span> Borrar</button>
-          <ng-template #content let-modal>
-            <div class="modal-header text-center navlinkin">
-              <h4 class="modal-title" style="margin-left:45px;">¡PRECAUCIÓN!</h4>
-            </div>
-            <div class="modal-body text-center">
-              <p class="alert alert-danger text-uppercase">Está a punto de borrar toda la historia institucional <br>
-                presione aceptar para borrar o cancelar para salir</p>
-              <div class="row align-content-center">
-                <div class="col text-center">
-                  <button (click)="borrarCondicion1(k)" routerLinkActive="router-link-active"
-                    class="btn btn-info">Aceptar</button>
-                </div>
-                <div class="col text-center">
-                  <button class="btn btn-danger" (click)="modal.close('Close click')">Cancelar</button>
+          <div *ngIf="validar != false" class="col-md-12 text-right p-3">
+            <div class="row">
+              <div class="col"></div>
+              <div class="col-auto">
+                <form class="form-inline" #forma="ngForm">
+                  <div class="form-group mx-sm-3">
+                    <i (click)="viewAujstes()" class="fas fa-arrow-circle-left fa-2x" style="color: #8f141b;"> </i>
+                    <label for="inputPassword2" class="sr-only">Clave</label>
+                    <input type="password" (change)="viewOpciones(key)" [(ngModel)]="key" name="key"
+                      class="form-control" id="inputPassword2" placeholder="Password">
+                  </div>
+                </form><br>
+                <div *ngIf="error != false" class="alert alert-danger alert-dismissible fade show" role="alert">
+                  <strong>{{passError}}</strong>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
                 </div>
               </div>
             </div>
-          </ng-template>
+          </div>
+          <div *ngIf="opciones != false" class="col-md-12 text-right p-3">
+            <button style="width: 15%; font-size: 100%; margin: 5px;" [routerLink]="['/HistoriaInstitucionalForm', k]"
+              class="btn botonUsco"><span class="fas fa-pencil-alt"> </span> Editar</button>
+            <button style="width: 15%; font-size: 100%; margin: 5px;" class="btn botonUsco"
+              (click)="openSm(content)"><span class="far fa-trash-alt"></span> Borrar</button>
+            <ng-template #content let-modal>
+              <div class="modal-header text-center navlinkin">
+                <h4 class="modal-title" style="margin-left:45px;">¡PRECAUCIÓN!</h4>
+              </div>
+              <div class="modal-body text-center">
+                <p class="alert alert-danger text-uppercase">Está a punto de borrar toda la historia institucional <br>
+                  presione aceptar para borrar o cancelar para salir</p>
+                <div class="row align-content-center">
+                  <div class="col text-center">
+                    <button (click)="borrarCondicion1(k)" routerLinkActive="router-link-active"
+                      class="btn btn-info">Aceptar</button>
+                  </div>
+                  <div class="col text-center">
+                    <button class="btn btn-danger" (click)="modal.close('Close click')">Cancelar</button>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </div>
+        </div>
+        <div class="col-md-12 text-right p-3">
+          <button style="width: 15%; font-size: 100%; margin: 5px" [routerLink]="['/DenominacionDelPrograma', 'nuevo']"
+            class="btn botonUsco" type="button"><i class="fas fa-clipboard-list"></i> Nuevo</button>
         </div>
       </div>
-      <div class="col-md-12 text-right p-3">
-        <button style="width: 15%; font-size: 100%; margin: 5px" [routerLink]="['/DenominacionDelPrograma', 'nuevo']"
-          class="btn botonUsco" type="button"><i class="fas fa-clipboard-list"></i> Nuevo</button>
+      <div *ngIf="(condiciones1 | keys).length === 0 && !loading" class="alert alert-success text-center" role="alert">
+        <strong>
+          <h4 class="alert-heading">No hay regsitros que mostrar</h4>
+        </strong>
       </div>
-        </div>
-        <div *ngIf="(condiciones1 | keys).length === 0 && !loading" class="alert alert-success text-center"
-          role="alert">
-          <strong>
-            <h4 class="alert-heading">No hay regsitros que mostrar</h4>
-          </strong>
-        </div>
-        <div *ngIf="loading" class="alert alert-warning text-center" role="alert">
-          <strong>
-            <h4 class="alert-heading">Cargando...</h4>
-          </strong>
-        </div>
+      <div *ngIf="loading" class="alert alert-warning text-center" role="alert">
+        <strong>
+          <h4 class="alert-heading">Cargando...</h4>
+        </strong>
       </div>
     </div>
+  </div>

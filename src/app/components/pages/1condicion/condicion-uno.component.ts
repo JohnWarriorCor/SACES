@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation  } from '@angular/core';
 import { formatDate } from '@angular/common';
 import { Router, ActivatedRoute} from '@angular/router';
-/*MODAL FUNCIONAL ERROR CIERRA RAPIDO
+/* MODAL FUNCIONAL ERROR CIERRA RAPIDO
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CargarArchivoService } from '../../../services/cargar-archivo.service';
 import { ModalUnoComponent } from './modal-uno.component';
@@ -25,6 +25,9 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   encapsulation: ViewEncapsulation.None,
 })
 export class CondicionUnoComponent implements OnInit {
+  // BOTONES FORMULARIOS COMPLEMENTARIOS
+  formComplementario = false;
+  icono = false;
   // BOTON ASPECTOS - PREGUNTAS
   show = false;
   buttonName = 'Aspectos';
@@ -467,5 +470,14 @@ export class CondicionUnoComponent implements OnInit {
         }, 5000);
       }
     });
+  }
+  desplegarForm() {
+    if (this.icono === false) {
+      this.formComplementario = true;
+      this.icono = true;
+    } else {
+      this.formComplementario = false;
+      this.icono = false;
+    }
   }
 }

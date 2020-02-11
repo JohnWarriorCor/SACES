@@ -13,6 +13,13 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   encapsulation: ViewEncapsulation.None,
 })
 export class RegistroCon2Component implements OnInit {
+  key: any;
+  opciones = false;
+  ajustes = true;
+  validar = false;
+  error = false;
+  passError = '';
+
   page = 1;
   pageSize = 1;
   closeResult: string;
@@ -46,6 +53,24 @@ export class RegistroCon2Component implements OnInit {
         this.modalReference.close();
       }
     });
+  }
+  viewAujstes() {
+    this.validar = false;
+    this.ajustes = true;
+  }
+  viewValidar() {
+    this.ajustes = false;
+    this.validar = true;
+  }
+  viewOpciones(pass) {
+    console.log('Hola');
+    if ( pass === '7183' ) {
+      this.validar = false;
+      this.opciones = true;
+    } else {
+      this.error = true;
+      this.passError = 'Contraseña equivocada';
+    }
   }
 
 }

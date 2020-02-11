@@ -181,7 +181,11 @@
                         </ngb-progressbar><br>
                     </div>
                 </div>
-                <div>
+                <div class="col-md-12 text-left p-3">
+                    <button style="width: 28%; font-size: 100%; margin: 5px"
+                      class="btn botonUsco" (click)="desplegarForm()" type="button">Información complementária <i *ngIf="formComplementario === false" class="far fa-arrow-alt-circle-down"></i><i *ngIf="formComplementario === true" class="far fa-arrow-alt-circle-up"></i></button>
+                  </div>
+                <div *ngIf="formComplementario != false">
                     <div class="row">
                         <div class="col">
                             <h6 class="gray text-left">Nivel Académico:</h6>
