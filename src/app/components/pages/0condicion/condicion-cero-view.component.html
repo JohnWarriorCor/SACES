@@ -23,8 +23,9 @@
     </p>
     <br>
     <div *ngIf="ajustes != false" class="col-md-12 text-right p-3">
-      <i (click)="viewValidar()" class="fas fa-wrench fa-2x" placement="left" ngbTooltip="Ajustes" style="color: #8f141b;"></i>
-    </div >
+      <i (click)="viewValidar()" class="fas fa-wrench fa-2x" placement="left" ngbTooltip="Ajustes"
+        style="color: #8f141b;"></i>
+    </div>
     <div *ngIf="validar != false" class="col-md-12 text-right p-3">
       <div class="row">
         <div class="col"></div>
@@ -33,7 +34,8 @@
             <div class="form-group mx-sm-3">
               <i (click)="viewAujstes()" class="fas fa-arrow-circle-left fa-2x" style="color: #8f141b;"> </i>
               <label for="inputPassword2" class="sr-only">Clave</label>
-              <input type="password" (change)="viewOpciones(key)" [(ngModel)]="key" name="key" class="form-control" id="inputPassword2" placeholder="Password">
+              <input type="password" (change)="viewOpciones(key)" [(ngModel)]="key" name="key" class="form-control"
+                id="inputPassword2" placeholder="Password">
             </div>
           </form><br>
           <div *ngIf="error != false" class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -44,7 +46,7 @@
           </div>
         </div>
       </div>
-    </div >
+    </div>
     <div *ngIf="opciones != false" class="col-md-12 text-right p-3">
       <button style="width: 15%; font-size: 100%; margin: 5px;" [routerLink]="['/HistoriaInstitucionalForm', k]"
         class="btn botonUsco"><span class="fas fa-pencil-alt"> </span> Editar</button>

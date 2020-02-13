@@ -35,14 +35,24 @@ export class CondicionUnoComponent implements OnInit {
   closeResult: string;
   // BARRA DE PROGRESO
   acumPuntos = 0.0;
+  acumPuntosAux1 = 0;
   acumPuntos1 = 0.0;
+  acumPuntosAux2 = 0;
   acumPuntos2 = 0.0;
+  acumPuntosAux3 = 0;
   acumPuntos3 = 0.0;
+  acumPuntosAux4 = 0;
   acumPuntos4 = 0.0;
+  acumPuntosAux5 = 0;
   acumPuntos5 = 0.0;
+  acumPuntosAux6 = 0;
   acumPuntos6 = 0.0;
+  acumPuntosAux7 = 0;
   acumPuntos7 = 0.0;
+  acumPuntosAux8 = 0;
   acumPuntos8 = 0.0;
+  acumPuntosAux9 = 0;
+  acumPuntos9 = 0.0;
   textoPuntos = '';
   // CONEXION FIREBASE BD
   forma: FormGroup;
@@ -75,7 +85,7 @@ export class CondicionUnoComponent implements OnInit {
     numeroEstudiantes: '',
     periocidadAdmision: '',
     costoMatricula: '',
-    observaciones: '',
+    progresoGeneral: 0,
     aspecto1Condicion1: '',
     aspecto2Condicion1: '',
     aspecto3Condicion1: '',
@@ -181,60 +191,87 @@ export class CondicionUnoComponent implements OnInit {
   openVerticallyCentered(content) {
     this.modalService.open(content, { centered: true });
   }
-  progreso1() {/*
-    this.cond1.por1 = 100;
-    this.acumPuntos1 = this.acumPuntos1 + 100;
-    this.textoPuntos = String(this.acumPuntos1);
-    this.textoPuntos = this.textoPuntos + '%';
-    return [this.acumPuntos1, this.textoPuntos];*/
-  }
   progreso() {/*
     this.acumPuntos = this.acumPuntos + 8;
     this.textoPuntos = String(this.acumPuntos);
     this.textoPuntos = this.textoPuntos + '%';
     return [this.acumPuntos, this.textoPuntos];*/
   }
-  progreso2() {/*
-    this.acumPuntos2 = this.acumPuntos2 + 34;
-    this.textoPuntos = String(this.acumPuntos2);
-    this.textoPuntos = this.textoPuntos + '%';
-    return [this.acumPuntos2, this.textoPuntos];*/
+  progreso1() {
+    if (this.acumPuntosAux1 < 100) {
+      this.acumPuntos1 = this.acumPuntos1 + 100;
+    }
+    if (this.acumPuntos1 >= 100 ) {
+      return this.acumPuntos = this.acumPuntos + 20;
+    }
   }
-  progreso3() {/*
-    this.acumPuntos3 = this.acumPuntos3 + 34;
-    this.textoPuntos = String(this.acumPuntos3);
-    this.textoPuntos = this.textoPuntos + '%';
-    return [this.acumPuntos3, this.textoPuntos];*/
+  progreso2() {
+    if (this.acumPuntosAux2 < 100) {
+      this.acumPuntos2 = this.acumPuntos2 + 33.33;
+      this.acumPuntosAux2 = Math.round(this.acumPuntos2);
+    }
+    if (this.acumPuntosAux2 >= 100 ) {
+      return this.acumPuntos = this.acumPuntos +  20;
+    }
   }
-  progreso4() {/*
-    this.acumPuntos4 = this.acumPuntos4 + 34;
-    this.textoPuntos = String(this.acumPuntos4);
-    this.textoPuntos = this.textoPuntos + '%';
-    return [this.acumPuntos4, this.textoPuntos];*/
+  progreso3() {
+    if (this.acumPuntosAux3 < 100) {
+      this.acumPuntos3 = this.acumPuntos3 + 33.33;
+      this.acumPuntosAux3 = Math.round(this.acumPuntos3);
+    }
+    if (this.acumPuntosAux3 >= 100 ) {
+      return this.acumPuntos = this.acumPuntos +  20;
+    }
   }
-  progreso5() {/*
-    this.acumPuntos5 = this.acumPuntos5 + 50;
-    this.textoPuntos = String(this.acumPuntos5);
-    this.textoPuntos = this.textoPuntos + '%';
-    return [this.acumPuntos5, this.textoPuntos];*/
+  progreso4() {
+    if (this.acumPuntosAux4 < 100) {
+      this.acumPuntos4 = this.acumPuntos4 + 33.33;
+      this.acumPuntosAux4 = Math.round(this.acumPuntos4);
+    }
+    if (this.acumPuntosAux4 >= 100 ) {
+      return this.acumPuntos = this.acumPuntos +  20;
+    }
   }
-  progreso6() {/*
-    this.acumPuntos6 = this.acumPuntos6 + 50;
-    this.textoPuntos = String(this.acumPuntos6);
-    this.textoPuntos = this.textoPuntos + '%';
-    return [this.acumPuntos6, this.textoPuntos];*/
+  progreso5() {
+    if (this.acumPuntosAux5 < 100) {
+      this.acumPuntos5 = this.acumPuntos5 + 6.67;
+      this.acumPuntosAux5 = Math.round(this.acumPuntos5);
+    }
+    if (this.acumPuntos5 >= 100 ) {
+      return this.acumPuntos = this.acumPuntos +  20;
+    }
   }
-  progreso7() {/*
-    this.acumPuntos7 = this.acumPuntos7 + 50;
-    this.textoPuntos = String(this.acumPuntos7);
-    this.textoPuntos = this.textoPuntos + '%';
-    return [this.acumPuntos7, this.textoPuntos];*/
+  progreso6() {
+    if (this.acumPuntosAux6 < 100) {
+      this.acumPuntos6 = this.acumPuntos6 + 50;
+    }
+    if (this.acumPuntos6 >= 100 ) {
+      return this.acumPuntos = this.acumPuntos +  20;
+    }
   }
-  progreso8() {/*
-    this.acumPuntos8 = this.acumPuntos8 + 50;
-    this.textoPuntos = String(this.acumPuntos8);
-    this.textoPuntos = this.textoPuntos + '%';
-    return [this.acumPuntos8, this.textoPuntos];*/
+  progreso7() {
+    if (this.acumPuntosAux7 < 100) {
+      this.acumPuntos7 = this.acumPuntos7 + 50;
+    }
+    if (this.acumPuntos7 >= 100 ) {
+      return this.acumPuntos = this.acumPuntos +  20;
+    }
+  }
+  progreso8() {
+    if (this.acumPuntosAux8 < 100) {
+      this.acumPuntos8 = this.acumPuntos8 + 50;
+    }
+    if (this.acumPuntos8 >= 100 ) {
+      return this.acumPuntos = this.acumPuntos +  20;
+    }
+  }
+  progreso9() {
+    if (this.acumPuntosAux9 < 100) {
+      this.acumPuntos9 = this.acumPuntos9 + 50;
+    }
+    if (this.acumPuntos9 >= 100 ) {
+      return this.acumPuntos = this.acumPuntos +  20;
+    }
   }
   guardar() {
     if ( this.id === 'nuevo' ) {
@@ -248,6 +285,7 @@ export class CondicionUnoComponent implements OnInit {
       },
       error => console.error(error));
     }
+    this.cond1.progresoGeneral = this.acumPuntos;
   }
   agregarNuevo( forma: NgForm) {
     this.router.navigate(['/DenominacionDelPrograma', 'nuevo']);

@@ -24,7 +24,7 @@ export interface Condicion1 {
     numeroEstudiantes: string;
     periocidadAdmision: string;
     costoMatricula: string;
-    observaciones: string;
+    progresoGeneral: any;
     aspecto1Condicion1: string;
     aspecto2Condicion1: string;
     aspecto3Condicion1: string;

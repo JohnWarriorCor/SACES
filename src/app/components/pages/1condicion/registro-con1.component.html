@@ -179,6 +179,8 @@
               </tr>
             </tbody>
           </table>
+          <ngb-progressbar [showValue]="true" type="danger"
+            [value]="condiciones1[k].progresoGeneral"></ngb-progressbar><br>
           <div *ngIf="ajustes != false" class="col-md-12 text-right p-3">
             <i (click)="viewValidar()" class="fas fa-wrench fa-2x" placement="left" ngbTooltip="Ajustes"
               style="color: #8f141b;"></i>
@@ -205,7 +207,7 @@
             </div>
           </div>
           <div *ngIf="opciones != false" class="col-md-12 text-right p-3">
-            <button style="width: 15%; font-size: 100%; margin: 5px;" [routerLink]="['/HistoriaInstitucionalForm', k]"
+            <button style="width: 15%; font-size: 100%; margin: 5px;" [routerLink]="['/DenominacionDelPrograma', k]"
               class="btn botonUsco"><span class="fas fa-pencil-alt"> </span> Editar</button>
             <button style="width: 15%; font-size: 100%; margin: 5px;" class="btn botonUsco"
               (click)="openSm(content)"><span class="far fa-trash-alt"></span> Borrar</button>
@@ -214,7 +216,7 @@
                 <h4 class="modal-title" style="margin-left:45px;">¡PRECAUCIÓN!</h4>
               </div>
               <div class="modal-body text-center">
-                <p class="alert alert-danger text-uppercase">Está a punto de borrar toda la historia institucional <br>
+                <p class="alert alert-danger text-uppercase">Está a punto de borrar la Denominación del programa<br>
                   presione aceptar para borrar o cancelar para salir</p>
                 <div class="row align-content-center">
                   <div class="col text-center">
