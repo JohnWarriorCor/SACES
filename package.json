@@ -31,7 +31,7 @@
     "@types/jquery": "^3.3.31",
     "angular-bootstrap-md": "^7.5.3",
     "angular-calendar": "^0.27.18",
-    "browserslist": "^4.8.6",
+    "browserslist": "^4.16.5",
     "caniuse-lite": "^1.0.30001027",
     "core-js": "^2.5.4",
     "date-fns": "^2.3.0",
